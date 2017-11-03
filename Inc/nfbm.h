@@ -3,6 +3,9 @@
 
 #include "stdint.h"
 
+
+#define channelNo 12
+
 struct AdcData{
 	
 	float Van; 	//AN-1
@@ -61,6 +64,11 @@ enum AdcChannel{
 	IRESc=13
 
 };
+
+
+
+
+
 
 
 

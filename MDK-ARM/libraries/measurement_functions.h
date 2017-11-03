@@ -14,6 +14,12 @@ struct phase_cs_in{
 		float Is;
 };
 
+struct phase_cs_single{
+
+	float c;
+	float s;
+};
+
 struct phase_cs_out{
 
 		float rms_V;
@@ -95,6 +101,9 @@ struct thermal_parameters{
 };
 
 float thermal_status(struct thermal_parameters therm, float mem);
+
+float prefilter(float rtInput ,float *zValues , unsigned int N);
+
 
 
 #endif

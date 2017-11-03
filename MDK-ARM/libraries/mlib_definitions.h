@@ -51,15 +51,6 @@ struct spectra {
 
 };
 
-void signal_spectra(
-	
-	float rtInput, 
-	struct spectra *h,
-	unsigned int qBufferLength,	//updated buffer length
-	float *twBufferReal,			//twiddle factor Real coeffs
-	float *twBufferImag,			//twiddle factor Imag coeffs    
-	unsigned int pCounter);
-
 
 
 struct pvp_data{
@@ -70,7 +61,7 @@ struct pvp_data{
 
 };
 
-float pvp_post_filter(float rtInput,float *coeff, unsigned int coeffLength, float *zValues);
+
 
 struct thermal_parameters{
 
@@ -83,7 +74,7 @@ struct thermal_parameters{
 };
 
 
-float prefilter(float rtInput ,float *zValues , unsigned int N);
+
 
 
 

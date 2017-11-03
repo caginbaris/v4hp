@@ -405,14 +405,14 @@
               <FilePath>../Src/spi.c</FilePath>
             </File>
             <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/usart.c</FilePath>
-            </File>
-            <File>
               <FileName>stm32f7xx_hal_msp.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/stm32f7xx_hal_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/usart.c</FilePath>
             </File>
             <File>
               <FileName>stm32f7xx_it.c</FileName>
@@ -600,6 +600,11 @@
           <GroupName>mfunctions</GroupName>
           <Files>
             <File>
+              <FileName>cs_handles.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\cs_handles.c</FilePath>
+            </File>
+            <File>
               <FileName>trueRMS.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\trueRMS.c</FilePath>
@@ -614,7 +619,15 @@
               <FileType>1</FileType>
               <FilePath>.\conversion.c</FilePath>
             </File>
+            <File>
+              <FileName>tickFunctions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\tickFunctions.c</FilePath>
+            </File>
           </Files>
+        </Group>
+        <Group>
+          <GroupName>initFunctions</GroupName>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>

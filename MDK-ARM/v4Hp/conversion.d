@@ -40,4 +40,5 @@ v4hp\conversion.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 v4hp\conversion.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
 v4hp\conversion.o: ../Inc/adc.h
 v4hp\conversion.o: ../Inc/nfbm.h
-v4hp\conversion.o: .\libraries\mlib_definitions.h
+v4hp\conversion.o: .\libraries\measurement_functions.h
+v4hp\conversion.o: ../Inc/conversion.h

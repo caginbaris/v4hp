@@ -27,13 +27,13 @@ Section Cross References
     spi.o(i.MX_SPI2_Init) refers to stm32f7xx_hal_spi.o(i.HAL_SPI_Init) for HAL_SPI_Init
     spi.o(i.MX_SPI2_Init) refers to main.o(i._Error_Handler) for _Error_Handler
     spi.o(i.MX_SPI2_Init) refers to spi.o(.bss) for .bss
+    stm32f7xx_hal_msp.o(i.HAL_MspInit) refers to stm32f7xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping) for HAL_NVIC_SetPriorityGrouping
+    stm32f7xx_hal_msp.o(i.HAL_MspInit) refers to stm32f7xx_hal_cortex.o(i.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
     usart.o(i.HAL_UART_MspDeInit) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_DeInit) for HAL_GPIO_DeInit
     usart.o(i.HAL_UART_MspInit) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_Init) for HAL_GPIO_Init
     usart.o(i.MX_USART2_UART_Init) refers to stm32f7xx_hal_uart.o(i.HAL_UART_Init) for HAL_UART_Init
     usart.o(i.MX_USART2_UART_Init) refers to main.o(i._Error_Handler) for _Error_Handler
     usart.o(i.MX_USART2_UART_Init) refers to usart.o(.bss) for .bss
-    stm32f7xx_hal_msp.o(i.HAL_MspInit) refers to stm32f7xx_hal_cortex.o(i.HAL_NVIC_SetPriorityGrouping) for HAL_NVIC_SetPriorityGrouping
-    stm32f7xx_hal_msp.o(i.HAL_MspInit) refers to stm32f7xx_hal_cortex.o(i.HAL_NVIC_SetPriority) for HAL_NVIC_SetPriority
     stm32f7xx_it.o(i.DMA2_Stream0_IRQHandler) refers to stm32f7xx_hal_dma.o(i.HAL_DMA_IRQHandler) for HAL_DMA_IRQHandler
     stm32f7xx_it.o(i.DMA2_Stream0_IRQHandler) refers to adc.o(.bss) for hdma_adc1
     stm32f7xx_it.o(i.DMA2_Stream1_IRQHandler) refers to stm32f7xx_hal_dma.o(i.HAL_DMA_IRQHandler) for HAL_DMA_IRQHandler
@@ -852,9 +852,51 @@ Section Cross References
     stm32f7xx_hal_i2c.o(i.I2C_WaitOnTXISFlagUntilTimeout) refers to stm32f7xx_hal.o(i.HAL_GetTick) for HAL_GetTick
     system_stm32f7xx.o(i.SystemCoreClockUpdate) refers to system_stm32f7xx.o(.data) for .data
     system_stm32f7xx.o(i.SystemCoreClockUpdate) refers to system_stm32f7xx.o(.constdata) for .constdata
+    cs_handles.o(i.cs_handle_tick1) refers to measurement_functions.o(i.cs_generation) for cs_generation
+    cs_handles.o(i.cs_handle_tick1) refers to measurement_functions.o(i.cs_computations) for cs_computations
+    cs_handles.o(i.cs_handle_tick1) refers to conversion.o(.bss) for fAdc
+    cs_handles.o(i.cs_handle_tick1) refers to cs_handles.o(.bss) for .bss
+    cs_handles.o(i.cs_handle_tick1) refers to cs_handles.o(.data) for .data
+    cs_handles.o(i.cs_handle_tick2) refers to measurement_functions.o(i.cs_generation) for cs_generation
+    cs_handles.o(i.cs_handle_tick2) refers to measurement_functions.o(i.cs_computations) for cs_computations
+    cs_handles.o(i.cs_handle_tick2) refers to conversion.o(.bss) for fAdc
+    cs_handles.o(i.cs_handle_tick2) refers to cs_handles.o(.bss) for .bss
+    cs_handles.o(i.cs_handle_tick2) refers to cs_handles.o(.data) for .data
+    cs_handles.o(i.cs_handle_tick3) refers to measurement_functions.o(i.cs_generation) for cs_generation
+    cs_handles.o(i.cs_handle_tick3) refers to measurement_functions.o(i.cs_computations) for cs_computations
+    cs_handles.o(i.cs_handle_tick3) refers to conversion.o(.bss) for fAdc
+    cs_handles.o(i.cs_handle_tick3) refers to cs_handles.o(.bss) for .bss
+    cs_handles.o(i.cs_handle_tick3) refers to cs_handles.o(.data) for .data
+    cs_handles.o(i.cs_handle_tick4) refers to measurement_functions.o(i.cs_generation) for cs_generation
+    cs_handles.o(i.cs_handle_tick4) refers to measurement_functions.o(i.sym_comp) for sym_comp
+    cs_handles.o(i.cs_handle_tick4) refers to measurement_functions.o(i.sym_mag) for sym_mag
+    cs_handles.o(i.cs_handle_tick4) refers to conversion.o(.bss) for fAdc
+    cs_handles.o(i.cs_handle_tick4) refers to cs_handles.o(.bss) for .bss
+    cs_handles.o(i.cs_handle_tick4) refers to cs_handles.o(.data) for .data
+    truerms.o(i.trueRMS) refers to measurement_functions.o(i.true_rms) for true_rms
+    truerms.o(i.trueRMS) refers to memcpya.o(.text) for __aeabi_memcpy4
+    truerms.o(i.trueRMS) refers to truerms.o(.bss) for .bss
+    truerms.o(i.trueRMS) refers to conversion.o(.bss) for fAdc
+    truerms.o(i.trueRMS) refers to truerms.o(.data) for .data
     conversion.o(i.HAL_ADC_ConvCpltCallback) refers to measurement_functions.o(i.prefilter) for prefilter
     conversion.o(i.HAL_ADC_ConvCpltCallback) refers to conversion.o(.bss) for .bss
     conversion.o(i.HAL_ADC_ConvCpltCallback) refers to conversion.o(.data) for .data
+    conversion.o(i.init_conversion) refers to conversion.o(.bss) for .bss
+    tickfunctions.o(i.ftick1) refers to cs_handles.o(i.cs_handle_tick1) for cs_handle_tick1
+    tickfunctions.o(i.ftick2) refers to cs_handles.o(i.cs_handle_tick2) for cs_handle_tick2
+    tickfunctions.o(i.ftick3) refers to cs_handles.o(i.cs_handle_tick3) for cs_handle_tick3
+    tickfunctions.o(i.ftick4) refers to cs_handles.o(i.cs_handle_tick4) for cs_handle_tick4
+    tickfunctions.o(i.tickFunctions) refers to tickfunctions.o(.data) for .data
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick1) for ftick1
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick2) for ftick2
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick3) for ftick3
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick4) for ftick4
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick5) for ftick5
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick6) for ftick6
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick7) for ftick7
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick8) for ftick8
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick9) for ftick9
+    tickfunctions.o(.data) refers to tickfunctions.o(i.ftick10) for ftick10
     atan2f.o(i.__hardfp_atan2f) refers (Special) to iusefp.o(.text) for __I$use$fp
     atan2f.o(i.__hardfp_atan2f) refers to fpclassifyf.o(i.__ARM_fpclassifyf) for __ARM_fpclassifyf
     atan2f.o(i.__hardfp_atan2f) refers to funder.o(i.__mathlib_flt_underflow) for __mathlib_flt_underflow
@@ -951,13 +993,13 @@ Removing Unused input sections from the image.
     Removing spi.o(.revsh_text), (4 bytes).
     Removing spi.o(.rrx_text), (6 bytes).
     Removing spi.o(i.HAL_SPI_MspDeInit), (44 bytes).
+    Removing stm32f7xx_hal_msp.o(.rev16_text), (4 bytes).
+    Removing stm32f7xx_hal_msp.o(.revsh_text), (4 bytes).
+    Removing stm32f7xx_hal_msp.o(.rrx_text), (6 bytes).
     Removing usart.o(.rev16_text), (4 bytes).
     Removing usart.o(.revsh_text), (4 bytes).
     Removing usart.o(.rrx_text), (6 bytes).
     Removing usart.o(i.HAL_UART_MspDeInit), (40 bytes).
-    Removing stm32f7xx_hal_msp.o(.rev16_text), (4 bytes).
-    Removing stm32f7xx_hal_msp.o(.revsh_text), (4 bytes).
-    Removing stm32f7xx_hal_msp.o(.rrx_text), (6 bytes).
     Removing stm32f7xx_it.o(.rev16_text), (4 bytes).
     Removing stm32f7xx_it.o(.revsh_text), (4 bytes).
     Removing stm32f7xx_it.o(.rrx_text), (6 bytes).
@@ -1626,15 +1668,37 @@ Removing Unused input sections from the image.
     Removing system_stm32f7xx.o(.revsh_text), (4 bytes).
     Removing system_stm32f7xx.o(.rrx_text), (6 bytes).
     Removing system_stm32f7xx.o(i.SystemCoreClockUpdate), (132 bytes).
+    Removing cs_handles.o(i.cs_handle_tick1), (176 bytes).
+    Removing cs_handles.o(i.cs_handle_tick2), (176 bytes).
+    Removing cs_handles.o(i.cs_handle_tick3), (180 bytes).
+    Removing cs_handles.o(i.cs_handle_tick4), (572 bytes).
+    Removing cs_handles.o(.bss), (5100 bytes).
+    Removing cs_handles.o(.data), (448 bytes).
+    Removing truerms.o(i.trueRMS), (108 bytes).
+    Removing truerms.o(.bss), (2496 bytes).
+    Removing truerms.o(.data), (1 bytes).
     Removing conversion.o(.rev16_text), (4 bytes).
     Removing conversion.o(.revsh_text), (4 bytes).
     Removing conversion.o(.rrx_text), (6 bytes).
     Removing conversion.o(i.HAL_ADC_ConvCpltCallback), (448 bytes).
+    Removing conversion.o(i.init_conversion), (116 bytes).
     Removing conversion.o(.bss), (684 bytes).
     Removing conversion.o(.data), (1 bytes).
+    Removing tickfunctions.o(i.ftick1), (4 bytes).
+    Removing tickfunctions.o(i.ftick10), (2 bytes).
+    Removing tickfunctions.o(i.ftick2), (4 bytes).
+    Removing tickfunctions.o(i.ftick3), (4 bytes).
+    Removing tickfunctions.o(i.ftick4), (4 bytes).
+    Removing tickfunctions.o(i.ftick5), (2 bytes).
+    Removing tickfunctions.o(i.ftick6), (2 bytes).
+    Removing tickfunctions.o(i.ftick7), (2 bytes).
+    Removing tickfunctions.o(i.ftick8), (2 bytes).
+    Removing tickfunctions.o(i.ftick9), (2 bytes).
+    Removing tickfunctions.o(i.tickFunctions), (36 bytes).
+    Removing tickfunctions.o(.data), (44 bytes).
     Removing fpstat.o(.text), (4 bytes).
 
-701 unused section(s) (total 55795 bytes) removed from the image.
+723 unused section(s) (total 65276 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1679,27 +1743,29 @@ Image Symbol Table
     ../Src/tim.c                             0x00000000   Number         0  tim.o ABSOLUTE
     ../Src/usart.c                           0x00000000   Number         0  usart.o ABSOLUTE
     ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpstat.c               0x00000000   Number         0  fpstat.o ABSOLUTE
     ../mathlib/atan2f.c                      0x00000000   Number         0  atan2f.o ABSOLUTE
     ../mathlib/atan2f.c                      0x00000000   Number         0  atan2f_x.o ABSOLUTE
     ../mathlib/fpclassifyf.c                 0x00000000   Number         0  fpclassifyf.o ABSOLUTE
     ../mathlib/funder.c                      0x00000000   Number         0  funder.o ABSOLUTE
-    ../mathlib/powf.c                        0x00000000   Number         0  powf_x.o ABSOLUTE
     ../mathlib/powf.c                        0x00000000   Number         0  powf.o ABSOLUTE
+    ../mathlib/powf.c                        0x00000000   Number         0  powf_x.o ABSOLUTE
     ../mathlib/sqrtf.c                       0x00000000   Number         0  sqrtf.o ABSOLUTE
     ../mathlib/sqrtf.c                       0x00000000   Number         0  sqrtf_x.o ABSOLUTE
     ..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal.c 0x00000000   Number         0  stm32f7xx_hal.o ABSOLUTE
@@ -1738,6 +1804,7 @@ Image Symbol Table
     ..\Src\usart.c                           0x00000000   Number         0  usart.o ABSOLUTE
     conversion.c                             0x00000000   Number         0  conversion.o ABSOLUTE
     conversion.c                             0x00000000   Number         0  conversion.o ABSOLUTE
+    cs_handles.c                             0x00000000   Number         0  cs_handles.o ABSOLUTE
     dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
     fc50.c                                   0x00000000   Number         0  fc50.o ABSOLUTE
     handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
@@ -1745,6 +1812,7 @@ Image Symbol Table
     libraries\measurement_functions.c        0x00000000   Number         0  measurement_functions.o ABSOLUTE
     libraries\protection_functions.c         0x00000000   Number         0  protection_functions.o ABSOLUTE
     startup_stm32f767xx.s                    0x00000000   Number         0  startup_stm32f767xx.o ABSOLUTE
+    tickFunctions.c                          0x00000000   Number         0  tickfunctions.o ABSOLUTE
     trueRMS.c                                0x00000000   Number         0  truerms.o ABSOLUTE
     RESET                                    0x08000000   Section      504  startup_stm32f767xx.o(RESET)
     .ARM.Collect$$$$00000000                 0x080001f8   Section        0  entry.o(.ARM.Collect$$$$00000000)
@@ -2124,17 +2192,17 @@ Memory Map of the image
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x000001f8   Data   RO          818    RESET               startup_stm32f767xx.o
-    0x080001f8   0x00000000   Code   RO         4910  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001f8   0x00000004   Code   RO         4929    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001fc   0x00000004   Code   RO         4932    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000200   0x00000000   Code   RO         4934    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000200   0x00000000   Code   RO         4936    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000200   0x00000008   Code   RO         4937    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000208   0x00000000   Code   RO         4939    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000208   0x00000000   Code   RO         4941    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000208   0x00000004   Code   RO         4930    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001f8   0x00000000   Code   RO         5059  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001f8   0x00000004   Code   RO         5082    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001fc   0x00000004   Code   RO         5085    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000200   0x00000000   Code   RO         5087    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000200   0x00000000   Code   RO         5089    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000200   0x00000008   Code   RO         5090    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000208   0x00000000   Code   RO         5092    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000208   0x00000000   Code   RO         5094    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000208   0x00000004   Code   RO         5083    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x0800020c   0x00000024   Code   RO          819    .text               startup_stm32f767xx.o
-    0x08000230   0x00000024   Code   RO         4953    .text               mc_w.l(init.o)
+    0x08000230   0x00000024   Code   RO         5106    .text               mc_w.l(init.o)
     0x08000254   0x00000134   Code   RO          829    i.ADC_Init          stm32f7xx_hal_adc.o
     0x08000388   0x00000002   Code   RO          388    i.BusFault_Handler  stm32f7xx_it.o
     0x0800038a   0x00000002   PAD
@@ -2159,7 +2227,7 @@ Memory Map of the image
     0x08000c4c   0x00000016   Code   RO         2636    i.HAL_Init          stm32f7xx_hal.o
     0x08000c62   0x00000002   PAD
     0x08000c64   0x00000028   Code   RO         2637    i.HAL_InitTick      stm32f7xx_hal.o
-    0x08000c8c   0x00000058   Code   RO          364    i.HAL_MspInit       stm32f7xx_hal_msp.o
+    0x08000c8c   0x00000058   Code   RO          322    i.HAL_MspInit       stm32f7xx_hal_msp.o
     0x08000ce4   0x00000016   Code   RO         1256    i.HAL_NVIC_EnableIRQ  stm32f7xx_hal_cortex.o
     0x08000cfa   0x00000002   PAD
     0x08000cfc   0x00000040   Code   RO         1262    i.HAL_NVIC_SetPriority  stm32f7xx_hal_cortex.o
@@ -2197,7 +2265,7 @@ Memory Map of the image
     0x08001ea6   0x00000002   Code   RO         1537    i.HAL_TIM_TriggerCallback  stm32f7xx_hal_tim.o
     0x08001ea8   0x0000006a   Code   RO         3324    i.HAL_UART_Init     stm32f7xx_hal_uart.o
     0x08001f12   0x00000002   PAD
-    0x08001f14   0x00000048   Code   RO          323    i.HAL_UART_MspInit  usart.o
+    0x08001f14   0x00000048   Code   RO          347    i.HAL_UART_MspInit  usart.o
     0x08001f5c   0x00000002   Code   RO          393    i.HardFault_Handler  stm32f7xx_it.o
     0x08001f5e   0x00000002   PAD
     0x08001f60   0x000000f4   Code   RO          490    i.MX_ADC1_Init      adc.o
@@ -2209,7 +2277,7 @@ Memory Map of the image
     0x0800248c   0x00000048   Code   RO          168    i.MX_RTC_Init       rtc.o
     0x080024d4   0x00000058   Code   RO          282    i.MX_SPI2_Init      spi.o
     0x0800252c   0x0000007c   Code   RO            6    i.MX_TIM1_Init      tim.o
-    0x080025a8   0x00000054   Code   RO          324    i.MX_USART2_UART_Init  usart.o
+    0x080025a8   0x00000054   Code   RO          348    i.MX_USART2_UART_Init  usart.o
     0x080025fc   0x00000002   Code   RO          394    i.MemManage_Handler  stm32f7xx_it.o
     0x080025fe   0x00000002   Code   RO          395    i.NMI_Handler       stm32f7xx_it.o
     0x08002600   0x00000022   Code   RO         1269    i.NVIC_SetPriority  stm32f7xx_hal_cortex.o
@@ -2233,14 +2301,14 @@ Memory Map of the image
     0x08002c6c   0x00000064   Code   RO         3349    i.UART_WaitOnFlagUntilTimeout  stm32f7xx_hal_uart.o
     0x08002cd0   0x00000002   Code   RO          400    i.UsageFault_Handler  stm32f7xx_it.o
     0x08002cd2   0x00000002   Code   RO          543    i._Error_Handler    main.o
-    0x08002cd4   0x0000000e   Code   RO         4957    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08002ce2   0x00000002   Code   RO         4958    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08002ce4   0x0000000e   Code   RO         4959    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08002cd4   0x0000000e   Code   RO         5110    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08002ce2   0x00000002   Code   RO         5111    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08002ce4   0x0000000e   Code   RO         5112    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x08002cf2   0x00000052   Code   RO          544    i.main              main.o
     0x08002d44   0x00000008   Data   RO         2818    .constdata          stm32f7xx_hal_dma.o
     0x08002d4c   0x00000010   Data   RO         4798    .constdata          system_stm32f7xx.o
     0x08002d5c   0x00000008   Data   RO         4799    .constdata          system_stm32f7xx.o
-    0x08002d64   0x00000020   Data   RO         4955    Region$$Table       anon$$obj.o
+    0x08002d64   0x00000020   Data   RO         5108    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00000780, Max: 0x00080000, ABSOLUTE)
@@ -2253,7 +2321,7 @@ Memory Map of the image
     0x20000048   0x00000020   Zero   RW          169    .bss                rtc.o
     0x20000068   0x0000004c   Zero   RW          211    .bss                quadspi.o
     0x200000b4   0x00000064   Zero   RW          283    .bss                spi.o
-    0x20000118   0x00000070   Zero   RW          325    .bss                usart.o
+    0x20000118   0x00000070   Zero   RW          349    .bss                usart.o
     0x20000188   0x000001f8   Zero   RW          493    .bss                adc.o
     0x20000380   0x00000400   Zero   RW          816    STACK               startup_stm32f767xx.o
 
