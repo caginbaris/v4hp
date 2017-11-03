@@ -609,6 +609,11 @@
               <FileType>1</FileType>
               <FilePath>.\trueRMS.c</FilePath>
             </File>
+            <File>
+              <FileName>spectra.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\spectra.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

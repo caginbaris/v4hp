@@ -23,16 +23,21 @@ void tickFunctions(){
 void ftick1(){
 	
 	cs_handle_tick1();
+	spectra_tick1();
+	
 
 };
 void ftick2(){
 
 	cs_handle_tick2();
+	spectra_tick2();
 	
 };
 void ftick3(){
 
 	cs_handle_tick3();
+	spectra_tick3();
+	
 
 };
 void ftick4(){

@@ -50,13 +50,16 @@
 
 /* USER CODE BEGIN Includes */
 
+
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-
+extern uint8_t conversion_completed;
+extern uint32_t adc_values[15];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -65,7 +68,7 @@ static void MX_NVIC_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-
+void tickFunctions();
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -116,11 +119,28 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	HAL_TIM_Base_Start_IT(&htim1);
+	HAL_ADC_Start(&hadc3);
+	HAL_ADC_Start(&hadc2);
+	HAL_ADCEx_MultiModeStart_DMA(&hadc1,(uint32_t*)adc_values, 15);
+	
+	
+	
   while (1)
   {
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+		
+	if(conversion_completed){
+		
+		tickFunctions();
+		
+		conversion_completed=0;
+	
+	
+	}	 
+		
 
   }
   /* USER CODE END 3 */

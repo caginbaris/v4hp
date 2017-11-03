@@ -39,6 +39,7 @@
 "v4hp\fc50.o"
 "v4hp\cs_handles.o"
 "v4hp\truerms.o"
+"v4hp\spectra.o"
 "v4hp\conversion.o"
 "v4hp\tickfunctions.o"
 --library_type=microlib --strict --scatter "v4Hp\v4Hp.sct"

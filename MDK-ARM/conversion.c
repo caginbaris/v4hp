@@ -4,6 +4,9 @@
 #include "measurement_functions.h"
 #include "conversion.h"
 
+
+uint8_t conversion_completed=0;
+
 union uAdc rawAdc={0};
 union uAdc fAdc={0};
 
@@ -12,7 +15,6 @@ struct AdcData scale={0};
 
 static uint32_t adc_values[15]={0};
 
-static uint8_t adcTick=0;
 static float dbuffer[channelNo][filterDepth]={0};
 
 
@@ -98,7 +100,7 @@ if(hadc->Instance==ADC1){
 	
 	}
 	
-	if(++adcTick==tickNo){	adcTick=0;}
+	conversion_completed=1;
 	
 	}
 

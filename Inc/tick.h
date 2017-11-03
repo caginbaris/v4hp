@@ -50,6 +50,11 @@ void cs_handle_tick2();
 void cs_handle_tick3();
 void cs_handle_tick4();
 
+void spectra_tick1();
+void spectra_tick2();
+void spectra_tick3();
+
+
 
 
 #endif

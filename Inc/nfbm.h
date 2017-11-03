@@ -6,6 +6,7 @@
 
 #define channelNo 12
 
+
 struct AdcData{
 	
 	float Van; 	//AN-1
