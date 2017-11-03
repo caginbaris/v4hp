@@ -59,7 +59,7 @@
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 extern uint8_t conversion_completed;
-extern uint32_t adc_values[15];
+uint32_t adc_values[15];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -109,6 +109,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_QUADSPI_Init();
   MX_RTC_Init();
+  MX_TIM6_Init();
 
   /* Initialize interrupts */
   MX_NVIC_Init();

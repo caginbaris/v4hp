@@ -68,6 +68,22 @@ enum AdcChannel{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 struct digital_inputs{
 	
 	uint32_t _1:1;
@@ -152,56 +168,7 @@ struct digital_outputs{
 extern struct digital_inputs  DI;
 extern struct digital_outputs DO;
 	
-union pFunctionEnable{
 	
-	struct{
-		
-		uint32_t fc50_obj1_L1:1	;
-		uint32_t fc50_obj1_L2:1	;
-		uint32_t fc50_obj1_L3:1	;
-		
-		uint32_t fc50_obj2_L1:1	;
-		uint32_t fc50_obj2_L2:1	;
-		uint32_t fc50_obj2_L3:1	;
-		
-	}bits;
-	
-	uint32_t all;
-	
-	
-	
-	
-	};
-
-	
-extern union pFunctionEnable EN;
-	
-	
-union rms_selection{
-		
-		struct{
-		
-		uint32_t fc50_obj1_L1:1	;
-		uint32_t fc50_obj1_L2:1	;
-		uint32_t fc50_obj1_L3:1	;
-		
-		uint32_t fc50_obj2_L1:1	;
-		uint32_t fc50_obj2_L2:1	;
-		uint32_t fc50_obj2_L3:1	;
-		
-	}bits;
-	
-	uint32_t all;
-	
-	
-	
-	
-	};
-
-	
-extern union rms_selection selectRMS;
-
-
 
 
 

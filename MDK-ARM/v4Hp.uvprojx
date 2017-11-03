@@ -335,7 +335,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc; ../Drivers/STM32F7xx_HAL_Driver/Inc; ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F7xx/Include; ../Drivers/CMSIS/Include; .\libraries</IncludePath>
+              <IncludePath>../Inc;  ../Drivers/STM32F7xx_HAL_Driver/Inc;  ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;  ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;  ../Drivers/CMSIS/Include;  .\libraries</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -593,6 +593,11 @@
               <FileName>fc50.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\fc50.c</FilePath>
+            </File>
+            <File>
+              <FileName>init_protection.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\init_protection.c</FilePath>
             </File>
           </Files>
         </Group>
