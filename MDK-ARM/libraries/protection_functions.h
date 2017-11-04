@@ -7,7 +7,7 @@ int on_off_delay(unsigned int input, unsigned int mem, unsigned int qual_sample,
 //------Definite Time Overcurrent-Start--------------------------------------------------------------------
 struct fc50_inputParameters {
 
-	float rms;
+	
 	float level;
 	float dropout_ratio;
 	float delay;
@@ -28,14 +28,14 @@ struct fc50_outputParameters {
 
 };
 
-void fc50(struct fc50_inputParameters fc50_in, struct fc50_outputParameters *fc50_out, int enable);
+void fc50(float rms, struct fc50_inputParameters fc50_in, struct fc50_outputParameters *fc50_out, int enable);
 //------Definite Time Overcurrent-End---------------------------------------------------------------------
 
 
 //------Inverse Time Overcurrent-Start--------------------------------------------------------------------
 struct fc51_inputParameters {
 
-	float rms;
+	
 	float level;
 	float curve_data[3];
 	float time_multiplier;
@@ -53,7 +53,7 @@ struct fc51_outputParameters {
 
 };
 
-void fc51(struct fc51_inputParameters fc51_in, struct fc51_outputParameters *fc51_out,int enable );
+void fc51(float rms,struct fc51_inputParameters fc51_in, struct fc51_outputParameters *fc51_out,int enable );
 
 //------Inverse Time Overcurrent-End--------------------------------------------------------------------
 
@@ -61,7 +61,7 @@ void fc51(struct fc51_inputParameters fc51_in, struct fc51_outputParameters *fc5
 
 struct fc27_inputParameters{
 
-	float rms;
+	
 	float level;
 	float dropout_ratio;
 	float delay;
@@ -78,7 +78,7 @@ struct fc27_outputParameters{
 
 };
 
-void fc27(struct fc27_inputParameters fc27_in, struct fc27_outputParameters *fc27_out,int enable );
+void fc27(float rms, struct fc27_inputParameters fc27_in, struct fc27_outputParameters *fc27_out,int enable );
 
 //------UnderVoltageProtection-End--------------------------------------------------------------------
 

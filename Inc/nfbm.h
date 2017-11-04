@@ -164,6 +164,25 @@ union pFunctionEnable{
 		uint32_t fc50_obj2_L2:1	;
 		uint32_t fc50_obj2_L3:1	;
 		
+		
+		uint32_t fc51_obj1:1	;
+		uint32_t fc51_obj2:1	;
+		
+		
+		uint32_t fc50N_obj1_L1:1	;
+		uint32_t fc50N_obj1_L2:1	;
+		uint32_t fc50N_obj1_L3:1	;
+		
+		uint32_t fc51N_obj1:1	;
+		
+		uint32_t fc27_obj1_L1:1	;
+		uint32_t fc27_obj1_L2:1	;	
+		
+
+		
+		
+		
+		
 	}bits;
 	
 	uint32_t all;
@@ -188,6 +207,22 @@ union rms_selection{
 		uint32_t fc50_obj2_L1:1	;
 		uint32_t fc50_obj2_L2:1	;
 		uint32_t fc50_obj2_L3:1	;
+			
+		uint32_t fc51_obj1:1	;
+		uint32_t fc51_obj2:1	;	
+
+		uint32_t fc50N_obj1_L1:1	;
+		uint32_t fc50N_obj1_L2:1	;
+		uint32_t fc50N_obj1_L3:1	;
+
+		uint32_t fc51N_obj1:1	;		
+
+		uint32_t fc27_obj1_L1:1	;
+		uint32_t fc27_obj1_L2:1	;	
+				
+
+			
+			
 		
 	}bits;
 	
@@ -200,6 +235,49 @@ union rms_selection{
 
 	
 extern union rms_selection selectRMS;
+	
+	
+	
+struct curve_selection{
+		
+		
+		
+		uint32_t fc51_obj1:4	;
+		uint32_t fc51_obj2:4	;
+		uint32_t fc51N_obj1:4	;
+
+		
+
+	
+	};
+
+	
+extern struct curve_selection selectCURVE;
+	
+	
+	
+
+enum curve_entry{
+	
+	IEC_inverse,
+	IEC_very_inverse,
+	IEC_extremely_inverse,
+	IEC_long_inverse,
+	
+	ANSI_inverse,
+	ANSI_short_inverse,
+	ANSI_long_inverse,
+	ANSI_moderately_inverse,
+	ANSI_very_inverse,
+	ANSI_extremely_inverse,
+	ANSI_deifinite_inverse
+	
+	
+};
+
+
+extern enum curve_entry curve;
+extern float curve_data[11][3];
 
 
 

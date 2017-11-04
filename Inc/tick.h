@@ -55,6 +55,14 @@ void spectra_tick2();
 void spectra_tick3();
 
 
+void fc50_all();
+void fc51_all();
+void fc50N_all();
+void fc51N_all();
+
+void fc27_all();
+
+
 
 
 #endif

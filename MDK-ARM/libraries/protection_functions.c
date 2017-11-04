@@ -104,17 +104,17 @@ int on_off_delay(unsigned int input, unsigned int mem, unsigned int qual_sample,
 //function-4
 // Definite TOC
 
-void fc50(struct fc50_inputParameters fc50_in, struct fc50_outputParameters *fc50_out, int enable)
+void fc50(float rms,struct fc50_inputParameters fc50_in, struct fc50_outputParameters *fc50_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fc50_in.rms > fc50_in.level)
+		if (rms > fc50_in.level)
 		{
 			fc50_out->initial_pick_up = 1;
 		}
-		if (fc50_in.rms < fc50_in.level * fc50_in.dropout_ratio)
+		if (rms < fc50_in.level * fc50_in.dropout_ratio)
 		{
 			fc50_out->initial_pick_up = 0;
 		}
@@ -135,20 +135,20 @@ void fc50(struct fc50_inputParameters fc50_in, struct fc50_outputParameters *fc5
 //function-5
 // Inverse TOC
 
-void fc51(struct fc51_inputParameters fc51_in, struct fc51_outputParameters *fc51_out, int enable)
+void fc51(float rms, struct fc51_inputParameters fc51_in, struct fc51_outputParameters *fc51_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fc51_in.rms > fc51_in.level * 1.100f)
+		if (rms > fc51_in.level * 1.100f)
 		{
 
 			fc51_out->pick_up = 1;
-			fc51_out->time2trip = fc51_in.time_multiplier * (fc51_in.curve_data[0] / (powf((fc51_in.rms / fc51_in.level), fc51_in.curve_data[1]) - 1.0f) + fc51_in.curve_data[2]);
+			fc51_out->time2trip = fc51_in.time_multiplier * (fc51_in.curve_data[0] / (powf((rms / fc51_in.level), fc51_in.curve_data[1]) - 1.0f) + fc51_in.curve_data[2]);
 
 		}
-		if (fc51_in.rms < fc51_in.level * 1.045f)
+		if (rms < fc51_in.level * 1.045f)
 		{
 
 			fc51_out->pick_up = 0;

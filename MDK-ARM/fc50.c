@@ -1,6 +1,8 @@
 #include "nfbm.h"
 #include "protection_functions.h"
 
+
+
 // input parameters------------------------------
 
 struct fc50_inputParameters fc50_obj1_L1_in;
@@ -33,21 +35,21 @@ struct fc50_outputParameters fc50_obj1_L3_out_c;
 
 // L1 obj2
 
-struct fc50_outputParameters fc50_obj1_L1_out_a;
-struct fc50_outputParameters fc50_obj1_L1_out_b;
-struct fc50_outputParameters fc50_obj1_L1_out_c;
+struct fc50_outputParameters fc50_obj2_L1_out_a;
+struct fc50_outputParameters fc50_obj2_L1_out_b;
+struct fc50_outputParameters fc50_obj2_L1_out_c;
 
 // L2 obj2
 
-struct fc50_outputParameters fc50_obj1_L2_out_a;
-struct fc50_outputParameters fc50_obj1_L2_out_b;
-struct fc50_outputParameters fc50_obj1_L2_out_c;
+struct fc50_outputParameters fc50_obj2_L2_out_a;
+struct fc50_outputParameters fc50_obj2_L2_out_b;
+struct fc50_outputParameters fc50_obj2_L2_out_c;
 
 // L3 obj2
 
-struct fc50_outputParameters fc50_obj1_L3_out_a;
-struct fc50_outputParameters fc50_obj1_L3_out_b;
-struct fc50_outputParameters fc50_obj1_L3_out_c;
+struct fc50_outputParameters fc50_obj2_L3_out_a;
+struct fc50_outputParameters fc50_obj2_L3_out_b;
+struct fc50_outputParameters fc50_obj2_L3_out_c;
 
 
 
@@ -65,22 +67,153 @@ void fc50_init(){
 
 void fc50_all(){
 	
+	float fc50_rms_a=0;
+	float fc50_rms_b=0;
+	float fc50_rms_c=0;
+	
+	// fc50 obj1 Start**************************
+	
+	// fc50 obj1 L1
+	
 	if(selectRMS.bits.fc50_obj1_L1){
 		
-		fc50_obj1_L1_in.rms=tRMS.Ia;
-	
+		fc50_rms_a=fRMS.Ia;
+		fc50_rms_b=fRMS.Ib;
+		fc50_rms_c=fRMS.Ic;
+		
+	}else{
+		
+		fc50_rms_a=tRMS.Ia;
+		fc50_rms_b=tRMS.Ib;
+		fc50_rms_c=tRMS.Ic;
+		
 	}
 	
+	fc50(fc50_rms_a,fc50_obj1_L1_in,&fc50_obj1_L1_out_a,EN.bits.fc50_obj1_L1);
+	fc50(fc50_rms_b,fc50_obj1_L1_in,&fc50_obj1_L1_out_b,EN.bits.fc50_obj1_L1);
+	fc50(fc50_rms_c,fc50_obj1_L1_in,&fc50_obj1_L1_out_c,EN.bits.fc50_obj1_L1);
+	
+	
+	
+		// fc50 obj1 L2
+	
+	if(selectRMS.bits.fc50_obj1_L2){
+		
+		fc50_rms_a=fRMS.Ia;
+		fc50_rms_b=fRMS.Ib;
+		fc50_rms_c=fRMS.Ic;
+		
+	}else{
+		
+		fc50_rms_a=tRMS.Ia;
+		fc50_rms_b=tRMS.Ib;
+		fc50_rms_c=tRMS.Ic;
+		
+	}
+	
+	fc50(fc50_rms_a,fc50_obj1_L2_in,&fc50_obj1_L2_out_a,EN.bits.fc50_obj1_L2);
+	fc50(fc50_rms_b,fc50_obj1_L2_in,&fc50_obj1_L2_out_b,EN.bits.fc50_obj1_L2);
+	fc50(fc50_rms_c,fc50_obj1_L2_in,&fc50_obj1_L2_out_c,EN.bits.fc50_obj1_L2);
+	
+	
+	
+		// fc50 obj1 L3
+	
+	if(selectRMS.bits.fc50_obj1_L3){
+		
+		fc50_rms_a=fRMS.Ia;
+		fc50_rms_b=fRMS.Ib;
+		fc50_rms_c=fRMS.Ic;
+		
+	}else{
+		
+		fc50_rms_a=tRMS.Ia;
+		fc50_rms_b=tRMS.Ib;
+		fc50_rms_c=tRMS.Ic;
+		
+	}
+	
+	fc50(fc50_rms_a,fc50_obj1_L3_in,&fc50_obj1_L3_out_a,EN.bits.fc50_obj1_L3);
+	fc50(fc50_rms_b,fc50_obj1_L3_in,&fc50_obj1_L3_out_b,EN.bits.fc50_obj1_L3);
+	fc50(fc50_rms_c,fc50_obj1_L3_in,&fc50_obj1_L3_out_c,EN.bits.fc50_obj1_L3);
+
+	// fc50 obj1 End****************************
 	
 	
 	
 	
-	fc50(fc50_obj1_L1_in,&fc50_obj1_L1_out_a,EN.bits.fc50_obj1_L1);
-	fc50(fc50_obj1_L1_in,&fc50_obj1_L1_out_b,EN.bits.fc50_obj1_L1);
-	fc50(fc50_obj1_L1_in,&fc50_obj1_L1_out_c,EN.bits.fc50_obj1_L1);
+	
+	// fc50 obj2 Start**************************
+	
+	
+	
+		// fc50 obj2 L1
+	
+	if(selectRMS.bits.fc50_obj2_L1){
+		
+		fc50_rms_a=fRMS.IRESa;
+		fc50_rms_b=fRMS.IRESb;
+		fc50_rms_c=fRMS.IRESc;
+		
+	}else{
+		
+		fc50_rms_a=tRMS.IRESa;
+		fc50_rms_b=tRMS.IRESb;
+		fc50_rms_c=tRMS.IRESc;
+		
+	}
+	
+	fc50(fc50_rms_a,fc50_obj2_L1_in,&fc50_obj2_L1_out_a,EN.bits.fc50_obj2_L1);
+	fc50(fc50_rms_b,fc50_obj2_L1_in,&fc50_obj2_L1_out_b,EN.bits.fc50_obj2_L1);
+	fc50(fc50_rms_c,fc50_obj2_L1_in,&fc50_obj2_L1_out_c,EN.bits.fc50_obj2_L1);
+	
+	
+	
+		// fc50 obj2 L2
+	
+	if(selectRMS.bits.fc50_obj2_L2){
+		
+		fc50_rms_a=fRMS.IRESa;
+		fc50_rms_b=fRMS.IRESb;
+		fc50_rms_c=fRMS.IRESc;
+		
+	}else{
+		
+		fc50_rms_a=tRMS.IRESa;
+		fc50_rms_b=tRMS.IRESb;
+		fc50_rms_c=tRMS.IRESc;
+		
+	}
+	
+	fc50(fc50_rms_a,fc50_obj2_L2_in,&fc50_obj2_L2_out_a,EN.bits.fc50_obj2_L2);
+	fc50(fc50_rms_b,fc50_obj2_L2_in,&fc50_obj2_L2_out_b,EN.bits.fc50_obj2_L2);
+	fc50(fc50_rms_c,fc50_obj2_L2_in,&fc50_obj2_L2_out_c,EN.bits.fc50_obj2_L2);
+	
+	
+	
+		// fc50 obj2 L3
+	
+	if(selectRMS.bits.fc50_obj2_L3){
+		
+		fc50_rms_a=fRMS.IRESa;
+		fc50_rms_b=fRMS.IRESb;
+		fc50_rms_c=fRMS.IRESc;
+		
+	}else{
+		
+		fc50_rms_a=tRMS.IRESa;
+		fc50_rms_b=tRMS.IRESb;
+		fc50_rms_c=tRMS.IRESc;
+		
+	}
+	
+	fc50(fc50_rms_a,fc50_obj2_L3_in,&fc50_obj2_L3_out_a,EN.bits.fc50_obj2_L3);
+	fc50(fc50_rms_b,fc50_obj2_L3_in,&fc50_obj2_L3_out_b,EN.bits.fc50_obj2_L3);
+	fc50(fc50_rms_c,fc50_obj2_L3_in,&fc50_obj2_L3_out_c,EN.bits.fc50_obj2_L3);
+	
+	
 
-
-
-
+	// fc50 obj2 End****************************
 
 }
+

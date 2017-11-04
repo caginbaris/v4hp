@@ -47,8 +47,23 @@ void ftick4(){
 };
 void ftick5(){};
 void ftick6(){};
-void ftick7(){};
-void ftick8(){};
+void ftick7(){
+
+	fc50_all();
+	fc51_all();
+
+	fc50N_all();
+	fc51N_all();
+	
+	fc27_all();	
+
+
+};
+void ftick8(){
+
+
+
+};
 void ftick9(){};
 void ftick10(){};	
 
