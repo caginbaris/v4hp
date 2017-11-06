@@ -104,6 +104,9 @@ float thermal_status(struct thermal_parameters therm, float mem);
 
 float prefilter(float rtInput ,float *zValues , unsigned int N);
 
+float minSelector_3p(float a, float b, float c);
+float maxSelector_3p(float a, float b, float c);
+
 
 
 #endif

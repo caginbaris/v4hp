@@ -217,10 +217,10 @@ union rms_selection{
 
 		uint32_t fc51N_obj1:1	;		
 
-		uint32_t fc27_obj1_L1:1	;
-		uint32_t fc27_obj1_L2:1	;	
+		//uint32_t fc27_obj1_L1:1	; undervoltage passed
+		//uint32_t fc27_obj1_L2:1	;	
 				
-
+		
 			
 			
 		
@@ -235,6 +235,12 @@ union rms_selection{
 
 	
 extern union rms_selection selectRMS;
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -256,6 +262,10 @@ extern struct curve_selection selectCURVE;
 	
 	
 	
+	
+	
+	
+	
 
 enum curve_entry{
 	
@@ -270,7 +280,7 @@ enum curve_entry{
 	ANSI_moderately_inverse,
 	ANSI_very_inverse,
 	ANSI_extremely_inverse,
-	ANSI_deifinite_inverse
+	ANSI_definite_inverse
 	
 	
 };

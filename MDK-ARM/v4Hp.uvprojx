@@ -619,6 +619,11 @@
               <FileType>1</FileType>
               <FilePath>.\fc27.c</FilePath>
             </File>
+            <File>
+              <FileName>fc59.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fc59.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -658,6 +663,16 @@
         </Group>
         <Group>
           <GroupName>initFunctions</GroupName>
+        </Group>
+        <Group>
+          <GroupName>powerSys</GroupName>
+          <Files>
+            <File>
+              <FileName>powerSysData.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\powerSysData.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>

@@ -17,39 +17,39 @@ struct fc50_inputParameters fc50_obj2_L3_in;
 
 // L1 obj1
 
-struct fc50_outputParameters fc50_obj1_L1_out_a;
-struct fc50_outputParameters fc50_obj1_L1_out_b;
-struct fc50_outputParameters fc50_obj1_L1_out_c;
+struct fc50_outputParameters fc50_obj1_L1_out_a={0};
+struct fc50_outputParameters fc50_obj1_L1_out_b={0};
+struct fc50_outputParameters fc50_obj1_L1_out_c={0};
 
 // L2 obj1
 
-struct fc50_outputParameters fc50_obj1_L2_out_a;
-struct fc50_outputParameters fc50_obj1_L2_out_b;
-struct fc50_outputParameters fc50_obj1_L2_out_c;
+struct fc50_outputParameters fc50_obj1_L2_out_a={0};
+struct fc50_outputParameters fc50_obj1_L2_out_b={0};
+struct fc50_outputParameters fc50_obj1_L2_out_c={0};
 
 // L3 obj1 
 
-struct fc50_outputParameters fc50_obj1_L3_out_a;
-struct fc50_outputParameters fc50_obj1_L3_out_b;
-struct fc50_outputParameters fc50_obj1_L3_out_c;
+struct fc50_outputParameters fc50_obj1_L3_out_a={0};
+struct fc50_outputParameters fc50_obj1_L3_out_b={0};
+struct fc50_outputParameters fc50_obj1_L3_out_c={0};
 
 // L1 obj2
 
-struct fc50_outputParameters fc50_obj2_L1_out_a;
-struct fc50_outputParameters fc50_obj2_L1_out_b;
-struct fc50_outputParameters fc50_obj2_L1_out_c;
+struct fc50_outputParameters fc50_obj2_L1_out_a={0};
+struct fc50_outputParameters fc50_obj2_L1_out_b={0};
+struct fc50_outputParameters fc50_obj2_L1_out_c={0};
 
 // L2 obj2
 
-struct fc50_outputParameters fc50_obj2_L2_out_a;
-struct fc50_outputParameters fc50_obj2_L2_out_b;
-struct fc50_outputParameters fc50_obj2_L2_out_c;
+struct fc50_outputParameters fc50_obj2_L2_out_a={0};
+struct fc50_outputParameters fc50_obj2_L2_out_b={0};
+struct fc50_outputParameters fc50_obj2_L2_out_c={0};
 
 // L3 obj2
 
-struct fc50_outputParameters fc50_obj2_L3_out_a;
-struct fc50_outputParameters fc50_obj2_L3_out_b;
-struct fc50_outputParameters fc50_obj2_L3_out_c;
+struct fc50_outputParameters fc50_obj2_L3_out_a={0};
+struct fc50_outputParameters fc50_obj2_L3_out_b={0};
+struct fc50_outputParameters fc50_obj2_L3_out_c={0};
 
 
 
@@ -58,6 +58,8 @@ struct fc50_outputParameters fc50_obj2_L3_out_c;
 
 
 void fc50_init(){
+	
+	
 
 
 

@@ -152,8 +152,8 @@ void cs_handle_tick4(){
 	UNBa.c=cs_generation(fAdc.sAdc.IUNBa,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
 	UNBa.s=cs_generation(fAdc.sAdc.IUNBa,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
 
-	resB.c=cs_generation(fAdc.sAdc.IUNBb,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
-	resB.s=cs_generation(fAdc.sAdc.IUNBb,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
+	UNBb.c=cs_generation(fAdc.sAdc.IUNBb,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
+	UNBb.s=cs_generation(fAdc.sAdc.IUNBb,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
 
 	n.c=cs_generation(fAdc.sAdc.In,cos_coeffs,N,&c_buffer[8][0])*cs_scale;
 	n.c=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;

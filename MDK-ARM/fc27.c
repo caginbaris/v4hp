@@ -1,21 +1,20 @@
 #include "nfbm.h"
 #include "protection_functions.h"
+#include "measurement_functions.h"
+#include "powerSysData.h"
+#include "cs_handles.h"
 
 
 
-
+#define cs_qual_time 0.02f
 
 struct fc27_inputParameters fc27_obj1_L1_in;
 struct fc27_inputParameters fc27_obj1_L2_in;
 
 
-struct fc27_outputParameters fc27_obj1_L1_out_a;
-struct fc27_outputParameters fc27_obj1_L1_out_b;
-struct fc27_outputParameters fc27_obj1_L1_out_c;
+struct fc27_outputParameters fc27_obj1_L1_out;
+struct fc27_outputParameters fc27_obj1_L2_out;
 
-struct fc27_outputParameters fc27_obj1_L2_out_a;
-struct fc27_outputParameters fc27_obj1_L2_out_b;
-struct fc27_outputParameters fc27_obj1_L2_out_c;
 
 
 void fc27_init(){
@@ -28,71 +27,45 @@ void fc27_init(){
 
 
 void fc27_all(){
+	
+	static uint8_t  cs_qual=0;
+	static long 		cs_counter=0;
+	
 
-	float fc27_rms_a=0;
-	float fc27_rms_b=0;
-	float fc27_rms_c=0;
+	
+	if(Sys.current_supervision){
+	
+	cs_qual=on_off_delay(
+		
+			(fRMS.Ia<Sys.I_BreakerClosed_MIN &&
+			 fRMS.Ib<Sys.I_BreakerClosed_MIN  &&
+			 fRMS.Ic<Sys.I_BreakerClosed_MIN),
+			 cs_qual,
+			 fs*cs_qual_time,
+			 &cs_counter);
+		
+	}
 	
 	
-	// which voltage entry
+	if(cs_qual){
 	
-		/* 
+	fc27_obj1_L1_in.cs=1;
+	fc27_obj1_L2_in.cs=1;		
 	
-	if(selectRMS.bits.fc27_obj1_L1){
+	}else{
 		
-			fc27_rms_a=fRMS.Van;
-			fc27_rms_b=fRMS.Vbn;
-			fc27_rms_c=fRMS.Vcn;			
-
-		}else{
-		
-			fc27_rms_a=tRMS.Van;
-			fc27_rms_b=tRMS.Vbn;
-			fc27_rms_c=tRMS.Vcn;
-			
-		} */
-		
-		
-		
-		fc27(fc27_rms_a,fc27_obj1_L1_in,&fc27_obj1_L1_out_a,EN.bits.fc27_obj1_L1);
-		fc27(fc27_rms_b,fc27_obj1_L1_in,&fc27_obj1_L1_out_b,EN.bits.fc27_obj1_L1);
-		fc27(fc27_rms_c,fc27_obj1_L1_in,&fc27_obj1_L1_out_c,EN.bits.fc27_obj1_L1);
-		
-		
-		
-	// which voltage entry
+	fc27_obj1_L1_in.cs=0;
+	fc27_obj1_L2_in.cs=0;			
 	
-		/* 
+	}
 	
-	if(selectRMS.bits.fc27_obj1_L1){
-		
-			fc27_rms_a=fRMS.Van;
-			fc27_rms_b=fRMS.Vbn;
-			fc27_rms_c=fRMS.Vcn;			
-
-		}else{
-		
-			fc27_rms_a=tRMS.Van;
-			fc27_rms_b=tRMS.Vbn;
-			fc27_rms_c=tRMS.Vcn;
-			
-		} */
-		
-		
-		fc27(fc27_rms_a,fc27_obj1_L2_in,&fc27_obj1_L2_out_a,EN.bits.fc27_obj1_L2);
-		fc27(fc27_rms_b,fc27_obj1_L2_in,&fc27_obj1_L2_out_b,EN.bits.fc27_obj1_L2);
-		fc27(fc27_rms_c,fc27_obj1_L2_in,&fc27_obj1_L2_out_c,EN.bits.fc27_obj1_L2);
-		
-		
-		
+	
+		//L1
+		fc27(mag_sym.V1,fc27_obj1_L1_in,&fc27_obj1_L1_out,EN.bits.fc27_obj1_L1);
+		//L2
+		fc27(mag_sym.V1,fc27_obj1_L2_in,&fc27_obj1_L2_out,EN.bits.fc27_obj1_L2);
 
 		
-		
-
-
-
-
-
 }
 
 

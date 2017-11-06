@@ -191,19 +191,28 @@ void fc27(struct fc27_inputParameters fc27_in, struct fc27_outputParameters *fc2
 	if (enable)
 	{
 
-		if (fc27_in.rms < fc27_in.level && fc27_in.cs == 0)
+		if (fc27_in.rms < fc27_in.level)
 		{
 
 			fc27_out->pick_up = 1;
 
 		}
 
-		if (fc27_in.rms > fc27_in.level * fc27_in.dropout_ratio || fc27_in.cs)
+		if (fc27_in.rms > fc27_in.level * fc27_in.dropout_ratio)
 		{
 
 			fc27_out->pick_up = 0;
 
 		}
+		
+		if(fc27_in.cs){
+		
+		fc27_out->pick_up = 0;
+		
+		}
+		
+		
+		
 
 		if (fc27_out->pick_up && fc27_out->trip == 0)
 		{
@@ -233,20 +242,20 @@ void fc27(struct fc27_inputParameters fc27_in, struct fc27_outputParameters *fc2
 // function-7
 // Overvoltage Protection
 
-void fc59(struct fc59_inputParameters fc59_in, struct fc59_outputParameters *fc59_out, int enable)
+void fc59(float rms, struct fc59_inputParameters fc59_in, struct fc59_outputParameters *fc59_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fc59_in.rms > fc59_in.level)
+		if (rms > fc59_in.level)
 		{
 
 			fc59_out->pick_up = 1;
 
 		}
 
-		if (fc59_in.rms < fc59_in.level * fc59_in.dropout_ratio)
+		if (rms < fc59_in.level * fc59_in.dropout_ratio)
 		{
 
 			fc59_out->pick_up = 0;
@@ -705,3 +714,33 @@ void fcPVPi(struct fcPVPi_inputParameters fcPVPi_in, struct fcPVPi_outputParamet
 	}
 
 }
+
+
+
+
+float minSelector_3p(float a, float b, float c){
+	
+	float min;
+	
+	min=a;
+	if(b<min){min=b;}
+	if(c<min){min=c;}
+	
+	return min;
+
+}
+
+
+float maxSelector_3p(float a, float b, float c){
+	
+	float max;
+	
+	max=a;
+	if(b>max){max=b;}
+	if(c>max){max=c;}
+	
+	return max;
+
+}
+
+
