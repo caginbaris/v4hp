@@ -188,6 +188,12 @@ union pFunctionEnable{
 		uint32_t fc46_obj1_L1:1	;
 		uint32_t fc46_obj1_L2:1	;	
 		
+		uint32_t fc49_obj1_L1:1	; 
+		uint32_t fc49_obj1_L2:1	;	
+		
+		uint32_t fc49_obj2_L1:1	; 
+		uint32_t fc49_obj2_L2:1	;	
+		
 		
 		
 		
@@ -234,6 +240,9 @@ union rms_selection{
 		
 		uint32_t fc46_obj1_L1:1	; // no use
 		uint32_t fc46_obj1_L2:1	;	// no use
+		
+		uint32_t fc49_obj1_L1:1	; // no use
+		uint32_t fc49_obj1_L2:1	;	// no use
 			
 			
 			

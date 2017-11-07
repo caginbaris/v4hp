@@ -321,7 +321,7 @@ float peak_detect_rms(float rtInput, float *pData,unsigned int pDataCounter, uns
 //function 10
 //thermal comp.
 
-float thermal_status(struct thermal_parameters therm, float mem)
+float thermal_status(float rms,struct thermal_parameters therm, float mem)
 {
 
 	float temp;
@@ -331,7 +331,7 @@ float thermal_status(struct thermal_parameters therm, float mem)
 
 	if (therm.freeze == 0)
 	{
-		temp = t_constant * (therm.rms * therm.rms) / (therm.Inom * therm.Inom) + mem * (1 - t_constant);
+		temp = t_constant * (rms*rms) / (therm.Inom * therm.Inom) + mem * (1 - t_constant);
 	}
 	else{
 		temp = mem;

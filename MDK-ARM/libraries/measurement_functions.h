@@ -92,7 +92,7 @@ float peak_detect_rms(float rtInput, float *pData,unsigned int pDataCounter, uns
 
 struct thermal_parameters{
 
-	float rms;
+
 	float Inom; // 0.1 to 4*Inom- def 1.1 k-factor*Inom_obj
 	float tau;
 	float ts;
@@ -100,7 +100,7 @@ struct thermal_parameters{
 
 };
 
-float thermal_status(struct thermal_parameters therm, float mem);
+float thermal_status(float rms,struct thermal_parameters therm, float mem);
 
 float prefilter(float rtInput ,float *zValues , unsigned int N);
 

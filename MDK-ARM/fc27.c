@@ -40,7 +40,7 @@ void fc27_all(){
 	cs_qual=on_off_delay(
 		
 			(fRMS.Ia<Sys.I_BreakerClosed_MIN &&
-			 fRMS.Ib<Sys.I_BreakerClosed_MIN  &&
+			 fRMS.Ib<Sys.I_BreakerClosed_MIN &&
 			 fRMS.Ic<Sys.I_BreakerClosed_MIN),
 			 cs_qual,
 			 fs*cs_qual_time,

@@ -370,27 +370,27 @@ void fc46i(float rms,struct fc46i_inputParameters fc46i_in, struct fc46i_outputP
 // function-10
 // Overtempereature Protection
 
-void fc49(struct fc49_inputParameters fc49_in, struct fc49_outputParameters *fc49_out, int enable)
+void fc49(float temp,struct fc49_inputParameters fc49_in, struct fc49_outputParameters *fc49_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fc49_in.temp > fc49_in.alarm_level)
+		if (temp > fc49_in.alarm_level)
 		{
 
 			fc49_out->alarm = 1;
 
 		}
 
-		if (fc49_in.temp < fc49_in.alarm_level * fc49_in.dropout_ratio)
+		if (temp < fc49_in.alarm_level * fc49_in.dropout_ratio)
 		{
 
 			fc49_out->alarm = 0;
 
 		}
 
-		if (fc49_in.temp > fc49_in.trip_level)
+		if (temp > fc49_in.trip_level)
 		{
 
 			fc49_out->trip = 1;

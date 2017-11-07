@@ -134,7 +134,7 @@ struct fc46i_outputParameters {
 
 struct fc49_inputParameters{
 
-	float temp;
+	
 	float alarm_level; 
 	float trip_level; 
 	float dropout_ratio;

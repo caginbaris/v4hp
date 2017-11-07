@@ -184,7 +184,7 @@ struct fc49_outputParameters{
 
 };
 
-void fc49(struct fc49_inputParameters fc49_in, struct fc49_outputParameters *fc49_out, int enable);
+void fc49(float temp,struct fc49_inputParameters fc49_in, struct fc49_outputParameters *fc49_out, int enable);
 
 //------ThermalProtection-End------------------------------------------------------------
 
