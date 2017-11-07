@@ -5,9 +5,14 @@
 #include <stdint.h>
 
 struct PowerSysData{
+	
+	
 
   float I_BreakerClosed_MIN;
-	uint32_t current_supervision:1;	
+	uint32_t currentSupervision:1;	
+	uint32_t phaseRotation:1;	
+	
+	
 
 	
 

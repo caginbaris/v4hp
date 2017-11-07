@@ -290,17 +290,17 @@ void fc59(float rms, struct fc59_inputParameters fc59_in, struct fc59_outputPara
 // function-8
 // Definite TOC Negative Seq. Protection
 
-void fc46d(struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable)
+void fc46d(float rms,struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable)
 {
 
-	if (enable && (fc46d_in.rms > 0.1f * fc46d_in.level && fc46d_in.rms < 10.0f * fc46d_in.level))
+	if (enable && (rms > 0.1f * fc46d_in.level && rms < 10.0f * fc46d_in.level))
 	{
 
-		if (fc46d_in.rms > fc46d_in.level)
+		if (rms > fc46d_in.level)
 		{
 			fc46d_out->initial_pick_up = 1;
 		}
-		if (fc46d_in.rms < fc46d_in.level * fc46d_in.dropout_ratio)
+		if (rms < fc46d_in.level * fc46d_in.dropout_ratio)
 		{
 			fc46d_out->initial_pick_up = 0;
 		}
@@ -321,20 +321,20 @@ void fc46d(struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters 
 // function-9
 // Inverse TOC Negative Seq. Protection
 
-void fc46i(struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable)
+void fc46i(float rms,struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable)
 {
 
-	if (enable && (fc46i_in.rms > 0.1f * fc46i_in.level && fc46i_in.rms < 10.0f * fc46i_in.level))
+	if (enable && (rms > 0.1f * fc46i_in.level && rms < 10.0f * fc46i_in.level))
 	{
 
-		if (fc46i_in.rms > fc46i_in.level * 1.100f)
+		if (rms > fc46i_in.level * 1.100f)
 		{
 
 			fc46i_out->pick_up = 1;
 			fc46i_out->time2trip = fc46i_in.time_multiplier * (fc46i_in.curve_data[0] / (powf((fc46i_in.rms / fc46i_in.level), fc46i_in.curve_data[1]) - 1.0f) + fc46i_in.curve_data[2]);
 
 		}
-		if (fc46i_in.rms < fc46i_in.level * 1.045f)
+		if (rms < fc46i_in.level * 1.045f)
 		{
 
 			fc46i_out->pick_up = 0;

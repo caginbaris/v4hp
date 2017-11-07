@@ -87,11 +87,11 @@ void fc27(float rms, struct fc27_inputParameters fc27_in, struct fc27_outputPara
 
 struct fc59_inputParameters{
 
-	float rms;
+	
 	float level;
 	float dropout_ratio;
 	float delay;
-	unsigned int cs;
+	
 
 };
 
@@ -104,7 +104,7 @@ struct fc59_outputParameters{
 
 };
 
-void fc59(struct fc59_inputParameters fc59_in, struct fc59_outputParameters *fc59_out,int enable );
+void fc59(float rms,struct fc59_inputParameters fc59_in, struct fc59_outputParameters *fc59_out,int enable );
 
 //------OverVoltageProtection-End--------------------------------------------------------------------
 
@@ -113,7 +113,7 @@ void fc59(struct fc59_inputParameters fc59_in, struct fc59_outputParameters *fc5
 
 struct fc46d_inputParameters{
 
-	float rms;
+	
 	float level;
 	float delay;
 	float dropout_time;
@@ -139,7 +139,7 @@ struct fc46d_outputParameters{
 
 struct fc46i_inputParameters {
 
-	float rms;
+	
 	float level;
 	float curve_data[3];
 	float time_multiplier;
@@ -156,8 +156,8 @@ struct fc46i_outputParameters {
 
 };
 
-void fc46d(struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable);
-void fc46i(struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable);
+void fc46d(float rms,struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable);
+void fc46i(float rms,struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable);
 
 //------NegativeSequenceProtection-End---------------------------------------------------
 

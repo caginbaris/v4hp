@@ -59,12 +59,20 @@ struct fc50_outputParameters fc50_obj2_L3_out_c={0};
 
 void fc50_init(){
 	
+	struct fc50_inputParameters fc50_initStruct={	1.0f, /*level*/
+																								0.9f, /*DropOutRatio*/
+																								0.05f,/*Delay*/
+																								0.02f /*DropOutTime*/};
 	
+	fc50_obj1_L1_in=fc50_initStruct;
+	fc50_obj1_L2_in=fc50_initStruct;
+	fc50_obj1_L3_in=fc50_initStruct;
 
-
-
-
-
+	fc50_obj2_L1_in=fc50_initStruct;
+	fc50_obj2_L2_in=fc50_initStruct;
+	fc50_obj2_L3_in=fc50_initStruct;																																																
+																								
+																								
 }
 
 void fc50_all(){

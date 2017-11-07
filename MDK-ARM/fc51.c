@@ -8,14 +8,14 @@ struct fc51_inputParameters fc51_obj1_in;
 struct fc51_inputParameters fc51_obj2_in;
 
 
-struct fc51_outputParameters fc51_obj1_out_a;
-struct fc51_outputParameters fc51_obj1_out_b;
-struct fc51_outputParameters fc51_obj1_out_c;
+struct fc51_outputParameters fc51_obj1_out_a={0};
+struct fc51_outputParameters fc51_obj1_out_b={0};
+struct fc51_outputParameters fc51_obj1_out_c={0};
 
 
-struct fc51_outputParameters fc51_obj2_out_a;
-struct fc51_outputParameters fc51_obj2_out_b;
-struct fc51_outputParameters fc51_obj2_out_c;
+struct fc51_outputParameters fc51_obj2_out_a={0};
+struct fc51_outputParameters fc51_obj2_out_b={0};
+struct fc51_outputParameters fc51_obj2_out_c={0};
 
 
 
@@ -25,6 +25,14 @@ struct fc51_outputParameters fc51_obj2_out_c;
 
 void fc51_init(){
 	
+	struct fc51_inputParameters fc51_initStruct={	1.0f, 						/*level*/
+																							{0.0f,0.0f,0.0f}, 	/*Curve*/
+																							0.02f 							/*TimeMultiplier*/};
+		
+	fc51_obj1_in=fc51_initStruct;
+	fc51_obj2_in=fc51_initStruct;
+																									
+
 	
 	curve=selectCURVE.fc51_obj1;
 		

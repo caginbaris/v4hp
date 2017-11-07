@@ -7,12 +7,22 @@ struct fc50_inputParameters fc50N_obj1_L2_in;
 struct fc50_inputParameters fc50N_obj1_L3_in;
 
 
-struct fc50_outputParameters fc50N_obj1_L1_out;
-struct fc50_outputParameters fc50N_obj1_L2_out;
-struct fc50_outputParameters fc50N_obj1_L3_out;
+struct fc50_outputParameters fc50N_obj1_L1_out={0};
+struct fc50_outputParameters fc50N_obj1_L2_out={0};
+struct fc50_outputParameters fc50N_obj1_L3_out={0};
 
 
 void fc50N_init(){
+	
+	
+		struct fc50_inputParameters fc50_initStruct={	1.0f, /*level*/
+																								0.9f, /*DropOutRatio*/
+																								0.05f,/*Delay*/
+																								0.02f /*DropOutTime*/};
+	
+		fc50N_obj1_L1_in=fc50_initStruct;
+		fc50N_obj1_L2_in=fc50_initStruct;
+		fc50N_obj1_L3_in=fc50_initStruct;	
 
 
 

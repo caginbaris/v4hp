@@ -25,6 +25,10 @@ struct AdcData{
 	
 	float IRESb;//AN-9
 	float IRESc;//AN-10
+	
+	float AB_synth;
+	float BC_synth;
+	float CA_synth;
 
 
 }; 
@@ -178,7 +182,11 @@ union pFunctionEnable{
 		uint32_t fc27_obj1_L1:1	;
 		uint32_t fc27_obj1_L2:1	;	
 		
-
+		uint32_t fc59_obj1_L1:1	;
+		uint32_t fc59_obj1_L2:1	;	
+		
+		uint32_t fc46_obj1_L1:1	;
+		uint32_t fc46_obj1_L2:1	;	
 		
 		
 		
@@ -217,8 +225,19 @@ union rms_selection{
 
 		uint32_t fc51N_obj1:1	;		
 
-		//uint32_t fc27_obj1_L1:1	; undervoltage passed
-		//uint32_t fc27_obj1_L2:1	;	
+		uint32_t fc27_obj1_L1:1	; // no use
+		uint32_t fc27_obj1_L2:1	;	// no use
+			
+		uint32_t fc59_obj1_L1:1	;
+		uint32_t fc59_obj1_L2:1	;		
+		
+		
+		uint32_t fc46_obj1_L1:1	; // no use
+		uint32_t fc46_obj1_L2:1	;	// no use
+			
+			
+			
+			
 				
 		
 			

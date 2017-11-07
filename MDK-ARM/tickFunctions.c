@@ -1,6 +1,6 @@
 
 #include "tick.h"
-#include "mlib_definitions.h"
+
 
 
 
@@ -55,7 +55,9 @@ void ftick7(){
 	fc50N_all();
 	fc51N_all();
 	
-	fc27_all();	
+	fc27_all();
+	fc59_all();
+	fc46_all();	
 
 
 };

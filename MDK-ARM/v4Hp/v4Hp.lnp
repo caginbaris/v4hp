@@ -43,12 +43,14 @@
 "v4hp\fc51n.o"
 "v4hp\fc27.o"
 "v4hp\fc59.o"
+"v4hp\fc46.o"
+"v4hp\fc49.o"
 "v4hp\cs_handles.o"
 "v4hp\truerms.o"
 "v4hp\spectra.o"
 "v4hp\conversion.o"
-"v4hp\tickfunctions.o"
 "v4hp\powersysdata.o"
+"v4hp\tickfunctions.o"
 --library_type=microlib --strict --scatter "v4Hp\v4Hp.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

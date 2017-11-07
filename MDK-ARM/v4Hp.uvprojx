@@ -624,6 +624,16 @@
               <FileType>1</FileType>
               <FilePath>.\fc59.c</FilePath>
             </File>
+            <File>
+              <FileName>fc46.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fc46.c</FilePath>
+            </File>
+            <File>
+              <FileName>fc49.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fc49.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -654,11 +664,6 @@
               <FileType>1</FileType>
               <FilePath>.\conversion.c</FilePath>
             </File>
-            <File>
-              <FileName>tickFunctions.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\tickFunctions.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -671,6 +676,16 @@
               <FileName>powerSysData.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\powerSysData.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>tickfunctions</GroupName>
+          <Files>
+            <File>
+              <FileName>tickFunctions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\tickFunctions.c</FilePath>
             </File>
           </Files>
         </Group>

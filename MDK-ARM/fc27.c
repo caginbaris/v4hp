@@ -31,9 +31,11 @@ void fc27_all(){
 	static uint8_t  cs_qual=0;
 	static long 		cs_counter=0;
 	
+	float rms;
+	
 
 	
-	if(Sys.current_supervision){
+	if(Sys.currentSupervision){
 	
 	cs_qual=on_off_delay(
 		
@@ -60,10 +62,21 @@ void fc27_all(){
 	}
 	
 	
+	if(Sys.phaseRotation){
+	
+	rms=mag_sym.V1;
+	
+	}else{
+	
+	rms=mag_sym.V2;
+	
+	}
+	
+	
 		//L1
-		fc27(mag_sym.V1,fc27_obj1_L1_in,&fc27_obj1_L1_out,EN.bits.fc27_obj1_L1);
+		fc27(rms,fc27_obj1_L1_in,&fc27_obj1_L1_out,EN.bits.fc27_obj1_L1);
 		//L2
-		fc27(mag_sym.V1,fc27_obj1_L2_in,&fc27_obj1_L2_out,EN.bits.fc27_obj1_L2);
+		fc27(rms,fc27_obj1_L2_in,&fc27_obj1_L2_out,EN.bits.fc27_obj1_L2);
 
 		
 }
