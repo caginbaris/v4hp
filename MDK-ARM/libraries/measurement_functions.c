@@ -331,7 +331,7 @@ float thermal_status(float rms,struct thermal_parameters therm, float mem)
 
 	if (therm.freeze == 0)
 	{
-		temp = t_constant * (rms*rms) / (therm.Inom * therm.Inom) + mem * (1 - t_constant);
+		temp = t_constant * (rms*rms) / (therm.Inom * therm.Inom * therm.k * therm.k) + mem * (1 - t_constant);
 	}
 	else{
 		temp = mem;

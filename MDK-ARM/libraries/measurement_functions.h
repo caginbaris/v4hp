@@ -94,6 +94,7 @@ struct thermal_parameters{
 
 
 	float Inom; // 0.1 to 4*Inom- def 1.1 k-factor*Inom_obj
+	float k;
 	float tau;
 	float ts;
 	unsigned int freeze;

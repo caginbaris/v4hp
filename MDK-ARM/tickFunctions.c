@@ -65,6 +65,9 @@ void ftick8(){
 	
 	
 	fc49_all();
+	fcBF_all();
+	fc37_all();
+	fcUNB_all();
 
 
 

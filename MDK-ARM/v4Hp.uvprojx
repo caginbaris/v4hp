@@ -634,6 +634,21 @@
               <FileType>1</FileType>
               <FilePath>.\fc49.c</FilePath>
             </File>
+            <File>
+              <FileName>fcBF.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fcBF.c</FilePath>
+            </File>
+            <File>
+              <FileName>fc37.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fc37.c</FilePath>
+            </File>
+            <File>
+              <FileName>fcUNB.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fcUNB.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

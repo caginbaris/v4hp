@@ -1,6 +1,7 @@
 #include "nfbm.h"
 #include "protection_functions.h"
 #include "measurement_functions.h"
+#include "powerSysData.h"
 
 
 struct thermal_parameters fc49_obj1_therm;
@@ -31,11 +32,34 @@ struct fc49_outputParameters fc49_obj2_L2_out_c={0};
 
 
 void fc49_init(){
+	
+	struct thermal_parameters fc49_therm_initStruct={ 1.0f,/*Inom*/
+																										1.1, /*k*/	
+																										10.0f,/*tau in*/
+																										0.0004f,/*ts*/				
+																										0 /*freeze*/	};
+	
+	struct fc49_inputParameters fc49_initStruct={ 0.1f,/*temp*/
+																								0.9f,/*alarm level*/
+																								1.0,/*trip level*/				
+																								0.9 /*dropOut*/	};
+	
+	fc49_obj1_therm=fc49_therm_initStruct;
+	fc49_obj2_therm=fc49_therm_initStruct;	
+																								
 
-
-
-
-
+	fc49_obj1_therm.Inom=Sys.I_Nom_obj1;
+	fc49_obj2_therm.Inom=Sys.I_Nom_obj2;
+																								
+																								
+	fc49_obj1_L1_in=fc49_initStruct;
+	fc49_obj1_L2_in=fc49_initStruct;
+																								
+	fc49_obj2_L1_in=fc49_initStruct;
+	fc49_obj2_L2_in=fc49_initStruct;
+																								
+																																												
+						
 
 }
 

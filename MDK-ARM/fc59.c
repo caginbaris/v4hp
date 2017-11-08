@@ -21,7 +21,7 @@ void fc59_init(){
 
 	struct fc59_inputParameters fc59_initStruct={	1.0f, /*level*/
 																								0.9f, /*DropOutRatio*/
-																								0.05f,/*Delay*/
+																								0.04f,/*Delay*/
 																								};
 	
 	fc59_obj1_L1_in=fc59_initStruct;

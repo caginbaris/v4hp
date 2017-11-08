@@ -190,7 +190,7 @@ struct fcBF_outputParameters{
 
 struct fc37_inputParameters{
 
-	float rms;
+	
 	float level;
 	float dropout_ratio;
 	float delay;
@@ -209,7 +209,7 @@ struct fc37_outputParameters{
 
 struct fcUNBd_inputParameters{
 
-	float rms;
+	
 	float level; // vectoral difference will be used
 	float dropout_ratio;
 	float delay;
@@ -227,7 +227,7 @@ struct fcUNBd_outputParameters{
 
 struct fcUNBi_inputParameters {
 
-	float rms;
+	
 	float level;
 	float curve_data[3];
 	float time_multiplier;

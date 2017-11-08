@@ -9,8 +9,8 @@ struct fc50_inputParameters {
 
 	
 	float level;
-	float dropout_ratio;
 	float delay;
+	float dropout_ratio;
 	float dropout_time;
 
 };
@@ -63,8 +63,8 @@ struct fc27_inputParameters{
 
 	
 	float level;
-	float dropout_ratio;
 	float delay;
+	float dropout_ratio;
 	unsigned int cs; // caution: externally set by a routine
 
 };
@@ -89,8 +89,9 @@ struct fc59_inputParameters{
 
 	
 	float level;
-	float dropout_ratio;
 	float delay;
+	float dropout_ratio;
+	
 	
 
 };
@@ -116,8 +117,8 @@ struct fc46d_inputParameters{
 	
 	float level;
 	float delay;
-	float dropout_time;
 	float dropout_ratio;
+	float dropout_time;
 
 };
 
@@ -239,7 +240,7 @@ void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcB
 //------UnderCurrent-Start------------------------------------------------------------
 struct fc37_inputParameters{
 
-	float rms;
+	
 	float level;
 	float dropout_ratio;
 	float delay;
@@ -256,7 +257,7 @@ struct fc37_outputParameters{
 
 };
 
-void fc37(struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc37_out, int enable);
+void fc37(float rms,struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc37_out, int enable);
 
 //------UnderCurrent-End--------------------------------------------------------------
 
@@ -264,7 +265,7 @@ void fc37(struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc3
 
 struct fcUNBd_inputParameters{
 
-	float rms;
+	
 	float level; // vectoral difference will be used
 	float dropout_ratio;
 	float delay;
@@ -284,7 +285,7 @@ struct fcUNBd_outputParameters{
 
 struct fcUNBi_inputParameters {
 
-	float rms;
+	
 	float level;
 	float curve_data[3];
 	float time_multiplier;
@@ -303,8 +304,8 @@ struct fcUNBi_outputParameters{
 };
 
 
-void fcUNBd(struct fcUNBd_inputParameters fcUNBd_in, struct fcUNBd_outputParameters *fcUNBd_out, int enable);
-void fcUNBi(struct fcUNBi_inputParameters fcUNBi_in, struct fcUNBi_outputParameters *fcUNBi_out, int enable);
+void fcUNBd(float rms,struct fcUNBd_inputParameters fcUNBd_in, struct fcUNBd_outputParameters *fcUNBd_out, int enable);
+void fcUNBi(float rms,struct fcUNBi_inputParameters fcUNBi_in, struct fcUNBi_outputParameters *fcUNBi_out, int enable);
 
 //------Unbalace-Start------------------------------------------------------------
 

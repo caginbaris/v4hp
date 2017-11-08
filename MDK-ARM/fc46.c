@@ -16,7 +16,23 @@ struct fc46i_outputParameters fc46i_obj1_L1_out;
 
 
 void fc46_init(){
-
+	
+	
+		struct fc46d_inputParameters fc46d_initStruct={ 1.0f,/*level*/
+																										0.04,/*delay*/
+																										1.1f,/*dropoutRatio*/				
+																										0.02 /*dropoutTime*/	};
+		
+		fc46d_obj1_L1_in=fc46d_initStruct;																								
+		
+																								
+		
+		struct fc46i_inputParameters fc46i_initStruct={ 1.0f,/*level*/
+																										{0.0f,0.0f,0.0f},/*curveData*/
+																										0.04f/*timeMultiplier*/};
+		
+																										
+		fc46i_obj1_L1_in=fc46i_initStruct;
 
 
 

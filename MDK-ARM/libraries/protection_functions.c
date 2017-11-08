@@ -445,7 +445,7 @@ void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcB
 
 			}
 
-			if (fcBF_out->pick_up == 1 && fcBF_out->trip == 0)
+			if (fcBF_out->pick_up == 1)
 			{
 
 				fcBF_out->trip_counter++;
@@ -473,20 +473,20 @@ void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcB
 // Undercurrent Protection
 // bs is CB input
 
-void fc37(struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc37_out, int enable)
+void fc37(float rms, struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc37_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fc37_in.rms < fc37_in.level && fc37_in.bs)
+		if (rms < fc37_in.level && fc37_in.bs)
 		{
 
 			fc37_out->pick_up = 1;
-
+                       
 		}
 
-		if (fc37_in.rms > fc37_in.level * fc37_in.dropout_ratio || fc37_in.bs == 0)
+		if (rms > fc37_in.level * fc37_in.dropout_ratio)
 		{
 
 			fc37_out->pick_up = 0;
@@ -523,20 +523,20 @@ void fc37(struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc3
 // Filter Unbalance Protection-Alarm Stage
 // caution : vectoral difference has to be used
 
-void fcUNBd(struct fcUNBd_inputParameters fcUNBd_in, struct fcUNBd_outputParameters *fcUNBd_out, int enable)
+void fcUNBd(float rms,struct fcUNBd_inputParameters fcUNBd_in, struct fcUNBd_outputParameters *fcUNBd_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fcUNBd_in.rms > fcUNBd_in.level)
+		if (rms > fcUNBd_in.level)
 		{
 
 			fcUNBd_out->pick_up = 1;
 
 		}
 
-		if (fcUNBd_in.rms < fcUNBd_in.level * fcUNBd_in.dropout_ratio)
+		if (rms < fcUNBd_in.level * fcUNBd_in.dropout_ratio)
 		{
 
 			fcUNBd_out->pick_up = 0;
@@ -572,20 +572,20 @@ void fcUNBd(struct fcUNBd_inputParameters fcUNBd_in, struct fcUNBd_outputParamet
 // Filter Unbalance Protection-Trip Stage
 // caution : vectoral difference has to be used @ input
 
-void fcUNBi(struct fcUNBi_inputParameters fcUNBi_in, struct fcUNBi_outputParameters *fcUNBi_out, int enable)
+void fcUNBi(float rms,struct fcUNBi_inputParameters fcUNBi_in, struct fcUNBi_outputParameters *fcUNBi_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fcUNBi_in.rms > fcUNBi_in.level * 1.100f)
+		if (rms > fcUNBi_in.level * 1.100f)
 		{
 
 			fcUNBi_out->pick_up = 1;
-			fcUNBi_out->time2trip = fcUNBi_in.time_multiplier * (101.2f / (100.0f * (fcUNBi_in.rms / fcUNBi_in.level) - 97.0f) + 0.02f);
+			fcUNBi_out->time2trip = fcUNBi_in.time_multiplier * (101.2f / (100.0f * (rms / fcUNBi_in.level) - 97.0f) + 0.02f);
 
 		}
-		if (fcUNBi_in.rms < fcUNBi_in.level * 1.045f)
+		if (rms < fcUNBi_in.level * 1.045f)
 		{
 
 			fcUNBi_out->pick_up = 0;

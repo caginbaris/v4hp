@@ -194,8 +194,13 @@ union pFunctionEnable{
 		uint32_t fc49_obj2_L1:1	; 
 		uint32_t fc49_obj2_L2:1	;	
 		
+		uint32_t fcBF_obj1:1	;	
 		
-		
+		uint32_t fc37_obj1:1	;
+		uint32_t fc37_obj2:1	;
+
+		uint32_t fcUNBd_obj1:1	;
+		uint32_t fcUNBi_obj1:1	;	
 		
 	}bits;
 	
@@ -237,12 +242,20 @@ union rms_selection{
 		uint32_t fc59_obj1_L1:1	;
 		uint32_t fc59_obj1_L2:1	;		
 		
-		
 		uint32_t fc46_obj1_L1:1	; // no use
 		uint32_t fc46_obj1_L2:1	;	// no use
 		
 		uint32_t fc49_obj1_L1:1	; // no use
 		uint32_t fc49_obj1_L2:1	;	// no use
+		
+		uint32_t fcBF_obj1:1	;		// no use
+		
+		uint32_t fc37_obj1:1	; 	// no use
+		uint32_t fc37_obj2:1	;		// no use	
+		
+		
+		uint32_t fcUNBd_obj1:1	; //no use
+		uint32_t fcUNBi_obj1:1	;	//no use
 			
 			
 			
