@@ -69,6 +69,7 @@ static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
 void tickFunctions();
+void initFunctions();
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -120,6 +121,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	
+	initFunctions();
+	
 	HAL_TIM_Base_Start_IT(&htim1);
 	HAL_ADC_Start(&hadc3);
 	HAL_ADC_Start(&hadc2);

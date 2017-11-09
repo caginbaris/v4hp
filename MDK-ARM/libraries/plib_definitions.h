@@ -210,9 +210,10 @@ struct fc37_outputParameters{
 struct fcUNBd_inputParameters{
 
 	
-	float level; // vectoral difference will be used
-	float dropout_ratio;
+	float level; 
 	float delay;
+	float dropout_ratio;
+	
 	
 
 };
@@ -248,10 +249,11 @@ struct fcUNBi_outputParameters{
 
 struct fcPVPd_inputParameters{
 
-	float rms;
-	float level; // vectoral difference will be used
-	float dropout_ratio;
+	
+	float level;
 	float delay;
+	float dropout_ratio;
+	
 	
 
 };
@@ -267,11 +269,9 @@ struct fcPVPd_outputParameters{
 
 struct fcPVPi_inputParameters {
 
-	float rms;
 	float level;
 	float curve_data[3];
 	float time_multiplier;
-
 
 };
 

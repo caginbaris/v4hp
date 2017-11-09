@@ -649,6 +649,11 @@
               <FileType>1</FileType>
               <FilePath>.\fcUNB.c</FilePath>
             </File>
+            <File>
+              <FileName>fcPVP.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\fcPVP.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -683,6 +688,13 @@
         </Group>
         <Group>
           <GroupName>initFunctions</GroupName>
+          <Files>
+            <File>
+              <FileName>initFunctions.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\initFunctions.c</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>powerSys</GroupName>

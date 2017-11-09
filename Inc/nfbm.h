@@ -202,6 +202,10 @@ union pFunctionEnable{
 		uint32_t fcUNBd_obj1:1	;
 		uint32_t fcUNBi_obj1:1	;	
 		
+		
+		uint32_t fcPVPd_obj1:1	;
+		uint32_t fcPVPi_obj1:1	;	
+		
 	}bits;
 	
 	uint32_t all;
@@ -256,6 +260,9 @@ union rms_selection{
 		
 		uint32_t fcUNBd_obj1:1	; //no use
 		uint32_t fcUNBi_obj1:1	;	//no use
+		
+		uint32_t fcPVPd_obj1:1	; //no use
+		uint32_t fcPVPi_obj1:1	;	//no use
 			
 			
 			
@@ -292,6 +299,10 @@ struct curve_selection{
 		uint32_t fc51_obj1:4	;
 		uint32_t fc51_obj2:4	;
 		uint32_t fc51N_obj1:4	;
+		uint32_t fc46i_obj1:4	;
+		uint32_t fcUNBi_obj1:4	;
+		uint32_t fcPVPi_obj1:4	;
+		
 
 		
 

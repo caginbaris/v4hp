@@ -33,6 +33,14 @@ void fc46_init(){
 		
 																										
 		fc46i_obj1_L1_in=fc46i_initStruct;
+																										
+		curve=selectCURVE.fc51_obj1;
+		
+		fc46i_obj1_L1_in.curve_data[0]=curve_data[curve][0];
+		fc46i_obj1_L1_in.curve_data[1]=curve_data[curve][1];
+		fc46i_obj1_L1_in.curve_data[2]=curve_data[curve][2];																								
+																										
+																										
 
 
 

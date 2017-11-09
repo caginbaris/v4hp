@@ -621,20 +621,20 @@ void fcUNBi(float rms,struct fcUNBi_inputParameters fcUNBi_in, struct fcUNBi_out
 // Function 16
 // Filter PVP definite
 
-void fcPVPd(struct fcPVPd_inputParameters fcPVPd_in, struct fcPVPd_outputParameters *fcPVPd_out, int enable)
+void fcPVPd(float rms,struct fcPVPd_inputParameters fcPVPd_in, struct fcPVPd_outputParameters *fcPVPd_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fcPVPd_in.rms > fcPVPd_in.level)
+		if (rms > fcPVPd_in.level)
 		{
 
 			fcPVPd_out->pick_up = 1;
 
 		}
 
-		if (fcPVPd_in.rms < fcPVPd_in.level * fcPVPd_in.dropout_ratio)
+		if (rms < fcPVPd_in.level * fcPVPd_in.dropout_ratio)
 		{
 
 			fcPVPd_out->pick_up = 0;
@@ -669,20 +669,20 @@ void fcPVPd(struct fcPVPd_inputParameters fcPVPd_in, struct fcPVPd_outputParamet
 // Function 17
 // Filter PVP-Trip Stage
 
-void fcPVPi(struct fcPVPi_inputParameters fcPVPi_in, struct fcPVPi_outputParameters *fcPVPi_out, int enable)
+void fcPVPi(float rms,struct fcPVPi_inputParameters fcPVPi_in, struct fcPVPi_outputParameters *fcPVPi_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fcPVPi_in.rms > fcPVPi_in.level * 1.100f)
+		if (rms > fcPVPi_in.level * 1.100f)
 		{
 
 			fcPVPi_out->pick_up = 1;
-			fcPVPi_out->time2trip = fcPVPi_in.time_multiplier * (fcPVPi_in.curve_data[0] / (100.0f * (fcPVPi_in.rms / fcPVPi_in.level) - 97.0f) + 0.02f);
+			fcPVPi_out->time2trip = fcPVPi_in.time_multiplier * (fcPVPi_in.curve_data[0] / (100.0f * (rms / fcPVPi_in.level) - 97.0f) + 0.02f);
 
 		}
-		if (fcPVPi_in.rms < fcPVPi_in.level * 1.045f)
+		if (rms < fcPVPi_in.level * 1.045f)
 		{
 
 			fcPVPi_out->pick_up = 0;

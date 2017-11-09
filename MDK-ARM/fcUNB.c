@@ -1,6 +1,9 @@
+#include "measurement_functions.h"
 #include "protection_functions.h"
 #include "nfbm.h"
 #include "powerSysData.h"
+#include "cs_handles.h"
+
 
 
 struct fcUNBd_inputParameters fcUNBd_obj1_L1_in;
@@ -15,8 +18,23 @@ struct fcUNBi_outputParameters  fcUNBi_obj1_L1_out_b={0};
 
 
 void fcUNB_initial_dt(){
-
-
+	
+	static float phase_diff;
+	
+	//should be entered and calc. for  UNB phase
+  //phase_diff=(phase_cs_A_out.phase_I-)
+	
+	 /* Matlab if(p12(i)<0)
+        
+        p12(i)=p12(i)+2*pi;
+        
+    end
+    
+    if(p12(i)>=pi)
+        
+        p12(i)=p12(i)-2*pi;
+        
+    end */
 
 }
 
