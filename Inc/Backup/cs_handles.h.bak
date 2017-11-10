@@ -3,9 +3,9 @@
 
 
 
-extern struct phase_cs_out phase_cs_out_a;
-extern struct phase_cs_out phase_cs_out_b;
-extern struct phase_cs_out phase_cs_out_c;
+extern struct phase_cs_out phase_cs_A_out;
+extern struct phase_cs_out phase_cs_B_out;
+extern struct phase_cs_out phase_cs_C_out;
 
 
 extern struct sym_out mag_sym;

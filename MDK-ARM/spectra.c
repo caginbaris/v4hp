@@ -105,3 +105,13 @@ void spectra_tick3(){
 
 }
 
+void thd_all(){
+	
+	signal_thd(spect_Ia);
+	signal_thd(spect_Ib);
+	signal_thd(spect_Ic);
+
+
+
+}
+

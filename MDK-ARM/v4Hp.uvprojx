@@ -335,7 +335,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc; ../Drivers/STM32F7xx_HAL_Driver/Inc; ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F7xx/Include; ../Drivers/CMSIS/Include; .\libraries</IncludePath>
+              <IncludePath>../Inc;    ../Drivers/STM32F7xx_HAL_Driver/Inc;    ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;    ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;    ../Drivers/CMSIS/Include;    .\libraries</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -713,6 +713,16 @@
               <FileName>tickFunctions.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\tickFunctions.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>boardIO</GroupName>
+          <Files>
+            <File>
+              <FileName>boardIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\boardIO.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -909,6 +909,12 @@ Section Cross References
     tickfunctions.o(.data) refers to tickfunctions.o(i.ftick8) for ftick8
     tickfunctions.o(.data) refers to tickfunctions.o(i.ftick9) for ftick9
     tickfunctions.o(.data) refers to tickfunctions.o(i.ftick10) for ftick10
+    boardio.o(i.boardIO) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_ReadPin) for HAL_GPIO_ReadPin
+    boardio.o(i.boardIO) refers to stm32f7xx_hal_gpio.o(i.HAL_GPIO_WritePin) for HAL_GPIO_WritePin
+    boardio.o(i.boardIO) refers to boardio.o(.bss) for .bss
+    boardio.o(i.boardIO) refers to boardio.o(.data) for .data
+    boardio.o(i.inputQualification) refers to protection_functions.o(i.on_off_delay) for on_off_delay
+    boardio.o(i.inputQualification) refers to boardio.o(.bss) for .bss
     atan2f.o(i.__hardfp_atan2f) refers (Special) to iusefp.o(.text) for __I$use$fp
     atan2f.o(i.__hardfp_atan2f) refers to fpclassifyf.o(i.__ARM_fpclassifyf) for __ARM_fpclassifyf
     atan2f.o(i.__hardfp_atan2f) refers to funder.o(i.__mathlib_flt_underflow) for __mathlib_flt_underflow
@@ -1641,8 +1647,16 @@ Removing Unused input sections from the image.
     Removing conversion.o(.revsh_text), (4 bytes).
     Removing conversion.o(.rrx_text), (6 bytes).
     Removing conversion.o(i.init_conversion), (116 bytes).
+    Removing boardio.o(.rev16_text), (4 bytes).
+    Removing boardio.o(.revsh_text), (4 bytes).
+    Removing boardio.o(.rrx_text), (6 bytes).
+    Removing boardio.o(i.boardIO), (392 bytes).
+    Removing boardio.o(i.inputQualification), (84 bytes).
+    Removing boardio.o(.bss), (120 bytes).
+    Removing boardio.o(.data), (4 bytes).
+    Removing boardio.o(.data), (1 bytes).
 
-655 unused section(s) (total 59729 bytes) removed from the image.
+663 unused section(s) (total 60344 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1688,29 +1702,29 @@ Image Symbol Table
     ../Src/usart.c                           0x00000000   Number         0  usart.o ABSOLUTE
     ../clib/../cmprslib/lz77c.c              0x00000000   Number         0  __dclz77c.o ABSOLUTE
     ../clib/microlib/errno.c                 0x00000000   Number         0  errno.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
     ../fplib/microlib/fpstat.c               0x00000000   Number         0  fpstat.o ABSOLUTE
-    ../mathlib/atan2f.c                      0x00000000   Number         0  atan2f.o ABSOLUTE
     ../mathlib/atan2f.c                      0x00000000   Number         0  atan2f_x.o ABSOLUTE
+    ../mathlib/atan2f.c                      0x00000000   Number         0  atan2f.o ABSOLUTE
     ../mathlib/fpclassifyf.c                 0x00000000   Number         0  fpclassifyf.o ABSOLUTE
     ../mathlib/funder.c                      0x00000000   Number         0  funder.o ABSOLUTE
     ../mathlib/powf.c                        0x00000000   Number         0  powf.o ABSOLUTE
     ../mathlib/powf.c                        0x00000000   Number         0  powf_x.o ABSOLUTE
-    ../mathlib/sqrtf.c                       0x00000000   Number         0  sqrtf_x.o ABSOLUTE
     ../mathlib/sqrtf.c                       0x00000000   Number         0  sqrtf.o ABSOLUTE
+    ../mathlib/sqrtf.c                       0x00000000   Number         0  sqrtf_x.o ABSOLUTE
     ..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal.c 0x00000000   Number         0  stm32f7xx_hal.o ABSOLUTE
     ..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_adc.c 0x00000000   Number         0  stm32f7xx_hal_adc.o ABSOLUTE
     ..\Drivers\STM32F7xx_HAL_Driver\Src\stm32f7xx_hal_adc_ex.c 0x00000000   Number         0  stm32f7xx_hal_adc_ex.o ABSOLUTE
@@ -1745,6 +1759,8 @@ Image Symbol Table
     ..\Src\system_stm32f7xx.c                0x00000000   Number         0  system_stm32f7xx.o ABSOLUTE
     ..\Src\tim.c                             0x00000000   Number         0  tim.o ABSOLUTE
     ..\Src\usart.c                           0x00000000   Number         0  usart.o ABSOLUTE
+    boardIO.c                                0x00000000   Number         0  boardio.o ABSOLUTE
+    boardIO.c                                0x00000000   Number         0  boardio.o ABSOLUTE
     conversion.c                             0x00000000   Number         0  conversion.o ABSOLUTE
     conversion.c                             0x00000000   Number         0  conversion.o ABSOLUTE
     cs_handles.c                             0x00000000   Number         0  cs_handles.o ABSOLUTE
@@ -2512,20 +2528,20 @@ Memory Map of the image
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x000001f8   Data   RO          837    RESET               startup_stm32f767xx.o
-    0x080001f8   0x00000000   Code   RO         5249  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001f8   0x00000004   Code   RO         5268    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001fc   0x00000004   Code   RO         5271    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000200   0x00000000   Code   RO         5273    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000200   0x00000000   Code   RO         5275    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000200   0x00000008   Code   RO         5276    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000208   0x00000000   Code   RO         5278    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000208   0x00000000   Code   RO         5280    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000208   0x00000004   Code   RO         5269    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001f8   0x00000000   Code   RO         5287  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001f8   0x00000004   Code   RO         5306    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001fc   0x00000004   Code   RO         5309    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000200   0x00000000   Code   RO         5311    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000200   0x00000000   Code   RO         5313    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000200   0x00000008   Code   RO         5314    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000208   0x00000000   Code   RO         5316    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000208   0x00000000   Code   RO         5318    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000208   0x00000004   Code   RO         5307    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x0800020c   0x00000024   Code   RO          838    .text               startup_stm32f767xx.o
-    0x08000230   0x00000000   Code   RO         5289    .text               mc_w.l(iusefp.o)
-    0x08000230   0x00000004   Code   RO         5290    .text               mf_w.l(fpstat.o)
-    0x08000234   0x00000024   Code   RO         5292    .text               mc_w.l(init.o)
-    0x08000258   0x0000005e   Code   RO         5302    .text               mc_w.l(__dclz77c.o)
+    0x08000230   0x00000000   Code   RO         5327    .text               mc_w.l(iusefp.o)
+    0x08000230   0x00000004   Code   RO         5328    .text               mf_w.l(fpstat.o)
+    0x08000234   0x00000024   Code   RO         5330    .text               mc_w.l(init.o)
+    0x08000258   0x0000005e   Code   RO         5340    .text               mc_w.l(__dclz77c.o)
     0x080002b6   0x00000060   Code   RO         2039    i.ADC_MultiModeDMAConvCplt  stm32f7xx_hal_adc_ex.o
     0x08000316   0x00000012   Code   RO         2040    i.ADC_MultiModeDMAError  stm32f7xx_hal_adc_ex.o
     0x08000328   0x00000006   Code   RO         2041    i.ADC_MultiModeDMAHalfConvCplt  stm32f7xx_hal_adc_ex.o
@@ -2625,22 +2641,22 @@ Memory Map of the image
     0x08003758   0x00000076   Code   RO         3264    i.UART_WaitOnFlagUntilTimeout  stm32f7xx_hal_uart.o
     0x080037ce   0x00000002   Code   RO          406    i.UsageFault_Handler  stm32f7xx_it.o
     0x080037d0   0x00000002   Code   RO          549    i._Error_Handler    main.o
-    0x080037d2   0x00000026   Code   RO         5252    i.__ARM_fpclassifyf  m_wv.l(fpclassifyf.o)
-    0x080037f8   0x00000258   Code   RO         5211    i.__hardfp_atan2f   m_wv.l(atan2f.o)
-    0x08003a50   0x00000658   Code   RO         5223    i.__hardfp_powf     m_wv.l(powf.o)
-    0x080040a8   0x0000003a   Code   RO         5237    i.__hardfp_sqrtf    m_wv.l(sqrtf.o)
+    0x080037d2   0x00000026   Code   RO         5290    i.__ARM_fpclassifyf  m_wv.l(fpclassifyf.o)
+    0x080037f8   0x00000258   Code   RO         5249    i.__hardfp_atan2f   m_wv.l(atan2f.o)
+    0x08003a50   0x00000658   Code   RO         5261    i.__hardfp_powf     m_wv.l(powf.o)
+    0x080040a8   0x0000003a   Code   RO         5275    i.__hardfp_sqrtf    m_wv.l(sqrtf.o)
     0x080040e2   0x00000002   PAD
-    0x080040e4   0x00000018   Code   RO         5254    i.__mathlib_flt_divzero  m_wv.l(funder.o)
-    0x080040fc   0x00000006   Code   RO         5256    i.__mathlib_flt_infnan2  m_wv.l(funder.o)
+    0x080040e4   0x00000018   Code   RO         5292    i.__mathlib_flt_divzero  m_wv.l(funder.o)
+    0x080040fc   0x00000006   Code   RO         5294    i.__mathlib_flt_infnan2  m_wv.l(funder.o)
     0x08004102   0x00000002   PAD
-    0x08004104   0x00000010   Code   RO         5257    i.__mathlib_flt_invalid  m_wv.l(funder.o)
-    0x08004114   0x00000010   Code   RO         5258    i.__mathlib_flt_overflow  m_wv.l(funder.o)
-    0x08004124   0x00000010   Code   RO         5260    i.__mathlib_flt_underflow  m_wv.l(funder.o)
-    0x08004134   0x0000000e   Code   RO         5296    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08004142   0x00000002   Code   RO         5297    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08004144   0x0000000e   Code   RO         5298    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08004104   0x00000010   Code   RO         5295    i.__mathlib_flt_invalid  m_wv.l(funder.o)
+    0x08004114   0x00000010   Code   RO         5296    i.__mathlib_flt_overflow  m_wv.l(funder.o)
+    0x08004124   0x00000010   Code   RO         5298    i.__mathlib_flt_underflow  m_wv.l(funder.o)
+    0x08004134   0x0000000e   Code   RO         5334    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08004142   0x00000002   Code   RO         5335    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08004144   0x0000000e   Code   RO         5336    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x08004152   0x00000002   PAD
-    0x08004154   0x0000000c   Code   RO         5284    i.__set_errno       mc_w.l(errno.o)
+    0x08004154   0x0000000c   Code   RO         5322    i.__set_errno       mc_w.l(errno.o)
     0x08004160   0x00000134   Code   RO          631    i.cs_computations   measurement_functions.o
     0x08004294   0x000000b2   Code   RO          632    i.cs_generation     measurement_functions.o
     0x08004346   0x00000002   PAD
@@ -2724,8 +2740,8 @@ Memory Map of the image
     0x080068b4   0x00000024   Data   RO         4852    .constdata          fc49.o
     0x080068d8   0x00000018   Data   RO         4883    .constdata          fcbf.o
     0x080068f0   0x00000020   Data   RO         4955    .constdata          fcpvp.o
-    0x08006910   0x00000140   Data   RO         5226    .constdata          m_wv.l(powf.o)
-    0x08006a50   0x00000020   Data   RO         5294    Region$$Table       anon$$obj.o
+    0x08006910   0x00000140   Data   RO         5264    .constdata          m_wv.l(powf.o)
+    0x08006a50   0x00000020   Data   RO         5332    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00003690, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x000001d0])
@@ -2751,7 +2767,7 @@ Memory Map of the image
     0x200004c4   0x00000001   Data   RW         5074    .data               conversion.o
     0x200004c5   0x00000003   PAD
     0x200004c8   0x0000002c   Data   RW         5144    .data               tickfunctions.o
-    0x200004f4   0x00000004   Data   RW         5285    .data               mc_w.l(errno.o)
+    0x200004f4   0x00000004   Data   RW         5323    .data               mc_w.l(errno.o)
     0x200004f8   0x00000080   Zero   RW            8    .bss                tim.o
     0x20000578   0x00000020   Zero   RW          175    .bss                rtc.o
     0x20000598   0x0000004c   Zero   RW          217    .bss                quadspi.o

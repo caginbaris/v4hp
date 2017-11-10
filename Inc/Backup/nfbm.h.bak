@@ -25,6 +25,10 @@ struct AdcData{
 	
 	float IRESb;//AN-9
 	float IRESc;//AN-10
+	
+	float AB_synth;
+	float BC_synth;
+	float CA_synth;
 
 
 }; 
@@ -65,22 +69,6 @@ enum AdcChannel{
 	IRESc=13
 
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -168,7 +156,192 @@ struct digital_outputs{
 extern struct digital_inputs  DI;
 extern struct digital_outputs DO;
 	
+union pFunctionEnable{
 	
+	struct{
+		
+		uint32_t fc50_obj1_L1:1	;
+		uint32_t fc50_obj1_L2:1	;
+		uint32_t fc50_obj1_L3:1	;
+		
+		uint32_t fc50_obj2_L1:1	;
+		uint32_t fc50_obj2_L2:1	;
+		uint32_t fc50_obj2_L3:1	;
+		
+		
+		uint32_t fc51_obj1:1	;
+		uint32_t fc51_obj2:1	;
+		
+		
+		uint32_t fc50N_obj1_L1:1	;
+		uint32_t fc50N_obj1_L2:1	;
+		uint32_t fc50N_obj1_L3:1	;
+		
+		uint32_t fc51N_obj1:1	;
+		
+		uint32_t fc27_obj1_L1:1	;
+		uint32_t fc27_obj1_L2:1	;	
+		
+		uint32_t fc59_obj1_L1:1	;
+		uint32_t fc59_obj1_L2:1	;	
+		
+		uint32_t fc46_obj1_L1:1	;
+		uint32_t fc46_obj1_L2:1	;	
+		
+		uint32_t fc49_obj1_L1:1	; 
+		uint32_t fc49_obj1_L2:1	;	
+		
+		uint32_t fc49_obj2_L1:1	; 
+		uint32_t fc49_obj2_L2:1	;	
+		
+		uint32_t fcBF_obj1:1	;	
+		
+		uint32_t fc37_obj1:1	;
+		uint32_t fc37_obj2:1	;
+
+		uint32_t fcUNBd_obj1:1	;
+		uint32_t fcUNBi_obj1:1	;	
+		
+		
+		uint32_t fcPVPd_obj1:1	;
+		uint32_t fcPVPi_obj1:1	;	
+		
+	}bits;
+	
+	uint32_t all;
+	
+	
+	
+	
+	};
+
+	
+extern union pFunctionEnable EN;
+	
+	
+union rms_selection{
+		
+		struct{
+		
+		uint32_t fc50_obj1_L1:1	;
+		uint32_t fc50_obj1_L2:1	;
+		uint32_t fc50_obj1_L3:1	;
+		
+		uint32_t fc50_obj2_L1:1	;
+		uint32_t fc50_obj2_L2:1	;
+		uint32_t fc50_obj2_L3:1	;
+			
+		uint32_t fc51_obj1:1	;
+		uint32_t fc51_obj2:1	;	
+
+		uint32_t fc50N_obj1_L1:1	;
+		uint32_t fc50N_obj1_L2:1	;
+		uint32_t fc50N_obj1_L3:1	;
+
+		uint32_t fc51N_obj1:1	;		
+
+		uint32_t fc27_obj1_L1:1	; // no use
+		uint32_t fc27_obj1_L2:1	;	// no use
+			
+		uint32_t fc59_obj1_L1:1	;
+		uint32_t fc59_obj1_L2:1	;		
+		
+		uint32_t fc46_obj1_L1:1	; // no use
+		uint32_t fc46_obj1_L2:1	;	// no use
+		
+		uint32_t fc49_obj1_L1:1	; // no use
+		uint32_t fc49_obj1_L2:1	;	// no use
+		
+		uint32_t fcBF_obj1:1	;		// no use
+		
+		uint32_t fc37_obj1:1	; 	// no use
+		uint32_t fc37_obj2:1	;		// no use	
+		
+		
+		uint32_t fcUNBd_obj1:1	; //no use
+		uint32_t fcUNBi_obj1:1	;	//no use
+		
+		uint32_t fcPVPd_obj1:1	; //no use
+		uint32_t fcPVPi_obj1:1	;	//no use
+			
+			
+			
+			
+				
+		
+			
+			
+		
+	}bits;
+	
+	uint32_t all;
+	
+	
+	
+	
+	};
+
+	
+extern union rms_selection selectRMS;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+struct curve_selection{
+		
+		
+		
+		uint32_t fc51_obj1:4	;
+		uint32_t fc51_obj2:4	;
+		uint32_t fc51N_obj1:4	;
+		uint32_t fc46i_obj1:4	;
+		uint32_t fcUNBi_obj1:4	;
+		uint32_t fcPVPi_obj1:4	;
+		
+
+		
+
+	
+	};
+
+	
+extern struct curve_selection selectCURVE;
+	
+	
+	
+	
+	
+	
+	
+
+enum curve_entry{
+	
+	IEC_inverse,
+	IEC_very_inverse,
+	IEC_extremely_inverse,
+	IEC_long_inverse,
+	
+	ANSI_inverse,
+	ANSI_short_inverse,
+	ANSI_long_inverse,
+	ANSI_moderately_inverse,
+	ANSI_very_inverse,
+	ANSI_extremely_inverse,
+	ANSI_definite_inverse
+	
+	
+};
+
+
+extern enum curve_entry curve;
+extern float curve_data[11][3];
+
+
 
 
 

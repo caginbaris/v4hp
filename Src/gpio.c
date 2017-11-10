@@ -88,12 +88,12 @@ void MX_GPIO_Init(void)
                           |DO_16_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, FR_4_Pin|FR_5_Pin|FR_6_Pin|DO_1_Pin 
+  HAL_GPIO_WritePin(GPIOC, FR_4_Pin|FR_5_Pin|FR_6_Pin|BOARD_TRIP_DO_1_Pin 
                           |DO_7_Pin|DO_8_Pin|DO_9_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, DO_2_Pin|DO_3_Pin|DO_4_Pin|DO_5_Pin 
-                          |DO_6_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, BOARD_ALARM_DO_2_Pin|BOARD_INHIBIT_DO_3_Pin|BOARD_BF_DO_4_Pin|BOARD_IBF_DO_5_Pin 
+                          |BOARD_SP_DO_6_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOD, DO_10_Pin|DO_11_Pin|DO_12_Pin|DO_13_Pin 
@@ -102,8 +102,8 @@ void MX_GPIO_Init(void)
   /*Configure GPIO pins : PEPin PEPin PEPin PEPin 
                            PEPin PEPin PEPin PEPin 
                            PEPin */
-  GPIO_InitStruct.Pin = DI_1_Pin|DI_2_Pin|DI_3_Pin|DI_4_Pin 
-                          |DI_5_Pin|DI_17_Pin|DI_18_Pin|DI_RESET_Pin 
+  GPIO_InitStruct.Pin = START_STOP_DI_1_Pin|Q1_CB_POS_DI_2_Pin|Q2_CB_POS_DI_3_Pin|Q3_CB_POS_DI_4_Pin 
+                          |DI_5_Pin|Q3_CB_TRIP_DI_17_Pin|DI_51_DI_18_Pin|DI_RESET_Pin 
                           |mcu2mcu_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -121,8 +121,8 @@ void MX_GPIO_Init(void)
                            PFPin PFPin PFPin PFPin 
                            PFPin */
   GPIO_InitStruct.Pin = DI_6_Pin|DI_7_Pin|DI_8_Pin|DI_9_Pin 
-                          |DI_10_Pin|DI_11_Pin|DI_12_Pin|DI_13_Pin 
-                          |DI_14_Pin;
+                          |SVC_TRIP_DI_10_Pin|DI_11_Pin|Q1_CB_OPEN_DI_12_Pin|Q1_CB_TRIP_DI_13_Pin 
+                          |Q2_CB_OPEN_DI_14_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOF, &GPIO_InitStruct);
@@ -144,8 +144,8 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PGPin PGPin PGPin PGPin 
                            PGPin */
-  GPIO_InitStruct.Pin = DI_15_Pin|DI_16_Pin|DI_27_Pin|DI_28_Pin 
-                          |DI_29_Pin;
+  GPIO_InitStruct.Pin = Q2_CB_TRIP_DI_15_Pin|Q3_CB_OPEN_DI_16_Pin|PLB_INT_DI_SP4_DI_27_Pin|PLB_INT_DI_SP3_DI_28_Pin 
+                          |PLB_INT_DI_SP6_DI_29_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOG, &GPIO_InitStruct);
@@ -172,8 +172,8 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PDPin PDPin PDPin PDPin 
                            PDPin PDPin PDPin PDPin */
-  GPIO_InitStruct.Pin = DI_19_Pin|DI_20_Pin|DI_21_Pin|DI_22_Pin 
-                          |DI_23_Pin|DI_24_Pin|DI_25_Pin|DI_26_Pin;
+  GPIO_InitStruct.Pin = DI_52_DI_19_Pin|DI_53_DI_20_Pin|DI_54_DI_21_Pin|COLD_TEST_DI_22_Pin 
+                          |DI_56_DI_23_Pin|TFR_TRIGGER_DI_24_Pin|PLB_INT_DI_SP2_DI_25_Pin|PLB_INT_DI_SP1_DI_26_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
@@ -197,7 +197,7 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PCPin PCPin PCPin PCPin 
                            PCPin PCPin PCPin */
-  GPIO_InitStruct.Pin = FR_4_Pin|FR_5_Pin|FR_6_Pin|DO_1_Pin 
+  GPIO_InitStruct.Pin = FR_4_Pin|FR_5_Pin|FR_6_Pin|BOARD_TRIP_DO_1_Pin 
                           |DO_7_Pin|DO_8_Pin|DO_9_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -206,8 +206,8 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : PAPin PAPin PAPin PAPin 
                            PAPin */
-  GPIO_InitStruct.Pin = DO_2_Pin|DO_3_Pin|DO_4_Pin|DO_5_Pin 
-                          |DO_6_Pin;
+  GPIO_InitStruct.Pin = BOARD_ALARM_DO_2_Pin|BOARD_INHIBIT_DO_3_Pin|BOARD_BF_DO_4_Pin|BOARD_IBF_DO_5_Pin 
+                          |BOARD_SP_DO_6_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
