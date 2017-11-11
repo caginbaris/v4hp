@@ -654,6 +654,11 @@
               <FileType>1</FileType>
               <FilePath>.\fcPVP.c</FilePath>
             </File>
+            <File>
+              <FileName>pickup_handles.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\pickup_handles.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

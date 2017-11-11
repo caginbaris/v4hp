@@ -275,6 +275,9 @@ struct fcUNBd_inputParameters{
 };
 
 struct fcUNBd_outputParameters{
+	
+	float Nphase;
+	float Nmag;
 
 	long trip_counter;
 	unsigned int pick_up:1;
@@ -285,17 +288,20 @@ struct fcUNBd_outputParameters{
 
 
 struct fcUNBi_inputParameters {
+	
+	
 
 	
 	float level;
-	float curve_data[3];
 	float time_multiplier;
+
 
 	
 };
 
 
 struct fcUNBi_outputParameters{
+	
 
 	float time2trip;
 	long trip_counter;

@@ -1,9 +1,13 @@
 #include "measurement_functions.h"
 #include "nfbm.h"
 
+
+
 struct spectra spect_Ia={0};
 struct spectra spect_Ib={0};
 struct spectra spect_Ic={0};
+
+struct thd_data thd={0};
 
 
 #define spectraLength 50
@@ -107,9 +111,9 @@ void spectra_tick3(){
 
 void thd_all(){
 	
-	signal_thd(spect_Ia);
-	signal_thd(spect_Ib);
-	signal_thd(spect_Ic);
+	thd.a=signal_thd(spect_Ia);
+	thd.b=signal_thd(spect_Ib);
+	thd.c=signal_thd(spect_Ic);
 
 
 

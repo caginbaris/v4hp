@@ -73,6 +73,15 @@ void signal_spectra(
 	float *twBufferReal,			//twiddle factor Real coeffs
 	float *twBufferImag,			//twiddle factor Imag coeffs    
 	unsigned int pCounter);
+	
+	
+struct thd_data{
+
+	float a;
+	float b;
+	float c;
+
+}	;
 
 
 float signal_thd(struct spectra h);

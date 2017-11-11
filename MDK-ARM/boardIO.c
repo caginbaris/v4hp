@@ -83,3 +83,6 @@ void inputQualification(union digitalInputsRaw in,union digitalInputsRaw *out, u
 
 
 
+
+
+
