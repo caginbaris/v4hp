@@ -3,7 +3,7 @@
 
 
 struct fc51_inputParameters 	fc51N_obj1_in;
-struct fc51_outputParameters 	fc51N_obj1_out;
+struct fc51_outputParameters 	fc51N_obj1_out={0};
 
 void fc51N_init(){
 	

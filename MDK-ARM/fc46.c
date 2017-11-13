@@ -10,8 +10,8 @@ struct fc46i_inputParameters fc46i_obj1_L1_in;
 
 
 
-struct fc46d_outputParameters fc46d_obj1_L1_out;
-struct fc46i_outputParameters fc46i_obj1_L1_out;
+struct fc46d_outputParameters fc46d_obj1_L1_out={0};
+struct fc46i_outputParameters fc46i_obj1_L1_out={0};
 
 
 

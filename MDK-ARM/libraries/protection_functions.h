@@ -1,3 +1,7 @@
+
+#ifndef __protection_functions_h
+#define __protection_functions_h
+
 #define fs 2500
 
 int on_delay(unsigned int input, unsigned int mem, unsigned int qual_sample, long *count);
@@ -360,3 +364,4 @@ void fcPVPd(float rms,struct fcPVPd_inputParameters fcPVPd_in, struct fcPVPd_out
 void fcPVPi(float rms,struct fcPVPi_inputParameters fcPVPi_in, struct fcPVPi_outputParameters *fcPVPi_out, int enable);
 
 
+#endif

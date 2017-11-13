@@ -73,7 +73,12 @@ void ftick8(){
 
 
 };
-void ftick9(){};
+void ftick9(){
+	
+	pick_up_handles();
+
+
+};
 void ftick10(){
 	
 fcUNB_initial_dt();
