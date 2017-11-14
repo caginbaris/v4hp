@@ -993,8 +993,8 @@ Section Cross References
     fcpvp.o(i.fcPVP_init) refers to init_protection.o(.data) for curve
     fcpvp.o(i.fcPVP_init) refers to init_protection.o(.data) for curve_data
     pickup_handles.o(i.pick_up_handles) refers to protection_functions.o(i.off_delay) for off_delay
-    pickup_handles.o(i.pick_up_handles) refers to pickup_handles.o(.bss) for .bss
     pickup_handles.o(i.pick_up_handles) refers to pickup_handles.o(.data) for .data
+    pickup_handles.o(i.pick_up_handles) refers to pickup_handles.o(.bss) for .bss
     pickup_handles.o(i.pick_up_handles) refers to fc50.o(.bss) for fc50_obj1_L1_out_a
     pickup_handles.o(i.pick_up_handles) refers to fc50n.o(.bss) for fc50N_obj1_L1_out
     pickup_handles.o(i.pick_up_handles) refers to fc51.o(.bss) for fc51_obj1_out_a
@@ -2269,44 +2269,44 @@ Image Symbol Table
     i.on_off_delay                           0x080062bc   Section        0  protection_functions.o(i.on_off_delay)
     i.peak_detect_rms                        0x080062dc   Section        0  measurement_functions.o(i.peak_detect_rms)
     i.pick_up_handles                        0x08006330   Section        0  pickup_handles.o(i.pick_up_handles)
-    i.prefilter                              0x08006cf8   Section        0  measurement_functions.o(i.prefilter)
-    i.pvp_filter                             0x08006d3c   Section        0  measurement_functions.o(i.pvp_filter)
-    i.signal_spectra                         0x08006db0   Section        0  measurement_functions.o(i.signal_spectra)
-    i.spectra_tick1                          0x08006e44   Section        0  spectra.o(i.spectra_tick1)
-    i.spectra_tick2                          0x08006e80   Section        0  spectra.o(i.spectra_tick2)
-    i.spectra_tick3                          0x08006ebc   Section        0  spectra.o(i.spectra_tick3)
-    i.sym_comp                               0x08006ef8   Section        0  measurement_functions.o(i.sym_comp)
-    i.sym_mag                                0x08006f80   Section        0  measurement_functions.o(i.sym_mag)
-    i.thermal_status                         0x08007098   Section        0  measurement_functions.o(i.thermal_status)
-    i.tickFunctions                          0x080070e4   Section        0  tickfunctions.o(i.tickFunctions)
-    i.true_rms                               0x08007108   Section        0  measurement_functions.o(i.true_rms)
-    .constdata                               0x0800713c   Section        8  stm32f7xx_hal_dma.o(.constdata)
-    flagBitshiftOffset                       0x0800713c   Data           8  stm32f7xx_hal_dma.o(.constdata)
-    .constdata                               0x08007144   Section       16  system_stm32f7xx.o(.constdata)
-    .constdata                               0x08007154   Section        8  system_stm32f7xx.o(.constdata)
-    .constdata                               0x0800715c   Section       16  fc50.o(.constdata)
-    .constdata                               0x0800716c   Section       16  fc50n.o(.constdata)
-    .constdata                               0x0800717c   Section       20  fc51.o(.constdata)
-    .constdata                               0x08007190   Section       20  fc51n.o(.constdata)
-    .constdata                               0x080071a4   Section       16  fc27.o(.constdata)
-    .constdata                               0x080071b4   Section       12  fc59.o(.constdata)
-    .constdata                               0x080071c0   Section       36  fc46.o(.constdata)
-    .constdata                               0x080071e4   Section       36  fc49.o(.constdata)
-    .constdata                               0x08007208   Section       24  fcbf.o(.constdata)
-    .constdata                               0x08007220   Section       20  fcunb.o(.constdata)
-    .constdata                               0x08007234   Section       32  fcpvp.o(.constdata)
-    .constdata                               0x08007254   Section      320  powf.o(.constdata)
-    table                                    0x08007254   Data         128  powf.o(.constdata)
-    powersof2to1over16top                    0x080072d4   Data          64  powf.o(.constdata)
-    powersof2to1over16bot                    0x08007314   Data          64  powf.o(.constdata)
-    powersof2to1over16all                    0x08007354   Data          64  powf.o(.constdata)
-    .constdata                               0x08007398   Section       48  cos_i.o(.constdata)
-    C                                        0x08007398   Data          48  cos_i.o(.constdata)
-    .constdata                               0x080073c8   Section      200  rred.o(.constdata)
-    pio2s                                    0x080073c8   Data          48  rred.o(.constdata)
-    twooverpi                                0x080073f8   Data         152  rred.o(.constdata)
-    .constdata                               0x08007490   Section       40  sin_i.o(.constdata)
-    S                                        0x08007490   Data          40  sin_i.o(.constdata)
+    i.prefilter                              0x08006c70   Section        0  measurement_functions.o(i.prefilter)
+    i.pvp_filter                             0x08006cb4   Section        0  measurement_functions.o(i.pvp_filter)
+    i.signal_spectra                         0x08006d28   Section        0  measurement_functions.o(i.signal_spectra)
+    i.spectra_tick1                          0x08006dbc   Section        0  spectra.o(i.spectra_tick1)
+    i.spectra_tick2                          0x08006df8   Section        0  spectra.o(i.spectra_tick2)
+    i.spectra_tick3                          0x08006e34   Section        0  spectra.o(i.spectra_tick3)
+    i.sym_comp                               0x08006e70   Section        0  measurement_functions.o(i.sym_comp)
+    i.sym_mag                                0x08006ef8   Section        0  measurement_functions.o(i.sym_mag)
+    i.thermal_status                         0x08007010   Section        0  measurement_functions.o(i.thermal_status)
+    i.tickFunctions                          0x0800705c   Section        0  tickfunctions.o(i.tickFunctions)
+    i.true_rms                               0x08007080   Section        0  measurement_functions.o(i.true_rms)
+    .constdata                               0x080070b4   Section        8  stm32f7xx_hal_dma.o(.constdata)
+    flagBitshiftOffset                       0x080070b4   Data           8  stm32f7xx_hal_dma.o(.constdata)
+    .constdata                               0x080070bc   Section       16  system_stm32f7xx.o(.constdata)
+    .constdata                               0x080070cc   Section        8  system_stm32f7xx.o(.constdata)
+    .constdata                               0x080070d4   Section       16  fc50.o(.constdata)
+    .constdata                               0x080070e4   Section       16  fc50n.o(.constdata)
+    .constdata                               0x080070f4   Section       20  fc51.o(.constdata)
+    .constdata                               0x08007108   Section       20  fc51n.o(.constdata)
+    .constdata                               0x0800711c   Section       16  fc27.o(.constdata)
+    .constdata                               0x0800712c   Section       12  fc59.o(.constdata)
+    .constdata                               0x08007138   Section       36  fc46.o(.constdata)
+    .constdata                               0x0800715c   Section       36  fc49.o(.constdata)
+    .constdata                               0x08007180   Section       24  fcbf.o(.constdata)
+    .constdata                               0x08007198   Section       20  fcunb.o(.constdata)
+    .constdata                               0x080071ac   Section       32  fcpvp.o(.constdata)
+    .constdata                               0x080071cc   Section      320  powf.o(.constdata)
+    table                                    0x080071cc   Data         128  powf.o(.constdata)
+    powersof2to1over16top                    0x0800724c   Data          64  powf.o(.constdata)
+    powersof2to1over16bot                    0x0800728c   Data          64  powf.o(.constdata)
+    powersof2to1over16all                    0x080072cc   Data          64  powf.o(.constdata)
+    .constdata                               0x08007310   Section       48  cos_i.o(.constdata)
+    C                                        0x08007310   Data          48  cos_i.o(.constdata)
+    .constdata                               0x08007340   Section      200  rred.o(.constdata)
+    pio2s                                    0x08007340   Data          48  rred.o(.constdata)
+    twooverpi                                0x08007370   Data         152  rred.o(.constdata)
+    .constdata                               0x08007408   Section       40  sin_i.o(.constdata)
+    S                                        0x08007408   Data          40  sin_i.o(.constdata)
     .data                                    0x20000000   Section        4  stm32f7xx_hal.o(.data)
     .data                                    0x20000004   Section        4  system_stm32f7xx.o(.data)
     .data                                    0x20000008   Section      132  init_protection.o(.data)
@@ -2694,22 +2694,22 @@ Image Symbol Table
     on_delay                                 0x08006293   Thumb Code    42  protection_functions.o(i.on_delay)
     on_off_delay                             0x080062bd   Thumb Code    30  protection_functions.o(i.on_off_delay)
     peak_detect_rms                          0x080062dd   Thumb Code    76  measurement_functions.o(i.peak_detect_rms)
-    pick_up_handles                          0x08006331   Thumb Code  2488  pickup_handles.o(i.pick_up_handles)
-    prefilter                                0x08006cf9   Thumb Code    68  measurement_functions.o(i.prefilter)
-    pvp_filter                               0x08006d3d   Thumb Code   114  measurement_functions.o(i.pvp_filter)
-    signal_spectra                           0x08006db1   Thumb Code   142  measurement_functions.o(i.signal_spectra)
-    spectra_tick1                            0x08006e45   Thumb Code    46  spectra.o(i.spectra_tick1)
-    spectra_tick2                            0x08006e81   Thumb Code    46  spectra.o(i.spectra_tick2)
-    spectra_tick3                            0x08006ebd   Thumb Code    46  spectra.o(i.spectra_tick3)
-    sym_comp                                 0x08006ef9   Thumb Code   126  measurement_functions.o(i.sym_comp)
-    sym_mag                                  0x08006f81   Thumb Code   270  measurement_functions.o(i.sym_mag)
-    thermal_status                           0x08007099   Thumb Code    76  measurement_functions.o(i.thermal_status)
-    tickFunctions                            0x080070e5   Thumb Code    30  tickfunctions.o(i.tickFunctions)
-    true_rms                                 0x08007109   Thumb Code    46  measurement_functions.o(i.true_rms)
-    AHBPrescTable                            0x08007144   Data          16  system_stm32f7xx.o(.constdata)
-    APBPrescTable                            0x08007154   Data           8  system_stm32f7xx.o(.constdata)
-    Region$$Table$$Base                      0x080074b8   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080074d8   Number         0  anon$$obj.o(Region$$Table)
+    pick_up_handles                          0x08006331   Thumb Code  2362  pickup_handles.o(i.pick_up_handles)
+    prefilter                                0x08006c71   Thumb Code    68  measurement_functions.o(i.prefilter)
+    pvp_filter                               0x08006cb5   Thumb Code   114  measurement_functions.o(i.pvp_filter)
+    signal_spectra                           0x08006d29   Thumb Code   142  measurement_functions.o(i.signal_spectra)
+    spectra_tick1                            0x08006dbd   Thumb Code    46  spectra.o(i.spectra_tick1)
+    spectra_tick2                            0x08006df9   Thumb Code    46  spectra.o(i.spectra_tick2)
+    spectra_tick3                            0x08006e35   Thumb Code    46  spectra.o(i.spectra_tick3)
+    sym_comp                                 0x08006e71   Thumb Code   126  measurement_functions.o(i.sym_comp)
+    sym_mag                                  0x08006ef9   Thumb Code   270  measurement_functions.o(i.sym_mag)
+    thermal_status                           0x08007011   Thumb Code    76  measurement_functions.o(i.thermal_status)
+    tickFunctions                            0x0800705d   Thumb Code    30  tickfunctions.o(i.tickFunctions)
+    true_rms                                 0x08007081   Thumb Code    46  measurement_functions.o(i.true_rms)
+    AHBPrescTable                            0x080070bc   Data          16  system_stm32f7xx.o(.constdata)
+    APBPrescTable                            0x080070cc   Data           8  system_stm32f7xx.o(.constdata)
+    Region$$Table$$Base                      0x08007430   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08007450   Number         0  anon$$obj.o(Region$$Table)
     uwTick                                   0x20000000   Data           4  stm32f7xx_hal.o(.data)
     SystemCoreClock                          0x20000004   Data           4  system_stm32f7xx.o(.data)
     curve_data                               0x20000008   Data         132  init_protection.o(.data)
@@ -2881,9 +2881,9 @@ Memory Map of the image
 
   Image Entry point : 0x080001f9
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x000079f4, Max: 0x00200000, ABSOLUTE, COMPRESSED[0x000076ac])
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x0000796c, Max: 0x00200000, ABSOLUTE, COMPRESSED[0x00007624])
 
-    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x000074d8, Max: 0x00200000, ABSOLUTE)
+    Execution Region ER_IROM1 (Base: 0x08000000, Size: 0x00007450, Max: 0x00200000, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -3103,39 +3103,39 @@ Memory Map of the image
     0x080062bc   0x0000001e   Code   RO          737    i.on_off_delay      protection_functions.o
     0x080062da   0x00000002   PAD
     0x080062dc   0x00000054   Code   RO          634    i.peak_detect_rms   measurement_functions.o
-    0x08006330   0x000009c8   Code   RO         5176    i.pick_up_handles   pickup_handles.o
-    0x08006cf8   0x00000044   Code   RO          635    i.prefilter         measurement_functions.o
-    0x08006d3c   0x00000072   Code   RO          636    i.pvp_filter        measurement_functions.o
-    0x08006dae   0x00000002   PAD
-    0x08006db0   0x00000094   Code   RO          638    i.signal_spectra    measurement_functions.o
-    0x08006e44   0x0000003c   Code   RO         5260    i.spectra_tick1     spectra.o
-    0x08006e80   0x0000003c   Code   RO         5261    i.spectra_tick2     spectra.o
-    0x08006ebc   0x0000003c   Code   RO         5262    i.spectra_tick3     spectra.o
-    0x08006ef8   0x00000088   Code   RO          640    i.sym_comp          measurement_functions.o
-    0x08006f80   0x00000118   Code   RO          641    i.sym_mag           measurement_functions.o
-    0x08007098   0x0000004c   Code   RO          642    i.thermal_status    measurement_functions.o
-    0x080070e4   0x00000024   Code   RO         5369    i.tickFunctions     tickfunctions.o
-    0x08007108   0x00000034   Code   RO          643    i.true_rms          measurement_functions.o
-    0x0800713c   0x00000008   Data   RO         2839    .constdata          stm32f7xx_hal_dma.o
-    0x08007144   0x00000010   Data   RO         4819    .constdata          system_stm32f7xx.o
-    0x08007154   0x00000008   Data   RO         4820    .constdata          system_stm32f7xx.o
-    0x0800715c   0x00000010   Data   RO         4872    .constdata          fc50.o
-    0x0800716c   0x00000010   Data   RO         4901    .constdata          fc50n.o
-    0x0800717c   0x00000014   Data   RO         4926    .constdata          fc51.o
-    0x08007190   0x00000014   Data   RO         4948    .constdata          fc51n.o
-    0x080071a4   0x00000010   Data   RO         4970    .constdata          fc27.o
-    0x080071b4   0x0000000c   Data   RO         5004    .constdata          fc59.o
-    0x080071c0   0x00000024   Data   RO         5027    .constdata          fc46.o
-    0x080071e4   0x00000024   Data   RO         5049    .constdata          fc49.o
-    0x08007208   0x00000018   Data   RO         5080    .constdata          fcbf.o
-    0x08007220   0x00000014   Data   RO         5125    .constdata          fcunb.o
-    0x08007234   0x00000020   Data   RO         5156    .constdata          fcpvp.o
-    0x08007254   0x00000140   Data   RO         5490    .constdata          m_wv.l(powf.o)
-    0x08007394   0x00000004   PAD
-    0x08007398   0x00000030   Data   RO         5533    .constdata          m_wv.l(cos_i.o)
-    0x080073c8   0x000000c8   Data   RO         5567    .constdata          m_wv.l(rred.o)
-    0x08007490   0x00000028   Data   RO         5571    .constdata          m_wv.l(sin_i.o)
-    0x080074b8   0x00000020   Data   RO         5612    Region$$Table       anon$$obj.o
+    0x08006330   0x00000940   Code   RO         5176    i.pick_up_handles   pickup_handles.o
+    0x08006c70   0x00000044   Code   RO          635    i.prefilter         measurement_functions.o
+    0x08006cb4   0x00000072   Code   RO          636    i.pvp_filter        measurement_functions.o
+    0x08006d26   0x00000002   PAD
+    0x08006d28   0x00000094   Code   RO          638    i.signal_spectra    measurement_functions.o
+    0x08006dbc   0x0000003c   Code   RO         5260    i.spectra_tick1     spectra.o
+    0x08006df8   0x0000003c   Code   RO         5261    i.spectra_tick2     spectra.o
+    0x08006e34   0x0000003c   Code   RO         5262    i.spectra_tick3     spectra.o
+    0x08006e70   0x00000088   Code   RO          640    i.sym_comp          measurement_functions.o
+    0x08006ef8   0x00000118   Code   RO          641    i.sym_mag           measurement_functions.o
+    0x08007010   0x0000004c   Code   RO          642    i.thermal_status    measurement_functions.o
+    0x0800705c   0x00000024   Code   RO         5369    i.tickFunctions     tickfunctions.o
+    0x08007080   0x00000034   Code   RO          643    i.true_rms          measurement_functions.o
+    0x080070b4   0x00000008   Data   RO         2839    .constdata          stm32f7xx_hal_dma.o
+    0x080070bc   0x00000010   Data   RO         4819    .constdata          system_stm32f7xx.o
+    0x080070cc   0x00000008   Data   RO         4820    .constdata          system_stm32f7xx.o
+    0x080070d4   0x00000010   Data   RO         4872    .constdata          fc50.o
+    0x080070e4   0x00000010   Data   RO         4901    .constdata          fc50n.o
+    0x080070f4   0x00000014   Data   RO         4926    .constdata          fc51.o
+    0x08007108   0x00000014   Data   RO         4948    .constdata          fc51n.o
+    0x0800711c   0x00000010   Data   RO         4970    .constdata          fc27.o
+    0x0800712c   0x0000000c   Data   RO         5004    .constdata          fc59.o
+    0x08007138   0x00000024   Data   RO         5027    .constdata          fc46.o
+    0x0800715c   0x00000024   Data   RO         5049    .constdata          fc49.o
+    0x08007180   0x00000018   Data   RO         5080    .constdata          fcbf.o
+    0x08007198   0x00000014   Data   RO         5125    .constdata          fcunb.o
+    0x080071ac   0x00000020   Data   RO         5156    .constdata          fcpvp.o
+    0x080071cc   0x00000140   Data   RO         5490    .constdata          m_wv.l(powf.o)
+    0x0800730c   0x00000004   PAD
+    0x08007310   0x00000030   Data   RO         5533    .constdata          m_wv.l(cos_i.o)
+    0x08007340   0x000000c8   Data   RO         5567    .constdata          m_wv.l(rred.o)
+    0x08007408   0x00000028   Data   RO         5571    .constdata          m_wv.l(sin_i.o)
+    0x08007430   0x00000020   Data   RO         5612    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00003a30, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x000001d4])
@@ -3231,7 +3231,7 @@ Image component sizes
         54          0          0          0          0        528   initfunctions.o
        354         34          0          0         60       2747   main.o
       1320         56          0          0          0       9631   measurement_functions.o
-      2504        290          0          1        280       7471   pickup_handles.o
+      2368        296          0          1        280       7423   pickup_handles.o
          0          0          0          0         16        726   powersysdata.o
       2302        138          0          0          0      15231   protection_functions.o
        208         46          0          0         76       1717   quadspi.o
@@ -3263,7 +3263,7 @@ Image component sizes
        156         38          0          0        112       1682   usart.o
 
     ----------------------------------------------------------------------
-     24256       2010        816       1304      13588    1106222   Object Totals
+     24120       2016        816       1304      13588    1106174   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         26          0          0          9          0          0   (incl. Padding)
 
@@ -3322,15 +3322,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     28484       2538       1428       1308      13588    1091750   Grand Totals
-     28484       2538       1428        468      13588    1091750   ELF Image Totals (compressed)
-     28484       2538       1428        468          0          0   ROM Totals
+     28348       2544       1428       1308      13588    1091702   Grand Totals
+     28348       2544       1428        468      13588    1091702   ELF Image Totals (compressed)
+     28348       2544       1428        468          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                29912 (  29.21kB)
+    Total RO  Size (Code + RO Data)                29776 (  29.08kB)
     Total RW  Size (RW Data + ZI Data)             14896 (  14.55kB)
-    Total ROM Size (Code + RO Data + RW Data)      30380 (  29.67kB)
+    Total ROM Size (Code + RO Data + RW Data)      30244 (  29.54kB)
 
 ==============================================================================
 
