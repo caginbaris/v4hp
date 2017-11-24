@@ -1,6 +1,66 @@
 
 #include "main.h"
 
+#define inputNo 24
+#define sammpleNo 10
+
+union digitalInputsRaw{
+
+
+struct{
+	
+	/*--------MRB naming----Board Naming*/
+	
+	uint8_t start_stop; 	//DI-1
+	uint8_t Q1_cb_pos;  	//DI-2
+	uint8_t Q2_cb_pos;  	//DI-3
+	uint8_t Q3_cb_pos;  	//DI-4
+	
+	uint8_t SVC_trip; 		// DI10
+	
+	uint8_t Q1_open; 			//DI-12
+	uint8_t Q2_open; 			//DI-14
+	uint8_t Q3_open; 			//DI-16
+	
+	uint8_t Q1_trip; 			//DI-13
+	uint8_t Q2_trip; 			//DI-15
+	uint8_t Q3_trip; 			//DI-17
+	
+	uint8_t _51; 					//DI-18
+	uint8_t _53; 					//DI-20
+	uint8_t _52; 					//DI-19
+	uint8_t _54; 					//DI-21
+	uint8_t _56; 					//DI-23
+	
+	uint8_t cold_test; 		//DI-22
+	uint8_t tfr_trig; 	  //DI-24
+	
+	uint8_t plb_sp1; 			//DI-26
+	uint8_t plb_sp2; 			//DI-25
+	uint8_t plb_sp3; 			//DI-28
+	uint8_t plb_sp4; 			//DI-27
+	uint8_t plb_sp6; 			//DI-29
+	
+	uint8_t reset; 				//reset.... 24th
+
+	
+	
+	
+}bit;
+
+
+
+uint32_t all[inputNo]; 
+
+
+
+
+
+};
+
+
+#if 1
+
 union digitalInputs{
 
 
@@ -53,7 +113,16 @@ uint32_t all;
 
 
 
-};
+}; 
+
+#endif
+
+
+
+
+
+
+
 
 
 

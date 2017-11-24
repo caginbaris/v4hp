@@ -98,7 +98,7 @@ if(hadc->Instance==ADC1){
 	
 	for	(i=0;i<channelNo;i++){
 		
-	fAdc.bufferAdc[i]=prefilter(rawAdc.bufferAdc[i],&dbuffer[i][0],filterDepth);
+	// fAdc.bufferAdc[i]=prefilter(rawAdc.bufferAdc[i],&dbuffer[i][0],filterDepth);
 	
 	}
 	

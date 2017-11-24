@@ -83,8 +83,8 @@ struct fc59_inputParameters{
 struct fc59_outputParameters{
 
 	long trip_counter;
-	unsigned int pick_up:1;
-	unsigned int trip:1;
+	unsigned int pick_up;
+	unsigned int trip;
 
 };
 

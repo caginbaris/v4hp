@@ -10,6 +10,9 @@ extern struct phase_cs_out phase_cs_C_out;
 
 extern struct sym_out mag_sym;
 
+extern struct phase_cs_single UNBa;
+extern struct phase_cs_single UNBb;
+
 
 
 

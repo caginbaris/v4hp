@@ -11,7 +11,7 @@ void tickFunctions(){
 	
 	void (* ftick_thread)(void);
 		
-	ftick_thread=ftick[tick++] ;
+	ftick_thread=ftick[tick1] ;
 	ftick_thread();
 	
 	if(tick==tick10){tick=tick1;}

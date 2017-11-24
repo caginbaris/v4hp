@@ -262,7 +262,7 @@ void fc59(float rms, struct fc59_inputParameters fc59_in, struct fc59_outputPara
 
 		}
 
-		if (fc59_out->pick_up && fc59_out->trip == 0)
+		if ((fc59_out->pick_up) && (fc59_out->trip == 0))
 		{
 
 			fc59_out->trip_counter++;
