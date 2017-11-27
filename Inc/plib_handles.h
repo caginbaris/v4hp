@@ -1,4 +1,8 @@
 
+#ifndef __plib_handles_h
+#define __plib_handles_h
+
+
 #include "stdint.h"
 
 
@@ -183,9 +187,15 @@ uint32_t fc51_obj2_out_a:1;
 uint32_t fc51_obj2_out_b:1;
 uint32_t fc51_obj2_out_c:1;
 
+
+
 //fc51N-----------------------------------------------1 obj,total=28
 
 uint32_t fc51N_obj1_out:1;
+
+uint32_t W1_spare:4;
+
+
 
 //fc27------------------------------------------------2 obj,total=30
 
@@ -234,6 +244,8 @@ uint32_t fc49_obj2_L2_out_c:1;
 
 uint32_t fcBF_out:1;
 
+uint32_t W2_spare:9;
+
 //fc37------------------------------------------------6 obj,total=57
 
 
@@ -264,9 +276,14 @@ uint32_t fcPVPd_obj1_L1_out_c:1;
 uint32_t fcPVPi_obj1_L1_out_a:1;
 uint32_t fcPVPi_obj1_L1_out_b:1;
 uint32_t fcPVPi_obj1_L1_out_c:1;	
+
+
+uint32_t W3_spare:14;
 	
 
 
 };
+
+#endif
 
 

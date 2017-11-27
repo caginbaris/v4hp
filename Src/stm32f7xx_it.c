@@ -182,8 +182,8 @@ void SysTick_Handler(void)
   /* USER CODE BEGIN SysTick_IRQn 1 */
 	
   /* Comm Layer Functions in 1ms timer */
-  uart_sysTickCallApp();
-  spi_sysTickCallApp();
+  //uart_sysTickCallApp(); //cau
+  //spi_sysTickCallApp();	 //cau
   /* USER CODE END SysTick_IRQn 1 */
 }
 

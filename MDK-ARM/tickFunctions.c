@@ -11,8 +11,8 @@ void tickFunctions(){
 	
 	void (* ftick_thread)(void);
 		
-	ftick_thread=ftick[tick1] ;
-	ftick_thread();
+	//ftick_thread=ftick[tick1] ;
+	//ftick_thread();
 	
 	if(tick==tick10){tick=tick1;}
 	
@@ -22,8 +22,8 @@ void tickFunctions(){
 
 void ftick1(){
 	
-	cs_handle_tick1();
-	spectra_tick1();
+	//cs_handle_tick1();
+	//spectra_tick1();
 	
 
 };
@@ -75,7 +75,7 @@ void ftick8(){
 };
 void ftick9(){
 	
-	pick_up_handles();
+	//pick_up_handles();
 
 
 };

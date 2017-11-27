@@ -1,0 +1,10 @@
+v4hp\commparams.o: commParams.c
+v4hp\commparams.o: ..\Inc\Comm_Library_Header\SPI_MasterSlave.h
+v4hp\commparams.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+v4hp\commparams.o: ..\Inc\Comm_Library_Header\CommConfig.h
+v4hp\commparams.o: ..\Src\Comm_Library_Source\CommConfig.c
+v4hp\commparams.o: ..\Inc\Comm_Library_Header\CommConfig.h
+v4hp\commparams.o: ..\Inc\Comm_Library_Header\UART_MasterSlave.h
+v4hp\commparams.o: ../Inc/test_commParams.h
+v4hp\commparams.o: ../Inc/plib_handles.h
+v4hp\commparams.o: ../Inc/externalData.h
