@@ -13,5 +13,11 @@ union ToWord{
 	
 };
 
+extern struct spectra spect_Ia;
+extern struct spectra spect_Ib;
+extern struct spectra spect_Ic;
+
+
 
 #endif
+

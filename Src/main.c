@@ -132,8 +132,8 @@ int main(void)
 	HAL_ADCEx_MultiModeStart_DMA(&hadc1,(uint32_t*)adc_values, 15);
 	
 	/* Comm Layer Functions before superloop */
-	//uart_initComApp();
-	//spi_initComApp();
+	uart_initComApp();
+	spi_initComApp();
 	
   while (1)
   {
@@ -149,7 +149,7 @@ int main(void)
 	}	 
     
 	/* Comm Layer Functions in superloop */
-	//uart_runComApp(); //cau
+	uart_runComApp(); //cau
 	spi_runComApp(); //cau
 	
   }

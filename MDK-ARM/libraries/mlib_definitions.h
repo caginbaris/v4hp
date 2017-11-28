@@ -44,10 +44,10 @@ struct sym_out{
 
 struct spectra {
 
-	float qBuffer[100];
-	float foutReal[13];
-	float foutImag[13];
-	float foutMag[13];
+	float qBuffer[50];
+	float foutReal[14];
+	float foutImag[14];
+	float foutMag[14];
 
 };
 

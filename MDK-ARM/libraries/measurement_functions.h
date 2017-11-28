@@ -59,9 +59,9 @@ void sym_mag(struct sym_out sym, struct sym_out *sym_back, struct sym_out *sym_r
 struct spectra {
 
 	float qBuffer[50];
-	float foutReal[13];
-	float foutImag[13];
-	float foutMag[13];
+	float foutReal[14];
+	float foutImag[14];
+	float foutMag[14];
 
 };
 

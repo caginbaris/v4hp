@@ -38,6 +38,9 @@ struct sym_out mag_sym={0};
 float c_buffer[channelNo][N]={0};
 float s_buffer[channelNo][N]={0};
 
+struct powerParameters P={0};
+struct powerParameters Q={0};
+
 
 float sin_coeffs[]={
 0.06279052048921585083f,
@@ -170,6 +173,40 @@ void cs_handle_tick4(){
 	sym_comp(phase_cs_A,phase_cs_B,phase_cs_C, &sym);
 	sym_mag(sym,&sym_hist,&mag_sym);
 	
+}
+
+
+void cs_PQ(void){
+	
+	
+	//P
+	
+	P.a=phase_cs_A_out.P;
+	P.b=phase_cs_B_out.P;
+	P.c=phase_cs_C_out.P;
+	
+	P.ab=P.a+P.b-P.c;
+	P.bc=P.b+P.c-P.a;
+	P.ca=P.c+P.a-P.b;
+	
+	P.total=P.a+P.b+P.c;
+	
+	//Q
+	
+	Q.a=phase_cs_A_out.Q;
+	Q.b=phase_cs_B_out.Q;
+	Q.c=phase_cs_C_out.Q;
+	
+	Q.ab=Q.a+Q.b-Q.c;
+	Q.bc=Q.b+Q.c-Q.a;
+	Q.ca=Q.c+Q.a-Q.b;
+	
+	Q.total=Q.a+Q.b+Q.c;
+
+
+
+
+
 }
 
 

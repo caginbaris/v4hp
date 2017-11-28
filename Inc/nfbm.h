@@ -72,89 +72,13 @@ enum AdcChannel{
 
 
 
-struct digital_inputs{
-	
-	uint32_t _1:1;
-	uint32_t _2:1;
-	uint32_t _3:1;
-	uint32_t _4:1;
-	uint32_t _5:1;
-	uint32_t _6:1;
-	uint32_t _7:1;
-	uint32_t _8:1;
-	uint32_t _9:1;
-	uint32_t _10:1;
-	uint32_t _11:1;
-	uint32_t _12:1;
-	uint32_t _13:1;
-	uint32_t _14:1;
-	uint32_t _15:1;
-	uint32_t _16:1;
-	uint32_t _17:1;
-	uint32_t _18:1;
-	uint32_t _19:1;
-	uint32_t _20:1;
-	uint32_t _21:1;
-	uint32_t _22:1;
-	uint32_t _23:1;
-	uint32_t _24:1;
-	uint32_t _25:1;
-	uint32_t _26:1;
-	uint32_t _27:1;
-	uint32_t _28:1;
-	uint32_t _29:1;
-	uint32_t _30:1;
-	uint32_t _31:1;
-	uint32_t _32:1;
-	
 
-};
-
-
-struct digital_outputs{
-	
-	
-	uint32_t _1:1;
-	uint32_t _2:1;
-	uint32_t _3:1;
-	uint32_t _4:1;
-	uint32_t _5:1;
-	uint32_t _6:1;
-	uint32_t _7:1;
-	uint32_t _8:1;
-	uint32_t _9:1;
-	uint32_t _10:1;
-	uint32_t _11:1;
-	uint32_t _12:1;
-	uint32_t _13:1;
-	uint32_t _14:1;
-	uint32_t _15:1;
-	uint32_t _16:1;
-	
-	uint32_t FR1:1;
-	uint32_t FR2:1;
-	uint32_t FR3:1;
-	uint32_t FR4:1;
-	uint32_t FR5:1;
-	uint32_t FR6:1;
-	
-	
-	uint32_t test1:1;
-	uint32_t test2:1;
-	
-	uint32_t LD_trip:1;
-	uint32_t LD_run:1;
-	uint32_t LD_alarm:1;
-	
-	
 	
 	
 
-};	
 
 
-extern struct digital_inputs  DI;
-extern struct digital_outputs DO;
+
 	
 union pFunctionEnable{
 	
@@ -341,6 +265,26 @@ enum curve_entry{
 extern enum curve_entry curve;
 extern float curve_data[11][3];
 
+
+
+
+struct powerParameters{
+
+	float a;
+	float b;
+	float c;
+	
+	float ab;
+	float bc;
+	float ca;
+	
+	float total;
+	
+
+};
+
+extern struct powerParameters P;
+extern struct powerParameters Q;
 
 
 

@@ -15,7 +15,7 @@ static long pick_buffer[totalPick]={0};
 void pick_up_handles(){
 	
 	static uint8_t pick_up_counter=0;
-	uint8_t count=0;
+	
 	
 	
 	switch (pick_up_counter)
