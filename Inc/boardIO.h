@@ -59,7 +59,7 @@ uint32_t all[inputNo];
 };
 
 
-#if 1
+
 
 union digitalInputs{
 
@@ -110,12 +110,9 @@ struct{
 uint32_t all; 
 
 
-
-
-
 }; 
 
-#endif
+
 
 
 

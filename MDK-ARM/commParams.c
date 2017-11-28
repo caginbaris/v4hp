@@ -47,12 +47,18 @@ void pushDataToMaster(){
 	comParams.pushDataBufferDW[1]=pick_words.w_arr[1];
 	comParams.pushDataBufferDW[2]=pick_words.w_arr[2];
 	
+	trip_words.w_str=trip;
 	
+	comParams.pushDataBufferDW[3]=trip_words.w_arr[0];
+	comParams.pushDataBufferDW[4]=trip_words.w_arr[1];
+	comParams.pushDataBufferDW[5]=trip_words.w_arr[2];
 	
+	comParams.pushDataBufferDW[6]=0; //tripping hist enerterd 1 or more seq
 	
+	comParams.pushDataBufferDW[7]=0; // Board Status
 	
-	
-	
+	comParams.pushDataBufferDW[8]=0; // Input Status
+	comParams.pushDataBufferDW[9]=0; // Output Status
 	
 	
 	#endif

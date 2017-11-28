@@ -155,13 +155,13 @@ void pick_up_handles(){
 		
 		case 9:
 			
-		pick.fcPVPd_obj1_L1_out_a=off_delay(fcPVPd_obj1_L1_out_a.pick_up,pick.fcPVPd_obj1_L1_out_a,pickHold,&pick_buffer[61]);trip.fcPVPd_obj1_L1_out_a=fcPVPd_obj1_L1_out_a.trip;
-		pick.fcPVPd_obj1_L1_out_b=off_delay(fcPVPd_obj1_L1_out_b.pick_up,pick.fcPVPd_obj1_L1_out_b,pickHold,&pick_buffer[62]);trip.fcPVPd_obj1_L1_out_b=fcPVPd_obj1_L1_out_b.trip;
-		pick.fcPVPd_obj1_L1_out_c=off_delay(fcPVPd_obj1_L1_out_c.pick_up,pick.fcPVPd_obj1_L1_out_c,pickHold,&pick_buffer[63]);trip.fcPVPd_obj1_L1_out_c=fcPVPd_obj1_L1_out_c.trip;
+		pick.fcPVPd_obj1_L1_out_a=off_delay(fcPVPd_obj1_L1_out_a.pick_up,pick.fcPVPd_obj1_L1_out_a,pickHold,&pick_buffer[61]);/**/trip.fcPVPd_obj1_L1_out_a=fcPVPd_obj1_L1_out_a.trip;
+		pick.fcPVPd_obj1_L1_out_b=off_delay(fcPVPd_obj1_L1_out_b.pick_up,pick.fcPVPd_obj1_L1_out_b,pickHold,&pick_buffer[62]);/**/trip.fcPVPd_obj1_L1_out_b=fcPVPd_obj1_L1_out_b.trip;
+		pick.fcPVPd_obj1_L1_out_c=off_delay(fcPVPd_obj1_L1_out_c.pick_up,pick.fcPVPd_obj1_L1_out_c,pickHold,&pick_buffer[63]);/**/trip.fcPVPd_obj1_L1_out_c=fcPVPd_obj1_L1_out_c.trip;
 		
-		pick.fcPVPi_obj1_L1_out_a=off_delay(fcPVPi_obj1_L1_out_a.pick_up,pick.fcPVPi_obj1_L1_out_a,pickHold,&pick_buffer[64]);trip.fcPVPi_obj1_L1_out_a=fcPVPi_obj1_L1_out_a.trip;
-		pick.fcPVPi_obj1_L1_out_b=off_delay(fcPVPi_obj1_L1_out_b.pick_up,pick.fcPVPi_obj1_L1_out_b,pickHold,&pick_buffer[65]);trip.fcPVPi_obj1_L1_out_b=fcPVPi_obj1_L1_out_b.trip;
-		pick.fcPVPi_obj1_L1_out_c=off_delay(fcPVPi_obj1_L1_out_c.pick_up,pick.fcPVPi_obj1_L1_out_c,pickHold,&pick_buffer[66]);trip.fcPVPi_obj1_L1_out_c=fcPVPi_obj1_L1_out_c.trip;
+		pick.fcPVPi_obj1_L1_out_a=off_delay(fcPVPi_obj1_L1_out_a.pick_up,pick.fcPVPi_obj1_L1_out_a,pickHold,&pick_buffer[64]);/**/trip.fcPVPi_obj1_L1_out_a=fcPVPi_obj1_L1_out_a.trip;
+		pick.fcPVPi_obj1_L1_out_b=off_delay(fcPVPi_obj1_L1_out_b.pick_up,pick.fcPVPi_obj1_L1_out_b,pickHold,&pick_buffer[65]);/**/trip.fcPVPi_obj1_L1_out_b=fcPVPi_obj1_L1_out_b.trip;
+		pick.fcPVPi_obj1_L1_out_c=off_delay(fcPVPi_obj1_L1_out_c.pick_up,pick.fcPVPi_obj1_L1_out_c,pickHold,&pick_buffer[66]);/**/trip.fcPVPi_obj1_L1_out_c=fcPVPi_obj1_L1_out_c.trip;
 		
 	
 		break;
@@ -169,12 +169,8 @@ void pick_up_handles(){
 		
   }
 	
-
 	
 
-
-	
-	
 	if(++pick_up_counter==10){pick_up_counter=0;}
 
 
