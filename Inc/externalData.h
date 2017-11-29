@@ -21,5 +21,9 @@ extern struct thd_data thd;
 extern struct sym_out mag_sym;
 
 
+extern struct phase_cs_out phase_cs_A_out;
+extern struct phase_cs_out phase_cs_B_out;
+extern struct phase_cs_out phase_cs_C_out;
+
 #endif
 

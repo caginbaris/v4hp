@@ -13,8 +13,14 @@ void tickFunctions(){
 		
 	//ftick_thread=ftick[tick1] ;
 	//ftick_thread();
+	boardIO();
 	
-	if(tick==tick10){tick=tick1;}
+	
+	if(tick==tick10){tick=tick1;
+	
+	pushDataToMaster();
+	
+	}
 	
 
 }

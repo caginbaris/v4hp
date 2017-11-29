@@ -27,7 +27,7 @@ union ToWord pick_words={0};
 union ToWord trip_words={0};
 
 
-void pushDataToMaster(){
+void pushDataToMaster(void){
 	
 	
 	
@@ -148,8 +148,8 @@ void pushDataToMaster(){
 	/*136*/comParams.pushDataBufferF[52]=mag_sym.I1; 	//Ipos
 	/*138*/comParams.pushDataBufferF[53]=mag_sym.I2;	//Ineg
 	
-	/*140*/comParams.pushDataBufferF[54]=(mag_sym.V1>1.0f) ? (mag_sym.V2/mag_sym.V1):0.0f ; //UNB Ratio V
-	/*142*/comParams.pushDataBufferF[55]=(mag_sym.I1>1.0f) ? (mag_sym.I2/mag_sym.I1):0.0f ; //UNB Ratio I
+	/*140*/comParams.pushDataBufferF[54]=(mag_sym.V1>1.0f) ? (100.0f*mag_sym.V2/mag_sym.V1):0.0f ; //UNB Ratio V
+	/*142*/comParams.pushDataBufferF[55]=(mag_sym.I1>1.0f) ? (100.0f*mag_sym.I2/mag_sym.I1):0.0f ; //UNB Ratio I
 	
 	/*144*/comParams.pushDataBufferF[56]=0.0f ; //Spare
 	
@@ -158,11 +158,41 @@ void pushDataToMaster(){
 	/*150*/comParams.pushDataBufferF[59]=fRMS.Vcn;		//RMS Vcn
 	
 	/*152*/comParams.pushDataBufferF[60]=fRMS.AB_synth;//RMS Vab
-	/*154*/comParams.pushDataBufferF[61]=fRMS.AB_synth;//RMS Vbc
-	/*156*/comParams.pushDataBufferF[62]=fRMS.AB_synth;//RMS Vca
+	/*154*/comParams.pushDataBufferF[61]=fRMS.BC_synth;//RMS Vbc
+	/*156*/comParams.pushDataBufferF[62]=fRMS.CA_synth;//RMS Vca
 	
-	/*158*/
+	/*158*/comParams.pushDataBufferF[63]=tRMS.IRESa; // true RMS IresA
+	/*160*/comParams.pushDataBufferF[64]=tRMS.IRESb; // true RMS IresB
+	/*162*/comParams.pushDataBufferF[65]=tRMS.IRESc; // true RMS IresC
 	
+	/*164*/comParams.pushDataBufferF[66]=tRMS.IRESa*tRMS.IRESa; // PresA cau need ext value for res 
+	/*166*/comParams.pushDataBufferF[67]=tRMS.IRESb*tRMS.IRESb; // PresB cau
+	/*168*/comParams.pushDataBufferF[68]=tRMS.IRESc*tRMS.IRESc; // PresC cau
+	
+	/*170*/comParams.pushDataBufferF[69]=comParams.pushDataBufferF[63]+comParams.pushDataBufferF[64]+comParams.pushDataBufferF[65]; // P Res Total
+	
+	/*172*/comParams.pushDataBufferF[70]=fRMS.IUNBa; // UNBa fund RMS
+	/*174*/comParams.pushDataBufferF[71]=tRMS.IUNBa; // UNBa true RMS
+	
+	/*176*/comParams.pushDataBufferF[72]=fRMS.IUNBa; // UNBa fund RMS
+	/*178*/comParams.pushDataBufferF[73]=tRMS.IUNBa; // UNBa true RMS
+	
+	/*180*/comParams.pushDataBufferF[74]=0.0f ; //Spare
+	/*182*/comParams.pushDataBufferF[75]=0.0f ; //Spare
+
+	/*184*/comParams.pushDataBufferF[76]=phase_cs_A_out.X ; // imp. A
+	/*186*/comParams.pushDataBufferF[77]=phase_cs_B_out.X ;	// imp. B
+	/*188*/comParams.pushDataBufferF[78]=phase_cs_C_out.X ;	// imp. C
+	
+	/*190*/comParams.pushDataBufferF[79]=phase_cs_A_out.phase_disp ;  // phase. disp.A
+	/*192*/comParams.pushDataBufferF[80]=phase_cs_B_out.phase_disp ;	// phase. disp.B
+	/*194*/comParams.pushDataBufferF[81]=phase_cs_C_out.phase_disp ;	// phase. disp.C
+	
+	/*196*/comParams.pushDataBufferF[82]=0.0f ; //Spare
+	/*198*/comParams.pushDataBufferF[83]=0.0f ; //Spare
+	/*200*/comParams.pushDataBufferF[84]=0.0f ; //Spare
+	/*202*/comParams.pushDataBufferF[85]=0.0f ; //Spare
+	/*204*/comParams.pushDataBufferF[86]=0.0f ; //Spare
 	
 	
 	
