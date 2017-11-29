@@ -8,7 +8,6 @@ v4hp\commparams.o: ..\Inc\Comm_Library_Header\CommConfig.h
 v4hp\commparams.o: ..\Inc\Comm_Library_Header\UART_MasterSlave.h
 v4hp\commparams.o: .\libraries\mlib_definitions.h
 v4hp\commparams.o: ../Inc/plib_handles.h
-v4hp\commparams.o: ../Inc/externalData.h
 v4hp\commparams.o: ../Inc/boardIO.h
 v4hp\commparams.o: ../Inc/main.h
 v4hp\commparams.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h
@@ -49,4 +48,5 @@ v4hp\commparams.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 v4hp\commparams.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 v4hp\commparams.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 v4hp\commparams.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
+v4hp\commparams.o: ../Inc/externalData.h
 v4hp\commparams.o: ../Inc/test_commParams.h

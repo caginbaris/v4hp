@@ -17,6 +17,8 @@ extern struct spectra spect_Ia;
 extern struct spectra spect_Ib;
 extern struct spectra spect_Ic;
 
+extern struct thd_data thd;
+extern struct sym_out mag_sym;
 
 
 #endif

@@ -1849,7 +1849,7 @@ Removing Unused input sections from the image.
     Removing commparams.o(.revsh_text), (4 bytes).
     Removing commparams.o(.rrx_text), (6 bytes).
     Removing commparams.o(i.pullDataFromMaster), (2 bytes).
-    Removing commparams.o(i.pushDataToMaster), (392 bytes).
+    Removing commparams.o(i.pushDataToMaster), (532 bytes).
     Removing commparams.o(.bss), (996 bytes).
     Removing commparams.o(.bss), (996 bytes).
     Removing commparams.o(.bss), (24 bytes).
@@ -1869,7 +1869,7 @@ Removing Unused input sections from the image.
     Removing dataparsermerger.o(.rrx_text), (6 bytes).
     Removing fpstat.o(.text), (4 bytes).
 
-736 unused section(s) (total 83552 bytes) removed from the image.
+736 unused section(s) (total 83692 bytes) removed from the image.
 
 ==============================================================================
 

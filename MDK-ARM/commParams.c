@@ -4,8 +4,8 @@
 
 #include "mlib_definitions.h"
 #include "plib_handles.h"
-#include "externalData.h"
 #include "boardIO.h"
+#include "externalData.h"
 
 #include "test_commParams.h"
 
@@ -40,6 +40,9 @@ void pushDataToMaster(){
 	comParams.pushDataBufferDW[testParamF]=testDW[testParamF];
 	
 	#else
+	
+	
+	//MEM AREA-1
 	
 	
 	//Integer Parameters
@@ -109,33 +112,58 @@ void pushDataToMaster(){
 	/*84*/comParams.pushDataBufferF[27]=spect_Ib.foutMag[6]; 	// H7-B
 	/*86*/comParams.pushDataBufferF[28]=spect_Ic.foutMag[6]; 	// H7-C
 	
-	/*82*/comParams.pushDataBufferF[29]=spect_Ia.foutMag[7]; 	// H8-A
-	/*84*/comParams.pushDataBufferF[30]=spect_Ib.foutMag[7]; 	// H8-B
-	/*86*/comParams.pushDataBufferF[31]=spect_Ic.foutMag[7]; 	// H8-C
+	/*88*/comParams.pushDataBufferF[29]=spect_Ia.foutMag[7]; 	// H8-A
+	/*90*/comParams.pushDataBufferF[30]=spect_Ib.foutMag[7]; 	// H8-B
+	/*92*/comParams.pushDataBufferF[31]=spect_Ic.foutMag[7]; 	// H8-C
 	
-	/*88*/comParams.pushDataBufferF[32]=spect_Ia.foutMag[8]; 	// H9-A
-	/*90*/comParams.pushDataBufferF[33]=spect_Ib.foutMag[8]; 	// H9-B
-	/*92*/comParams.pushDataBufferF[34]=spect_Ic.foutMag[8];	// H9-C
+	/*94*/comParams.pushDataBufferF[32]=spect_Ia.foutMag[8]; 	// H9-A
+	/*96*/comParams.pushDataBufferF[33]=spect_Ib.foutMag[8]; 	// H9-B
+	/*98*/comParams.pushDataBufferF[34]=spect_Ic.foutMag[8];	// H9-C
 	
-	/*94*/comParams.pushDataBufferF[35]=spect_Ia.foutMag[9]; 	// H10-A
-	/*96*/comParams.pushDataBufferF[36]=spect_Ib.foutMag[9]; 	// H10-B
-	/*98*/comParams.pushDataBufferF[37]=spect_Ic.foutMag[9]; 	// H10-C
+	/*100*/comParams.pushDataBufferF[35]=spect_Ia.foutMag[9]; 	// H10-A
+	/*102*/comParams.pushDataBufferF[36]=spect_Ib.foutMag[9]; 	// H10-B
+	/*104*/comParams.pushDataBufferF[37]=spect_Ic.foutMag[9]; 	// H10-C
 	
-	/*100*/comParams.pushDataBufferF[38]=spect_Ia.foutMag[10]; // H11-A
-	/*102*/comParams.pushDataBufferF[39]=spect_Ib.foutMag[10]; // H11-B
-	/*104*/comParams.pushDataBufferF[40]=spect_Ic.foutMag[10]; // H11-C
+	/*106*/comParams.pushDataBufferF[38]=spect_Ia.foutMag[10]; // H11-A
+	/*108*/comParams.pushDataBufferF[39]=spect_Ib.foutMag[10]; // H11-B
+	/*110*/comParams.pushDataBufferF[40]=spect_Ic.foutMag[10]; // H11-C
 	
-	/*106*/comParams.pushDataBufferF[41]=spect_Ia.foutMag[11]; // H12-A
-	/*108*/comParams.pushDataBufferF[42]=spect_Ib.foutMag[11]; // H12-B
-	/*110*/comParams.pushDataBufferF[43]=spect_Ic.foutMag[11]; // H12-C
+	/*112*/comParams.pushDataBufferF[41]=spect_Ia.foutMag[11]; // H12-A
+	/*114*/comParams.pushDataBufferF[42]=spect_Ib.foutMag[11]; // H12-B
+	/*116*/comParams.pushDataBufferF[43]=spect_Ic.foutMag[11]; // H12-C
 	
-	/*112*/comParams.pushDataBufferF[44]=spect_Ia.foutMag[12]; // H13-A
-	/*114*/comParams.pushDataBufferF[45]=spect_Ib.foutMag[12]; // H13-B
-	/*116*/comParams.pushDataBufferF[46]=spect_Ic.foutMag[12]; // H13-C
+	/*118*/comParams.pushDataBufferF[44]=spect_Ia.foutMag[12]; // H13-A
+	/*120*/comParams.pushDataBufferF[45]=spect_Ib.foutMag[12]; // H13-B
+	/*122*/comParams.pushDataBufferF[46]=spect_Ic.foutMag[12]; // H13-C
 	
-	/*118*/comParams.pushDataBufferF[38]=spect_Ia.foutMag[13]; // H14-A //*******preblem
-	/*120*/comParams.pushDataBufferF[39]=spect_Ib.foutMag[13]; // H13-B
-	/*122*/comParams.pushDataBufferF[40]=spect_Ic.foutMag[13]; // H13-C
+	//MEM AREA-2
+	
+	/*126*/comParams.pushDataBufferF[47]=thd.a; 			//thd Ia
+	/*128*/comParams.pushDataBufferF[48]=thd.b;				//thd Ib
+	/*130*/comParams.pushDataBufferF[49]=thd.c;				//thd Ic
+	
+	/*132*/comParams.pushDataBufferF[50]=mag_sym.V1; 	//Vpos
+	/*134*/comParams.pushDataBufferF[51]=mag_sym.V2; 	//Vneg
+	
+	/*136*/comParams.pushDataBufferF[52]=mag_sym.I1; 	//Ipos
+	/*138*/comParams.pushDataBufferF[53]=mag_sym.I2;	//Ineg
+	
+	/*140*/comParams.pushDataBufferF[54]=(mag_sym.V1>1.0f) ? (mag_sym.V2/mag_sym.V1):0.0f ; //UNB Ratio V
+	/*142*/comParams.pushDataBufferF[55]=(mag_sym.I1>1.0f) ? (mag_sym.I2/mag_sym.I1):0.0f ; //UNB Ratio I
+	
+	/*144*/comParams.pushDataBufferF[56]=0.0f ; //Spare
+	
+	/*146*/comParams.pushDataBufferF[57]=fRMS.Van; 		//RMS Van
+	/*148*/comParams.pushDataBufferF[58]=fRMS.Vbn;		//RMS Vbn
+	/*150*/comParams.pushDataBufferF[59]=fRMS.Vcn;		//RMS Vcn
+	
+	/*152*/comParams.pushDataBufferF[60]=fRMS.AB_synth;//RMS Vab
+	/*154*/comParams.pushDataBufferF[61]=fRMS.AB_synth;//RMS Vbc
+	/*156*/comParams.pushDataBufferF[62]=fRMS.AB_synth;//RMS Vca
+	
+	/*158*/
+	
+	
 	
 	
 	#endif

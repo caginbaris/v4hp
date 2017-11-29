@@ -52,6 +52,13 @@ struct spectra {
 };
 
 
+struct thd_data{
+
+	float a;
+	float b;
+	float c;
+
+}	;
 
 struct pvp_data{
 
