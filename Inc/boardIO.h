@@ -70,7 +70,12 @@ struct{
 	uint8_t inhibit:1;  //DO-3
 	uint8_t BF:1;  			//DO-4
 	uint8_t IBF:1;			//DO-5
-	uint8_t spare:1;		//DO-6	
+	uint8_t spare:1;		//DO-6
+	uint32_t boardSPARE:10;	// DO-7...16	
+	
+	uint32_t LD_IBF:1;		// Board Ind. Output Upper
+	uint32_t LD_TRIP:1;		// Board Ind. Output Mid
+	uint32_t LD_ALARM:1;	// Board Ind. Output Bot
 	
 	
 }bits;
