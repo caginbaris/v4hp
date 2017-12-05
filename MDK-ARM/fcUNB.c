@@ -47,7 +47,7 @@ void fcUNB_initial_dt(){
 
 void fcUNB_init(){
 	
-		struct fcUNBd_inputParameters fUNBd_initStruct={	0.0f, 					/*level*/
+		struct fcUNBd_inputParameters fUNBd_initStruct={	0.0f, 						/*level*/
 																										  0.0f, 						/*delay*/
 																										  0.02f 						/*dropout ratio*/};
 		

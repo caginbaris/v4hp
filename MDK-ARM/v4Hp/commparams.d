@@ -5,7 +5,6 @@ v4hp\commparams.o: ..\Inc\Comm_Library_Header\SPI_MasterSlave.h
 v4hp\commparams.o: ..\Inc\Comm_Library_Header\CommConfig.h
 v4hp\commparams.o: ..\Src\Comm_Library_Source\CommConfig.c
 v4hp\commparams.o: ..\Inc\Comm_Library_Header\CommConfig.h
-v4hp\commparams.o: ..\Inc\Comm_Library_Header\UART_MasterSlave.h
 v4hp\commparams.o: .\libraries\mlib_definitions.h
 v4hp\commparams.o: ../Inc/plib_handles.h
 v4hp\commparams.o: ../Inc/boardIO.h

@@ -150,79 +150,32 @@ void fc50_all(){
 	// fc50 obj1 End****************************
 	
 	
-	
-	
+
 	
 	// fc50 obj2 Start**************************
 	
 	
 	
-		// fc50 obj2 L1
+	// fc50 obj2 L1
 	
-	if(selectRMS.bits.fc50_obj2_L1){
 		
-		fc50_rms_a=fRMS.IRESa;
-		fc50_rms_b=fRMS.IRESb;
-		fc50_rms_c=fRMS.IRESc;
-		
-	}else{
-		
-		fc50_rms_a=tRMS.IRESa;
-		fc50_rms_b=tRMS.IRESb;
-		fc50_rms_c=tRMS.IRESc;
-		
-	}
+	fc50(tRMS.IRESa,fc50_obj2_L1_in,&fc50_obj2_L1_out_a,EN.bits.fc50_obj2_L1);
+	fc50(tRMS.IRESb,fc50_obj2_L1_in,&fc50_obj2_L1_out_b,EN.bits.fc50_obj2_L1);
+	fc50(tRMS.IRESc,fc50_obj2_L1_in,&fc50_obj2_L1_out_c,EN.bits.fc50_obj2_L1);
 	
-	fc50(fc50_rms_a,fc50_obj2_L1_in,&fc50_obj2_L1_out_a,EN.bits.fc50_obj2_L1);
-	fc50(fc50_rms_b,fc50_obj2_L1_in,&fc50_obj2_L1_out_b,EN.bits.fc50_obj2_L1);
-	fc50(fc50_rms_c,fc50_obj2_L1_in,&fc50_obj2_L1_out_c,EN.bits.fc50_obj2_L1);
+	// fc50 obj2 L2
+	
+	fc50(tRMS.IRESa,fc50_obj2_L2_in,&fc50_obj2_L2_out_a,EN.bits.fc50_obj2_L2);
+	fc50(tRMS.IRESb,fc50_obj2_L2_in,&fc50_obj2_L2_out_b,EN.bits.fc50_obj2_L2);
+	fc50(tRMS.IRESc,fc50_obj2_L2_in,&fc50_obj2_L2_out_c,EN.bits.fc50_obj2_L2);
 	
 	
+	//fc50 obj2 L3
 	
-		// fc50 obj2 L2
+	fc50(tRMS.IRESa,fc50_obj2_L3_in,&fc50_obj2_L3_out_a,EN.bits.fc50_obj2_L3);
+	fc50(tRMS.IRESb,fc50_obj2_L3_in,&fc50_obj2_L3_out_b,EN.bits.fc50_obj2_L3);
+	fc50(tRMS.IRESc,fc50_obj2_L3_in,&fc50_obj2_L3_out_c,EN.bits.fc50_obj2_L3);
 	
-	if(selectRMS.bits.fc50_obj2_L2){
-		
-		fc50_rms_a=fRMS.IRESa;
-		fc50_rms_b=fRMS.IRESb;
-		fc50_rms_c=fRMS.IRESc;
-		
-	}else{
-		
-		fc50_rms_a=tRMS.IRESa;
-		fc50_rms_b=tRMS.IRESb;
-		fc50_rms_c=tRMS.IRESc;
-		
-	}
-	
-	fc50(fc50_rms_a,fc50_obj2_L2_in,&fc50_obj2_L2_out_a,EN.bits.fc50_obj2_L2);
-	fc50(fc50_rms_b,fc50_obj2_L2_in,&fc50_obj2_L2_out_b,EN.bits.fc50_obj2_L2);
-	fc50(fc50_rms_c,fc50_obj2_L2_in,&fc50_obj2_L2_out_c,EN.bits.fc50_obj2_L2);
-	
-	
-	
-		// fc50 obj2 L3
-	
-	if(selectRMS.bits.fc50_obj2_L3){
-		
-		fc50_rms_a=fRMS.IRESa;
-		fc50_rms_b=fRMS.IRESb;
-		fc50_rms_c=fRMS.IRESc;
-		
-	}else{
-		
-		fc50_rms_a=tRMS.IRESa;
-		fc50_rms_b=tRMS.IRESb;
-		fc50_rms_c=tRMS.IRESc;
-		
-	}
-	
-	fc50(fc50_rms_a,fc50_obj2_L3_in,&fc50_obj2_L3_out_a,EN.bits.fc50_obj2_L3);
-	fc50(fc50_rms_b,fc50_obj2_L3_in,&fc50_obj2_L3_out_b,EN.bits.fc50_obj2_L3);
-	fc50(fc50_rms_c,fc50_obj2_L3_in,&fc50_obj2_L3_out_c,EN.bits.fc50_obj2_L3);
-	
-	
-
 	// fc50 obj2 End****************************
 
 }

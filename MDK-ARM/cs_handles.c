@@ -87,7 +87,10 @@ float cos_coeffs[]={
 
 
 
-void cs_handle_tick1(){
+
+
+
+void cs_handle_tick1(void){
 
 
 	phase_cs_A.Vc= 	cs_generation(fAdc.sAdc.Van,cos_coeffs,N,&c_buffer[0][0])*cs_scale;
@@ -104,7 +107,7 @@ void cs_handle_tick1(){
 	
 }
 
-void cs_handle_tick2(){
+void cs_handle_tick2(void){
 
 
 	phase_cs_B.Vc= 	cs_generation(fAdc.sAdc.Vbn,cos_coeffs,N,&c_buffer[2][0])*cs_scale;
@@ -121,7 +124,7 @@ void cs_handle_tick2(){
 }
 
 
-void cs_handle_tick3(){
+void cs_handle_tick3(void){
 
 
 	phase_cs_C.Vc= 	cs_generation(fAdc.sAdc.Vcn,cos_coeffs,N,&c_buffer[4][0])*cs_scale;
@@ -138,45 +141,11 @@ void cs_handle_tick3(){
 
 }
 
-
-void cs_handle_tick4(){
+void cs_handle_tick4(void){
 	
-	
-	resA.c=cs_generation(fAdc.sAdc.IRESa,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
-	resA.s=cs_generation(fAdc.sAdc.IRESa,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
-
-	resB.c=cs_generation(fAdc.sAdc.IRESb,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
-	resB.s=cs_generation(fAdc.sAdc.IRESb,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
-
-	resC.c=cs_generation(fAdc.sAdc.IRESc,cos_coeffs,N,&c_buffer[8][0])*cs_scale;
-	resC.s=cs_generation(fAdc.sAdc.IRESc,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
-
-	
-	UNBa.c=cs_generation(fAdc.sAdc.IUNBa,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
-	UNBa.s=cs_generation(fAdc.sAdc.IUNBa,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
-
-	UNBb.c=cs_generation(fAdc.sAdc.IUNBb,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
-	UNBb.s=cs_generation(fAdc.sAdc.IUNBb,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
-
-	n.c=cs_generation(fAdc.sAdc.In,cos_coeffs,N,&c_buffer[8][0])*cs_scale;
-	n.c=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
-	
-	
-	fRMS.IRESa=(resA.c*resA.c	+	resA.s*resA.s)*cs_rms_scale;
-	fRMS.IRESb=(resB.c*resB.c	+	resB.s*resB.s)*cs_rms_scale;
-	fRMS.IRESc=(resC.c*resC.c	+	resC.s*resC.s)*cs_rms_scale;
-	
-	fRMS.IUNBa=(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;
-	fRMS.IUNBb=(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
-	fRMS.In=	 (n.c*n.c				+	n.s*n.s)*cs_rms_scale;
 	
 	sym_comp(phase_cs_A,phase_cs_B,phase_cs_C, &sym);
 	sym_mag(sym,&sym_hist,&mag_sym);
-	
-}
-
-
-void cs_PQ(void){
 	
 	
 	//P
@@ -205,9 +174,47 @@ void cs_PQ(void){
 
 
 
+}
+
+
+void cs_handle_tick5(void){
+	
+	
+
+	UNBa.c=cs_generation(fAdc.sAdc.IUNBa,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
+	UNBa.s=cs_generation(fAdc.sAdc.IUNBa,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
+
+	UNBb.c=cs_generation(fAdc.sAdc.IUNBb,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
+	UNBb.s=cs_generation(fAdc.sAdc.IUNBb,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
+
+	n.c=cs_generation(fAdc.sAdc.In,cos_coeffs,N,&c_buffer[8][0])*cs_scale;
+	n.c=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
+	
+	
+	fRMS.IUNBa=(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;
+	fRMS.IUNBb=(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
+	fRMS.In=	 (n.c*n.c				+	n.s*n.s)*cs_rms_scale;
+	
+
+	
+}
+
+
+
+void cs_handles(){
+
+	cs_handle_tick1();
+	cs_handle_tick2();
+	cs_handle_tick3();
+	cs_handle_tick4();
+	cs_handle_tick5();
+
 
 
 }
+
+
+
 
 
 

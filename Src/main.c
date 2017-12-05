@@ -70,8 +70,9 @@ static void MX_NVIC_Init(void);
 
 /* USER CODE BEGIN PFP */
 /* Private function prototypes -----------------------------------------------*/
-void tickFunctions();
-void initFunctions();
+void main_flow(void);
+void initFunctions(void);
+void pushDataToMaster(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -143,14 +144,19 @@ int main(void)
 		
 	if(conversion_completed){
 		
-		tickFunctions();
-		
+		main_flow();
 		conversion_completed=0;
-	}	 
+	}
+	
+	
+	
     
 	/* Comm Layer Functions in superloop */
-	uart_runComApp(); //cau
-	spi_runComApp(); //cau
+	uart_runComApp(); 
+	spi_runComApp();
+	pushDataToMaster();
+	
+
 	
   }
   /* USER CODE END 3 */

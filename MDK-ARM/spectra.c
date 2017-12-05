@@ -62,16 +62,7 @@ float coeffs_imag[]={
 void spectra_tick1(){
 	
 	
-	static unsigned int count=0; 
-	
-	signal_spectra(fAdc.sAdc.Ia,
-								&spect_Ia,
-								spectraLength,
-								&coeffs_real[0],
-								&coeffs_imag[0],
-								count++);
-	
-	if(count==spectraLength){count=0;}
+
 
 }
 
@@ -82,12 +73,7 @@ void spectra_tick2(){
 	
 	static unsigned int count=0; 
 	
-	signal_spectra(fAdc.sAdc.Ib,
-								&spect_Ib,
-								spectraLength,
-								&coeffs_real[0],
-								&coeffs_imag[0],
-								count++);
+
 	
 	if(count==spectraLength){count=0;}
 
@@ -98,12 +84,7 @@ void spectra_tick3(){
 	
 	static unsigned int count=0; 
 	
-	signal_spectra(fAdc.sAdc.Ib,
-								&spect_Ib,
-								spectraLength,
-								&coeffs_real[0],
-								&coeffs_imag[0],
-								count++);
+
 	
 	if(count==spectraLength){count=0;}
 
@@ -111,9 +92,47 @@ void spectra_tick3(){
 
 void thd_all(){
 	
+
+
+
+
+}
+
+
+void spectra(){
+	
+	
+	static unsigned int count=0; 
+	
+	signal_spectra(fAdc.sAdc.Ia,
+								&spect_Ia,
+								spectraLength,
+								&coeffs_real[0],
+								&coeffs_imag[0],
+								count);
+	
+	
+	signal_spectra(fAdc.sAdc.Ib,
+								&spect_Ib,
+								spectraLength,
+								&coeffs_real[0],
+								&coeffs_imag[0],
+								count);
+	
+	signal_spectra(fAdc.sAdc.Ic,
+								&spect_Ic,
+								spectraLength,
+								&coeffs_real[0],
+								&coeffs_imag[0],
+								count);
+								
+	
 	thd.a=signal_thd(spect_Ia);
 	thd.b=signal_thd(spect_Ib);
-	thd.c=signal_thd(spect_Ic);
+	thd.c=signal_thd(spect_Ic);							
+								
+	
+	if(++count==spectraLength){count=0;}
 
 
 

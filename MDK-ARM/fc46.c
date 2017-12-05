@@ -23,15 +23,12 @@ void fc46_init(){
 																										1.1f,/*dropoutRatio*/				
 																										0.02 /*dropoutTime*/	};
 		
-		fc46d_obj1_L1_in=fc46d_initStruct;																								
-		
-																								
-		
+																									
 		struct fc46i_inputParameters fc46i_initStruct={ 1.0f,/*level*/
 																										{0.0f,0.0f,0.0f},/*curveData*/
 																										0.04f/*timeMultiplier*/};
 		
-																										
+		fc46d_obj1_L1_in=fc46d_initStruct;																									
 		fc46i_obj1_L1_in=fc46i_initStruct;
 																										
 		curve=selectCURVE.fc51_obj1;
@@ -40,10 +37,6 @@ void fc46_init(){
 		fc46i_obj1_L1_in.curve_data[1]=curve_data[curve][1];
 		fc46i_obj1_L1_in.curve_data[2]=curve_data[curve][2];																								
 																										
-																										
-
-
-
 
 }
 

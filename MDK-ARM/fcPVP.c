@@ -73,7 +73,7 @@ void fcPVP_all(){
 	
 	peak_a=peak_detect_rms(pvp_out.a,&peakBuffer[0][0],counter,N);
 	peak_b=peak_detect_rms(pvp_out.b,&peakBuffer[1][0],counter,N);
-	peak_c=peak_detect_rms(pvp_out.c,&peakBuffer[2][0],counter++,N);
+	peak_c=peak_detect_rms(pvp_out.c,&peakBuffer[2][0],counter,N);
 	
 	
 	fcPVPd(peak_a,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_a,EN.bits.fcPVPd_obj1);
@@ -85,7 +85,7 @@ void fcPVP_all(){
 	fcPVPi(peak_c,fcPVPi_obj1_L1_in,&fcPVPi_obj1_L1_out_c,EN.bits.fcPVPi_obj1);
 	
 	
-	if(counter==N){counter=0;}
+	if(++counter==N){counter=0;}
 	
 	
 

@@ -2,7 +2,7 @@
 #define __conversion_h
 
 #define filterDepth 9
-#define tickNo 10
+#define dSample 10
 
 
 

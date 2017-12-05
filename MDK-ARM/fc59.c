@@ -35,41 +35,16 @@ void fc59_init(){
 void fc59_all(){
 	
 	
-	float fc59_rms_a=0;
-	float fc59_rms_b=0;
-	float fc59_rms_c=0;
+	
+	fc59(tRMS.AB_synth,fc59_obj1_L1_in,&fc59_obj1_L1_out_a,EN.bits.fc59_obj1_L1);
+	fc59(tRMS.AB_synth,fc59_obj1_L1_in,&fc59_obj1_L1_out_b,EN.bits.fc59_obj1_L1);
+	fc59(tRMS.AB_synth,fc59_obj1_L1_in,&fc59_obj1_L1_out_c,EN.bits.fc59_obj1_L1);
+	
+	fc59(tRMS.AB_synth,fc59_obj1_L2_in,&fc59_obj1_L2_out_a,EN.bits.fc59_obj1_L2);
+	fc59(tRMS.AB_synth,fc59_obj1_L2_in,&fc59_obj1_L2_out_b,EN.bits.fc59_obj1_L2);
+	fc59(tRMS.AB_synth,fc59_obj1_L2_in,&fc59_obj1_L2_out_c,EN.bits.fc59_obj1_L2);
 	
 	
-		if(selectRMS.bits.fc59_obj1_L1){
-		
-		fc59_rms_a=fRMS.Van;
-		fc59_rms_b=fRMS.Vbn;
-		fc59_rms_c=fRMS.Vcn;
-		
-	}else{
-		
-		fc59_rms_a=tRMS.Ia;
-		fc59_rms_b=tRMS.Ib;
-		fc59_rms_c=tRMS.Ic;
-		
-	}
-	
-	
-	fc59(fc59_rms_a,fc59_obj1_L1_in,&fc59_obj1_L1_out_a,EN.bits.fc59_obj1_L1);
-	fc59(fc59_rms_b,fc59_obj1_L1_in,&fc59_obj1_L1_out_b,EN.bits.fc59_obj1_L1);
-	fc59(fc59_rms_c,fc59_obj1_L1_in,&fc59_obj1_L1_out_c,EN.bits.fc59_obj1_L1);
-	
-	fc59(fc59_rms_a,fc59_obj1_L2_in,&fc59_obj1_L2_out_a,EN.bits.fc59_obj1_L2);
-	fc59(fc59_rms_b,fc59_obj1_L2_in,&fc59_obj1_L2_out_b,EN.bits.fc59_obj1_L2);
-	fc59(fc59_rms_c,fc59_obj1_L2_in,&fc59_obj1_L2_out_c,EN.bits.fc59_obj1_L2);
-	
-	
-	
-
-
-
-
-
 
 }
 

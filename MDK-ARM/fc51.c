@@ -80,25 +80,10 @@ void fc51_all(){
 	
 	// fc51 obj2 Start************************
 	
-	if(selectRMS.bits.fc51_obj2){
-		
-		fc51_rms_a=fRMS.IRESa;
-		fc51_rms_b=fRMS.IRESb;
-		fc51_rms_c=fRMS.IRESc;
-		
-	}else{
-		
-		fc51_rms_a=tRMS.IRESa;
-		fc51_rms_b=tRMS.IRESb;
-		fc51_rms_c=tRMS.IRESc;
-		
-	}
 	
-	
-	
-	fc51(fc51_rms_a,fc51_obj1_in,&fc51_obj1_out_a,EN.bits.fc51_obj1);
-	fc51(fc51_rms_b,fc51_obj1_in,&fc51_obj1_out_a,EN.bits.fc51_obj1);
-	fc51(fc51_rms_c,fc51_obj1_in,&fc51_obj1_out_a,EN.bits.fc51_obj1);	
+	fc51(tRMS.IRESa,fc51_obj1_in,&fc51_obj1_out_a,EN.bits.fc51_obj1);
+	fc51(tRMS.IRESb,fc51_obj1_in,&fc51_obj1_out_a,EN.bits.fc51_obj1);
+	fc51(tRMS.IRESc,fc51_obj1_in,&fc51_obj1_out_a,EN.bits.fc51_obj1);	
 	
 	
 	// fc51 obj2 End**************************

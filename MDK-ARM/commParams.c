@@ -1,6 +1,6 @@
 #include "nfbm.h"
 #include "SPI_MasterSlave.h"
-#include "UART_MasterSlave.h"
+
 
 #include "mlib_definitions.h"
 #include "plib_handles.h"
@@ -201,11 +201,7 @@ void pushDataToMaster(void){
 }
 
 
-void pullDataFromMaster(){
-	
 
-	
-}
 
 
 

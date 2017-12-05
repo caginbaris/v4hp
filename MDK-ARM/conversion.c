@@ -8,6 +8,7 @@
 uint8_t conversion_completed=0;
 
 union uAdc rawAdc={0};
+union uAdc smAdc={0};
 union uAdc fAdc={0};
 
 struct AdcData offset={0};
@@ -71,6 +72,7 @@ void init_conversion(){
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 	
+static uint8_t dec=0;	
 uint8_t i;
 
 if(hadc->Instance==ADC1){ 
@@ -98,15 +100,17 @@ if(hadc->Instance==ADC1){
 	
 	for	(i=0;i<channelNo;i++){
 		
-	 fAdc.bufferAdc[i]=prefilter(rawAdc.bufferAdc[i],&dbuffer[i][0],filterDepth);
+	 smAdc.bufferAdc[i]=prefilter(rawAdc.bufferAdc[i],&dbuffer[i][0],filterDepth);
 	
 	}
 	
 	
-	fAdc.sAdc.AB_synth=(fAdc.sAdc.Van-fAdc.sAdc.Vbn);
-	fAdc.sAdc.BC_synth=(fAdc.sAdc.Vbn-fAdc.sAdc.Vcn);
-	fAdc.sAdc.CA_synth=(fAdc.sAdc.Vcn-fAdc.sAdc.Van);
+	smAdc.sAdc.AB_synth=(smAdc.sAdc.Van-smAdc.sAdc.Vbn);
+	smAdc.sAdc.BC_synth=(smAdc.sAdc.Vbn-smAdc.sAdc.Vcn);
+	smAdc.sAdc.CA_synth=(smAdc.sAdc.Vcn-smAdc.sAdc.Van);
 	
+	
+	if(++dec==dSample){fAdc=smAdc;}
 	
 	
 	conversion_completed=1;

@@ -56,11 +56,12 @@
 "v4hp\conversion.o"
 "v4hp\initfunctions.o"
 "v4hp\powersysdata.o"
-"v4hp\tickfunctions.o"
 "v4hp\boardio.o"
 "v4hp\commconfig.o"
 "..\Src\Comm_Layer.lib"
 "v4hp\commparams.o"
+"v4hp\configparams.o"
+"v4hp\main_flow.o"
 --library_type=microlib --strict --scatter "v4Hp\v4Hp.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
