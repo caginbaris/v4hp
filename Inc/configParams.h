@@ -3,6 +3,7 @@
 
 #include "stdint.h"
 
+//---------------DW0
 union pFuncEnable{
 
 	struct{
@@ -54,7 +55,7 @@ union pFuncEnable{
 
 
 //0->true RMS
-
+//---------------DW1
 union mSelection{
 
 	struct{
@@ -101,22 +102,147 @@ union mSelection{
 };
 
 
-
-union cSelection{
+//---------------DW2
+union cSelection1{
 
 	struct{
 		
-		uint32_t obj1_fc50_L1:1;
+		//51
 		
-	
+		uint32_t obj1_fc51_IEC_NormalInverse:1;
+		uint32_t obj1_fc51_IEC_VeryInverse:1;
+		uint32_t obj1_fc51_IEC_ExtremelyInverse:1;
+		uint32_t obj1_fc51_IEC_LongInverse:1;
 		
-	
+		uint32_t obj1_fc51_ANSI_NormalInverse:1;
+		uint32_t obj1_fc51_ANSI_VeryInverse:1;
+		uint32_t obj1_fc51_ANSI_ExtremelyInverse:1;
+		uint32_t obj1_fc51_ANSI_LongInverse:1;
+		
+		//51N
+		
+		uint32_t obj1_fc51N_IEC_NormalInverse:1;
+		uint32_t obj1_fc51N_IEC_VeryInverse:1;
+		uint32_t obj1_fc51N_IEC_ExtremelyInverse:1;
+		uint32_t obj1_fc51N_IEC_LongInverse:1;
+		
+		uint32_t obj1_fc51N_ANSI_NormalInverse:1;
+		uint32_t obj1_fc51N_ANSI_VeryInverse:1;
+		uint32_t obj1_fc51N_ANSI_ExtremelyInverse:1;
+		uint32_t obj1_fc51N_ANSI_LongInverse:1;
+		
+		//46
+		
+		uint32_t obj1_fc46_IEC_NormalInverse:1;
+		uint32_t obj1_fc46_IEC_VeryInverse:1;
+		uint32_t obj1_fc46_IEC_ExtremelyInverse:1;
+		uint32_t obj1_fc46_IEC_LongInverse:1;
+		
+		uint32_t obj1_fc46_ANSI_NormalInverse:1;
+		uint32_t obj1_fc46_ANSI_VeryInverse:1;
+		uint32_t obj1_fc46_ANSI_ExtremelyInverse:1;
+		uint32_t obj1_fc46_ANSI_LongInverse:1;
+		
+		//UNB dont care
+		
+		uint32_t obj1_fcUNB_IEC_NormalInverse:1;
+		uint32_t obj1_fcUNB_IEC_VeryInverse:1;
+		uint32_t obj1_fcUNB_IEC_ExtremelyInverse:1;
+		uint32_t obj1_fcUNB_IEC_LongInverse:1;
+		
+		uint32_t obj1_fcUNB_ANSI_NormalInverse:1;
+		uint32_t obj1_fcUNB_ANSI_VeryInverse:1;
+		uint32_t obj1_fcUNB_ANSI_ExtremelyInverse:1;
+		uint32_t obj1_fcUNB_ANSI_LongInverse:1;
 		
 	
 	}bit;
 	
 	uint32_t all;	
 };
+
+//---------------DW3
+union cSelection2{
+
+	struct{
+		
+		//PVP
+		
+		uint32_t obj1_fcPVP_IEC_NormalInverse:1;
+		uint32_t obj1_fcPVP_IEC_VeryInverse:1;
+		uint32_t obj1_fcPVP_IEC_ExtremelyInverse:1;
+		uint32_t obj1_fcPVP_IEC_LongInverse:1;
+		
+		uint32_t obj1_fcPVP_ANSI_NormalInverse:1;
+		uint32_t obj1_fcPVP_ANSI_VeryInverse:1;
+		uint32_t obj1_fcPVP_ANSI_ExtremelyInverse:1;
+		uint32_t obj1_fcPVP_ANSI_LongInverse:1;
+		
+		//51
+		
+		uint32_t obj2_fc51_IEC_NormalInverse:1;
+		uint32_t obj2_fc51_IEC_VeryInverse:1;
+		uint32_t obj2_fc51_IEC_ExtremelyInverse:1;
+		uint32_t obj2_fc51_IEC_LongInverse:1;
+		
+		uint32_t obj2_fc51_ANSI_NormalInverse:1;
+		uint32_t obj2_fc51_ANSI_VeryInverse:1;
+		uint32_t obj2_fc51_ANSI_ExtremelyInverse:1;
+		uint32_t obj2_fc51_ANSI_LongInverse:1;
+		
+		//51N
+		
+		uint32_t obj2_fc51N_IEC_NormalInverse:1;
+		uint32_t obj2_fc51N_IEC_VeryInverse:1;
+		uint32_t obj2_fc51N_IEC_ExtremelyInverse:1;
+		uint32_t obj2_fc51N_IEC_LongInverse:1;
+		
+		uint32_t obj2_fc51N_ANSI_NormalInverse:1;
+		uint32_t obj2_fc51N_ANSI_VeryInverse:1;
+		uint32_t obj2_fc51N_ANSI_ExtremelyInverse:1;
+		uint32_t obj2_fc51N_ANSI_LongInverse:1;
+		
+
+		uint32_t spare1:1;
+		uint32_t spare2:1;
+		uint32_t spare3:1;
+		uint32_t spare4:1;
+		uint32_t spare5:1;
+		uint32_t spare6:1;
+		uint32_t spare7:1;
+		uint32_t spare8:1;
+
+	
+	}bit;
+	
+	uint32_t all;	
+};
+
+
+//---------------DW4
+union pFlags{
+
+	struct{
+		
+		
+		
+		uint32_t phaseRotation:1;
+		uint32_t fc27_currentSupervision:1;
+		uint32_t fcBF_cbSupervision:1;
+		uint32_t spare1:1;
+		uint32_t naturalUNBdetect:1;
+		uint32_t naturalUNBcomp:1;
+		uint32_t spare2:26;
+	
+	}bit;
+	
+	uint32_t all;	
+};
+
+
+
+
+
 
 
 

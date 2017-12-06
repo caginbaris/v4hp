@@ -5,3 +5,5 @@ v4hp\configparams.o: ..\Inc\Comm_Library_Header\UART_MasterSlave.h
 v4hp\configparams.o: ..\Inc\Comm_Library_Header\CommConfig.h
 v4hp\configparams.o: ..\Src\Comm_Library_Source\CommConfig.c
 v4hp\configparams.o: ..\Inc\Comm_Library_Header\CommConfig.h
+v4hp\configparams.o: .\libraries\protection_functions.h
+v4hp\configparams.o: ../Inc/pDataConfigs.h

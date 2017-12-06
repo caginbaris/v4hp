@@ -1108,6 +1108,12 @@ Section Cross References
     commparams.o(i.pushDataToMaster) refers to truerms.o(.bss) for tRMS
     commparams.o(i.pushDataToMaster) refers to cs_handles.o(.bss) for fRMS
     commparams.o(i.pushDataToMaster) refers to spectra.o(.bss) for spect_Ia
+    configparams.o(i.pullDataFromMaster) refers to uart_masterslave.o(.bss) for comParams_uart
+    configparams.o(i.pullDataFromMaster) refers to fc50.o(.bss) for fc50_obj1_L1_in
+    configparams.o(i.pullDataFromMaster) refers to fc51.o(.bss) for fc51_obj1_in
+    configparams.o(i.pullDataFromMaster) refers to fc50n.o(.bss) for fc50N_obj1_L1_in
+    configparams.o(i.pullDataFromMaster) refers to fc51n.o(.bss) for fc51N_obj1_in
+    configparams.o(i.pullDataFromMaster) refers to fc59.o(.bss) for fc59_obj1_L1_in
     main_flow.o(i.main_flow) refers to cs_handles.o(i.cs_handles) for cs_handles
     main_flow.o(i.main_flow) refers to truerms.o(i.trueRMS) for trueRMS
     main_flow.o(i.main_flow) refers to spectra.o(i.spectra) for spectra
@@ -1949,7 +1955,8 @@ Removing Unused input sections from the image.
     Removing commparams.o(.data), (1 bytes).
     Removing commparams.o(.data), (4 bytes).
     Removing commparams.o(.data), (4 bytes).
-    Removing configparams.o(i.pullDataFromMaster), (2 bytes).
+    Removing configparams.o(i.checkDataFromMaster), (2 bytes).
+    Removing configparams.o(i.pullDataFromMaster), (292 bytes).
     Removing spi_masterslave.o(.rev16_text), (4 bytes).
     Removing spi_masterslave.o(.revsh_text), (4 bytes).
     Removing spi_masterslave.o(.rrx_text), (6 bytes).
@@ -1961,7 +1968,7 @@ Removing Unused input sections from the image.
     Removing dataparsermerger.o(.revsh_text), (4 bytes).
     Removing dataparsermerger.o(.rrx_text), (6 bytes).
 
-689 unused section(s) (total 55039 bytes) removed from the image.
+690 unused section(s) (total 55331 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2989,21 +2996,21 @@ Memory Map of the image
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
     0x08000000   0x000001f8   Data   RO          871    RESET               startup_stm32f767xx.o
-    0x080001f8   0x00000000   Code   RO         5983  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001f8   0x00000004   Code   RO         6034    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001fc   0x00000004   Code   RO         6037    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000200   0x00000000   Code   RO         6039    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000200   0x00000000   Code   RO         6041    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000200   0x00000008   Code   RO         6042    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000208   0x00000000   Code   RO         6044    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x08000208   0x00000000   Code   RO         6046    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x08000208   0x00000004   Code   RO         6035    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001f8   0x00000000   Code   RO         5993  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001f8   0x00000004   Code   RO         6044    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001fc   0x00000004   Code   RO         6047    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000200   0x00000000   Code   RO         6049    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000200   0x00000000   Code   RO         6051    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000200   0x00000008   Code   RO         6052    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000208   0x00000000   Code   RO         6054    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x08000208   0x00000000   Code   RO         6056    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x08000208   0x00000004   Code   RO         6045    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
     0x0800020c   0x00000024   Code   RO          872    .text               startup_stm32f767xx.o
-    0x08000230   0x00000024   Code   RO         5986    .text               mc_w.l(memcpya.o)
-    0x08000254   0x00000000   Code   RO         6055    .text               mc_w.l(iusefp.o)
-    0x08000254   0x00000004   Code   RO         6056    .text               mf_w.l(fpstat.o)
-    0x08000258   0x00000024   Code   RO         6068    .text               mc_w.l(init.o)
-    0x0800027c   0x0000005e   Code   RO         6078    .text               mc_w.l(__dclz77c.o)
+    0x08000230   0x00000024   Code   RO         5996    .text               mc_w.l(memcpya.o)
+    0x08000254   0x00000000   Code   RO         6065    .text               mc_w.l(iusefp.o)
+    0x08000254   0x00000004   Code   RO         6066    .text               mf_w.l(fpstat.o)
+    0x08000258   0x00000024   Code   RO         6078    .text               mc_w.l(init.o)
+    0x0800027c   0x0000005e   Code   RO         6088    .text               mc_w.l(__dclz77c.o)
     0x080002da   0x00000002   PAD
     0x080002dc   0x00000134   Code   RO          882    i.ADC_Init          stm32f7xx_hal_adc.o
     0x08000410   0x0000005a   Code   RO         2139    i.ADC_MultiModeDMAConvCplt  stm32f7xx_hal_adc_ex.o
@@ -3065,7 +3072,7 @@ Memory Map of the image
     0x0800206c   0x000000c4   Code   RO         4533    i.HAL_SPI_Init      stm32f7xx_hal_spi.o
     0x08002130   0x00000058   Code   RO          626    i.HAL_SPI_MspInit   spi.o
     0x08002188   0x00000094   Code   RO         4546    i.HAL_SPI_Transmit_IT  stm32f7xx_hal_spi.o
-    0x0800221c   0x00000020   Code   RO         5530    i.HAL_SPI_TxCpltCallback  Comm_Layer.lib(spi_masterslave.o)
+    0x0800221c   0x00000020   Code   RO         5540    i.HAL_SPI_TxCpltCallback  Comm_Layer.lib(spi_masterslave.o)
     0x0800223c   0x00000018   Code   RO         1318    i.HAL_SYSTICK_CLKSourceConfig  stm32f7xx_hal_cortex.o
     0x08002254   0x00000002   Code   RO         1319    i.HAL_SYSTICK_Callback  stm32f7xx_hal_cortex.o
     0x08002256   0x00000026   Code   RO         1320    i.HAL_SYSTICK_Config  stm32f7xx_hal_cortex.o
@@ -3092,8 +3099,8 @@ Memory Map of the image
     0x080027f4   0x00000054   Code   RO          584    i.HAL_UART_MspInit  usart.o
     0x08002848   0x0000008e   Code   RO         4267    i.HAL_UART_Receive_IT  stm32f7xx_hal_uart.o
     0x080028d6   0x00000002   PAD
-    0x080028d8   0x00000050   Code   RO         5720    i.HAL_UART_RxCpltCallback  Comm_Layer.lib(uart_masterslave.o)
-    0x08002928   0x00000020   Code   RO         5721    i.HAL_UART_TxCpltCallback  Comm_Layer.lib(uart_masterslave.o)
+    0x080028d8   0x00000050   Code   RO         5730    i.HAL_UART_RxCpltCallback  Comm_Layer.lib(uart_masterslave.o)
+    0x08002928   0x00000020   Code   RO         5731    i.HAL_UART_TxCpltCallback  Comm_Layer.lib(uart_masterslave.o)
     0x08002948   0x00000002   Code   RO          316    i.HardFault_Handler  stm32f7xx_it.o
     0x0800294a   0x00000002   PAD
     0x0800294c   0x000000f4   Code   RO          444    i.MX_ADC1_Init      adc.o
@@ -3142,32 +3149,32 @@ Memory Map of the image
     0x080039e4   0x0000000c   Code   RO          324    i.USART2_IRQHandler  stm32f7xx_it.o
     0x080039f0   0x00000002   Code   RO          325    i.UsageFault_Handler  stm32f7xx_it.o
     0x080039f2   0x00000002   Code   RO          497    i._Error_Handler    main.o
-    0x080039f4   0x00000030   Code   RO         6064    i.__ARM_fpclassify  m_wv.l(fpclassify.o)
-    0x08003a24   0x00000026   Code   RO         6007    i.__ARM_fpclassifyf  m_wv.l(fpclassifyf.o)
+    0x080039f4   0x00000030   Code   RO         6074    i.__ARM_fpclassify  m_wv.l(fpclassify.o)
+    0x08003a24   0x00000026   Code   RO         6017    i.__ARM_fpclassifyf  m_wv.l(fpclassifyf.o)
     0x08003a4a   0x00000002   PAD
-    0x08003a4c   0x00000258   Code   RO         5933    i.__hardfp_atan2f   m_wv.l(atan2f.o)
-    0x08003ca4   0x00000658   Code   RO         5945    i.__hardfp_powf     m_wv.l(powf.o)
+    0x08003a4c   0x00000258   Code   RO         5943    i.__hardfp_atan2f   m_wv.l(atan2f.o)
+    0x08003ca4   0x00000658   Code   RO         5955    i.__hardfp_powf     m_wv.l(powf.o)
     0x080042fc   0x00000004   PAD
-    0x08004300   0x000000b0   Code   RO         5959    i.__hardfp_sin      m_wv.l(sin.o)
-    0x080043b0   0x0000003a   Code   RO         5971    i.__hardfp_sqrtf    m_wv.l(sqrtf.o)
+    0x08004300   0x000000b0   Code   RO         5969    i.__hardfp_sin      m_wv.l(sin.o)
+    0x080043b0   0x0000003a   Code   RO         5981    i.__hardfp_sqrtf    m_wv.l(sqrtf.o)
     0x080043ea   0x00000006   PAD
-    0x080043f0   0x00000310   Code   RO         6023    i.__ieee754_rem_pio2  m_wv.l(rred.o)
-    0x08004700   0x000000e0   Code   RO         5990    i.__kernel_cos      m_wv.l(cos_i.o)
-    0x080047e0   0x00000070   Code   RO         6066    i.__kernel_poly     m_wv.l(poly.o)
-    0x08004850   0x000000a8   Code   RO         6028    i.__kernel_sin      m_wv.l(sin_i.o)
-    0x080048f8   0x00000018   Code   RO         5996    i.__mathlib_dbl_invalid  m_wv.l(dunder.o)
-    0x08004910   0x00000018   Code   RO         5999    i.__mathlib_dbl_underflow  m_wv.l(dunder.o)
-    0x08004928   0x00000018   Code   RO         6009    i.__mathlib_flt_divzero  m_wv.l(funder.o)
-    0x08004940   0x00000006   Code   RO         6011    i.__mathlib_flt_infnan2  m_wv.l(funder.o)
+    0x080043f0   0x00000310   Code   RO         6033    i.__ieee754_rem_pio2  m_wv.l(rred.o)
+    0x08004700   0x000000e0   Code   RO         6000    i.__kernel_cos      m_wv.l(cos_i.o)
+    0x080047e0   0x00000070   Code   RO         6076    i.__kernel_poly     m_wv.l(poly.o)
+    0x08004850   0x000000a8   Code   RO         6038    i.__kernel_sin      m_wv.l(sin_i.o)
+    0x080048f8   0x00000018   Code   RO         6006    i.__mathlib_dbl_invalid  m_wv.l(dunder.o)
+    0x08004910   0x00000018   Code   RO         6009    i.__mathlib_dbl_underflow  m_wv.l(dunder.o)
+    0x08004928   0x00000018   Code   RO         6019    i.__mathlib_flt_divzero  m_wv.l(funder.o)
+    0x08004940   0x00000006   Code   RO         6021    i.__mathlib_flt_infnan2  m_wv.l(funder.o)
     0x08004946   0x00000002   PAD
-    0x08004948   0x00000010   Code   RO         6012    i.__mathlib_flt_invalid  m_wv.l(funder.o)
-    0x08004958   0x00000010   Code   RO         6013    i.__mathlib_flt_overflow  m_wv.l(funder.o)
-    0x08004968   0x00000010   Code   RO         6015    i.__mathlib_flt_underflow  m_wv.l(funder.o)
-    0x08004978   0x0000000e   Code   RO         6072    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08004986   0x00000002   Code   RO         6073    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08004988   0x0000000e   Code   RO         6074    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08004948   0x00000010   Code   RO         6022    i.__mathlib_flt_invalid  m_wv.l(funder.o)
+    0x08004958   0x00000010   Code   RO         6023    i.__mathlib_flt_overflow  m_wv.l(funder.o)
+    0x08004968   0x00000010   Code   RO         6025    i.__mathlib_flt_underflow  m_wv.l(funder.o)
+    0x08004978   0x0000000e   Code   RO         6082    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08004986   0x00000002   Code   RO         6083    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08004988   0x0000000e   Code   RO         6084    i.__scatterload_zeroinit  mc_w.l(handlers.o)
     0x08004996   0x00000002   PAD
-    0x08004998   0x0000000c   Code   RO         6050    i.__set_errno       mc_w.l(errno.o)
+    0x08004998   0x0000000c   Code   RO         6060    i.__set_errno       mc_w.l(errno.o)
     0x080049a4   0x00000120   Code   RO          664    i.cs_computations   measurement_functions.o
     0x08004ac4   0x0000004a   Code   RO          665    i.cs_generation     measurement_functions.o
     0x08004b0e   0x00000002   PAD
@@ -3177,13 +3184,13 @@ Memory Map of the image
     0x08004d28   0x000000d4   Code   RO         5231    i.cs_handle_tick4   cs_handles.o
     0x08004dfc   0x00000120   Code   RO         5232    i.cs_handle_tick5   cs_handles.o
     0x08004f1c   0x0000001a   Code   RO         5233    i.cs_handles        cs_handles.o
-    0x08004f36   0x0000006c   Code   RO         5778    i.dpm_mergeDWord    Comm_Layer.lib(dataparsermerger.o)
+    0x08004f36   0x0000006c   Code   RO         5788    i.dpm_mergeDWord    Comm_Layer.lib(dataparsermerger.o)
     0x08004fa2   0x00000002   PAD
-    0x08004fa4   0x00000060   Code   RO         5779    i.dpm_mergeFloat    Comm_Layer.lib(dataparsermerger.o)
-    0x08005004   0x00000052   Code   RO         5780    i.dpm_parseDWord    Comm_Layer.lib(dataparsermerger.o)
+    0x08004fa4   0x00000060   Code   RO         5789    i.dpm_mergeFloat    Comm_Layer.lib(dataparsermerger.o)
+    0x08005004   0x00000052   Code   RO         5790    i.dpm_parseDWord    Comm_Layer.lib(dataparsermerger.o)
     0x08005056   0x00000002   PAD
-    0x08005058   0x00000060   Code   RO         5781    i.dpm_parseFloat    Comm_Layer.lib(dataparsermerger.o)
-    0x080050b8   0x00000018   Code   RO         6060    i.fabs              m_wv.l(fabs.o)
+    0x08005058   0x00000060   Code   RO         5791    i.dpm_parseFloat    Comm_Layer.lib(dataparsermerger.o)
+    0x080050b8   0x00000018   Code   RO         6070    i.fabs              m_wv.l(fabs.o)
     0x080050d0   0x00000090   Code   RO          752    i.fc27              protection_functions.o
     0x08005160   0x000000c8   Code   RO         4999    i.fc27_all          fc27.o
     0x08005228   0x00000018   Code   RO         5000    i.fc27_init         fc27.o
@@ -3225,7 +3232,7 @@ Memory Map of the image
     0x080066d8   0x00000036   Code   RO         5385    i.initFunctions     initfunctions.o
     0x0800670e   0x00000002   PAD
     0x08006710   0x000000b0   Code   RO          498    i.main              main.o
-    0x080067c0   0x00000042   Code   RO         5511    i.main_flow         main_flow.o
+    0x080067c0   0x00000042   Code   RO         5521    i.main_flow         main_flow.o
     0x08006802   0x0000002a   Code   RO          767    i.off_delay         protection_functions.o
     0x0800682c   0x0000002a   Code   RO          768    i.on_delay          protection_functions.o
     0x08006856   0x0000001e   Code   RO          769    i.on_off_delay      protection_functions.o
@@ -3237,18 +3244,18 @@ Memory Map of the image
     0x08006cf0   0x00000094   Code   RO          670    i.signal_spectra    measurement_functions.o
     0x08006d84   0x00000050   Code   RO          671    i.signal_thd        measurement_functions.o
     0x08006dd4   0x000000c8   Code   RO         5307    i.spectra           spectra.o
-    0x08006e9c   0x00000002   Code   RO         5531    i.spi_initComApp    Comm_Layer.lib(spi_masterslave.o)
+    0x08006e9c   0x00000002   Code   RO         5541    i.spi_initComApp    Comm_Layer.lib(spi_masterslave.o)
     0x08006e9e   0x00000002   PAD
-    0x08006ea0   0x00000384   Code   RO         5532    i.spi_runComApp     Comm_Layer.lib(spi_masterslave.o)
-    0x08007224   0x00000044   Code   RO         5533    i.spi_sysTickCallApp  Comm_Layer.lib(spi_masterslave.o)
+    0x08006ea0   0x00000384   Code   RO         5542    i.spi_runComApp     Comm_Layer.lib(spi_masterslave.o)
+    0x08007224   0x00000044   Code   RO         5543    i.spi_sysTickCallApp  Comm_Layer.lib(spi_masterslave.o)
     0x08007268   0x00000088   Code   RO          672    i.sym_comp          measurement_functions.o
     0x080072f0   0x00000118   Code   RO          673    i.sym_mag           measurement_functions.o
     0x08007408   0x0000004c   Code   RO          674    i.thermal_status    measurement_functions.o
     0x08007454   0x0000006c   Code   RO         5287    i.trueRMS           truerms.o
     0x080074c0   0x00000034   Code   RO          675    i.true_rms          measurement_functions.o
-    0x080074f4   0x00000014   Code   RO         5722    i.uart_initComApp   Comm_Layer.lib(uart_masterslave.o)
-    0x08007508   0x0000018c   Code   RO         5723    i.uart_runComApp    Comm_Layer.lib(uart_masterslave.o)
-    0x08007694   0x00000040   Code   RO         5724    i.uart_sysTickCallApp  Comm_Layer.lib(uart_masterslave.o)
+    0x080074f4   0x00000014   Code   RO         5732    i.uart_initComApp   Comm_Layer.lib(uart_masterslave.o)
+    0x08007508   0x0000018c   Code   RO         5733    i.uart_runComApp    Comm_Layer.lib(uart_masterslave.o)
+    0x08007694   0x00000040   Code   RO         5734    i.uart_sysTickCallApp  Comm_Layer.lib(uart_masterslave.o)
     0x080076d4   0x00000008   Data   RO         2544    .constdata          stm32f7xx_hal_dma.o
     0x080076dc   0x00000010   Data   RO         4851    .constdata          system_stm32f7xx.o
     0x080076ec   0x00000008   Data   RO         4852    .constdata          system_stm32f7xx.o
@@ -3263,12 +3270,12 @@ Memory Map of the image
     0x080077a0   0x00000018   Data   RO         5112    .constdata          fcbf.o
     0x080077b8   0x00000014   Data   RO         5157    .constdata          fcunb.o
     0x080077cc   0x00000020   Data   RO         5188    .constdata          fcpvp.o
-    0x080077ec   0x00000140   Data   RO         5948    .constdata          m_wv.l(powf.o)
+    0x080077ec   0x00000140   Data   RO         5958    .constdata          m_wv.l(powf.o)
     0x0800792c   0x00000004   PAD
-    0x08007930   0x00000030   Data   RO         5991    .constdata          m_wv.l(cos_i.o)
-    0x08007960   0x000000c8   Data   RO         6025    .constdata          m_wv.l(rred.o)
-    0x08007a28   0x00000028   Data   RO         6029    .constdata          m_wv.l(sin_i.o)
-    0x08007a50   0x00000020   Data   RO         6070    Region$$Table       anon$$obj.o
+    0x08007930   0x00000030   Data   RO         6001    .constdata          m_wv.l(cos_i.o)
+    0x08007960   0x000000c8   Data   RO         6035    .constdata          m_wv.l(rred.o)
+    0x08007a28   0x00000028   Data   RO         6039    .constdata          m_wv.l(sin_i.o)
+    0x08007a50   0x00000020   Data   RO         6080    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Base: 0x20000000, Size: 0x00005e98, Max: 0x00080000, ABSOLUTE, COMPRESSED[0x000001b4])
@@ -3293,8 +3300,8 @@ Memory Map of the image
     0x200004a4   0x00000002   Data   RW         5353    .data               conversion.o
     0x200004a6   0x00000002   PAD
     0x200004a8   0x00000008   Data   RW         5416    .data               boardio.o
-    0x200004b0   0x00000004   Data   RW         5782    .data               Comm_Layer.lib(dataparsermerger.o)
-    0x200004b4   0x00000004   Data   RW         6051    .data               mc_w.l(errno.o)
+    0x200004b0   0x00000004   Data   RW         5792    .data               Comm_Layer.lib(dataparsermerger.o)
+    0x200004b4   0x00000004   Data   RW         6061    .data               mc_w.l(errno.o)
     0x200004b8   0x00000080   Zero   RW            8    .bss                tim.o
     0x20000538   0x00000020   Zero   RW          175    .bss                rtc.o
     0x20000558   0x0000004c   Zero   RW          217    .bss                quadspi.o
@@ -3324,8 +3331,8 @@ Memory Map of the image
     0x20003408   0x00000318   Zero   RW         5352    .bss                conversion.o
     0x20003720   0x00000010   Zero   RW         5400    .bss                powersysdata.o
     0x20003730   0x00000018   Zero   RW         5454    .bss                commparams.o
-    0x20003748   0x00001790   Zero   RW         5534    .bss                Comm_Layer.lib(spi_masterslave.o)
-    0x20004ed8   0x00000bc0   Zero   RW         5725    .bss                Comm_Layer.lib(uart_masterslave.o)
+    0x20003748   0x00001790   Zero   RW         5544    .bss                Comm_Layer.lib(spi_masterslave.o)
+    0x20004ed8   0x00000bc0   Zero   RW         5735    .bss                Comm_Layer.lib(uart_masterslave.o)
     0x20005a98   0x00000400   Zero   RW          869    STACK               startup_stm32f767xx.o
 
 
