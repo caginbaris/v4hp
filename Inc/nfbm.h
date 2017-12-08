@@ -287,6 +287,25 @@ extern struct powerParameters P;
 extern struct powerParameters Q;
 
 
+struct TurnRatios{
+
+	float VT_Primary;
+	float VT_Secondary;
+	
+	float CT_Primary;
+	float CT_Secondary;
+	
+	float UNB_Primary;
+	float UNB_Secondary;
+	
+	float RES_Primary;
+	float RES_Secondary;
+	
+};
+
+extern struct TurnRatios TR;
+
+
 
 
 #endif

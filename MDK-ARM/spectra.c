@@ -54,51 +54,6 @@ float coeffs_imag[]={
 
 
 
-
-
-
-
-
-void spectra_tick1(){
-	
-	
-
-
-}
-
-
-
-void spectra_tick2(){
-	
-	
-	static unsigned int count=0; 
-	
-
-	
-	if(count==spectraLength){count=0;}
-
-}
-
-void spectra_tick3(){
-	
-	
-	static unsigned int count=0; 
-	
-
-	
-	if(count==spectraLength){count=0;}
-
-}
-
-void thd_all(){
-	
-
-
-
-
-}
-
-
 void spectra(){
 	
 	

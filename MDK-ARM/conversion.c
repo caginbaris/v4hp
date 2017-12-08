@@ -14,6 +14,8 @@ union uAdc fAdc={0};
 struct AdcData offset={0};
 struct AdcData scale={0};
 
+struct TurnRatios TR;
+
 static uint32_t adc_values[15]={0};
 
 static float dbuffer[channelNo][filterDepth]={0};

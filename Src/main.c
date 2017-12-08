@@ -73,6 +73,7 @@ static void MX_NVIC_Init(void);
 void main_flow(void);
 void initFunctions(void);
 void pushDataToMaster(void);
+void pullDataFromMaster(void);
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -155,6 +156,7 @@ int main(void)
 	uart_runComApp(); 
 	spi_runComApp();
 	pushDataToMaster();
+	pullDataFromMaster();
 	
 
 	

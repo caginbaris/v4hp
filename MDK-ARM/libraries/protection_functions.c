@@ -411,7 +411,7 @@ void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcB
 	if (enable)
 	{
 
-		if (fcBF_in.trip_input && fcBF_out->trip == 0)
+		if (fcBF_in.trip_input /*&& fcBF_out->trip == 0*/)
 		{
 
 			fcBF_out->current_checked = (fcBF_in.rmsA < fcBF_in.threshold && fcBF_in.rmsB < fcBF_in.threshold && fcBF_in.rmsC < fcBF_in.threshold);
