@@ -1,6 +1,6 @@
 #include "nfbm.h"
 #include "protection_functions.h"
-
+#include "pDataConfigs.h"
 
 
 // input parameters------------------------------
@@ -85,7 +85,7 @@ void fc50_all(){
 	
 	// fc50 obj1 L1
 	
-	if(selectRMS.bits.fc50_obj1_L1){
+	if(mSelect.bit.obj1_fc50_L1){
 		
 		fc50_rms_a=fRMS.Ia;
 		fc50_rms_b=fRMS.Ib;
@@ -107,7 +107,7 @@ void fc50_all(){
 	
 		// fc50 obj1 L2
 	
-	if(selectRMS.bits.fc50_obj1_L2){
+	if(mSelect.bit.obj1_fc50_L2){
 		
 		fc50_rms_a=fRMS.Ia;
 		fc50_rms_b=fRMS.Ib;
@@ -129,7 +129,7 @@ void fc50_all(){
 	
 		// fc50 obj1 L3
 	
-	if(selectRMS.bits.fc50_obj1_L3){
+	if(mSelect.bit.obj1_fc50_L3){
 		
 		fc50_rms_a=fRMS.Ia;
 		fc50_rms_b=fRMS.Ib;

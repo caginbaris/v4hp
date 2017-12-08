@@ -29,7 +29,7 @@ struct fcBF_inputParameters fcBF_initStruct={
 fcBF_in=fcBF_initStruct;
 
 fcBF_in.threshold=Sys.I_BreakerClosed_MIN;
-fcBF_in.CB_pos_check=Sys.CBSupervision; /*CB pos input control*/
+fcBF_in.CB_pos_check=Sys.fcBF_CBSupervision; /*CB pos input control*/
 
 
 

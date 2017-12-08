@@ -3,6 +3,7 @@
 #include "nfbm.h"
 #include "powerSysData.h"
 #include "cs_handles.h"
+#include "pDataConfigs.h"
 
 #define ts 1/fs
 #define N 50
@@ -44,7 +45,6 @@ void fcPVP_init(){
 	fcPVPi_obj1_L1_in=fcPVPi_initStruct;
 																										
 																								
-	curve=selectCURVE.fcPVPi_obj1;
 		
 	fcPVPi_obj1_L1_in.curve_data[0]=curve_data[curve][0];
 	fcPVPi_obj1_L1_in.curve_data[1]=curve_data[curve][1];

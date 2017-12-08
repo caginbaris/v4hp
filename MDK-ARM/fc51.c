@@ -1,5 +1,7 @@
 #include "nfbm.h"
 #include "protection_functions.h"
+#include "pDataConfigs.h"
+
 
 
 
@@ -34,7 +36,7 @@ void fc51_init(){
 																									
 
 	
-	curve=selectCURVE.fc51_obj1;
+	
 		
 	fc51_obj1_in.curve_data[0]=curve_data[curve][0];
 	fc51_obj1_in.curve_data[1]=curve_data[curve][1];
@@ -54,7 +56,7 @@ void fc51_all(){
 	
 	// fc51 obj1 Start**************************
 
-	if(selectRMS.bits.fc51_obj1){
+	if(mSelect.bit.obj1_fc51){
 		
 		fc51_rms_a=fRMS.Ia;
 		fc51_rms_b=fRMS.Ib;

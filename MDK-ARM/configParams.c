@@ -8,9 +8,10 @@
 
 union protectionEnableData pEN;
 
-union mSelection mSelect;
+union mSelection mSelect={0};
+union pFlags pFlag={0};
 
-
+void init_protection();
 
 void checkDataFromMaster(){
 	
@@ -26,9 +27,21 @@ void pullDataFromMaster(){
 	
 	// processed @ last
 	
+	init_protection();
+	
 	mSelect.all=comParams_uart.recDataBufferDW[1];
+	cSelect1.all=comParams_uart.recDataBufferDW[2];
+	cSelect2.all=comParams_uart.recDataBufferDW[3];
 	
 	
+	Sys.phaseRotation=pFlag.bit.phaseRotation;
+	Sys.fc27_currentSupervision= pFlag.bit.fc27_currentSupervision;
+	Sys.fcBF_CBSupervision=pFlag.bit.fcBF_cbSupervision;
+	
+	//spare
+	
+	Sys.UNBdetect=pFlag.bit.naturalUNBdetect;
+	Sys.UNBcompFlag=pFlag.bit.naturalUNBcomp;
 	
 	
 	//F data
@@ -207,16 +220,15 @@ void pullDataFromMaster(){
 	fc37_obj2_L1_in.level=comParams_uart.recDataBufferF[98];
 	fc37_obj2_L1_in.delay=comParams_uart.recDataBufferF[99];
 	
-	//spare
-	//spare
-	//spare
-	//spare
+	Sys.Q_TCR=comParams_uart.recDataBufferF[100];
+	Sys.Q_HF2=comParams_uart.recDataBufferF[101];
+	Sys.Q_HF3=comParams_uart.recDataBufferF[102];
+	Sys.Q_HF4=comParams_uart.recDataBufferF[103];
 
-	Sys.I_Nom_obj1=comParams_uart.recDataBufferF[103];
-	Sys.I_Nom_obj2=comParams_uart.recDataBufferF[104];
+	Sys.I_Nom_obj1=comParams_uart.recDataBufferF[104];
+	Sys.I_Nom_obj2=comParams_uart.recDataBufferF[105];
 	
 	Sys.I_BreakerClosed_MIN=comParams_uart.recDataBufferF[105];
-	Sys.Xvalue=comParams_uart.pushDataBufferF[106];
 	Sys.Rvalue=comParams_uart.pushDataBufferF[107];
 	
 	
@@ -226,187 +238,15 @@ void pullDataFromMaster(){
 	TR.CT_Primary  =comParams_uart.recDataBufferF[110];
 	TR.CT_Secondary=comParams_uart.recDataBufferF[111];
 	
-	TR.VT_Primary  =comParams_uart.recDataBufferF[112];
-	TR.VT_Secondary=comParams_uart.recDataBufferF[113];
+	TR.UNB_Primary  =comParams_uart.recDataBufferF[112];
+	TR.UNB_Secondary=comParams_uart.recDataBufferF[113];
 	
-	TR.UNB_Primary  =comParams_uart.recDataBufferF[114];
-	TR.UNB_Secondary=comParams_uart.recDataBufferF[115];
-	
-	
+	TR.RES_Primary  =comParams_uart.recDataBufferF[114];
+	TR.RES_Secondary=comParams_uart.recDataBufferF[115];
 	
 	
-	/*Enable Handling*/
 	
-	/*
-	
-	// fc50 
-	
-	EN.bits.fc50_obj1_L1= pEN.bit.obj1_50_51_N &
-												pEN.bit.obj1_50s &
-												(fc50_obj1_L1_in.level>eps) &
-												(fc50_obj1_L1_in.delay>eps);
-																								
-	EN.bits.fc50_obj1_L2= pEN.bit.obj1_50_51_N &
-												pEN.bit.obj1_50s &
-												(fc50_obj1_L2_in.level>eps) &
-												(fc50_obj1_L2_in.delay>eps);										
-												
-	EN.bits.fc50_obj1_L3= pEN.bit.obj1_50_51_N &
-												pEN.bit.obj1_50s &
-												(fc50_obj1_L3_in.level>eps) &
-												(fc50_obj1_L3_in.delay>eps);
-
-
-	EN.bits.fc50_obj2_L1= pEN.bit.obj2_50_51_N &
-												pEN.bit.obj2_50s &
-												(fc50_obj2_L1_in.level>eps) &
-												(fc50_obj2_L1_in.delay>eps);
-																								
-	EN.bits.fc50_obj2_L2= pEN.bit.obj2_50_51_N &
-												pEN.bit.obj2_50s &
-												(fc50_obj2_L2_in.level>eps) &
-												(fc50_obj2_L2_in.delay>eps);										
-												
-	EN.bits.fc50_obj2_L3= pEN.bit.obj2_50_51_N &
-												pEN.bit.obj2_50s &
-												(fc50_obj2_L3_in.level>eps) &
-												(fc50_obj2_L3_in.delay>eps);
-												
-	
-	//fc51	
-												
-	EN.bits.fc51_obj1= 	  pEN.bit.obj1_50_51_N &
-												pEN.bit.obj1_50s &
-												(fc51_obj1_in.level>eps) &
-												(fc51_obj1_in.time_multiplier>eps);
-												
-	EN.bits.fc51_obj2= 	  pEN.bit.obj2_50_51_N &
-												pEN.bit.obj2_50s &
-												(fc51_obj2_in.level>eps) &
-												(fc51_obj2_in.time_multiplier>eps);											
-												
-												
-	// fc50N
-	
-	EN.bits.fc50N_obj1_L1= 	pEN.bit.obj1_50_51_N &
-													pEN.bit.obj1_50Ns &
-													(fc50N_obj1_L1_in.level>eps) &
-													(fc50N_obj1_L1_in.delay>eps);
-																								
-	EN.bits.fc50N_obj1_L2= 	pEN.bit.obj1_50_51_N &
-													pEN.bit.obj1_50Ns &
-													(fc50N_obj1_L2_in.level>eps) &
-													(fc50N_obj1_L2_in.delay>eps);										
-												
-	EN.bits.fc50N_obj1_L3= 	pEN.bit.obj1_50_51_N &
-													pEN.bit.obj1_50s &
-													(fc50N_obj1_L3_in.level>eps) &
-													(fc50N_obj1_L3_in.delay>eps);		
-
-	// fc51N
-	
-	EN.bits.fc51N_obj1= 	  pEN.bit.obj1_50_51_N &
-													pEN.bit.obj1_51Ns &
-													(fc51N_obj1_in.level>eps) &
-													(fc51N_obj1_in.time_multiplier>eps);
-	
-	
-	// fc27
-	
-	EN.bits.fc27_obj1_L1=   pEN.bit.obj1_27_59 &
-													pEN.bit.obj1_27 &
-													(fc27_obj1_L1_in.level>eps) &
-													(fc27_obj1_L1_in.delay>eps);
-
-	EN.bits.fc27_obj1_L2=   pEN.bit.obj1_27_59 &
-													pEN.bit.obj1_27 &
-													(fc27_obj1_L2_in.level>eps) &
-													(fc27_obj1_L2_in.delay>eps);
-
-
-	// fc59
-	
-	EN.bits.fc59_obj1_L1=   pEN.bit.obj1_27_59 &
-													pEN.bit.obj1_59 &
-													(fc59_obj1_L1_in.level>eps) &
-													(fc59_obj1_L1_in.delay>eps);
-
-	EN.bits.fc59_obj1_L2=   pEN.bit.obj1_27_59 &
-													pEN.bit.obj1_59 &
-													(fc59_obj1_L2_in.level>eps) &
-													(fc59_obj1_L2_in.delay>eps);	
-													
-	// fc46
-	
-	EN.bits.fc46_obj1_L1=   pEN.bit.obj1_46 &
-													(fc46d_obj1_L1_in.level>eps) &
-													(fc46d_obj1_L1_in.delay>eps);
-
-	EN.bits.fc46_obj1_L2=    pEN.bit.obj1_46 &
-													(fc46i_obj1_L1_in.level>eps) &
-													(fc46i_obj1_L1_in.time_multiplier>eps);	
-
-	// fc49
-	
-	EN.bits.fc49_obj1_L1=  pEN.bit.obj1_49 &
-												(fc49_obj1_L1_in.alarm_level>eps) &
-												(fc49_obj1_L1_in.trip_level>eps);	
-												
-	EN.bits.fc49_obj1_L2=  pEN.bit.obj1_49 &
-												(fc49_obj1_L2_in.alarm_level>eps) &
-												(fc49_obj1_L2_in.trip_level>eps);			
-
-
-	EN.bits.fc49_obj2_L1=  pEN.bit.obj1_49 &
-												(fc49_obj2_L1_in.alarm_level>eps) &
-												(fc49_obj2_L1_in.trip_level>eps);	
-												
-	EN.bits.fc49_obj2_L2=  pEN.bit.obj1_49 &
-												(fc49_obj2_L2_in.alarm_level>eps) &
-												(fc49_obj2_L2_in.trip_level>eps);
-												
-												
-												
-	// fcBF		
-
-	EN.bits.fcBF_obj1 = pEN.bit.obj1_BF &
-											(fcBF_in.delay>eps);
-											
-											
-	// fc37
-	
-	EN.bits.fc37_obj1 =pEN.bit.obj1_37 &
-										(fc37_obj1_L1_in.level>eps) &
-										(fc37_obj1_L1_in.delay>eps);
-										
-										
-	EN.bits.fc37_obj2 =pEN.bit.obj2_37 &
-										(fc37_obj2_L1_in.level>eps) &
-										(fc37_obj2_L1_in.delay>eps);
-										
-										
-	// fcUNB
-	
-		EN.bits.fcUNBd_obj1 =pEN.bit.obj1_UNB &
-											(fcUNBd_obj1_L1_in.level>eps) &
-											(fcUNBd_obj1_L1_in.delay>eps);		
-
-		EN.bits.fcUNBi_obj1 =pEN.bit.obj1_UNB &
-											(fcUNBi_obj1_L1_in.level>eps);	
-
-	// fcPVP
-	
-		EN.bits.fcPVPd_obj1= pEN.bit.obj1_PVP &
-												 (fcUNBd_obj1_L1_in.level>eps) &
-												 (fcUNBd_obj1_L1_in.delay>eps); 
-												 
-												 
-		EN.bits.fcPVPi_obj1= pEN.bit.obj1_PVP &
-												 (fcUNBi_obj1_L1_in.level>eps) &
-												 (fcUNBi_obj1_L1_in.time_multiplier>eps);
-		
-		*/
-		/*Enable Handling End*/										 
+								 
 												 
 	
 

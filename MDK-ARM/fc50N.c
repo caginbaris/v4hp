@@ -1,6 +1,6 @@
 #include "nfbm.h"
 #include "protection_functions.h"
-
+#include "pDataConfigs.h"
 
 struct fc50_inputParameters fc50N_obj1_L1_in;
 struct fc50_inputParameters fc50N_obj1_L2_in;
@@ -37,9 +37,9 @@ void fc50N_all(){
 	float fc50N_rms=0;
 
 	
-	// fc50N L1
+		// fc50N L1****************
 	
-		if(selectRMS.bits.fc50N_obj1_L1){
+		if(mSelect.bit.obj1_fc50N_L1){
 		
 		fc50N_rms=fRMS.In;
 
@@ -51,7 +51,39 @@ void fc50N_all(){
 		
 		
 		fc50(fc50N_rms,fc50N_obj1_L1_in,&fc50N_obj1_L1_out,EN.bits.fc50N_obj1_L1);
+		
+		
+		// fc50N L2*****************
+		
+		if(mSelect.bit.obj1_fc50N_L2){
+		
+		fc50N_rms=fRMS.In;
+
+		}else{
+		
+		fc50N_rms=tRMS.In;
+			
+		}
+		
+		
+		
+		
 		fc50(fc50N_rms,fc50N_obj1_L2_in,&fc50N_obj1_L2_out,EN.bits.fc50N_obj1_L2);
+		
+		
+		
+		if(mSelect.bit.obj1_fc50N_L3){
+		
+		fc50N_rms=fRMS.In;
+
+		}else{
+		
+		fc50N_rms=tRMS.In;
+			
+		}
+		
+		
+		
 		fc50(fc50N_rms,fc50N_obj1_L3_in,&fc50N_obj1_L3_out,EN.bits.fc50N_obj1_L3);
 
 

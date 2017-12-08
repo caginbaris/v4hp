@@ -31,7 +31,7 @@ void fc46_init(){
 		fc46d_obj1_L1_in=fc46d_initStruct;																									
 		fc46i_obj1_L1_in=fc46i_initStruct;
 																										
-		curve=selectCURVE.fc51_obj1;
+		
 		
 		fc46i_obj1_L1_in.curve_data[0]=curve_data[curve][0];
 		fc46i_obj1_L1_in.curve_data[1]=curve_data[curve][1];
@@ -49,11 +49,11 @@ float sym_data=0.0f;
 	
 	if(Sys.phaseRotation){
 		
-	sym_data=mag_sym.I2;
+	sym_data=mag_sym.I1;
 	
 	}else{
 		
-	sym_data=mag_sym.I1;	
+	sym_data=mag_sym.I2;	
 	
 	
 	}

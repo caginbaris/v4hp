@@ -43,7 +43,7 @@ void fc27_all(){
 	
 
 	
-	if(Sys.currentSupervision){
+	if(Sys.fc27_currentSupervision){
 	
 	cs_qual=on_off_delay(
 		
@@ -72,11 +72,11 @@ void fc27_all(){
 	
 	if(Sys.phaseRotation){
 	
-	rms=mag_sym.V1;
+	rms=mag_sym.V2;
 	
 	}else{
 	
-	rms=mag_sym.V2;
+	rms=mag_sym.V1;
 	
 	}
 	

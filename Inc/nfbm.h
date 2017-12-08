@@ -143,70 +143,8 @@ union pFunctionEnable{
 extern union pFunctionEnable EN;
 	
 	
-union rms_selection{
-		
-		struct{
-		
-		uint32_t fc50_obj1_L1	;
-		uint32_t fc50_obj1_L2	;
-		uint32_t fc50_obj1_L3	;
-		
-		uint32_t fc50_obj2_L1	;
-		uint32_t fc50_obj2_L2	;
-		uint32_t fc50_obj2_L3	;
-			
-		uint32_t fc51_obj1:1	;
-		uint32_t fc51_obj2:1	;	
 
-		uint32_t fc50N_obj1_L1:1	;
-		uint32_t fc50N_obj1_L2:1	;
-		uint32_t fc50N_obj1_L3:1	;
 
-		uint32_t fc51N_obj1:1	;		
-
-		uint32_t fc27_obj1_L1	; // no use
-		uint32_t fc27_obj1_L2	;	// no use
-			
-		uint32_t fc59_obj1_L1	;
-		uint32_t fc59_obj1_L2;		
-		
-		uint32_t fc46_obj1_L1	; // no use
-		uint32_t fc46_obj1_L2	;	// no use
-		
-		uint32_t fc49_obj1_L1	; // no use
-		uint32_t fc49_obj1_L2	;	// no use
-		
-		uint32_t fcBF_obj1	;		// no use
-		
-		uint32_t fc37_obj1	; 	// no use
-		uint32_t fc37_obj2	;		// no use	
-		
-		
-		uint32_t fcUNBd_obj1	; //no use
-		uint32_t fcUNBi_obj1	;	//no use
-		
-		uint32_t fcPVPd_obj1	; //no use
-		uint32_t fcPVPi_obj1	;	//no use
-			
-			
-			
-			
-				
-		
-			
-			
-		
-	}bits;
-	
-	uint32_t all;
-	
-	
-	
-	
-	};
-
-	
-extern union rms_selection selectRMS;
 	
 	
 	
@@ -245,25 +183,24 @@ extern struct curve_selection selectCURVE;
 
 enum curve_entry{
 	
-	IEC_inverse,
-	IEC_very_inverse,
-	IEC_extremely_inverse,
-	IEC_long_inverse,
+	IEC_normal_inverse=0x01,
+	IEC_very_inverse=0x02,
+	IEC_extremely_inverse=0x04,
+	IEC_long_inverse=0x08,
 	
-	ANSI_inverse,
-	ANSI_short_inverse,
-	ANSI_long_inverse,
-	ANSI_moderately_inverse,
-	ANSI_very_inverse,
-	ANSI_extremely_inverse,
-	ANSI_definite_inverse
-	
-	
+	ANSI_normal_inverse=0x10,
+	ANSI_very_inverse=0x20,
+	ANSI_extremely_inverse=0x40,
+	ANSI_long_inverse=0x80,
+
+
 };
 
 
+
+
 extern enum curve_entry curve;
-extern float curve_data[11][3];
+extern float curve_data[8][3];
 
 
 

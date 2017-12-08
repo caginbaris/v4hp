@@ -29,11 +29,11 @@ void main_flow(){
 	
 	fcBF_all();
 	
-	fc37_all();
+	//fc37_all();
 	
 	//fcUNB_all();
 	
-	fcPVP_all();
+	//fcPVP_all();
 	
 	
 	

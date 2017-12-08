@@ -1,5 +1,6 @@
 #include "nfbm.h"
 #include "protection_functions.h"
+#include "pDataConfigs.h"
 
 
 struct fc51_inputParameters 	fc51N_obj1_in;
@@ -15,7 +16,7 @@ void fc51N_init(){
 	fc51N_obj1_in=fc51N_initStruct;
 	
 
-	curve=selectCURVE.fc51N_obj1;
+	
 		
 	fc51N_obj1_in.curve_data[0]=curve_data[curve][0];
 	fc51N_obj1_in.curve_data[1]=curve_data[curve][1];
@@ -34,7 +35,7 @@ void fc51N_all(){
 	
 	// fc51N obj1 Start**************************
 
-	if(selectRMS.bits.fc51_obj1){
+	if(mSelect.bit.obj1_fc51N){
 		
 		fc51N_rms=fRMS.Ia;
 
