@@ -3,6 +3,7 @@
 #include "nfbm.h"
 #include "measurement_functions.h"
 #include "conversion.h"
+#include "pDataConfigs.h"
 
 
 uint8_t conversion_completed=0;
@@ -64,8 +65,11 @@ void init_conversion(){
 	scale.Van=1.0f;
 	scale.Vbn=1.0f;
 	scale.Vcn=1.0f;
-
-
+	
+	TR.VT=	(TR.VT_Secondary>eps) 	? 	(TR.VT_Primary/TR.VT_Secondary) : 0.0f;
+	TR.CT=	(TR.CT_Secondary>eps) 	? 	(TR.CT_Primary/TR.CT_Secondary) : 0.0f;
+	TR.RES=	(TR.RES_Secondary>eps) 	? 	(TR.RES_Primary/TR.RES_Secondary) : 0.0f;
+	TR.UNB=	(TR.UNB_Secondary>eps) 	? 	(TR.UNB_Primary/TR.RES_Secondary) : 0.0f;
 }
 
 
@@ -76,6 +80,8 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 	
 static uint8_t dec=0;	
 uint8_t i;
+	
+
 
 if(hadc->Instance==ADC1){ 
 	

@@ -79,7 +79,6 @@ enum AdcChannel{
 
 
 
-	
 union pFunctionEnable{
 	
 	struct{
@@ -145,34 +144,7 @@ extern union pFunctionEnable EN;
 	
 
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-struct curve_selection{
-		
-		
-		
-		uint32_t fc51_obj1	;
-		uint32_t fc51_obj2	;
-		uint32_t fc51N_obj1	;
-		uint32_t fc46i_obj1	;
-		uint32_t fcUNBi_obj1	;
-		uint32_t fcPVPi_obj1	;
-		
 
-		
-
-	
-	};
-
-	
-extern struct curve_selection selectCURVE;
 	
 	
 	
@@ -237,6 +209,11 @@ struct TurnRatios{
 	
 	float RES_Primary;
 	float RES_Secondary;
+	
+	float VT;
+	float CT;
+	float UNB;
+	float RES;
 	
 };
 

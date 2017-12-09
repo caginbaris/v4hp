@@ -42,3 +42,4 @@ v4hp\conversion.o: ../Inc/adc.h
 v4hp\conversion.o: ../Inc/nfbm.h
 v4hp\conversion.o: .\libraries\measurement_functions.h
 v4hp\conversion.o: ../Inc/conversion.h
+v4hp\conversion.o: ../Inc/pDataConfigs.h
