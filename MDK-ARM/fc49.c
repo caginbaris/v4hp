@@ -8,10 +8,10 @@ struct thermal_parameters fc49_obj1_therm;
 struct thermal_parameters fc49_obj2_therm;
 
 struct fc49_inputParameters fc49_obj1_L1_in;
-struct fc49_inputParameters fc49_obj1_L2_in;
+struct fc49_inputParameters fc49_obj1_L2_in; // cau-omitted
 
 struct fc49_inputParameters fc49_obj2_L1_in;
-struct fc49_inputParameters fc49_obj2_L2_in;
+struct fc49_inputParameters fc49_obj2_L2_in; // cau-omitted
 
 
 struct fc49_outputParameters fc49_obj1_L1_out_a={0};
@@ -91,9 +91,9 @@ void fc49_all(){
 	fc49(therm_b_obj1,fc49_obj1_L1_in,&fc49_obj1_L1_out_a,EN.bits.fc49_obj1_L1);
 	fc49(therm_c_obj1,fc49_obj1_L1_in,&fc49_obj1_L1_out_a,EN.bits.fc49_obj1_L1);
 	
-	fc49(therm_a_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
-	fc49(therm_b_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
-	fc49(therm_c_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
+	//fc49(therm_a_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
+	//7fc49(therm_b_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
+	//fc49(therm_c_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
 	
 	
 	//obj2
@@ -102,9 +102,9 @@ void fc49_all(){
 	fc49(therm_b_obj2,fc49_obj2_L1_in,&fc49_obj2_L1_out_a,EN.bits.fc49_obj2_L1);
 	fc49(therm_c_obj2,fc49_obj2_L1_in,&fc49_obj2_L1_out_a,EN.bits.fc49_obj2_L1);
 	
-	fc49(therm_a_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
-	fc49(therm_b_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
-	fc49(therm_c_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
+	//fc49(therm_a_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
+	//fc49(therm_b_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
+	//fc49(therm_c_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
 
 
 

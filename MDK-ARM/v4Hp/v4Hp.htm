@@ -3,7 +3,7 @@
 <title>Static Call Graph - [v4Hp\v4Hp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image v4Hp\v4Hp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Sat Dec 09 10:02:54 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Wed Dec 27 16:59:29 2017
 <BR><P>
 <H3>Maximum Stack Usage =        440 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -555,7 +555,7 @@ Global Symbols
 <P><STRONG><a name="[8]"></a>DebugMon_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.DebugMon_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f767xx.o(RESET)
 </UL>
-<P><STRONG><a name="[33]"></a>EXTI15_10_IRQHandler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.EXTI15_10_IRQHandler))
+<P><STRONG><a name="[33]"></a>EXTI15_10_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f7xx_it.o(i.EXTI15_10_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = EXTI15_10_IRQHandler &rArr; HAL_GPIO_EXTI_IRQHandler
 </UL>
 <BR>[Calls]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_IRQHandler
@@ -1723,18 +1723,18 @@ Global Symbols
 <P><STRONG><a name="[12b]"></a>init_protection</STRONG> (Thumb, 2178 bytes, Stack size 60 bytes, init_protection.o(i.init_protection))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = init_protection
 </UL>
-<BR>[Called By]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pullDataFromMaster
+<BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pullDataFromMaster
 </UL>
 
-<P><STRONG><a name="[77]"></a>main</STRONG> (Thumb, 156 bytes, Stack size 0 bytes, main.o(i.main))
+<P><STRONG><a name="[77]"></a>main</STRONG> (Thumb, 166 bytes, Stack size 0 bytes, main.o(i.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 440<LI>Call Chain = main &rArr; main_flow &rArr; spectra &rArr; signal_spectra &rArr; __hardfp_sqrtf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_runComApp
 <LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_initComApp
 <LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_runComApp
 <LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spi_initComApp
-<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pushDataToMaster
-<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pullDataFromMaster
+<LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pushDataToMaster
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;pullDataFromMaster
 <LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main_flow
 <LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initFunctions
 <LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_USART2_UART_Init
@@ -1787,7 +1787,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
 </UL>
 
-<P><STRONG><a name="[128]"></a>pullDataFromMaster</STRONG> (Thumb, 912 bytes, Stack size 16 bytes, configparams.o(i.pullDataFromMaster))
+<P><STRONG><a name="[127]"></a>pullDataFromMaster</STRONG> (Thumb, 912 bytes, Stack size 16 bytes, configparams.o(i.pullDataFromMaster))
 <BR><BR>[Stack]<UL><LI>Max Depth = 76<LI>Call Chain = pullDataFromMaster &rArr; init_protection
 </UL>
 <BR>[Calls]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;init_protection
@@ -1795,7 +1795,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[127]"></a>pushDataToMaster</STRONG> (Thumb, 800 bytes, Stack size 12 bytes, commparams.o(i.pushDataToMaster))
+<P><STRONG><a name="[128]"></a>pushDataToMaster</STRONG> (Thumb, 800 bytes, Stack size 12 bytes, commparams.o(i.pushDataToMaster))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = pushDataToMaster
 </UL>
 <BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main

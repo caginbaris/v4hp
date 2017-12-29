@@ -27,11 +27,13 @@ void pullDataFromMaster(){
 	
 	// processed @ last
 	
-	init_protection();
-	
+	pEN.all=comParams_uart.recDataBufferDW[0];
 	mSelect.all=comParams_uart.recDataBufferDW[1];
 	cSelect1.all=comParams_uart.recDataBufferDW[2];
 	cSelect2.all=comParams_uart.recDataBufferDW[3];
+	pFlag.all=comParams_uart.recDataBufferDW[4];
+	
+	init_protection();
 	
 	
 	Sys.phaseRotation=pFlag.bit.phaseRotation;
@@ -136,7 +138,7 @@ void pullDataFromMaster(){
 	fc49_obj1_therm.k=comParams_uart.recDataBufferF[42];
 	fc49_obj1_therm.tau=comParams_uart.recDataBufferF[43];
 	fc49_obj1_L1_in.alarm_level=comParams_uart.recDataBufferF[44];
-	fc49_obj1_therm.Inom=comParams_uart.recDataBufferF[45];
+	fc49_obj1_therm.Inom=comParams_uart.recDataBufferF[104];
 	
 	//discard
 	//discard
@@ -145,6 +147,7 @@ void pullDataFromMaster(){
 	fcBF_in.delay=comParams_uart.recDataBufferF[49];
 	fcBF_in.threshold=comParams_uart.recDataBufferF[50];
 	
+	//discard
 	//discard
 	//discard
 	//discard
@@ -209,7 +212,7 @@ void pullDataFromMaster(){
 	fc49_obj2_therm.k=comParams_uart.recDataBufferF[90];
 	fc49_obj2_therm.tau=comParams_uart.recDataBufferF[91];
 	fc49_obj2_L1_in.alarm_level=comParams_uart.recDataBufferF[92];
-	fc49_obj2_therm.Inom=comParams_uart.recDataBufferF[93];
+	fc49_obj2_therm.Inom=comParams_uart.recDataBufferF[105];
 	
 	//spare
 	//spare

@@ -43,7 +43,7 @@ void fc27_all(){
 	
 
 	
-	if(Sys.fc27_currentSupervision){
+	if(Sys.fc27_currentSupervision){ //cau assigment check needed
 	
 	cs_qual=on_off_delay(
 		

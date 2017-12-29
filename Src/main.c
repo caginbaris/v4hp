@@ -62,6 +62,7 @@
 /* Private variables ---------------------------------------------------------*/
 extern uint8_t conversion_completed;
 uint32_t adc_values[15];
+uint8_t incoming_data_flag=0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -155,8 +156,19 @@ int main(void)
 	/* Comm Layer Functions in superloop */
 	uart_runComApp(); 
 	spi_runComApp();
-	pushDataToMaster();
+	
+	if(incoming_data_flag){
+	
 	pullDataFromMaster();
+	incoming_data_flag=0;	
+	
+	}else{
+	
+	pushDataToMaster();
+	
+	}
+	
+	
 	
 
 	
