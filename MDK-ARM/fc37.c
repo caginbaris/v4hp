@@ -27,7 +27,7 @@ void fc37_init(){
 
 void fc37_all(){
 	
-
+	// cau bs
 
 	fc37(fRMS.Ia,fc37_obj1_L1_in,&fc37_obj1_L1_out_a,EN.bits.fc37_obj1);
 	fc37(fRMS.Ib,fc37_obj1_L1_in,&fc37_obj1_L1_out_b,EN.bits.fc37_obj1);

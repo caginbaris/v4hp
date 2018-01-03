@@ -7,7 +7,8 @@
 
 void initFunctions(){
 	
-
+//init_conversion();
+	
 fc50_init();
 fc51_init();
 fc50N_init();

@@ -1,7 +1,7 @@
 #include "nfbm.h"
 #include "SPI_MasterSlave.h"
 
-
+#include "UART_MasterSlave.h"
 #include "mlib_definitions.h"
 #include "plib_handles.h"
 #include "protection_functions.h"
@@ -36,11 +36,17 @@ void pushDataToMaster(void){
 	
 	#if  COMM_testEnable 
 	
-	testDW[testParamDW]=testEntryDW;
+	int i;
+	
+	/*testDW[testParamDW]=testEntryDW;
 	comParams.pushDataBufferDW[testParamDW]=testDW[testParamDW];
 	
 	testF[testParamF]=testEntryF;
-	comParams.pushDataBufferDW[testParamF]=testDW[testParamF];
+	comParams.pushDataBufferDW[testParamF]=testDW[testParamF];*/
+	
+	for(i=0;i<80;i++){
+	comParams.pushDataBufferF[i+166]=comParams_uart.recDataBufferF[i];
+	}
 	
 	#else
 	
@@ -206,7 +212,7 @@ void pushDataToMaster(void){
 	/*254*/comParams.pushDataBufferDW[15]=mSelect.all;
 	/*256*/comParams.pushDataBufferDW[16]=cSelect1.all;
   /*258*/comParams.pushDataBufferDW[17]=cSelect2.all;
-	/*260*/comParams.pushDataBufferDW[17]=pFlag.all; 
+	/*260*/comParams.pushDataBufferDW[18]=pFlag.all; 
 	
 	
 	/*262*/comParams.pushDataBufferF[109]=fc50_obj1_L1_in.dropout_ratio;
@@ -346,8 +352,8 @@ void pushDataToMaster(void){
 	//discard
 	//discard
 	
-	/*442*/comParams.pushDataBufferF[198]=fc51_obj1_in.level;
-	/*444*/comParams.pushDataBufferF[199]=fc51_obj1_in.time_multiplier;
+	/*442*/comParams.pushDataBufferF[198]=fc51_obj2_in.level;
+	/*444*/comParams.pushDataBufferF[199]=fc51_obj2_in.time_multiplier;
 	
 	
 	/*446*/comParams.pushDataBufferF[200]=fc49_obj2_therm.k;
@@ -358,29 +364,29 @@ void pushDataToMaster(void){
 	//discard
 	
 	
-	/*458*/comParams.pushDataBufferF[206]=fc37_obj1_L1_in.dropout_ratio;
+	/*458*/comParams.pushDataBufferF[206]=fc37_obj2_L1_in.dropout_ratio;
 	//discard
-	/*462*/comParams.pushDataBufferF[208]=fc37_obj1_L1_in.level;
-	/*464*/comParams.pushDataBufferF[209]=fc37_obj1_L1_in.delay;
+	/*462*/comParams.pushDataBufferF[208]=fc37_obj2_L1_in.level;
+	/*464*/comParams.pushDataBufferF[209]=fc37_obj2_L1_in.delay;
 	
-	/*466*/comParams.pushDataBufferF[210]=Sys.Q_TCR;
+	/*466*/comParams.pushDataBufferF[210]=Sys.Q_TCR; //cau im MVar
 	/*468*/comParams.pushDataBufferF[211]=Sys.Q_HF2;
 	/*470*/comParams.pushDataBufferF[212]=Sys.Q_HF3;
 	/*472*/comParams.pushDataBufferF[213]=Sys.Q_HF4;
 	
 	/*474*/comParams.pushDataBufferF[214]=Sys.I_Nom_obj1;
-	/*476*/comParams.pushDataBufferF[215]=Sys.I_Nom_obj1;
+	/*476*/comParams.pushDataBufferF[215]=Sys.I_Nom_obj2;
 	/*478*/comParams.pushDataBufferF[216]=Sys.I_BreakerClosed_MIN;
 	/*480*/comParams.pushDataBufferF[217]=Sys.Rvalue;
 	
 	/*474*/comParams.pushDataBufferF[218]=TR.VT_Primary;
 	/*476*/comParams.pushDataBufferF[219]=TR.VT_Secondary;
 	/*478*/comParams.pushDataBufferF[220]=TR.CT_Primary;
-	/*480*/comParams.pushDataBufferF[221]=TR.CT_Primary;
+	/*480*/comParams.pushDataBufferF[221]=TR.CT_Secondary  ;
 	/*478*/comParams.pushDataBufferF[222]=TR.UNB_Primary;
-	/*480*/comParams.pushDataBufferF[223]=TR.UNB_Primary;
+	/*480*/comParams.pushDataBufferF[223]=TR.UNB_Secondary;
 	/*478*/comParams.pushDataBufferF[224]=TR.RES_Primary;
-	/*480*/comParams.pushDataBufferF[225]=TR.RES_Primary;
+	/*480*/comParams.pushDataBufferF[225]=TR.RES_Secondary;
 	
 	//discard
 	//discard

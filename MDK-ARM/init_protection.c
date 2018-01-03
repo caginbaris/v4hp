@@ -26,7 +26,9 @@ float curve_data[8][3]={
 void init_protection(void){
 	
 	
-		/*Enable Handling*/
+	/*Enable Handling*/
+	
+	// cau EN all is not changing acc. to bit value 
 	
 	// fc50 
 	
@@ -145,11 +147,11 @@ void init_protection(void){
 													(fc49_obj1_L2_in.trip_level>eps);			
 
 
-		EN.bits.fc49_obj2_L1=  	 pEN.bit.obj1_49 &
+		EN.bits.fc49_obj2_L1=  	 pEN.bit.obj2_49 &
 													(fc49_obj2_L1_in.alarm_level>eps) &
 													(fc49_obj2_L1_in.trip_level>eps);	
 													
-		EN.bits.fc49_obj2_L2=  	pEN.bit.obj1_49 &
+		EN.bits.fc49_obj2_L2=  	pEN.bit.obj2_49 &
 													(fc49_obj2_L2_in.alarm_level>eps) &
 													(fc49_obj2_L2_in.trip_level>eps);
 												
@@ -185,13 +187,13 @@ void init_protection(void){
 	// fcPVP
 	
 		EN.bits.fcPVPd_obj1= pEN.bit.obj1_PVP &
-												 (fcUNBd_obj1_L1_in.level>eps) &
-												 (fcUNBd_obj1_L1_in.delay>eps); 
+												 (fcPVPd_obj1_L1_in.level>eps) &
+												 (fcPVPd_obj1_L1_in.delay>eps); 
 												 
 												 
 		EN.bits.fcPVPi_obj1= pEN.bit.obj1_PVP &
-												 (fcUNBi_obj1_L1_in.level>eps) &
-												 (fcUNBi_obj1_L1_in.time_multiplier>eps);
+												 (fcPVPi_obj1_L1_in.level>eps) &
+												 (fcPVPi_obj1_L1_in.time_multiplier>eps);
 		
 		
 	/*Enable Handling End*/		
@@ -363,7 +365,7 @@ void init_protection(void){
 	
 	
 	
-	curve=(cSelect2.all>>16) & 0x00FF;
+	curve=(cSelect2.all>>8) & 0x00FF;
 	
 	switch (curve)
   {
@@ -400,6 +402,8 @@ void init_protection(void){
 																	fc51_obj2_in.curve_data[2]=curve_data[7][0] ; break;
 		
   }
+	
+	
 
 }
 

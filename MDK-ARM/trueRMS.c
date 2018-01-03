@@ -20,7 +20,7 @@ void trueRMS(void){
 	
 	}
 	
-	if(++counter==channelNo){counter=0;}
+	if(++counter==bufferLength){counter=0;}
 	
 	tRMS=backRMS.sAdc;
 		

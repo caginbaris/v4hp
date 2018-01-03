@@ -44,7 +44,7 @@ void fcPVP_init(){
 	fcPVPd_obj1_L1_in=fcPVPd_initStruct;																									
 	fcPVPi_obj1_L1_in=fcPVPi_initStruct;
 																										
-																								
+	//cau curve data is not checked																					
 		
 	fcPVPi_obj1_L1_in.curve_data[0]=curve_data[curve][0];
 	fcPVPi_obj1_L1_in.curve_data[1]=curve_data[curve][1];

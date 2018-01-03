@@ -32,6 +32,8 @@ void init_conversion(){
 	
 	//Offset
 	
+	
+	
 	offset.Ia=2048.0f;
 	offset.Ib=2048.0f;
 	offset.Ic=2048.0f;
@@ -46,7 +48,7 @@ void init_conversion(){
 	
 	offset.Van=2048.0f;
 	offset.Vbn=2048.0f;
-	scale.Vcn=2048.0f;
+	offset.Vcn=2048.0f;
 	
 	// Scale
 	
@@ -118,10 +120,10 @@ if(hadc->Instance==ADC1){
 	smAdc.sAdc.CA_synth=(smAdc.sAdc.Vcn-smAdc.sAdc.Van);
 	
 	
-	if(++dec==dSample){fAdc=smAdc;}
+	if(++dec==dSample){fAdc=smAdc;conversion_completed=1;dec=0;}
 	
 	
-	conversion_completed=1;
+	
 	
 	}
 

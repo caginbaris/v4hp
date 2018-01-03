@@ -178,8 +178,8 @@ void pullDataFromMaster(){
 	
 	//discard
 	//discard
-	fcPVPi_obj1_L1_in.level=comParams_uart.recDataBufferF[67];
-	fcPVPi_obj1_L1_in.time_multiplier=comParams_uart.recDataBufferF[68]; // cau-diff curve entered
+	fcPVPi_obj1_L1_in.level=comParams_uart.recDataBufferF[75];
+	fcPVPi_obj1_L1_in.time_multiplier=comParams_uart.recDataBufferF[76]; // cau-diff curve entered
 	
 	//spare
 	
@@ -231,8 +231,8 @@ void pullDataFromMaster(){
 	Sys.I_Nom_obj1=comParams_uart.recDataBufferF[104];
 	Sys.I_Nom_obj2=comParams_uart.recDataBufferF[105];
 	
-	Sys.I_BreakerClosed_MIN=comParams_uart.recDataBufferF[105];
-	Sys.Rvalue=comParams_uart.pushDataBufferF[107];
+	Sys.I_BreakerClosed_MIN=comParams_uart.recDataBufferF[106];
+	Sys.Rvalue=comParams_uart.recDataBufferF[107];
 	
 	
 	TR.VT_Primary  =comParams_uart.recDataBufferF[108];
@@ -246,6 +246,9 @@ void pullDataFromMaster(){
 	
 	TR.RES_Primary  =comParams_uart.recDataBufferF[114];
 	TR.RES_Secondary=comParams_uart.recDataBufferF[115];
+	
+	
+	//cau final TR value must considered
 	
 	
 	

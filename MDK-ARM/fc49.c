@@ -92,7 +92,7 @@ void fc49_all(){
 	fc49(therm_c_obj1,fc49_obj1_L1_in,&fc49_obj1_L1_out_a,EN.bits.fc49_obj1_L1);
 	
 	//fc49(therm_a_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
-	//7fc49(therm_b_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
+	//fc49(therm_b_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
 	//fc49(therm_c_obj1,fc49_obj1_L2_in,&fc49_obj1_L2_out_a,EN.bits.fc49_obj1_L2);
 	
 	
