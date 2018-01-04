@@ -17,12 +17,12 @@ struct AdcData scale={0};
 
 struct TurnRatios TR;
 
-static uint32_t adc_values[15]={0};
+extern uint32_t adc_values[15];
 
 static float dbuffer[channelNo][filterDepth]={0};
 
 
-
+void main_flow(void);
 
 
 
@@ -68,10 +68,10 @@ void init_conversion(){
 	scale.Vbn=1.0f;
 	scale.Vcn=1.0f;
 	
-	TR.VT=	(TR.VT_Secondary>eps) 	? 	(TR.VT_Primary/TR.VT_Secondary) : 0.0f;
-	TR.CT=	(TR.CT_Secondary>eps) 	? 	(TR.CT_Primary/TR.CT_Secondary) : 0.0f;
-	TR.RES=	(TR.RES_Secondary>eps) 	? 	(TR.RES_Primary/TR.RES_Secondary) : 0.0f;
-	TR.UNB=	(TR.UNB_Secondary>eps) 	? 	(TR.UNB_Primary/TR.RES_Secondary) : 0.0f;
+	//TR.VT=	(TR.VT_Secondary>eps) 	? 	(TR.VT_Primary/TR.VT_Secondary) : 0.0f;
+	//TR.CT=	(TR.CT_Secondary>eps) 	? 	(TR.CT_Primary/TR.CT_Secondary) : 0.0f;
+	//TR.RES=	(TR.RES_Secondary>eps) 	? 	(TR.RES_Primary/TR.RES_Secondary) : 0.0f;
+	//TR.UNB=	(TR.UNB_Secondary>eps) 	? 	(TR.UNB_Primary/TR.RES_Secondary) : 0.0f;
 }
 
 
@@ -87,7 +87,7 @@ uint8_t i;
 
 if(hadc->Instance==ADC1){ 
 	
-	//HAL_GPIO_TogglePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin);
+	
 	
 	rawAdc.sAdc.Van=			(adc_values[Van]		-	offset.Van)			*scale.Van;
 	rawAdc.sAdc.Ia=				(adc_values[Ia]			-	offset.Ia)			*scale.Ia;
@@ -105,8 +105,8 @@ if(hadc->Instance==ADC1){
 	
 	rawAdc.sAdc.IRESb=		(adc_values[IRESb]-offset.IRESb)			*scale.IRESb;
 	rawAdc.sAdc.IRESc=		(adc_values[IRESc]-offset.IRESc)			*scale.IRESc;
-	
-	
+
+		
 	
 	for	(i=0;i<channelNo;i++){
 		
@@ -120,8 +120,22 @@ if(hadc->Instance==ADC1){
 	smAdc.sAdc.CA_synth=(smAdc.sAdc.Vcn-smAdc.sAdc.Van);
 	
 	
-	if(++dec==dSample){fAdc=smAdc;conversion_completed=1;dec=0;}
+	if(++dec==dSample){
 	
+	fAdc=smAdc;
+		
+	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
+	main_flow();
+	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
+	
+	dec=0;
+		
+	}
+	
+	
+			
+		
+		
 	
 	
 	

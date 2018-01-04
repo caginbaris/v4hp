@@ -4,7 +4,7 @@
   * @brief   Interrupt Service Routines.
   ******************************************************************************
   *
-  * COPYRIGHT(c) 2017 STMicroelectronics
+  * COPYRIGHT(c) 2018 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -39,6 +39,8 @@
 #include "UART_MasterSlave.h"
 #include "SPI_MasterSlave.h"
 #include "CommConfig.h"
+
+extern uint8_t incoming_data_flag;
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
@@ -48,8 +50,6 @@ extern DMA_HandleTypeDef hdma_adc3;
 extern SPI_HandleTypeDef hspi2;
 extern TIM_HandleTypeDef htim1;
 extern UART_HandleTypeDef huart2;
-
-extern uint8_t incoming_data_flag;
 
 /******************************************************************************/
 /*            Cortex-M7 Processor Interruption and Exception Handlers         */ 
@@ -236,10 +236,7 @@ void USART2_IRQHandler(void)
   /* USER CODE BEGIN USART2_IRQn 1 */
 
   /* USER CODE END USART2_IRQn 1 */
-	
-	
 }
-
 
 /**
 * @brief This function handles EXTI line[15:10] interrupts.

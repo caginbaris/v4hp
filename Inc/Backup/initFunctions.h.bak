@@ -1,6 +1,9 @@
 #ifndef __initFunctions_h
 #define __initFunctions_h
 
+
+void init_conversion(void);
+
 void fc50_init(void);
 void fc51_init(void);
 void fc50N_init(void);

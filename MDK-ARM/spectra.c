@@ -81,10 +81,10 @@ void spectra(){
 								&coeffs_imag[0],
 								count);
 								
-	
-	thd.a=signal_thd(spect_Ia);
+	//cau thd problem
+	/*thd.a=signal_thd(spect_Ia);
 	thd.b=signal_thd(spect_Ib);
-	thd.c=signal_thd(spect_Ic);							
+	thd.c=signal_thd(spect_Ic);		*/					
 								
 	
 	if(++count==spectraLength){count=0;}

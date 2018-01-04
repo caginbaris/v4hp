@@ -10,10 +10,10 @@ void main_flow(){
 	
 		cs_handles();
 		trueRMS();
-		//spectra();
+		spectra();
 	
 	// protection
-	
+	/*
 	fc50_all();
 	fc50N_all();
 	
@@ -26,8 +26,9 @@ void main_flow(){
 	fc46_all();
 	
 	fc49_all();
+	*/
 	
-	fcBF_all();
+	//fcBF_all();
 	
 	//fc37_all();
 	
