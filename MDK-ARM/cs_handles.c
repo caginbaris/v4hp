@@ -224,7 +224,7 @@ void cs_handles(){
 	sym_comp(phase_cs_A,phase_cs_B,phase_cs_C, &sym);
 	sym_mag(sym,&sym_hist,&mag_sym);
 	
-	cs_handle_tick5();
+	
 	
 	// -UNB and In
 	

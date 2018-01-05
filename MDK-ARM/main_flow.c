@@ -8,9 +8,10 @@ void main_flow(){
 
   //measurement
 	
+		spectral_analysis();
 		cs_handles();
 		trueRMS();
-		spectra();
+		
 	
 	// protection
 	/*

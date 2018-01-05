@@ -1,7 +1,7 @@
 #include "measurement_functions.h"
 #include "nfbm.h"
 
-#define rmsChannelNo 15
+#define rmsChannelNo 12
 #define bufferLength 50
 
 struct AdcData tRMS={0};

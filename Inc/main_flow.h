@@ -4,7 +4,7 @@
 
 void cs_handles(void);
 void trueRMS(void);
-void spectra(void);
+void spectral_analysis(void);
 
 
 void fc50_all(void);
