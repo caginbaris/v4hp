@@ -224,15 +224,15 @@ float signal_thd(struct spectra h){
 
 	hsum=0;
 
-	if(h.foutMag[0]!=0.0f){
+	if(h.foutMag[1]>1.0f){
 	
-		for(i=1;i<13;i++){hsum+=h.foutMag[i]*h.foutMag[i];}
+		for(i=2;i<13;i++){hsum+=h.foutMag[i]*h.foutMag[i];}
 		
-		thd=100.0f*sqrtf(hsum)/h.foutMag[0];
+		thd=100.0f*sqrtf(hsum)/h.foutMag[1];
 
 	}else{
 
-		thd=0;
+		thd=0.0f;
 	
 	}
 

@@ -3,6 +3,7 @@
 
 
 
+
 struct spectra spect_Ia={0};
 struct spectra spect_Ib={0};
 struct spectra spect_Ic={0};
@@ -82,9 +83,12 @@ void spectral_analysis(){
 								count);
 								
 	//cau thd problem
-	/*thd.a=signal_thd(spect_Ia);
+	
+	thd.a=signal_thd(spect_Ia);
 	thd.b=signal_thd(spect_Ib);
-	thd.c=signal_thd(spect_Ic);		*/					
+	thd.c=signal_thd(spect_Ic);	
+
+	
 								
 	
 	if(++count==spectraLength){count=0;}
