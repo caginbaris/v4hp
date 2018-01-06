@@ -148,25 +148,33 @@ int main(void)
 		
 		main_flow();
 		conversion_completed=0;
+		
+	}else{
+
+	if(incoming_data_flag){
+
+		pullDataFromMaster();
+		incoming_data_flag=0;	
+	
+	}else{
+	
+		pushDataToMaster();
+	
+		}
+	
 	}
 	
 	
 	
     
+
+	
+
+	
+	
 	/* Comm Layer Functions in superloop */
 	uart_runComApp(); 
 	spi_runComApp();
-	
-	if(incoming_data_flag){
-	
-	pullDataFromMaster();
-	incoming_data_flag=0;	
-	
-	}else{
-	
-	pushDataToMaster();
-	
-	}
 	
 	
 	

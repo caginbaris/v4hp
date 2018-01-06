@@ -10,7 +10,7 @@ void main_flow(){
 	
 		cs_handles();
 		trueRMS();
-		//spectra();
+		spectra();
 	
 	// protection
 	
