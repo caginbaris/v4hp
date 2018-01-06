@@ -149,6 +149,7 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+<<<<<<< HEAD
 		
 	if(conversion_completed){
 	
@@ -159,21 +160,47 @@ int main(void)
 	
 	}	
 		
+=======
+<<<<<<< HEAD
+		
+	if(conversion_completed){
+		
+		main_flow();
+		conversion_completed=0;
+		
+	}else{
+
+	if(incoming_data_flag){
+
+		pullDataFromMaster();
+		incoming_data_flag=0;	
+	
+	}else{
+	
+		pushDataToMaster();
+	
+		}
+=======
+>>>>>>> fd642c2ea1ade142ac1a7bf76ed1dfc154cf39a1
 			
 	/* Comm Layer Functions in superloop */
 	uart_runComApp(); 
 	spi_runComApp();
-	
-	if(incoming_data_flag){
-	
-	pullDataFromMaster();
-	incoming_data_flag=0;	
-	
-	}else{
-	
-	pushDataToMaster();
+>>>>>>> f66fda070f49487d68886660556b09829577d2c1
 	
 	}
+	
+	
+	
+    
+
+	
+
+	
+	
+	/* Comm Layer Functions in superloop */
+	uart_runComApp(); 
+	spi_runComApp();
 	
 	
 	

@@ -11,7 +11,11 @@ void main_flow(){
 		spectral_analysis();
 		cs_handles();
 		trueRMS();
+<<<<<<< HEAD
+		spectra();
+=======
 		
+>>>>>>> f66fda070f49487d68886660556b09829577d2c1
 	
 	// protection
 	
