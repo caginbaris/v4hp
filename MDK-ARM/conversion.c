@@ -80,7 +80,7 @@ void init_conversion(){
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 	
-static uint8_t dec=0;	
+volatile static uint8_t dec=0;	
 uint8_t i;
 	
 
@@ -107,6 +107,7 @@ if(hadc->Instance==ADC1){
 	rawAdc.sAdc.IRESc=		(adc_values[IRESc]-offset.IRESc)			*scale.IRESc;
 
 		
+	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 	
 	for	(i=0;i<channelNo;i++){
 		
@@ -114,18 +115,24 @@ if(hadc->Instance==ADC1){
 	
 	}
 	
+	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
+	
 	
 	smAdc.sAdc.AB_synth=(smAdc.sAdc.Van-smAdc.sAdc.Vbn);
 	smAdc.sAdc.BC_synth=(smAdc.sAdc.Vbn-smAdc.sAdc.Vcn);
 	smAdc.sAdc.CA_synth=(smAdc.sAdc.Vcn-smAdc.sAdc.Van);
 	
 	
-	if(++dec==dSample){
+	
+	if(dec++==dSample){
+		
+	HAL_GPIO_TogglePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin);	
 	
 	fAdc=smAdc;
 	conversion_completed=1;	
 	dec=0;
-		
+	
+	
 	}
 	
 	

@@ -149,26 +149,17 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-<<<<<<< HEAD
+
 		
 	if(conversion_completed){
 	
-		HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
+		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 		main_flow();
-		HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
+		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
 		conversion_completed=0;
 	
 	}	
 		
-=======
-<<<<<<< HEAD
-		
-	if(conversion_completed){
-		
-		main_flow();
-		conversion_completed=0;
-		
-	}else{
 
 	if(incoming_data_flag){
 
@@ -179,32 +170,12 @@ int main(void)
 	
 		pushDataToMaster();
 	
-		}
-=======
->>>>>>> fd642c2ea1ade142ac1a7bf76ed1dfc154cf39a1
-			
-	/* Comm Layer Functions in superloop */
-	uart_runComApp(); 
-	spi_runComApp();
->>>>>>> f66fda070f49487d68886660556b09829577d2c1
-	
 	}
-	
-	
-	
-    
 
-	
-
-	
 	
 	/* Comm Layer Functions in superloop */
 	uart_runComApp(); 
 	spi_runComApp();
-	
-	
-	
-
 	
   }
   /* USER CODE END 3 */
