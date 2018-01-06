@@ -71,15 +71,15 @@ void spectral_analysis(){
 	signal_spectra(fAdc.sAdc.Ib,
 								&spect_Ib,
 								spectraLength,
-								&coeffs_real[0],
-								&coeffs_imag[0],
+								coeffs_real,
+								coeffs_imag,
 								count);
 	
 	signal_spectra(fAdc.sAdc.Ic,
 								&spect_Ic,
 								spectraLength,
-								&coeffs_real[0],
-								&coeffs_imag[0],
+								coeffs_real,
+								coeffs_imag,
 								count);
 								
 	//cau thd problem

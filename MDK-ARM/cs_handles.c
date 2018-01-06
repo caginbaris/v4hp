@@ -84,42 +84,12 @@ float cos_coeffs[]={
 
 
 
-
-
-
-
-
-
-void cs_handle_tick1(void){
-
-
-
-	
-}
-
-void cs_handle_tick2(void){
-
-
-
-}
-
-
-void cs_handle_tick3(void){
-
-
-
-
-}
-
-void cs_handle_tick4(void){
-	
-	
-
+void cs_PQ_combination(void){
 	
 	
 	//P
 	
-	/*P.a=phase_cs_A_out.P;
+	P.a=phase_cs_A_out.P;
 	P.b=phase_cs_B_out.P;
 	P.c=phase_cs_C_out.P;
 	
@@ -139,34 +109,14 @@ void cs_handle_tick4(void){
 	Q.bc=Q.b+Q.c-Q.a;
 	Q.ca=Q.c+Q.a-Q.b;
 	
-	Q.total=Q.a+Q.b+Q.c; */
+	Q.total=Q.a+Q.b+Q.c; 
 
 
 
 }
 
 
-void cs_handle_tick5(void){
-	
-	
 
-	UNBa.c=cs_generation(fAdc.sAdc.IUNBa,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
-	UNBa.s=cs_generation(fAdc.sAdc.IUNBa,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
-
-	UNBb.c=cs_generation(fAdc.sAdc.IUNBb,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
-	UNBb.s=cs_generation(fAdc.sAdc.IUNBb,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
-
-	n.c=cs_generation(fAdc.sAdc.In,cos_coeffs,N,&c_buffer[8][0])*cs_scale;
-	n.c=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
-	
-	
-	fRMS.IUNBa=(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;
-	fRMS.IUNBb=(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
-	fRMS.In=	 (n.c*n.c				+	n.s*n.s)*cs_rms_scale;
-	
-
-	
-}
 
 
 
@@ -242,6 +192,9 @@ void cs_handles(){
 	fRMS.IUNBb=(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
 	fRMS.In=	 (n.c*n.c				+	n.s*n.s)*cs_rms_scale;
 
+	// PQ comb
+
+	cs_PQ_combination();
 
 
 }
