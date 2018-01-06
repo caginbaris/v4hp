@@ -93,64 +93,33 @@ float cos_coeffs[]={
 void cs_handle_tick1(void){
 
 
-	phase_cs_A.Vc= 	cs_generation(fAdc.sAdc.Van,cos_coeffs,N,&c_buffer[0][0])*cs_scale;
-	phase_cs_A.Vs= 	cs_generation(fAdc.sAdc.Van,sin_coeffs,N,&s_buffer[0][0])*cs_scale;
-	
-	phase_cs_A.Ic= 	cs_generation(fAdc.sAdc.Ia,cos_coeffs,N,&c_buffer[1][0])*cs_scale;
-	phase_cs_A.Is= 	cs_generation(fAdc.sAdc.Ia,sin_coeffs,N,&s_buffer[1][0])*cs_scale;
-	
 
-	cs_computations(phase_cs_A,&phase_cs_A_out);
-	
-	fRMS.Van=phase_cs_A_out.rms_V;
-	fRMS.Ia=phase_cs_A_out.rms_I;
 	
 }
 
 void cs_handle_tick2(void){
 
 
-	phase_cs_B.Vc= 	cs_generation(fAdc.sAdc.Vbn,cos_coeffs,N,&c_buffer[2][0])*cs_scale;
-	phase_cs_B.Vs= 	cs_generation(fAdc.sAdc.Vbn,sin_coeffs,N,&s_buffer[2][0])*cs_scale;
-	
-	phase_cs_B.Ic= 	cs_generation(fAdc.sAdc.Ib,cos_coeffs,N,&c_buffer[3][0])*cs_scale;
-	phase_cs_B.Is= 	cs_generation(fAdc.sAdc.Ib,sin_coeffs,N,&s_buffer[3][0])*cs_scale;
-	
 
-	cs_computations(phase_cs_B,&phase_cs_B_out);
-
-	fRMS.Vbn=phase_cs_B_out.rms_V;
-	fRMS.Ib=phase_cs_B_out.rms_I;
 }
 
 
 void cs_handle_tick3(void){
 
 
-	phase_cs_C.Vc= 	cs_generation(fAdc.sAdc.Vcn,cos_coeffs,N,&c_buffer[4][0])*cs_scale;
-	phase_cs_C.Vs= 	cs_generation(fAdc.sAdc.Vcn,sin_coeffs,N,&s_buffer[4][0])*cs_scale;
-	
-	phase_cs_C.Ic= 	cs_generation(fAdc.sAdc.Ic,cos_coeffs,N,&c_buffer[5][0])*cs_scale;
-	phase_cs_C.Is= 	cs_generation(fAdc.sAdc.Ic,sin_coeffs,N,&s_buffer[5][0])*cs_scale;
-	
 
-	cs_computations(phase_cs_C,&phase_cs_C_out);
-	
-	fRMS.Vcn=phase_cs_C_out.rms_V;
-	fRMS.Ic=phase_cs_C_out.rms_I;
 
 }
 
 void cs_handle_tick4(void){
 	
 	
-	sym_comp(phase_cs_A,phase_cs_B,phase_cs_C, &sym);
-	sym_mag(sym,&sym_hist,&mag_sym);
+
 	
 	
 	//P
 	
-	P.a=phase_cs_A_out.P;
+	/*P.a=phase_cs_A_out.P;
 	P.b=phase_cs_B_out.P;
 	P.c=phase_cs_C_out.P;
 	
@@ -170,7 +139,7 @@ void cs_handle_tick4(void){
 	Q.bc=Q.b+Q.c-Q.a;
 	Q.ca=Q.c+Q.a-Q.b;
 	
-	Q.total=Q.a+Q.b+Q.c;
+	Q.total=Q.a+Q.b+Q.c; */
 
 
 
@@ -203,11 +172,75 @@ void cs_handle_tick5(void){
 
 void cs_handles(){
 
-	cs_handle_tick1();
-	cs_handle_tick2();
-	cs_handle_tick3();
-	cs_handle_tick4();
-	cs_handle_tick5();
+	
+	
+	
+	
+	//-PA
+	
+	phase_cs_A.Vc= 	cs_generation(fAdc.sAdc.Van,cos_coeffs,N,&c_buffer[0][0])*cs_scale;
+	phase_cs_A.Vs= 	cs_generation(fAdc.sAdc.Van,sin_coeffs,N,&s_buffer[0][0])*cs_scale;
+	
+	phase_cs_A.Ic= 	cs_generation(fAdc.sAdc.Ia,cos_coeffs,N,&c_buffer[1][0])*cs_scale;
+	phase_cs_A.Is= 	cs_generation(fAdc.sAdc.Ia,sin_coeffs,N,&s_buffer[1][0])*cs_scale;
+	
+
+	cs_computations(phase_cs_A,&phase_cs_A_out);
+	
+	fRMS.Van=phase_cs_A_out.rms_V;
+	fRMS.Ia=phase_cs_A_out.rms_I;
+	
+	//-PB
+	
+	phase_cs_B.Vc= 	cs_generation(fAdc.sAdc.Vbn,cos_coeffs,N,&c_buffer[2][0])*cs_scale;
+	phase_cs_B.Vs= 	cs_generation(fAdc.sAdc.Vbn,sin_coeffs,N,&s_buffer[2][0])*cs_scale;
+	
+	phase_cs_B.Ic= 	cs_generation(fAdc.sAdc.Ib,cos_coeffs,N,&c_buffer[3][0])*cs_scale;
+	phase_cs_B.Is= 	cs_generation(fAdc.sAdc.Ib,sin_coeffs,N,&s_buffer[3][0])*cs_scale;
+	
+
+	cs_computations(phase_cs_B,&phase_cs_B_out);
+
+	fRMS.Vbn=phase_cs_B_out.rms_V;
+	fRMS.Ib=phase_cs_B_out.rms_I;
+	
+	//-PC
+	
+	
+	phase_cs_C.Vc= 	cs_generation(fAdc.sAdc.Vcn,cos_coeffs,N,&c_buffer[4][0])*cs_scale;
+	phase_cs_C.Vs= 	cs_generation(fAdc.sAdc.Vcn,sin_coeffs,N,&s_buffer[4][0])*cs_scale;
+	
+	phase_cs_C.Ic= 	cs_generation(fAdc.sAdc.Ic,cos_coeffs,N,&c_buffer[5][0])*cs_scale;
+	phase_cs_C.Is= 	cs_generation(fAdc.sAdc.Ic,sin_coeffs,N,&s_buffer[5][0])*cs_scale;
+	
+
+	cs_computations(phase_cs_C,&phase_cs_C_out);
+	
+	fRMS.Vcn=phase_cs_C_out.rms_V;
+	fRMS.Ic=phase_cs_C_out.rms_I;
+	
+	//-Seq Comp
+	
+	sym_comp(phase_cs_A,phase_cs_B,phase_cs_C, &sym);
+	sym_mag(sym,&sym_hist,&mag_sym);
+	
+	
+	
+	// -UNB and In
+	
+	UNBa.c=cs_generation(fAdc.sAdc.IUNBa,cos_coeffs,N,&c_buffer[6][0])*cs_scale;
+	UNBa.s=cs_generation(fAdc.sAdc.IUNBa,sin_coeffs,N,&s_buffer[6][0])*cs_scale;
+
+	UNBb.c=cs_generation(fAdc.sAdc.IUNBb,cos_coeffs,N,&c_buffer[7][0])*cs_scale;
+	UNBb.s=cs_generation(fAdc.sAdc.IUNBb,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
+
+	n.c=cs_generation(fAdc.sAdc.In,cos_coeffs,N,&c_buffer[8][0])*cs_scale;
+	n.c=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
+	
+	
+	fRMS.IUNBa=(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;
+	fRMS.IUNBb=(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
+	fRMS.In=	 (n.c*n.c				+	n.s*n.s)*cs_rms_scale;
 
 
 

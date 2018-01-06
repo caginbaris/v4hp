@@ -3,6 +3,7 @@
 
 
 
+
 struct spectra spect_Ia={0};
 struct spectra spect_Ib={0};
 struct spectra spect_Ic={0};
@@ -54,7 +55,7 @@ float coeffs_imag[]={
 
 
 
-void spectra(){
+void spectral_analysis(){
 	
 	
 	static unsigned int count=0; 
@@ -62,8 +63,8 @@ void spectra(){
 	signal_spectra(fAdc.sAdc.Ia,
 								&spect_Ia,
 								spectraLength,
-								&coeffs_real[0],
-								&coeffs_imag[0],
+								coeffs_real,
+								coeffs_imag,
 								count);
 	
 	
@@ -81,10 +82,13 @@ void spectra(){
 								&coeffs_imag[0],
 								count);
 								
+	//cau thd problem
 	
 	thd.a=signal_thd(spect_Ia);
 	thd.b=signal_thd(spect_Ib);
-	thd.c=signal_thd(spect_Ic);							
+	thd.c=signal_thd(spect_Ic);	
+
+	
 								
 	
 	if(++count==spectraLength){count=0;}

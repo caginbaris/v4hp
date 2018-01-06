@@ -9,7 +9,7 @@
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
-  * COPYRIGHT(c) 2017 STMicroelectronics
+  * COPYRIGHT(c) 2018 STMicroelectronics
   *
   * Redistribution and use in source and binary forms, with or without modification,
   * are permitted provided that the following conditions are met:
@@ -61,7 +61,7 @@
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 extern uint8_t conversion_completed;
-uint32_t adc_values[15];
+uint32_t adc_values[15]={0};
 uint8_t incoming_data_flag=0;
 /* USER CODE END PV */
 
@@ -87,6 +87,12 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
+
+  /* Enable I-Cache-------------------------------------------------------------*/
+  SCB_EnableICache();
+
+  /* Enable D-Cache-------------------------------------------------------------*/
+  SCB_EnableDCache();
 
   /* MCU Configuration----------------------------------------------------------*/
 
@@ -143,6 +149,7 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+<<<<<<< HEAD
 		
 	if(conversion_completed){
 		
@@ -161,6 +168,12 @@ int main(void)
 		pushDataToMaster();
 	
 		}
+=======
+			
+	/* Comm Layer Functions in superloop */
+	uart_runComApp(); 
+	spi_runComApp();
+>>>>>>> f66fda070f49487d68886660556b09829577d2c1
 	
 	}
 	

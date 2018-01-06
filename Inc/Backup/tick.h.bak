@@ -72,6 +72,8 @@ void boardIO(void);
 void fcUNB_initial_dt(void);
 void pick_up_handles(void);
 
+void pushDataToMaster(void);
+
 
 
 #endif

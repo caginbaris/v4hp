@@ -200,7 +200,7 @@ void signal_spectra(
 	x_error=h->qBuffer[pCounter]-rtInput;
 	h->qBuffer[pCounter]=rtInput;
 
-	for(i=0;i<13;i++){
+	for(i=0;i<14;i++){
 
 	temp_real =twBufferReal[i]* (h->foutReal[i]+x_error)-twBufferImag[i]*h->foutImag[i];
 	temp_imag=twBufferImag[i]* (h->foutReal[i]+x_error)+twBufferReal[i]*h->foutImag[i];
@@ -224,15 +224,15 @@ float signal_thd(struct spectra h){
 
 	hsum=0;
 
-	if(h.foutMag[0]!=0.0f){
+	if(h.foutMag[1]>1.0f){
 	
-		for(i=1;i<13;i++){hsum+=h.foutMag[i]*h.foutMag[i];}
+		for(i=2;i<13;i++){hsum+=h.foutMag[i]*h.foutMag[i];}
 		
-		thd=100.0f*sqrtf(hsum)/h.foutMag[0];
+		thd=100.0f*sqrtf(hsum)/h.foutMag[1];
 
 	}else{
 
-		thd=0;
+		thd=0.0f;
 	
 	}
 
