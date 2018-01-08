@@ -1,8 +1,8 @@
 #ifndef __conversion_h
 #define __conversion_h
 
-#define filterDepth 5
-#define dSample 10
+#define filterDepth 2
+#define dSample 9
 
 
 

@@ -20,8 +20,10 @@ struct AdcData{
 	float Vcn;	//AN-5
 	float Ic;		//AN-6
 	
+	
 	float IRESa;//AN-8
 	float In;		//AN-7
+	
 	
 	float IRESb;//AN-9
 	float IRESc;//AN-10
@@ -41,7 +43,7 @@ extern struct AdcData fRMS;
 union uAdc
 {
   struct AdcData sAdc;
-	float bufferAdc[12];
+	float bufferAdc[15];
 		
 };
 
@@ -61,12 +63,17 @@ enum AdcChannel{
 	
 	Vcn=6,
 	Ic=7,
+	Vab=8,
 	
 	IRESa=9,
 	In=10,
+	Vbc=11,
 	
 	IRESb=12,
-	IRESc=13
+	IRESc=13,
+	
+	Vca=14
+
 
 };
 

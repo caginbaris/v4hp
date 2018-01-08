@@ -62,7 +62,7 @@
 "v4hp\commparams.o"
 "v4hp\configparams.o"
 "v4hp\main_flow.o"
---library_type=microlib --strict --scatter "v4Hp\v4Hp.sct"
+--strict --scatter "v4Hp\v4Hp.sct"
 --diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "v4Hp.map" -o v4Hp\v4Hp.axf

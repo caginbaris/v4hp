@@ -2,11 +2,13 @@
 #include "adc.h"
 #include "nfbm.h"
 #include "measurement_functions.h"
-#include "conversion.h"
 #include "pDataConfigs.h"
-
+#include "conversion.h"
 
 uint8_t conversion_completed=0;
+
+uint32_t cycle_count_1=0;
+uint32_t cycle_count_2=0;
 
 union uAdc rawAdc={0};
 union uAdc smAdc={0};
@@ -109,7 +111,7 @@ if(hadc->Instance==ADC1){
 		
 	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 	
-	for	(i=0;i<channelNo;i++){
+	for(i=0;i<channelNo;i++){
 		
 	 smAdc.bufferAdc[i]=prefilter(rawAdc.bufferAdc[i],&dbuffer[i][0],filterDepth);
 	
@@ -126,9 +128,15 @@ if(hadc->Instance==ADC1){
 	
 	if(dec++==dSample){
 		
-	HAL_GPIO_TogglePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin);	
+	//HAL_GPIO_TogglePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin);	
+		
+	cycle_count_1++;
 	
-	fAdc=smAdc;
+	fAdc=smAdc;		
+	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
+	//main_flow();
+	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);	
+	
 	conversion_completed=1;	
 	dec=0;
 	

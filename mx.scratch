@@ -35,7 +35,7 @@
     <usedDebug>true</usedDebug>
     	<debugprobe>jtag</debugprobe>
     <optimization></optimization>
-    <icfloc>1</icfloc>
+    <icfloc>2</icfloc>
     <Adefines>
         <define></define>
     </Adefines>   

@@ -61,6 +61,7 @@
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 extern uint8_t conversion_completed;
+extern uint32_t cycle_count_2;
 uint32_t adc_values[15]={0};
 uint8_t incoming_data_flag=0;
 /* USER CODE END PV */
@@ -87,12 +88,6 @@ int main(void)
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
-
-  /* Enable I-Cache-------------------------------------------------------------*/
-  SCB_EnableICache();
-
-  /* Enable D-Cache-------------------------------------------------------------*/
-  SCB_EnableDCache();
 
   /* MCU Configuration----------------------------------------------------------*/
 
@@ -153,12 +148,15 @@ int main(void)
 		
 	if(conversion_completed){
 	
-		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
+		HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
+		
 		main_flow();
-		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
+		cycle_count_2++;
+		HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
+		
 		conversion_completed=0;
 	
-	}	
+	}else{
 		
 
 	if(incoming_data_flag){
@@ -171,6 +169,7 @@ int main(void)
 		pushDataToMaster();
 	
 	}
+}
 
 	
 	/* Comm Layer Functions in superloop */
