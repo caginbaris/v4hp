@@ -186,7 +186,7 @@
             <hadIRAM2>0</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -298,12 +298,12 @@
               <OCR_RVCT9>
                 <Type>0</Type>
                 <StartAddress>0x20000000</StartAddress>
-                <Size>0x80000</Size>
+                <Size>0x1ffff</Size>
               </OCR_RVCT9>
               <OCR_RVCT10>
                 <Type>0</Type>
-                <StartAddress>0x0</StartAddress>
-                <Size>0x0</Size>
+                <StartAddress>0x20020000</StartAddress>
+                <Size>0x60000</Size>
               </OCR_RVCT10>
             </OnChipMemories>
             <RvctStartVector></RvctStartVector>
@@ -335,7 +335,7 @@
               <MiscControls>--C99</MiscControls>
               <Define>USE_HAL_DRIVER,STM32F767xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;                    ../Drivers/STM32F7xx_HAL_Driver/Inc;                    ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                    ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                    ../Drivers/CMSIS/Include;                    .\libraries;                    ..\Inc\Comm_Library_Header;                    ..\Src\Comm_Library_Source</IncludePath>
+              <IncludePath>../Inc;                       ../Drivers/STM32F7xx_HAL_Driver/Inc;                       ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy;                       ../Drivers/CMSIS/Device/ST/STM32F7xx/Include;                       ../Drivers/CMSIS/Include;                       .\libraries;                       ..\Inc\Comm_Library_Header;                       ..\Src\Comm_Library_Source</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -1392,9 +1392,29 @@
               <FilePath>..\Src\Comm_Library_Source\CommConfig.c</FilePath>
             </File>
             <File>
-              <FileName>Comm_Layer.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>..\Src\Comm_Layer.lib</FilePath>
+              <FileName>DataParserMerger.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Comm_Library_Source\DataParserMerger.c</FilePath>
+            </File>
+            <File>
+              <FileName>fputc_debug.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Comm_Library_Source\fputc_debug.c</FilePath>
+            </File>
+            <File>
+              <FileName>Modbus_MasterSlave.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Comm_Library_Source\Modbus_MasterSlave.c</FilePath>
+            </File>
+            <File>
+              <FileName>SPI_MasterSlave.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Comm_Library_Source\SPI_MasterSlave.c</FilePath>
+            </File>
+            <File>
+              <FileName>UART_MasterSlave.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Src\Comm_Library_Source\UART_MasterSlave.c</FilePath>
             </File>
           </Files>
         </Group>

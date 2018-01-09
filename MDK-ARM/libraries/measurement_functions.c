@@ -31,7 +31,7 @@ float true_rms(float rtInput, float *delayLineArray, unsigned int delayLineCount
 
 	}
 
-	rms = sqrtf(rms_sum / arrayLength);
+	rms = sqrt(rms_sum / arrayLength);
 
 	return rms;
 
@@ -77,10 +77,10 @@ void cs_computations(struct phase_cs_in p_in, struct phase_cs_out *p_out ){
 
 	
    	p_out->rms_V2 =(p_in.Vc)*(p_in.Vc) + (p_in.Vs)*(p_in.Vs);
-    	p_out->rms_I2 =(p_in.Ic)*(p_in.Ic) + (p_in.Is)*(p_in.Is);
+    p_out->rms_I2 =(p_in.Ic)*(p_in.Ic) + (p_in.Is)*(p_in.Is);
 
-   	p_out->rms_V =sqrtf((p_in.Vc)*(p_in.Vc) + (p_in.Vs)*(p_in.Vs))*isqrt2;
-    	p_out->rms_I =sqrtf((p_in.Ic)*(p_in.Ic) + (p_in.Is)*(p_in.Is))*isqrt2;
+   p_out->rms_V =sqrt((p_in.Vc)*(p_in.Vc) + (p_in.Vs)*(p_in.Vs))*isqrt2;
+   p_out->rms_I =sqrt((p_in.Ic)*(p_in.Ic) + (p_in.Is)*(p_in.Is))*isqrt2;
 
 	p_out->P= _i2*((p_in.Vc)*(p_in.Ic) +(p_in.Vs)*(p_in.Is));
 	p_out->Q=_i2*((p_in.Vs)*(p_in.Ic) -(p_in.Vc)*(p_in.Is));
@@ -94,8 +94,8 @@ void cs_computations(struct phase_cs_in p_in, struct phase_cs_out *p_out ){
 	}
 
 
-	p_out->phase_V= -atan2f(p_in.Vc,p_in.Vs)+pi;
-	p_out->phase_I= -atan2f(p_in.Ic,p_in.Is)+pi;
+	p_out->phase_V= -atan2(p_in.Vc,p_in.Vs)+pi;
+	p_out->phase_I= -atan2(p_in.Ic,p_in.Is)+pi;
 
 	p_out->phase_disp=p_out->phase_I-p_out->phase_V;
 

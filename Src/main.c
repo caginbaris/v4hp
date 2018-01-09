@@ -89,6 +89,12 @@ int main(void)
 
   /* USER CODE END 1 */
 
+  /* Enable I-Cache-------------------------------------------------------------*/
+  SCB_EnableICache();
+
+  /* Enable D-Cache-------------------------------------------------------------*/
+  SCB_EnableDCache();
+
   /* MCU Configuration----------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -148,11 +154,11 @@ int main(void)
 		
 	if(conversion_completed){
 	
-		HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
+		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 		
-		main_flow();
+		//main_flow();
 		cycle_count_2++;
-		HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
+		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
 		
 		conversion_completed=0;
 	
@@ -169,12 +175,14 @@ int main(void)
 		pushDataToMaster();
 	
 	}
+	
+	uart_runComApp(); 
+	spi_runComApp();
 }
 
 	
 	/* Comm Layer Functions in superloop */
-	uart_runComApp(); 
-	spi_runComApp();
+
 	
   }
   /* USER CODE END 3 */
@@ -250,7 +258,7 @@ void SystemClock_Config(void)
   HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
 
   /* SysTick_IRQn interrupt configuration */
-  HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(SysTick_IRQn, 1, 0);
 }
 
 /** NVIC Configuration

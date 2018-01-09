@@ -5,10 +5,10 @@
 #include "pDataConfigs.h"
 #include "conversion.h"
 
-uint8_t conversion_completed=0;
+volatile uint8_t conversion_completed=0;
 
-uint32_t cycle_count_1=0;
-uint32_t cycle_count_2=0;
+volatile uint32_t cycle_count_1=0;
+volatile uint32_t cycle_count_2=0;
 
 union uAdc rawAdc={0};
 union uAdc smAdc={0};
@@ -108,7 +108,8 @@ if(hadc->Instance==ADC1){
 	rawAdc.sAdc.IRESb=		(adc_values[IRESb]-offset.IRESb)			*scale.IRESb;
 	rawAdc.sAdc.IRESc=		(adc_values[IRESc]-offset.IRESc)			*scale.IRESc;
 
-		
+	// #if 0
+	
 	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 	
 	for(i=0;i<channelNo;i++){
@@ -117,27 +118,40 @@ if(hadc->Instance==ADC1){
 	
 	}
 	
-	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
+	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);
+
+	
 	
 	
 	smAdc.sAdc.AB_synth=(smAdc.sAdc.Van-smAdc.sAdc.Vbn);
 	smAdc.sAdc.BC_synth=(smAdc.sAdc.Vbn-smAdc.sAdc.Vcn);
 	smAdc.sAdc.CA_synth=(smAdc.sAdc.Vcn-smAdc.sAdc.Van);
+	//#endif	
 	
+	fAdc=smAdc;
 	
+	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
+	main_flow();
+	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);
+	conversion_completed=1;	
+
+	conversion_completed=1;		
+	//HAL_GPIO_TogglePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin);	
 	
-	if(dec++==dSample){
+	cycle_count_1++;
+	
+	if(0){
 		
 	//HAL_GPIO_TogglePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin);	
 		
-	cycle_count_1++;
 	
-	fAdc=smAdc;		
+	
+		
 	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
-	//main_flow();
+	
 	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);	
 	
-	conversion_completed=1;	
+	
 	dec=0;
 	
 	
