@@ -80,12 +80,6 @@ enum AdcChannel{
 
 
 
-	
-	
-
-
-
-
 union pFunctionEnable{
 	
 	struct{

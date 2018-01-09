@@ -11,7 +11,6 @@ volatile uint32_t cycle_count_1=0;
 volatile uint32_t cycle_count_2=0;
 
 union uAdc rawAdc={0};
-union uAdc smAdc={0};
 union uAdc fAdc={0};
 
 struct AdcData offset={0};
@@ -21,7 +20,6 @@ struct TurnRatios TR;
 
 extern uint32_t adc_values[15];
 
-static float dbuffer[channelNo][filterDepth]={0};
 
 
 void main_flow(void);
@@ -82,10 +80,8 @@ void init_conversion(){
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
 	
-volatile static uint8_t dec=0;	
-uint8_t i;
-	
 
+	
 
 if(hadc->Instance==ADC1){ 
 	
@@ -108,27 +104,14 @@ if(hadc->Instance==ADC1){
 	rawAdc.sAdc.IRESb=		(adc_values[IRESb]-offset.IRESb)			*scale.IRESb;
 	rawAdc.sAdc.IRESc=		(adc_values[IRESc]-offset.IRESc)			*scale.IRESc;
 
-	// #if 0
-	
-	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
-	
-	for(i=0;i<channelNo;i++){
-		
-	 smAdc.bufferAdc[i]=prefilter(rawAdc.bufferAdc[i],&dbuffer[i][0],filterDepth);
-	
-	}
-	
-	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);
-
+	rawAdc.sAdc.AB_synth=(rawAdc.sAdc.Van-rawAdc.sAdc.Vbn);
+	rawAdc.sAdc.BC_synth=(rawAdc.sAdc.Vbn-rawAdc.sAdc.Vcn);
+	rawAdc.sAdc.CA_synth=(rawAdc.sAdc.Vcn-rawAdc.sAdc.Van);
 	
 	
-	
-	smAdc.sAdc.AB_synth=(smAdc.sAdc.Van-smAdc.sAdc.Vbn);
-	smAdc.sAdc.BC_synth=(smAdc.sAdc.Vbn-smAdc.sAdc.Vcn);
-	smAdc.sAdc.CA_synth=(smAdc.sAdc.Vcn-smAdc.sAdc.Van);
 	//#endif	
 	
-	fAdc=smAdc;
+	fAdc=rawAdc;
 	
 	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 	main_flow();
@@ -139,29 +122,6 @@ if(hadc->Instance==ADC1){
 	//HAL_GPIO_TogglePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin);	
 	
 	cycle_count_1++;
-	
-	if(0){
-		
-	//HAL_GPIO_TogglePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin);	
-		
-	
-	
-		
-	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
-	
-	//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);	
-	
-	
-	dec=0;
-	
-	
-	}
-	
-	
-			
-		
-		
-	
 	
 	
 	}

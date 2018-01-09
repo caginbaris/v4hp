@@ -107,10 +107,6 @@ void fc49_all(){
 	//fc49(therm_c_obj2,fc49_obj2_L2_in,&fc49_obj2_L2_out_a,EN.bits.fc49_obj2_L2);
 
 
-
-
-
-
 }
 
 

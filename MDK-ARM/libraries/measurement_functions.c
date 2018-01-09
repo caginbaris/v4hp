@@ -343,6 +343,8 @@ float thermal_status(float rms,struct thermal_parameters therm, float mem)
 
 }
 
+#if 0
+
 //function 11
 //prefiltering for conversion
 float prefilter(float rtInput ,float *zValues , unsigned int N){
@@ -374,8 +376,22 @@ float prefilter(float rtInput ,float *zValues , unsigned int N){
 
 }
 
+//function 12
+//prefiltering for conversion
+float prefilter2(float rtInput,unsigned int seq){
 
+	static float buffer[12]={0};
+	
+  float output;
 
+	output=(rtInput)*1.0f;
+	buffer[seq]=rtInput;
+
+	return(output);
+
+}
+
+#endif
 
 
 
