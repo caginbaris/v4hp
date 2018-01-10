@@ -13,6 +13,7 @@ volatile uint32_t cycle_count_2=0;
 union uAdc rawAdc={0};
 union uAdc fAdc={0};
 
+
 struct AdcData offset={0};
 struct AdcData scale={0};
 
@@ -20,8 +21,11 @@ struct TurnRatios TR;
 
 extern uint32_t adc_values[15];
 
+float calc_offset=0;
+enum AdcChannel ch=Van;
 
 
+float averager();
 void main_flow(void);
 
 
@@ -32,29 +36,27 @@ void init_conversion(){
 	
 	//Offset
 	
+	offset.Ia=0.0f;
+	offset.Ib=0.0f;
+	offset.Ic=0.0f;
 	
+	offset.In=0.0f;
+	offset.IRESa=0.0f;
+	offset.IRESb=0.0f;
+	offset.IRESc=0.0f;
 	
-	offset.Ia=2048.0f;
-	offset.Ib=2048.0f;
-	offset.Ic=2048.0f;
+	offset.IUNBa=0.0f;
+	offset.IUNBb=0.0f;
 	
-	offset.In=2048.0f;
-	offset.IRESa=2048.0f;
-	offset.IRESb=2048.0f;
-	offset.IRESc=2048.0f;
-	
-	offset.IUNBa=2048.0f;
-	offset.IUNBb=2048.0f;
-	
-	offset.Van=2048.0f;
-	offset.Vbn=2048.0f;
-	offset.Vcn=2048.0f;
+	offset.Van=0.0f;
+	offset.Vbn=0.0f;
+	offset.Vcn=0.0f;
 	
 	// Scale
 	
-	scale.Ia=1.0f;
-	scale.Ib=1.0f;
-	scale.Ic=1.0f;
+	scale.Ia=1.0f;//0.055411955626188f;
+	scale.Ib=1.0f;//0.055411955626188f;
+	scale.Ic=1.0f;//0.055411955626188f;
 	
 	scale.In=1.0f;
 	scale.IRESa=1.0f;
@@ -123,9 +125,33 @@ if(hadc->Instance==ADC1){
 	
 	cycle_count_1++;
 	
+	calc_offset= averager();
+	
 	
 	}
 
+
+}
+
+
+
+float averager(){
+	
+	
+	static uint32_t count=0;
+	static float sum=0;
+	static float x=0;
+	
+	sum+=fAdc.bufferAdc[ch];
+	
+	if(++count==12500){
+	
+		x=sum/12500.0f;
+		sum=0;
+		count=0;
+	}
+	
+	return x;
 
 }
 

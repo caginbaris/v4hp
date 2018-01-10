@@ -19,17 +19,15 @@ struct AdcData{
 	
 	float Vcn;	//AN-5
 	float Ic;		//AN-6
+	float AB_synth;
 	
 	
 	float IRESa;//AN-8
 	float In;		//AN-7
-	
+	float BC_synth;
 	
 	float IRESb;//AN-9
 	float IRESc;//AN-10
-	
-	float AB_synth;
-	float BC_synth;
 	float CA_synth;
 
 
