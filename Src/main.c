@@ -156,7 +156,7 @@ int main(void)
 	
 		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 		
-		//main_flow();
+		main_flow();
 		cycle_count_2++;
 		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
 		
@@ -167,17 +167,17 @@ int main(void)
 
 	if(incoming_data_flag){
 
-		pullDataFromMaster();
+		//pullDataFromMaster();
 		incoming_data_flag=0;	
 	
 	}else{
 	
-		pushDataToMaster();
+		//pushDataToMaster();
 	
 	}
 	
-	uart_runComApp(); 
-	spi_runComApp();
+	//uart_runComApp(); 
+	//spi_runComApp();
 }
 
 	

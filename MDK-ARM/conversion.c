@@ -114,7 +114,7 @@ if(hadc->Instance==ADC1){
 	fAdc=rawAdc;
 	
 	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
-	main_flow();
+	//main_flow();
 	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);
 	conversion_completed=1;	
 

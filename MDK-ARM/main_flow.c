@@ -8,21 +8,21 @@ void main_flow(){
 
   //measurement
 	
-		spectral_analysis();
+		//spectral_analysis();
 		cs_handles();
 		trueRMS();
 
 
 	// protection
 	
-	
+	/*
 	fc50_all();
 	fc50N_all();
 	
 	fc51_all();
 	fc51N_all();
 	
-	/*
+	
 	fc27_all();
 	fc59_all();
 	

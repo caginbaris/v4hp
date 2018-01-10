@@ -4,7 +4,7 @@
 #include "conversion.h"
 #include "cs_handles.h"
 #include "nfbm.h"
-
+#include <math.h>
 
 #define N 						50
 #define cs_scale 			0.04f
@@ -188,9 +188,9 @@ void cs_handles(){
 	n.c=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
 	
 	
-	fRMS.IUNBa=(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;
-	fRMS.IUNBb=(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
-	fRMS.In=	 (n.c*n.c				+	n.s*n.s)*cs_rms_scale;
+	fRMS.IUNBa=sqrtf(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;
+	fRMS.IUNBb=sqrtf(UNBb.c*UNBb.c	+	UNBb.s*UNBb.s)*cs_rms_scale;
+	fRMS.In=	 sqrtf(n.c*n.c				+	n.s*n.s)*cs_rms_scale;
 
 	// PQ comb
 
