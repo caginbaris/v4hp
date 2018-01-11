@@ -343,6 +343,9 @@ float thermal_status(float rms,struct thermal_parameters therm, float mem)
 
 }
 
+
+
+
 #if 0
 
 //function 11

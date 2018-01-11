@@ -8,7 +8,9 @@ void main_flow(){
 
   //measurement
 	
-		//spectral_analysis();
+	boardIO();
+	
+		spectral_analysis();
 		cs_handles();
 		trueRMS();
 
