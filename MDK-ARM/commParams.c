@@ -97,53 +97,53 @@ void pushDataToMaster(void){
 	/*48*/comParams.pushDataBufferF[9]=Q.ca; 			// Qca
 	/*50*/comParams.pushDataBufferF[10]=Q.total;	// Qca
 	
-	/*52*/comParams.pushDataBufferF[11]=spect_Ia.foutMag[1]; 	// H2-A
-	/*54*/comParams.pushDataBufferF[12]=spect_Ib.foutMag[1]; 	// H2-B
-	/*56*/comParams.pushDataBufferF[13]=spect_Ic.foutMag[1]; 	// H2-C
+	/*52*/comParams.pushDataBufferF[11]=spect_Ia.foutMag[2]; 	// H2-A
+	/*54*/comParams.pushDataBufferF[12]=spect_Ib.foutMag[2]; 	// H2-B
+	/*56*/comParams.pushDataBufferF[13]=spect_Ic.foutMag[2]; 	// H2-C
 	
-	/*58*/comParams.pushDataBufferF[14]=spect_Ia.foutMag[2];	// H3-A
-	/*60*/comParams.pushDataBufferF[15]=spect_Ib.foutMag[2]; 	// H3-B
-	/*62*/comParams.pushDataBufferF[16]=spect_Ic.foutMag[2]; 	// H3-C
+	/*58*/comParams.pushDataBufferF[14]=spect_Ia.foutMag[3];	// H3-A
+	/*60*/comParams.pushDataBufferF[15]=spect_Ib.foutMag[3]; 	// H3-B
+	/*62*/comParams.pushDataBufferF[16]=spect_Ic.foutMag[3]; 	// H3-C
 	
-	/*64*/comParams.pushDataBufferF[17]=spect_Ia.foutMag[3]; 	// H4-A
-	/*66*/comParams.pushDataBufferF[18]=spect_Ib.foutMag[3]; 	// H4-B
-	/*68*/comParams.pushDataBufferF[19]=spect_Ic.foutMag[3]; 	// H4-C
+	/*64*/comParams.pushDataBufferF[17]=spect_Ia.foutMag[4]; 	// H4-A
+	/*66*/comParams.pushDataBufferF[18]=spect_Ib.foutMag[4]; 	// H4-B
+	/*68*/comParams.pushDataBufferF[19]=spect_Ic.foutMag[4]; 	// H4-C
 	
-	/*70*/comParams.pushDataBufferF[20]=spect_Ia.foutMag[4]; 	// H5-A
-	/*72*/comParams.pushDataBufferF[21]=spect_Ib.foutMag[4]; 	// H5-B
-	/*74*/comParams.pushDataBufferF[22]=spect_Ic.foutMag[4]; 	// H5-C
+	/*70*/comParams.pushDataBufferF[20]=spect_Ia.foutMag[5]; 	// H5-A
+	/*72*/comParams.pushDataBufferF[21]=spect_Ib.foutMag[5]; 	// H5-B
+	/*74*/comParams.pushDataBufferF[22]=spect_Ic.foutMag[5]; 	// H5-C
 	
-	/*76*/comParams.pushDataBufferF[23]=spect_Ia.foutMag[5]; 	// H6-A
-	/*78*/comParams.pushDataBufferF[24]=spect_Ib.foutMag[5]; 	// H6-B
-	/*80*/comParams.pushDataBufferF[25]=spect_Ic.foutMag[5]; 	// H6-C
+	/*76*/comParams.pushDataBufferF[23]=spect_Ia.foutMag[6]; 	// H6-A
+	/*78*/comParams.pushDataBufferF[24]=spect_Ib.foutMag[6]; 	// H6-B
+	/*80*/comParams.pushDataBufferF[25]=spect_Ic.foutMag[6]; 	// H6-C
 	
-	/*82*/comParams.pushDataBufferF[26]=spect_Ia.foutMag[6]; 	// H7-A
-	/*84*/comParams.pushDataBufferF[27]=spect_Ib.foutMag[6]; 	// H7-B
-	/*86*/comParams.pushDataBufferF[28]=spect_Ic.foutMag[6]; 	// H7-C
+	/*82*/comParams.pushDataBufferF[26]=spect_Ia.foutMag[7]; 	// H7-A
+	/*84*/comParams.pushDataBufferF[27]=spect_Ib.foutMag[7]; 	// H7-B
+	/*86*/comParams.pushDataBufferF[28]=spect_Ic.foutMag[7]; 	// H7-C
 	
-	/*88*/comParams.pushDataBufferF[29]=spect_Ia.foutMag[7]; 	// H8-A
-	/*90*/comParams.pushDataBufferF[30]=spect_Ib.foutMag[7]; 	// H8-B
-	/*92*/comParams.pushDataBufferF[31]=spect_Ic.foutMag[7]; 	// H8-C
+	/*88*/comParams.pushDataBufferF[29]=spect_Ia.foutMag[8]; 	// H8-A
+	/*90*/comParams.pushDataBufferF[30]=spect_Ib.foutMag[8]; 	// H8-B
+	/*92*/comParams.pushDataBufferF[31]=spect_Ic.foutMag[8]; 	// H8-C
 	
-	/*94*/comParams.pushDataBufferF[32]=spect_Ia.foutMag[8]; 	// H9-A
-	/*96*/comParams.pushDataBufferF[33]=spect_Ib.foutMag[8]; 	// H9-B
-	/*98*/comParams.pushDataBufferF[34]=spect_Ic.foutMag[8];	// H9-C
+	/*94*/comParams.pushDataBufferF[32]=spect_Ia.foutMag[9]; 	// H9-A
+	/*96*/comParams.pushDataBufferF[33]=spect_Ib.foutMag[9]; 	// H9-B
+	/*98*/comParams.pushDataBufferF[34]=spect_Ic.foutMag[9];	// H9-C
 	
-	/*100*/comParams.pushDataBufferF[35]=spect_Ia.foutMag[9]; 	// H10-A
-	/*102*/comParams.pushDataBufferF[36]=spect_Ib.foutMag[9]; 	// H10-B
-	/*104*/comParams.pushDataBufferF[37]=spect_Ic.foutMag[9]; 	// H10-C
+	/*100*/comParams.pushDataBufferF[35]=spect_Ia.foutMag[10]; 	// H10-A
+	/*102*/comParams.pushDataBufferF[36]=spect_Ib.foutMag[10]; 	// H10-B
+	/*104*/comParams.pushDataBufferF[37]=spect_Ic.foutMag[10]; 	// H10-C
 	
-	/*106*/comParams.pushDataBufferF[38]=spect_Ia.foutMag[10]; // H11-A
-	/*108*/comParams.pushDataBufferF[39]=spect_Ib.foutMag[10]; // H11-B
-	/*110*/comParams.pushDataBufferF[40]=spect_Ic.foutMag[10]; // H11-C
+	/*106*/comParams.pushDataBufferF[38]=spect_Ia.foutMag[11]; // H11-A
+	/*108*/comParams.pushDataBufferF[39]=spect_Ib.foutMag[11]; // H11-B
+	/*110*/comParams.pushDataBufferF[40]=spect_Ic.foutMag[11]; // H11-C
 	
-	/*112*/comParams.pushDataBufferF[41]=spect_Ia.foutMag[11]; // H12-A
-	/*114*/comParams.pushDataBufferF[42]=spect_Ib.foutMag[11]; // H12-B
-	/*116*/comParams.pushDataBufferF[43]=spect_Ic.foutMag[11]; // H12-C
+	/*112*/comParams.pushDataBufferF[41]=spect_Ia.foutMag[12]; // H12-A
+	/*114*/comParams.pushDataBufferF[42]=spect_Ib.foutMag[12]; // H12-B
+	/*116*/comParams.pushDataBufferF[43]=spect_Ic.foutMag[12]; // H12-C
 	
-	/*118*/comParams.pushDataBufferF[44]=spect_Ia.foutMag[12]; // H13-A
-	/*120*/comParams.pushDataBufferF[45]=spect_Ib.foutMag[12]; // H13-B
-	/*122*/comParams.pushDataBufferF[46]=spect_Ic.foutMag[12]; // H13-C
+	/*118*/comParams.pushDataBufferF[44]=spect_Ia.foutMag[13]; // H13-A
+	/*120*/comParams.pushDataBufferF[45]=spect_Ib.foutMag[13]; // H13-B
+	/*122*/comParams.pushDataBufferF[46]=spect_Ic.foutMag[13]; // H13-C
 	
 	//MEM AREA-2
 	
@@ -174,17 +174,17 @@ void pushDataToMaster(void){
 	/*160*/comParams.pushDataBufferF[64]=tRMS.IRESb; // true RMS IresB
 	/*162*/comParams.pushDataBufferF[65]=tRMS.IRESc; // true RMS IresC
 	
-	/*164*/comParams.pushDataBufferF[66]=tRMS.IRESa*tRMS.IRESa; // PresA cau need ext value for res 
-	/*166*/comParams.pushDataBufferF[67]=tRMS.IRESb*tRMS.IRESb; // PresB cau
-	/*168*/comParams.pushDataBufferF[68]=tRMS.IRESc*tRMS.IRESc; // PresC cau
+	/*164*/comParams.pushDataBufferF[66]=tRMS.IRESa*tRMS.IRESa*Sys.Rvalue; // PresA 
+	/*166*/comParams.pushDataBufferF[67]=tRMS.IRESb*tRMS.IRESb*Sys.Rvalue; // PresB 
+	/*168*/comParams.pushDataBufferF[68]=tRMS.IRESc*tRMS.IRESc*Sys.Rvalue; // PresC 
 	
 	/*170*/comParams.pushDataBufferF[69]=comParams.pushDataBufferF[63]+comParams.pushDataBufferF[64]+comParams.pushDataBufferF[65]; // P Res Total
 	
 	/*172*/comParams.pushDataBufferF[70]=fRMS.IUNBa; // UNBa fund RMS
 	/*174*/comParams.pushDataBufferF[71]=tRMS.IUNBa; // UNBa true RMS
 	
-	/*176*/comParams.pushDataBufferF[72]=fRMS.IUNBa; // UNBa fund RMS
-	/*178*/comParams.pushDataBufferF[73]=tRMS.IUNBa; // UNBa true RMS
+	/*176*/comParams.pushDataBufferF[72]=fRMS.IUNBb; // UNBa fund RMS
+	/*178*/comParams.pushDataBufferF[73]=tRMS.IUNBb; // UNBa true RMS
 	
 	/*180*/comParams.pushDataBufferF[74]=0.0f ; //Spare
 	/*182*/comParams.pushDataBufferF[75]=0.0f ; //Spare

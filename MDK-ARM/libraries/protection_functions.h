@@ -363,5 +363,7 @@ struct fcPVPi_outputParameters{
 void fcPVPd(float rms,struct fcPVPd_inputParameters fcPVPd_in, struct fcPVPd_outputParameters *fcPVPd_out, int enable);
 void fcPVPi(float rms,struct fcPVPi_inputParameters fcPVPi_in, struct fcPVPi_outputParameters *fcPVPi_out, int enable);
 
+float minSelector_3p(float a, float b, float c);
+float maxSelector_3p(float a, float b, float c);
 
 #endif
