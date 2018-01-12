@@ -26,8 +26,7 @@ uint32_t testEntryF=0;
 
 //****test Parameters For Register Read****//
 
-union ToWord pick_words={0};
-union ToWord trip_words={0};
+
 
 
 void pushDataToMaster(void){
@@ -56,13 +55,9 @@ void pushDataToMaster(void){
 	
 	//Integer Parameters
 	
-	pick_words.w_str=pick;
-	
 	/*2*/comParams.pushDataBufferDW[0]=pick_words.w_arr[0];
 	/*4*/comParams.pushDataBufferDW[1]=pick_words.w_arr[1];
 	/*6*/comParams.pushDataBufferDW[2]=pick_words.w_arr[2];
-	
-	trip_words.w_str=trip;
 	
 	/*8*/ comParams.pushDataBufferDW[3]=trip_words.w_arr[0];
 	/*10*/comParams.pushDataBufferDW[4]=trip_words.w_arr[1];

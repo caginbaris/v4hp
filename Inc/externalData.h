@@ -13,6 +13,10 @@ union ToWord{
 	
 };
 
+	
+extern union ToWord pick_words;
+extern union ToWord trip_words;
+
 extern struct spectra spect_Ia;
 extern struct spectra spect_Ib;
 extern struct spectra spect_Ic;

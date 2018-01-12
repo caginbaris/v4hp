@@ -2,13 +2,17 @@
 #include "plib_handles.h"
 #include "protection_functions.h"
 #include "boardIO.h"
+#include "externalData.h"
 
 
-#define totalPick 67
+#define totalPick 62
 #define pickHold 10
 
 struct plib_handles pick={0};
 struct plib_handles trip={0};
+
+union ToWord pick_words={0};
+union ToWord trip_words={0};
 
 static long pick_buffer[totalPick]={0};
 
@@ -18,6 +22,8 @@ void pick_up_handles(){
 	
 	static uint8_t pick_up_counter=0;
 	
+	
+	pick_words.w_str=pick;
 	
 	switch (pick_up_counter)
   {
@@ -114,29 +120,29 @@ void pick_up_handles(){
 		
 		case 6:
 			
-		pick.fc49_obj2_L1_out_a=off_delay(fc49_obj2_L1_out_a.alarm, pick.fc49_obj2_L1_out_a,pickHold,&pick_buffer[44]);/**/trip.fc49_obj2_L1_out_a=fc49_obj2_L1_out_a.trip;
-		pick.fc49_obj2_L1_out_b=off_delay(fc49_obj2_L1_out_b.alarm, pick.fc49_obj2_L1_out_b,pickHold,&pick_buffer[45]);/**/trip.fc49_obj2_L1_out_b=fc49_obj2_L1_out_b.trip;
-		pick.fc49_obj2_L1_out_c=off_delay(fc49_obj2_L1_out_c.alarm, pick.fc49_obj2_L1_out_c,pickHold,&pick_buffer[46]);/**/trip.fc49_obj2_L1_out_c=fc49_obj2_L1_out_c.trip;
+		pick.fc49_obj2_L1_out_a=off_delay(fc49_obj2_L1_out_a.alarm, pick.fc49_obj2_L1_out_a,pickHold,&pick_buffer[41]);/**/trip.fc49_obj2_L1_out_a=fc49_obj2_L1_out_a.trip;
+		pick.fc49_obj2_L1_out_b=off_delay(fc49_obj2_L1_out_b.alarm, pick.fc49_obj2_L1_out_b,pickHold,&pick_buffer[42]);/**/trip.fc49_obj2_L1_out_b=fc49_obj2_L1_out_b.trip;
+		pick.fc49_obj2_L1_out_c=off_delay(fc49_obj2_L1_out_c.alarm, pick.fc49_obj2_L1_out_c,pickHold,&pick_buffer[43]);/**/trip.fc49_obj2_L1_out_c=fc49_obj2_L1_out_c.trip;
 		
 		//pick.fc49_obj2_L2_out_a=off_delay(fc49_obj2_L2_out_a.alarm, pick.fc49_obj2_L2_out_a,pickHold,&pick_buffer[47]);/**/trip.fc49_obj2_L2_out_a=fc49_obj2_L2_out_a.trip;
 		//pick.fc49_obj2_L2_out_b=off_delay(fc49_obj2_L2_out_b.alarm, pick.fc49_obj2_L2_out_b,pickHold,&pick_buffer[48]);/**/trip.fc49_obj2_L2_out_b=fc49_obj2_L2_out_b.trip;
 		//pick.fc49_obj2_L2_out_c=off_delay(fc49_obj2_L2_out_c.alarm, pick.fc49_obj2_L2_out_c,pickHold,&pick_buffer[49]);/**/trip.fc49_obj2_L2_out_c=fc49_obj2_L2_out_c.trip;
 		
 		
-		pick.fcBF_out=off_delay(fcBF_out.pick_up,pick.fcBF_out,pickHold,&pick_buffer[50]);/**/trip.fcBF_out=fcBF_out.trip;
+		pick.fcBF_out=off_delay(fcBF_out.pick_up,pick.fcBF_out,pickHold,&pick_buffer[44]);/**/trip.fcBF_out=fcBF_out.trip;
 		
 			
 		break;
 		
 		case 7:
 			
-		pick.fc37_obj1_L1_out_a=off_delay(fc37_obj1_L1_out_a.pick_up,pick.fc37_obj1_L1_out_a,pickHold,&pick_buffer[51]);/**/trip.fc37_obj1_L1_out_a=fc37_obj1_L1_out_a.trip;
-		pick.fc37_obj1_L1_out_b=off_delay(fc37_obj1_L1_out_b.pick_up,pick.fc37_obj1_L1_out_b,pickHold,&pick_buffer[52]);/**/trip.fc37_obj1_L1_out_b=fc37_obj1_L1_out_b.trip;
-		pick.fc37_obj1_L1_out_c=off_delay(fc37_obj1_L1_out_c.pick_up,pick.fc37_obj1_L1_out_c,pickHold,&pick_buffer[53]);/**/trip.fc37_obj1_L1_out_c=fc37_obj1_L1_out_c.trip;
+		pick.fc37_obj1_L1_out_a=off_delay(fc37_obj1_L1_out_a.pick_up,pick.fc37_obj1_L1_out_a,pickHold,&pick_buffer[45]);/**/trip.fc37_obj1_L1_out_a=fc37_obj1_L1_out_a.trip;
+		pick.fc37_obj1_L1_out_b=off_delay(fc37_obj1_L1_out_b.pick_up,pick.fc37_obj1_L1_out_b,pickHold,&pick_buffer[46]);/**/trip.fc37_obj1_L1_out_b=fc37_obj1_L1_out_b.trip;
+		pick.fc37_obj1_L1_out_c=off_delay(fc37_obj1_L1_out_c.pick_up,pick.fc37_obj1_L1_out_c,pickHold,&pick_buffer[47]);/**/trip.fc37_obj1_L1_out_c=fc37_obj1_L1_out_c.trip;
 		
-		pick.fc37_obj2_L1_out_a=off_delay(fc37_obj2_L1_out_a.pick_up,pick.fc37_obj2_L1_out_a,pickHold,&pick_buffer[54]);/**/trip.fc37_obj2_L1_out_a=fc37_obj2_L1_out_a.trip;
-		pick.fc37_obj2_L1_out_b=off_delay(fc37_obj2_L1_out_b.pick_up,pick.fc37_obj2_L1_out_b,pickHold,&pick_buffer[55]);/**/trip.fc37_obj2_L1_out_b=fc37_obj2_L1_out_b.trip;
-		pick.fc37_obj2_L1_out_c=off_delay(fc37_obj2_L1_out_c.pick_up,pick.fc37_obj2_L1_out_c,pickHold,&pick_buffer[56]);/**/trip.fc37_obj2_L1_out_c=fc37_obj2_L1_out_c.trip;
+		pick.fc37_obj2_L1_out_a=off_delay(fc37_obj2_L1_out_a.pick_up,pick.fc37_obj2_L1_out_a,pickHold,&pick_buffer[48]);/**/trip.fc37_obj2_L1_out_a=fc37_obj2_L1_out_a.trip;
+		pick.fc37_obj2_L1_out_b=off_delay(fc37_obj2_L1_out_b.pick_up,pick.fc37_obj2_L1_out_b,pickHold,&pick_buffer[49]);/**/trip.fc37_obj2_L1_out_b=fc37_obj2_L1_out_b.trip;
+		pick.fc37_obj2_L1_out_c=off_delay(fc37_obj2_L1_out_c.pick_up,pick.fc37_obj2_L1_out_c,pickHold,&pick_buffer[50]);/**/trip.fc37_obj2_L1_out_c=fc37_obj2_L1_out_c.trip;
 		
 		
 		break;
@@ -144,11 +150,11 @@ void pick_up_handles(){
 		
 		case 8:
 			
-		pick.fcUNBd_obj1_L1_out_a=off_delay(fcUNBd_obj1_L1_out_a.pick_up,pick.fcUNBd_obj1_L1_out_a,pickHold,&pick_buffer[57]);/**/trip.fcUNBd_obj1_L1_out_a=fcUNBd_obj1_L1_out_a.trip;
-		pick.fcUNBd_obj1_L1_out_b=off_delay(fcUNBd_obj1_L1_out_b.pick_up,pick.fcUNBd_obj1_L1_out_b,pickHold,&pick_buffer[58]);/**/trip.fcUNBd_obj1_L1_out_b=fcUNBd_obj1_L1_out_b.trip;
+		pick.fcUNBd_obj1_L1_out_a=off_delay(fcUNBd_obj1_L1_out_a.pick_up,pick.fcUNBd_obj1_L1_out_a,pickHold,&pick_buffer[51]);/**/trip.fcUNBd_obj1_L1_out_a=fcUNBd_obj1_L1_out_a.trip;
+		pick.fcUNBd_obj1_L1_out_b=off_delay(fcUNBd_obj1_L1_out_b.pick_up,pick.fcUNBd_obj1_L1_out_b,pickHold,&pick_buffer[52]);/**/trip.fcUNBd_obj1_L1_out_b=fcUNBd_obj1_L1_out_b.trip;
 		
-		pick.fcUNBi_obj1_L1_out_a=off_delay(fcUNBi_obj1_L1_out_a.pick_up,pick.fcUNBi_obj1_L1_out_a,pickHold,&pick_buffer[59]);/**/trip.fcUNBi_obj1_L1_out_a=fcUNBi_obj1_L1_out_a.trip;
-		pick.fcUNBi_obj1_L1_out_b=off_delay(fcUNBi_obj1_L1_out_b.pick_up,pick.fcUNBi_obj1_L1_out_b,pickHold,&pick_buffer[60]);/**/trip.fcUNBi_obj1_L1_out_b=fcUNBi_obj1_L1_out_b.trip;
+		pick.fcUNBi_obj1_L1_out_a=off_delay(fcUNBi_obj1_L1_out_a.pick_up,pick.fcUNBi_obj1_L1_out_a,pickHold,&pick_buffer[53]);/**/trip.fcUNBi_obj1_L1_out_a=fcUNBi_obj1_L1_out_a.trip;
+		pick.fcUNBi_obj1_L1_out_b=off_delay(fcUNBi_obj1_L1_out_b.pick_up,pick.fcUNBi_obj1_L1_out_b,pickHold,&pick_buffer[54]);/**/trip.fcUNBi_obj1_L1_out_b=fcUNBi_obj1_L1_out_b.trip;
 	
 		
 		break;
@@ -156,13 +162,13 @@ void pick_up_handles(){
 		
 		case 9:
 			
-		pick.fcPVPd_obj1_L1_out_a=off_delay(fcPVPd_obj1_L1_out_a.pick_up,pick.fcPVPd_obj1_L1_out_a,pickHold,&pick_buffer[61]);/**/trip.fcPVPd_obj1_L1_out_a=fcPVPd_obj1_L1_out_a.trip;
-		pick.fcPVPd_obj1_L1_out_b=off_delay(fcPVPd_obj1_L1_out_b.pick_up,pick.fcPVPd_obj1_L1_out_b,pickHold,&pick_buffer[62]);/**/trip.fcPVPd_obj1_L1_out_b=fcPVPd_obj1_L1_out_b.trip;
-		pick.fcPVPd_obj1_L1_out_c=off_delay(fcPVPd_obj1_L1_out_c.pick_up,pick.fcPVPd_obj1_L1_out_c,pickHold,&pick_buffer[63]);/**/trip.fcPVPd_obj1_L1_out_c=fcPVPd_obj1_L1_out_c.trip;
+		pick.fcPVPd_obj1_L1_out_a=off_delay(fcPVPd_obj1_L1_out_a.pick_up,pick.fcPVPd_obj1_L1_out_a,pickHold,&pick_buffer[55]);/**/trip.fcPVPd_obj1_L1_out_a=fcPVPd_obj1_L1_out_a.trip;
+		pick.fcPVPd_obj1_L1_out_b=off_delay(fcPVPd_obj1_L1_out_b.pick_up,pick.fcPVPd_obj1_L1_out_b,pickHold,&pick_buffer[56]);/**/trip.fcPVPd_obj1_L1_out_b=fcPVPd_obj1_L1_out_b.trip;
+		pick.fcPVPd_obj1_L1_out_c=off_delay(fcPVPd_obj1_L1_out_c.pick_up,pick.fcPVPd_obj1_L1_out_c,pickHold,&pick_buffer[57]);/**/trip.fcPVPd_obj1_L1_out_c=fcPVPd_obj1_L1_out_c.trip;
 		
-		pick.fcPVPi_obj1_L1_out_a=off_delay(fcPVPi_obj1_L1_out_a.pick_up,pick.fcPVPi_obj1_L1_out_a,pickHold,&pick_buffer[64]);/**/trip.fcPVPi_obj1_L1_out_a=fcPVPi_obj1_L1_out_a.trip;
-		pick.fcPVPi_obj1_L1_out_b=off_delay(fcPVPi_obj1_L1_out_b.pick_up,pick.fcPVPi_obj1_L1_out_b,pickHold,&pick_buffer[65]);/**/trip.fcPVPi_obj1_L1_out_b=fcPVPi_obj1_L1_out_b.trip;
-		pick.fcPVPi_obj1_L1_out_c=off_delay(fcPVPi_obj1_L1_out_c.pick_up,pick.fcPVPi_obj1_L1_out_c,pickHold,&pick_buffer[66]);/**/trip.fcPVPi_obj1_L1_out_c=fcPVPi_obj1_L1_out_c.trip;
+		pick.fcPVPi_obj1_L1_out_a=off_delay(fcPVPi_obj1_L1_out_a.pick_up,pick.fcPVPi_obj1_L1_out_a,pickHold,&pick_buffer[58]);/**/trip.fcPVPi_obj1_L1_out_a=fcPVPi_obj1_L1_out_a.trip;
+		pick.fcPVPi_obj1_L1_out_b=off_delay(fcPVPi_obj1_L1_out_b.pick_up,pick.fcPVPi_obj1_L1_out_b,pickHold,&pick_buffer[59]);/**/trip.fcPVPi_obj1_L1_out_b=fcPVPi_obj1_L1_out_b.trip;
+		pick.fcPVPi_obj1_L1_out_c=off_delay(fcPVPi_obj1_L1_out_c.pick_up,pick.fcPVPi_obj1_L1_out_c,pickHold,&pick_buffer[60]);/**/trip.fcPVPi_obj1_L1_out_c=fcPVPi_obj1_L1_out_c.trip;
 		
 	
 		break;
@@ -173,10 +179,21 @@ void pick_up_handles(){
 	
 
 	if(++pick_up_counter==10){pick_up_counter=0;}
-
-
-
-
+	
+	
+	pick_words.w_str=pick;
+	
+		if(pick_words.w_arr[0]!=0 || pick_words.w_arr[0]!=0 || pick_words.w_arr[0]!=0){
+		
+		DO.bits.alarm=1;
+		DO.bits.LD_ALARM=1;
+		
+		}else{
+			
+		DO.bits.alarm=0;
+		DO.bits.LD_ALARM=0;	
+		
+		}
 
 
 }
@@ -292,6 +309,8 @@ void reset_handles(){
 		//--reset end	
 		
 		}
+		
+		
 
 
 
@@ -302,8 +321,19 @@ void trip_handles(){
 	
 	
 	
-
-
-
-
+	trip_words.w_str=trip;
+	
+	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[0]!=0 || trip_words.w_arr[0]!=0){
+		
+		DO.bits.trip=0;
+		DO.bits.LD_TRIP=1;
+	
+	}else{
+		
+		DO.bits.trip=1;
+		DO.bits.LD_TRIP=1;
+	
+	
+	}
+	
 }
