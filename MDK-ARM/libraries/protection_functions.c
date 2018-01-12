@@ -430,7 +430,7 @@ void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcB
 			}
 
 			// for breaking latency, fcBF_out->pass_flag initialised to 1, 20ms delay entered
-			fcBF_out->pass_flag_filtered = off_delay(fcBF_out->pass_flag, fcBF_out->pass_flag_filtered, fs / 50, &(fcBF_out->pass_flag_counter));
+			fcBF_out->pass_flag_filtered = off_delay(fcBF_out->pass_flag, fcBF_out->pass_flag_filtered, fs*0.02f, &(fcBF_out->pass_flag_counter));
 
 			if (fcBF_out->pass_flag_filtered == 0)
 			{

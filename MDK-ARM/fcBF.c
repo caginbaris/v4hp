@@ -1,6 +1,7 @@
 #include "protection_functions.h"
 #include "nfbm.h"
 #include "powerSysData.h"
+#include "boardIO.h"
 
 
 
@@ -43,14 +44,23 @@ void fcBF_all(){
 	fcBF_in.rmsC=fRMS.Ic;
 	
 	
-	fcBF_in.CB_pos=0;			/*Breaker Input*/
-	fcBF_in.trip_input=0;	/*Trip Input*/
+	fcBF_in.CB_pos		=DI.bit.Q1_cb_pos | DI.bit.Q2_cb_pos | DI.bit.Q3_cb_pos;			/*Breaker Input*/
+	fcBF_in.trip_input=DI.bit.Q1_trip 	| DI.bit.Q2_trip	 | DI.bit.Q3_trip;	       /*Trip Input*/
 	
 	
 	fcBF(fcBF_in,&fcBF_out,EN.bits.fcBF_obj1);
 	
+	
+	if(fcBF_out.trip){
 
+		DO.bits.BF=1;
 
+	}else{
+	
+		DO.bits.BF=0;
+	
+	}
+	
 
 
 }

@@ -193,8 +193,6 @@ uint32_t fc51_obj2_out_c:1;
 
 uint32_t fc51N_obj1_out:1;
 
-uint32_t W1_spare:4;
-
 
 
 //fc27------------------------------------------------2 obj,total=30

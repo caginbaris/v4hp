@@ -913,11 +913,6 @@
                 </FileArmAds>
               </FileOption>
             </File>
-            <File>
-              <FileName>inhibiton.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\inhibiton.c</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>

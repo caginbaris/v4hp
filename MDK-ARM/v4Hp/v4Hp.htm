@@ -3,7 +3,7 @@
 <title>Static Call Graph - [v4Hp\v4Hp.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image v4Hp\v4Hp.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Thu Jan 11 10:44:50 2018
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060300: Last Updated: Fri Jan 12 11:20:06 2018
 <BR><P>
 <H3>Maximum Stack Usage =        448 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -683,8 +683,8 @@ Global Symbols
 
 <P><STRONG><a name="[8c]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f7xx_hal_gpio.o(i.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[d6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;boardIO
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;boardIO
 </UL>
 
 <P><STRONG><a name="[95]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f7xx_hal.o(i.HAL_GetTick))
@@ -1615,10 +1615,10 @@ Global Symbols
 <P><STRONG><a name="[8d]"></a>main_flow</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, main_flow.o(i.main_flow))
 <BR><BR>[Stack]<UL><LI>Max Depth = 432<LI>Call Chain = main_flow &rArr; spectral_analysis &rArr; signal_spectra &rArr; __hardfp_sqrtf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;boardIO
-<LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spectral_analysis
+<BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;spectral_analysis
 <LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;trueRMS
 <LI><a href="#[fa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;cs_handles
+<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;boardIO
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
 </UL>

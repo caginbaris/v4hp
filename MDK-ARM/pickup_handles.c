@@ -1,6 +1,8 @@
 #include "nfbm.h"
 #include "plib_handles.h"
 #include "protection_functions.h"
+#include "boardIO.h"
+
 
 #define totalPick 67
 #define pickHold 10
@@ -15,7 +17,6 @@ static long pick_buffer[totalPick]={0};
 void pick_up_handles(){
 	
 	static uint8_t pick_up_counter=0;
-	
 	
 	
 	switch (pick_up_counter)
@@ -104,9 +105,9 @@ void pick_up_handles(){
 		pick.fc49_obj1_L1_out_b=off_delay(fc49_obj1_L1_out_b.alarm, pick.fc49_obj1_L1_out_b,pickHold,&pick_buffer[39]);/**/trip.fc49_obj1_L1_out_b=fc49_obj1_L1_out_b.trip;
 		pick.fc49_obj1_L1_out_c=off_delay(fc49_obj1_L1_out_c.alarm, pick.fc49_obj1_L1_out_c,pickHold,&pick_buffer[40]);/**/trip.fc49_obj1_L1_out_c=fc49_obj1_L1_out_c.trip;
 		
-		pick.fc49_obj1_L2_out_a=off_delay(fc49_obj1_L2_out_a.alarm, pick.fc49_obj1_L2_out_a,pickHold,&pick_buffer[41]);/**/trip.fc49_obj1_L2_out_a=fc49_obj1_L2_out_a.trip;
-		pick.fc49_obj1_L2_out_b=off_delay(fc49_obj1_L2_out_b.alarm, pick.fc49_obj1_L2_out_b,pickHold,&pick_buffer[42]);/**/trip.fc49_obj1_L2_out_b=fc49_obj1_L2_out_b.trip;
-		pick.fc49_obj1_L2_out_c=off_delay(fc49_obj1_L2_out_c.alarm, pick.fc49_obj1_L2_out_c,pickHold,&pick_buffer[43]);/**/trip.fc49_obj1_L2_out_c=fc49_obj1_L2_out_c.trip;			
+		//pick.fc49_obj1_L2_out_a=off_delay(fc49_obj1_L2_out_a.alarm, pick.fc49_obj1_L2_out_a,pickHold,&pick_buffer[41]);/**/trip.fc49_obj1_L2_out_a=fc49_obj1_L2_out_a.trip;
+		//pick.fc49_obj1_L2_out_b=off_delay(fc49_obj1_L2_out_b.alarm, pick.fc49_obj1_L2_out_b,pickHold,&pick_buffer[42]);/**/trip.fc49_obj1_L2_out_b=fc49_obj1_L2_out_b.trip;
+		//pick.fc49_obj1_L2_out_c=off_delay(fc49_obj1_L2_out_c.alarm, pick.fc49_obj1_L2_out_c,pickHold,&pick_buffer[43]);/**/trip.fc49_obj1_L2_out_c=fc49_obj1_L2_out_c.trip;			
 		
 		break;
 		
@@ -117,9 +118,9 @@ void pick_up_handles(){
 		pick.fc49_obj2_L1_out_b=off_delay(fc49_obj2_L1_out_b.alarm, pick.fc49_obj2_L1_out_b,pickHold,&pick_buffer[45]);/**/trip.fc49_obj2_L1_out_b=fc49_obj2_L1_out_b.trip;
 		pick.fc49_obj2_L1_out_c=off_delay(fc49_obj2_L1_out_c.alarm, pick.fc49_obj2_L1_out_c,pickHold,&pick_buffer[46]);/**/trip.fc49_obj2_L1_out_c=fc49_obj2_L1_out_c.trip;
 		
-		pick.fc49_obj2_L2_out_a=off_delay(fc49_obj2_L2_out_a.alarm, pick.fc49_obj2_L2_out_a,pickHold,&pick_buffer[47]);/**/trip.fc49_obj2_L2_out_a=fc49_obj2_L2_out_a.trip;
-		pick.fc49_obj2_L2_out_b=off_delay(fc49_obj2_L2_out_b.alarm, pick.fc49_obj2_L2_out_b,pickHold,&pick_buffer[48]);/**/trip.fc49_obj2_L2_out_b=fc49_obj2_L2_out_b.trip;
-		pick.fc49_obj2_L2_out_c=off_delay(fc49_obj2_L2_out_c.alarm, pick.fc49_obj2_L2_out_c,pickHold,&pick_buffer[49]);/**/trip.fc49_obj2_L2_out_c=fc49_obj2_L2_out_c.trip;
+		//pick.fc49_obj2_L2_out_a=off_delay(fc49_obj2_L2_out_a.alarm, pick.fc49_obj2_L2_out_a,pickHold,&pick_buffer[47]);/**/trip.fc49_obj2_L2_out_a=fc49_obj2_L2_out_a.trip;
+		//pick.fc49_obj2_L2_out_b=off_delay(fc49_obj2_L2_out_b.alarm, pick.fc49_obj2_L2_out_b,pickHold,&pick_buffer[48]);/**/trip.fc49_obj2_L2_out_b=fc49_obj2_L2_out_b.trip;
+		//pick.fc49_obj2_L2_out_c=off_delay(fc49_obj2_L2_out_c.alarm, pick.fc49_obj2_L2_out_c,pickHold,&pick_buffer[49]);/**/trip.fc49_obj2_L2_out_c=fc49_obj2_L2_out_c.trip;
 		
 		
 		pick.fcBF_out=off_delay(fcBF_out.pick_up,pick.fcBF_out,pickHold,&pick_buffer[50]);/**/trip.fcBF_out=fcBF_out.trip;
@@ -174,6 +175,91 @@ void pick_up_handles(){
 	if(++pick_up_counter==10){pick_up_counter=0;}
 
 
+
+
+
+
+}
+
+
+void reset_handles(){
+	
+		// cau , invoke after DO op.
+	
+		if(DI.bit.reset){
+	
+	
+		if(!pick.fc50_obj1_L1_out_a){fc50_obj1_L1_out_a.trip_latch=0;}
+		if(!pick.fc50_obj1_L1_out_b){fc50_obj1_L1_out_b.trip_latch=0;}
+		if(!pick.fc50_obj1_L1_out_c){fc50_obj1_L1_out_c.trip_latch=0;}
+		
+		if(!pick.fc50_obj1_L2_out_a){fc50_obj1_L2_out_a.trip_latch=0;}
+		if(!pick.fc50_obj1_L2_out_b){fc50_obj1_L2_out_b.trip_latch=0;}
+		if(!pick.fc50_obj1_L2_out_c){fc50_obj1_L2_out_c.trip_latch=0;}
+		
+		if(!pick.fc50_obj1_L3_out_a){fc50_obj1_L3_out_a.trip_latch=0;}
+		if(!pick.fc50_obj1_L3_out_b){fc50_obj1_L3_out_b.trip_latch=0;}
+		if(!pick.fc50_obj1_L3_out_c){fc50_obj1_L3_out_c.trip_latch=0;}
+		
+		
+		
+		if(!pick.fc50_obj2_L1_out_a){fc50_obj2_L1_out_a.trip_latch=0;}
+		if(!pick.fc50_obj2_L1_out_b){fc50_obj2_L1_out_b.trip_latch=0;}
+		if(!pick.fc50_obj2_L1_out_c){fc50_obj2_L1_out_c.trip_latch=0;}
+		
+		if(!pick.fc50_obj2_L2_out_a){fc50_obj2_L2_out_a.trip_latch=0;}
+		if(!pick.fc50_obj2_L2_out_b){fc50_obj2_L2_out_b.trip_latch=0;}
+		if(!pick.fc50_obj2_L2_out_c){fc50_obj2_L2_out_c.trip_latch=0;}
+		
+		if(!pick.fc50_obj2_L3_out_a){fc50_obj2_L3_out_a.trip_latch=0;}
+		if(!pick.fc50_obj2_L3_out_b){fc50_obj2_L3_out_b.trip_latch=0;}
+		if(!pick.fc50_obj2_L3_out_c){fc50_obj2_L3_out_c.trip_latch=0;}
+		
+		
+		
+		if(!pick.fc50N_obj1_L1_out){fc50N_obj1_L1_out.trip_latch=0;}
+		if(!pick.fc50N_obj1_L2_out){fc50N_obj1_L2_out.trip_latch=0;}
+		if(!pick.fc50N_obj1_L3_out){fc50N_obj1_L3_out.trip_latch=0;}
+		
+		
+		if(!pick.fc51_obj1_out_a){fc51_obj1_out_a.trip=0;}
+		if(!pick.fc51_obj1_out_b){fc51_obj1_out_b.trip=0;}
+		if(!pick.fc51_obj1_out_c){fc51_obj1_out_c.trip=0;}
+		
+		if(!pick.fc51_obj2_out_a){fc51_obj2_out_a.trip=0;}
+		if(!pick.fc51_obj2_out_b){fc51_obj2_out_b.trip=0;}
+		if(!pick.fc51_obj2_out_c){fc51_obj2_out_c.trip=0;}
+		
+		
+		if(!pick.fc51N_obj1_out){fc51N_obj1_out.trip=0;}
+		
+		
+		if(!pick.fc27_obj1_L1_out){fc27_obj1_L1_out.trip=0;}
+		if(!pick.fc27_obj1_L2_out){fc27_obj1_L2_out.trip=0;}
+		
+
+		if(!pick.fc59_obj1_L1_out_a){fc59_obj1_L1_out_a.trip=0;}
+		if(!pick.fc59_obj1_L1_out_b){fc59_obj1_L1_out_b.trip=0;}
+		if(!pick.fc59_obj1_L1_out_c){fc59_obj1_L1_out_c.trip=0;}
+		
+		if(!pick.fc59_obj1_L2_out_a){fc59_obj1_L2_out_a.trip=0;}
+		if(!pick.fc59_obj1_L2_out_b){fc59_obj1_L2_out_b.trip=0;}
+		if(!pick.fc59_obj1_L2_out_c){fc59_obj1_L2_out_c.trip=0;}
+		
+		
+		if(!pick.fc49_obj1_L1_out_a){fc49_obj1_L1_out_a.trip=0;}
+		if(!pick.fc49_obj1_L1_out_b){fc49_obj1_L1_out_b.trip=0;}
+		if(!pick.fc49_obj1_L1_out_c){fc49_obj1_L1_out_c.trip=0;}
+		
+		
+		if(!pick.fc49_obj2_L1_out_a){fc49_obj2_L1_out_a.trip=0;}
+		if(!pick.fc49_obj2_L1_out_b){fc49_obj2_L1_out_b.trip=0;}
+		if(!pick.fc49_obj2_L1_out_c){fc49_obj2_L1_out_c.trip=0;}
+		
+		
+			
+		//--reset end	
+		}
 
 
 
