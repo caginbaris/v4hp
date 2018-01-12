@@ -247,19 +247,61 @@ void reset_handles(){
 		if(!pick.fc59_obj1_L2_out_c){fc59_obj1_L2_out_c.trip=0;}
 		
 		
+		if(!pick.fc46d_obj1_L1_out){fc46d_obj1_L1_out.trip_latch=0;}
+		if(!pick.fc46i_obj1_L1_out){fc46i_obj1_L1_out.trip=0;}
+		
+		
 		if(!pick.fc49_obj1_L1_out_a){fc49_obj1_L1_out_a.trip=0;}
 		if(!pick.fc49_obj1_L1_out_b){fc49_obj1_L1_out_b.trip=0;}
 		if(!pick.fc49_obj1_L1_out_c){fc49_obj1_L1_out_c.trip=0;}
-		
 		
 		if(!pick.fc49_obj2_L1_out_a){fc49_obj2_L1_out_a.trip=0;}
 		if(!pick.fc49_obj2_L1_out_b){fc49_obj2_L1_out_b.trip=0;}
 		if(!pick.fc49_obj2_L1_out_c){fc49_obj2_L1_out_c.trip=0;}
 		
+		if(!pick.fcBF_out){fcBF_out.trip=0;}
 		
-			
+		
+		if(!pick.fc37_obj1_L1_out_a){fc37_obj1_L1_out_a.trip=0;}
+		if(!pick.fc37_obj1_L1_out_b){fc37_obj1_L1_out_b.trip=0;}
+		if(!pick.fc37_obj1_L1_out_c){fc37_obj1_L1_out_c.trip=0;}
+		
+		if(!pick.fc37_obj2_L1_out_a){fc37_obj1_L1_out_a.trip=0;}
+		if(!pick.fc37_obj2_L1_out_b){fc37_obj1_L1_out_b.trip=0;}
+		if(!pick.fc37_obj2_L1_out_c){fc37_obj1_L1_out_c.trip=0;}
+		
+		
+		if(!pick.fcUNBd_obj1_L1_out_a){fcUNBd_obj1_L1_out_a.trip=0;}
+		if(!pick.fcUNBd_obj1_L1_out_b){fcUNBd_obj1_L1_out_b.trip=0;}
+		
+		if(!pick.fcUNBi_obj1_L1_out_a){fcUNBi_obj1_L1_out_a.trip=0;}
+		if(!pick.fcUNBi_obj1_L1_out_b){fcUNBi_obj1_L1_out_b.trip=0;}
+		
+		
+		if(!pick.fcPVPd_obj1_L1_out_a){fcPVPd_obj1_L1_out_a.trip=0;}
+		if(!pick.fcPVPd_obj1_L1_out_b){fcPVPd_obj1_L1_out_b.trip=0;}
+		if(!pick.fcPVPd_obj1_L1_out_c){fcPVPd_obj1_L1_out_c.trip=0;}
+		
+		if(!pick.fcPVPi_obj1_L1_out_a){fcPVPi_obj1_L1_out_a.trip=0;}
+		if(!pick.fcPVPi_obj1_L1_out_b){fcPVPi_obj1_L1_out_b.trip=0;}
+		if(!pick.fcPVPi_obj1_L1_out_c){fcPVPi_obj1_L1_out_c.trip=0;}
+		
+		
+		
+		
 		//--reset end	
+		
 		}
+
+
+
+
+}
+
+void trip_handles(){
+	
+	
+	
 
 
 
