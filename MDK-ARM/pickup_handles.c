@@ -3,7 +3,7 @@
 #include "protection_functions.h"
 #include "boardIO.h"
 #include "externalData.h"
-
+#include "bit_expansion.h"
 
 #define totalPick 62
 #define pickHold 10
@@ -15,6 +15,8 @@ union ToWord pick_words={0};
 union ToWord trip_words={0};
 
 static long pick_buffer[totalPick]={0};
+
+enum fault_codes fault_code=no_fault;
 
 
 
@@ -332,7 +334,116 @@ void trip_handles(){
 		
 		DO.bits.trip=1;
 		DO.bits.LD_TRIP=1;
+		fault_code=no_fault;
 	
+	
+	}
+	
+	
+	if(DO.bits.trip==1 && fault_code==0){
+	
+	switch (trip_words.w_arr[0]){
+		
+  	case BIT_0: 	fault_code=_50_1_a;break;/*50-1a*/
+		case BIT_1: 	fault_code=_50_1_b;break;/*50-1b*/
+		case BIT_2: 	fault_code=_50_1_c;break;/*50-1c*/
+		
+		case BIT_3: 	fault_code=_50_2_a;break;/*50-2a*/
+		case BIT_4: 	fault_code=_50_2_b;break;/*50-2b*/
+		case BIT_5: 	fault_code=_50_2_c;break;/*50-2c*/
+		
+		case BIT_6: 	fault_code=_50_3_a;break;/*50-3a*/
+		case BIT_7: 	fault_code=_50_3_b;break;/*50-3b*/
+		case BIT_8: 	fault_code=_50_3_c;break;/*50-3c*/
+		
+		case BIT_9: 	fault_code=_50_1_a_res;break;/*50-1a_res*/
+		case BIT_10: 	fault_code=_50_1_b_res;break;/*50-1b_res*/
+		case BIT_11: 	fault_code=_50_1_c_res;break;/*50-1c_res*/
+		
+		case BIT_12: 	fault_code=_50_2_a_res;break;/*50-2a_res*/
+		case BIT_13: 	fault_code=_50_2_b_res;break;/*50-2b_res*/
+		case BIT_14: 	fault_code=_50_2_c_res;break;/*50-2c_res*/
+		
+		case BIT_15: 	fault_code=_50_3_a_res;break;/*50-3a_res*/
+		case BIT_16: 	fault_code=_50_3_b_res;break;/*50-3b_res*/
+		case BIT_17: 	fault_code=_50_3_c_res;break;/*50-3c_res*/
+		
+		case BIT_18: 	fault_code=_50N_1;break;/*50N-a*/
+		case BIT_19: 	fault_code=_50N_2;break;/*50N-b*/
+		case BIT_20: 	fault_code=_50N_3;break;/*50N-c*/
+		
+		case BIT_21: 	fault_code=_51_a;break;/*51-a*/
+		case BIT_22: 	fault_code=_51_b;break;/*51-b*/
+		case BIT_23: 	fault_code=_51_c;break;/*51-c*/
+		
+		case BIT_24: 	fault_code=_51_a_res;break;/*51-a-res*/
+		case BIT_25: 	fault_code=_51_b_res;break;/*51-b-res*/
+		case BIT_26: 	fault_code=_51_c_res;break;/*51-c-res*/
+		
+		case BIT_27: 	fault_code=_51N;break;/*51-c-res*/
+		
+  	
+  }
+	
+	
+	
+	switch (trip_words.w_arr[1]){
+			
+  	case BIT_0: 	fault_code=_27_1;break;	/*27-1*/
+		case BIT_1: 	fault_code=_27_2;break;	/*27-2*/
+		
+		case BIT_2: 	fault_code=_59_1a;break;	/*59-1a*/
+		case BIT_3: 	fault_code=_59_1b;break; 	/*59-1b*/
+		case BIT_4: 	fault_code=_59_1c;break; 	/*59-1c*/
+		
+		case BIT_5: 	fault_code=_59_2a;break;	/*59-2a*/
+		case BIT_6: 	fault_code=_59_2b;break;	/*59-2b*/
+		case BIT_7: 	fault_code=_59_2c;break;	/*59-2c*/
+		
+		case BIT_8: 	fault_code=_46d;break;	/*46-d*/
+		case BIT_9: 	fault_code=_46i;break;	/*46-i*/
+		
+		case BIT_10: 	fault_code=_49_a;break;	/*49-a*/
+		case BIT_11: 	fault_code=_49_b;break;	/*49-b*/
+		case BIT_12: 	fault_code=_49_c;break;	/*49-c*/
+		
+		case BIT_16: 	fault_code=_49_a_res;break;	/*49-a-res*/
+		case BIT_17: 	fault_code=_49_b_res;break;	/*49-b-res*/
+		case BIT_18: 	fault_code=_49_c_res;break;	/*49-c-res*/
+		
+		case BIT_22: 	fault_code=_BF;break;/*BF*/
+		
+  }
+	
+	
+	
+	switch (trip_words.w_arr[2]){
+			
+  	case BIT_0: 	fault_code=_37_a;break;	/*37-1a*/
+		case BIT_1: 	fault_code=_37_b;break;	/*37-1b*/
+		case BIT_2: 	fault_code=_37_c;break;	/*37-1c*/
+			
+		case BIT_3: 	fault_code=_37_a_res;break; 	/*37-1a-res*/
+		case BIT_4: 	fault_code=_37_b_res;break; 	/*37-1b-res*/
+		case BIT_5: 	fault_code=_37_c_res;break;	/*37-1c-res*/
+			
+		case BIT_6: 	fault_code=_UNBd_a;break;	/*UNBd-a*/
+		case BIT_7: 	fault_code=_UNBd_b;break;	/*UNBd-b*/
+		
+		case BIT_9: 	fault_code=_UNBi_a;break;	/*UNBi-a*/
+		case BIT_10: 	fault_code=_UNBi_b;break;	/*UNBi-b*/
+		
+		case BIT_12: 	fault_code=_PVPd_a;break;	/*pvp-d-a*/
+		case BIT_13: 	fault_code=_PVPd_b;break;	/*pvp-d-b*/
+		case BIT_14: 	fault_code=_PVPd_c;break;	/*pvp-d-c*/
+		
+		case BIT_15: 	fault_code=_PVPi_a;break;	/*pvpi-a*/
+		case BIT_16: 	fault_code=_PVPi_b;break;	/*pvpi-b*/
+		case BIT_17: 	fault_code=_PVPi_c;break;	/*pvpi-c*/
+		
+		
+		
+		}
 	
 	}
 	
