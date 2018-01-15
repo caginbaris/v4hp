@@ -6,7 +6,7 @@
 union pFunctionEnable EN;
 union cSelection1 cSelect1;
 union cSelection2 cSelect2;
-enum  curve_entry curve;
+enum  curve_entry curve=IEC_normal_inverse;
 
 float curve_data[8][3]={
 	

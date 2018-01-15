@@ -35,12 +35,13 @@ void fc51_init(){
 	fc51_obj2_in=fc51_initStruct;
 																									
 
-	
-	
-		
-	fc51_obj1_in.curve_data[0]=curve_data[curve][0];
-	fc51_obj1_in.curve_data[1]=curve_data[curve][1];
-	fc51_obj1_in.curve_data[2]=curve_data[curve][2];	
+	fc51_obj1_in.curve_data[0]=curve_data[IEC_normal_inverse][0];
+	fc51_obj1_in.curve_data[1]=curve_data[IEC_normal_inverse][1];
+	fc51_obj1_in.curve_data[2]=curve_data[IEC_normal_inverse][2];	
+																							
+	fc51_obj2_in.curve_data[0]=curve_data[IEC_normal_inverse][0];
+	fc51_obj2_in.curve_data[1]=curve_data[IEC_normal_inverse][1];
+	fc51_obj2_in.curve_data[2]=curve_data[IEC_normal_inverse][2];																							
 
 
 }
@@ -83,9 +84,9 @@ void fc51_all(){
 	// fc51 obj2 Start************************
 	
 	
-	fc51(tRMS.IRESa,fc51_obj1_in,&fc51_obj1_out_a,EN.bits.fc51_obj1);
-	fc51(tRMS.IRESb,fc51_obj1_in,&fc51_obj1_out_a,EN.bits.fc51_obj1);
-	fc51(tRMS.IRESc,fc51_obj1_in,&fc51_obj1_out_a,EN.bits.fc51_obj1);	
+	fc51(tRMS.IRESa,fc51_obj2_in,&fc51_obj2_out_a,EN.bits.fc51_obj2);
+	fc51(tRMS.IRESb,fc51_obj2_in,&fc51_obj2_out_a,EN.bits.fc51_obj2);
+	fc51(tRMS.IRESc,fc51_obj2_in,&fc51_obj2_out_a,EN.bits.fc51_obj2);	
 	
 	
 	// fc51 obj2 End**************************

@@ -27,8 +27,12 @@ void pick_up_handles(){
 	
 	pick_words.w_str=pick;
 	
+	
+	
 	switch (pick_up_counter)
   {
+		
+		
   	case 0:
 			
 		pick.fc50_obj1_L1_out_a=off_delay(fc50_obj1_L1_out_a.pick_up, pick.fc50_obj1_L1_out_a, pickHold, &pick_buffer[0]);/**/trip.fc50_obj1_L1_out_a=fc50_obj1_L1_out_a.trip_latch;
@@ -71,6 +75,9 @@ void pick_up_handles(){
 			
 		break;
 		
+		
+		
+		
 		case 3:
 			
 		pick.fc51_obj1_out_a=off_delay(fc51_obj1_out_a.pick_up, pick.fc51_obj1_out_a,pickHold,&pick_buffer[21]);/**/trip.fc51_obj1_out_a=fc51_obj1_out_a.trip;
@@ -85,6 +92,7 @@ void pick_up_handles(){
 			
 		
 		break;
+		
 		
 		
 		case 4:
@@ -173,7 +181,9 @@ void pick_up_handles(){
 		pick.fcPVPi_obj1_L1_out_c=off_delay(fcPVPi_obj1_L1_out_c.pick_up,pick.fcPVPi_obj1_L1_out_c,pickHold,&pick_buffer[60]);/**/trip.fcPVPi_obj1_L1_out_c=fcPVPi_obj1_L1_out_c.trip;
 		
 	
-		break;
+		break; 
+		
+		
 		
 		
   }
@@ -447,4 +457,17 @@ void trip_handles(){
 	
 	}
 	
+}
+
+
+
+
+
+void pick_trip_reset_handles(){
+
+
+	pick_up_handles();
+	reset_handles();
+	trip_handles();
+
 }

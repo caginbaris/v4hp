@@ -18,7 +18,13 @@ struct fc37_outputParameters fc37_obj2_L1_out_c={0};
 
 void fc37_init(){
 
+			struct fc37_inputParameters fc37_initStruct={	1.0f, /*level*/
+																								0.9f, /*DropOutRatio*/
+																								0.05f,/*Delay*/};
 	
+		fc37_obj1_L1_in=fc37_initStruct;
+		fc37_obj2_L1_in=fc37_initStruct;
+		
 
 
 }

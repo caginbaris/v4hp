@@ -46,7 +46,7 @@ void fcBF_all(){
 	
 	fcBF_in.CB_pos		=DI.bit.Q1_cb_pos | DI.bit.Q2_cb_pos | DI.bit.Q3_cb_pos;			/*Breaker Input*/
 	fcBF_in.trip_input=DI.bit.Q1_trip 	| DI.bit.Q2_trip	 | DI.bit.Q3_trip;	       /*Trip Input*/
-	
+	// cau related cb position should conditionally compiled
 	
 	fcBF(fcBF_in,&fcBF_out,EN.bits.fcBF_obj1);
 	
