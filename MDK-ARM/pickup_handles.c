@@ -333,7 +333,7 @@ void trip_handles(){
 	}else{
 		
 		DO.bits.trip=1;
-		DO.bits.LD_TRIP=1;
+		DO.bits.LD_TRIP=0;
 		fault_code=no_fault;
 	
 	

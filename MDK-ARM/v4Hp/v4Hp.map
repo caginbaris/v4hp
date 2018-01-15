@@ -988,7 +988,7 @@ Section Cross References
     fcbf.o(i.fcBF_init) refers to fcbf.o(.bss) for .bss
     fcbf.o(i.fcBF_init) refers to powersysdata.o(.bss) for Sys
     fc37.o(i.fc37_all) refers to protection_functions.o(i.maxSelector_3p) for maxSelector_3p
-    fc37.o(i.fc37_all) refers to protection_functions.o(i.on_off_delay) for on_off_delay
+    fc37.o(i.fc37_all) refers to protection_functions.o(i.off_delay) for off_delay
     fc37.o(i.fc37_all) refers to protection_functions.o(i.fc37) for fc37
     fc37.o(i.fc37_all) refers to fc37.o(i.inhibition) for inhibition
     fc37.o(i.fc37_all) refers to cs_handles.o(.bss) for fRMS
