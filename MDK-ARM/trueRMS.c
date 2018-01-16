@@ -28,6 +28,10 @@ void trueRMS(void){
 	backRMS.sAdc.IRESb=true_rms(fAdc.sAdc.IRESb,&bufferRMS[IRESb][0],counter,bufferLength);
 	backRMS.sAdc.IRESc=true_rms(fAdc.sAdc.IRESc,&bufferRMS[IRESc][0],counter,bufferLength);
 	
+	backRMS.sAdc.IUNBa =true_rms(fAdc.sAdc.IUNBa,&bufferRMS[IUNBa][0],counter,bufferLength);
+	backRMS.sAdc.IUNBb =true_rms(fAdc.sAdc.IUNBb,&bufferRMS[IUNBb][0],counter,bufferLength);
+	
+	
 	if(++counter==bufferLength){counter=0;}
 	
 	tRMS=backRMS.sAdc;

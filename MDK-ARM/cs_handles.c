@@ -185,7 +185,7 @@ void cs_handles(){
 	UNBb.s=cs_generation(fAdc.sAdc.IUNBb,sin_coeffs,N,&s_buffer[7][0])*cs_scale;
 
 	n.c=cs_generation(fAdc.sAdc.In,cos_coeffs,N,&c_buffer[8][0])*cs_scale;
-	n.c=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
+	n.s=cs_generation(fAdc.sAdc.In,sin_coeffs,N,&s_buffer[8][0])*cs_scale;
 	
 	
 	fRMS.IUNBa=sqrtf(UNBa.c*UNBa.c	+	UNBa.s*UNBa.s)*cs_rms_scale;

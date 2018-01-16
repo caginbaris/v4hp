@@ -8,7 +8,7 @@ void main_flow(){
 
   //measurement
 	
-	boardIO();
+		boardIO();
 	
 		spectral_analysis();
 		cs_handles();
