@@ -8,45 +8,49 @@ void main_flow(){
 
   //measurement
 	
-		boardIO();
+
 	
-		spectral_analysis();
-		cs_handles();
-		trueRMS();
+	spectral_analysis();
+	cs_handles();
+	trueRMS();
 
 
 	// protection
 	
-	/*
-	fc50_all();
-	fc50N_all();
 	
+	
+	//fc50_all();
+	//fc50N_all();
+	
+	#if 0
 	fc51_all();
 	fc51N_all();
 	
-	
+
 	fc27_all();
 	fc59_all();
 	
-	
+		
 	fc46_all();
 	
 	fc49_all();	
-	
+	/*
 	
 	*/
 	
+	fcBF_all();
+	
+	fc37_all();
+	
+	fcUNB_all();
+	
+	fcPVP_all();
+	
+	#endif 
+	//pick_trip_reset_handles();
+	boardIO();
 	
 	
-	
-	
-	//fcBF_all();
-	
-	//fc37_all();
-	
-	//fcUNB_all();
-	
-	//fcPVP_all();
 	
 	
 	

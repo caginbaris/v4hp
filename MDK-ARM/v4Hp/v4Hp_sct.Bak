@@ -13,6 +13,7 @@ LR_IROM1 0x08000000 0x00200000  {    ; load region size_region
   }
   RW_IRAM2 0x00000000 0x00003FFF  {
     measurement_functions.o (+RO +ZI +RW)
+    protection_functions.o (+RO +ZI +RW)
   }
 }
 

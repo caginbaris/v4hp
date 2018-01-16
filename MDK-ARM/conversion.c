@@ -36,11 +36,11 @@ void init_conversion(){
 	
 	//Offset
 	
-	offset.Ia=0.0f;
-	offset.Ib=0.0f;
-	offset.Ic=0.0f;
+	offset.Ia=2051.129f;
+	offset.Ib=2050.04f;
+	offset.Ic=2050.65f;
 	
-	offset.In=0.0f;
+	offset.In=2051.270f;
 	offset.IRESa=0.0f;
 	offset.IRESb=0.0f;
 	offset.IRESc=0.0f;
@@ -48,17 +48,18 @@ void init_conversion(){
 	offset.IUNBa=0.0f;
 	offset.IUNBb=0.0f;
 	
-	offset.Van=0.0f;
-	offset.Vbn=0.0f;
-	offset.Vcn=0.0f;
+	offset.Van=2048.936f;
+	offset.Vbn=2050.661f;
+	offset.Vcn=2050.0f;
 	
 	// Scale
 	
-	scale.Ia=1.0f;//0.055411955626188f;
-	scale.Ib=1.0f;//0.055411955626188f;
-	scale.Ic=1.0f;//0.055411955626188f;
+	scale.Ia=0.055370985603544f;//0.055411955626188f;
+	scale.Ib=0.055493895671476f;//0.055411955626188f;
+	scale.Ic=0.055370985603544f;//0.055411955626188f;
 	
-	scale.In=1.0f;
+	scale.In=0.005482456140351f;
+
 	scale.IRESa=1.0f;
 	scale.IRESb=1.0f;
 	scale.IRESc=1.0f;
@@ -66,9 +67,9 @@ void init_conversion(){
 	scale.IUNBa=1.0f;
 	scale.IUNBb=1.0f;
 	
-	scale.Van=1.0f;
-	scale.Vbn=1.0f;
-	scale.Vcn=1.0f;
+	scale.Van=0.10699f;
+	scale.Vbn=0.10699f;
+	scale.Vcn=0.10699f;
 	
 	//TR.VT=	(TR.VT_Secondary>eps) 	? 	(TR.VT_Primary/TR.VT_Secondary) : 0.0f;
 	//TR.CT=	(TR.CT_Secondary>eps) 	? 	(TR.CT_Primary/TR.CT_Secondary) : 0.0f;
@@ -120,12 +121,12 @@ if(hadc->Instance==ADC1){
 	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);
 	conversion_completed=1;	
 
-	conversion_completed=1;		
+	
 	//HAL_GPIO_TogglePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin);	
 	
 	cycle_count_1++;
 	
-	calc_offset= averager();
+	//calc_offset= averager();
 	
 	
 	}
