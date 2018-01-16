@@ -1,14 +1,22 @@
 #include "nfbm.h"
 #include "plib_handles.h"
 #include "protection_functions.h"
+#include "boardIO.h"
+#include "externalData.h"
+#include "bit_expansion.h"
 
-#define totalPick 67
+#define totalPick 62
 #define pickHold 10
 
 struct plib_handles pick={0};
 struct plib_handles trip={0};
 
+union ToWord pick_words={0};
+union ToWord trip_words={0};
+
 static long pick_buffer[totalPick]={0};
+
+enum fault_codes fault_code=no_fault;
 
 
 
@@ -17,9 +25,14 @@ void pick_up_handles(){
 	static uint8_t pick_up_counter=0;
 	
 	
+	pick_words.w_str=pick;
+	
+	
 	
 	switch (pick_up_counter)
   {
+		
+		
   	case 0:
 			
 		pick.fc50_obj1_L1_out_a=off_delay(fc50_obj1_L1_out_a.pick_up, pick.fc50_obj1_L1_out_a, pickHold, &pick_buffer[0]);/**/trip.fc50_obj1_L1_out_a=fc50_obj1_L1_out_a.trip_latch;
@@ -62,6 +75,9 @@ void pick_up_handles(){
 			
 		break;
 		
+		
+		
+		
 		case 3:
 			
 		pick.fc51_obj1_out_a=off_delay(fc51_obj1_out_a.pick_up, pick.fc51_obj1_out_a,pickHold,&pick_buffer[21]);/**/trip.fc51_obj1_out_a=fc51_obj1_out_a.trip;
@@ -76,6 +92,7 @@ void pick_up_handles(){
 			
 		
 		break;
+		
 		
 		
 		case 4:
@@ -104,38 +121,38 @@ void pick_up_handles(){
 		pick.fc49_obj1_L1_out_b=off_delay(fc49_obj1_L1_out_b.alarm, pick.fc49_obj1_L1_out_b,pickHold,&pick_buffer[39]);/**/trip.fc49_obj1_L1_out_b=fc49_obj1_L1_out_b.trip;
 		pick.fc49_obj1_L1_out_c=off_delay(fc49_obj1_L1_out_c.alarm, pick.fc49_obj1_L1_out_c,pickHold,&pick_buffer[40]);/**/trip.fc49_obj1_L1_out_c=fc49_obj1_L1_out_c.trip;
 		
-		pick.fc49_obj1_L2_out_a=off_delay(fc49_obj1_L2_out_a.alarm, pick.fc49_obj1_L2_out_a,pickHold,&pick_buffer[41]);/**/trip.fc49_obj1_L2_out_a=fc49_obj1_L2_out_a.trip;
-		pick.fc49_obj1_L2_out_b=off_delay(fc49_obj1_L2_out_b.alarm, pick.fc49_obj1_L2_out_b,pickHold,&pick_buffer[42]);/**/trip.fc49_obj1_L2_out_b=fc49_obj1_L2_out_b.trip;
-		pick.fc49_obj1_L2_out_c=off_delay(fc49_obj1_L2_out_c.alarm, pick.fc49_obj1_L2_out_c,pickHold,&pick_buffer[43]);/**/trip.fc49_obj1_L2_out_c=fc49_obj1_L2_out_c.trip;			
+		//pick.fc49_obj1_L2_out_a=off_delay(fc49_obj1_L2_out_a.alarm, pick.fc49_obj1_L2_out_a,pickHold,&pick_buffer[41]);/**/trip.fc49_obj1_L2_out_a=fc49_obj1_L2_out_a.trip;
+		//pick.fc49_obj1_L2_out_b=off_delay(fc49_obj1_L2_out_b.alarm, pick.fc49_obj1_L2_out_b,pickHold,&pick_buffer[42]);/**/trip.fc49_obj1_L2_out_b=fc49_obj1_L2_out_b.trip;
+		//pick.fc49_obj1_L2_out_c=off_delay(fc49_obj1_L2_out_c.alarm, pick.fc49_obj1_L2_out_c,pickHold,&pick_buffer[43]);/**/trip.fc49_obj1_L2_out_c=fc49_obj1_L2_out_c.trip;			
 		
 		break;
 		
 		
 		case 6:
 			
-		pick.fc49_obj2_L1_out_a=off_delay(fc49_obj2_L1_out_a.alarm, pick.fc49_obj2_L1_out_a,pickHold,&pick_buffer[44]);/**/trip.fc49_obj2_L1_out_a=fc49_obj2_L1_out_a.trip;
-		pick.fc49_obj2_L1_out_b=off_delay(fc49_obj2_L1_out_b.alarm, pick.fc49_obj2_L1_out_b,pickHold,&pick_buffer[45]);/**/trip.fc49_obj2_L1_out_b=fc49_obj2_L1_out_b.trip;
-		pick.fc49_obj2_L1_out_c=off_delay(fc49_obj2_L1_out_c.alarm, pick.fc49_obj2_L1_out_c,pickHold,&pick_buffer[46]);/**/trip.fc49_obj2_L1_out_c=fc49_obj2_L1_out_c.trip;
+		pick.fc49_obj2_L1_out_a=off_delay(fc49_obj2_L1_out_a.alarm, pick.fc49_obj2_L1_out_a,pickHold,&pick_buffer[41]);/**/trip.fc49_obj2_L1_out_a=fc49_obj2_L1_out_a.trip;
+		pick.fc49_obj2_L1_out_b=off_delay(fc49_obj2_L1_out_b.alarm, pick.fc49_obj2_L1_out_b,pickHold,&pick_buffer[42]);/**/trip.fc49_obj2_L1_out_b=fc49_obj2_L1_out_b.trip;
+		pick.fc49_obj2_L1_out_c=off_delay(fc49_obj2_L1_out_c.alarm, pick.fc49_obj2_L1_out_c,pickHold,&pick_buffer[43]);/**/trip.fc49_obj2_L1_out_c=fc49_obj2_L1_out_c.trip;
 		
-		pick.fc49_obj2_L2_out_a=off_delay(fc49_obj2_L2_out_a.alarm, pick.fc49_obj2_L2_out_a,pickHold,&pick_buffer[47]);/**/trip.fc49_obj2_L2_out_a=fc49_obj2_L2_out_a.trip;
-		pick.fc49_obj2_L2_out_b=off_delay(fc49_obj2_L2_out_b.alarm, pick.fc49_obj2_L2_out_b,pickHold,&pick_buffer[48]);/**/trip.fc49_obj2_L2_out_b=fc49_obj2_L2_out_b.trip;
-		pick.fc49_obj2_L2_out_c=off_delay(fc49_obj2_L2_out_c.alarm, pick.fc49_obj2_L2_out_c,pickHold,&pick_buffer[49]);/**/trip.fc49_obj2_L2_out_c=fc49_obj2_L2_out_c.trip;
+		//pick.fc49_obj2_L2_out_a=off_delay(fc49_obj2_L2_out_a.alarm, pick.fc49_obj2_L2_out_a,pickHold,&pick_buffer[47]);/**/trip.fc49_obj2_L2_out_a=fc49_obj2_L2_out_a.trip;
+		//pick.fc49_obj2_L2_out_b=off_delay(fc49_obj2_L2_out_b.alarm, pick.fc49_obj2_L2_out_b,pickHold,&pick_buffer[48]);/**/trip.fc49_obj2_L2_out_b=fc49_obj2_L2_out_b.trip;
+		//pick.fc49_obj2_L2_out_c=off_delay(fc49_obj2_L2_out_c.alarm, pick.fc49_obj2_L2_out_c,pickHold,&pick_buffer[49]);/**/trip.fc49_obj2_L2_out_c=fc49_obj2_L2_out_c.trip;
 		
 		
-		pick.fcBF_out=off_delay(fcBF_out.pick_up,pick.fcBF_out,pickHold,&pick_buffer[50]);/**/trip.fcBF_out=fcBF_out.trip;
+		pick.fcBF_out=off_delay(fcBF_out.pick_up,pick.fcBF_out,pickHold,&pick_buffer[44]);/**/trip.fcBF_out=fcBF_out.trip;
 		
 			
 		break;
 		
 		case 7:
 			
-		pick.fc37_obj1_L1_out_a=off_delay(fc37_obj1_L1_out_a.pick_up,pick.fc37_obj1_L1_out_a,pickHold,&pick_buffer[51]);/**/trip.fc37_obj1_L1_out_a=fc37_obj1_L1_out_a.trip;
-		pick.fc37_obj1_L1_out_b=off_delay(fc37_obj1_L1_out_b.pick_up,pick.fc37_obj1_L1_out_b,pickHold,&pick_buffer[52]);/**/trip.fc37_obj1_L1_out_b=fc37_obj1_L1_out_b.trip;
-		pick.fc37_obj1_L1_out_c=off_delay(fc37_obj1_L1_out_c.pick_up,pick.fc37_obj1_L1_out_c,pickHold,&pick_buffer[53]);/**/trip.fc37_obj1_L1_out_c=fc37_obj1_L1_out_c.trip;
+		pick.fc37_obj1_L1_out_a=off_delay(fc37_obj1_L1_out_a.pick_up,pick.fc37_obj1_L1_out_a,pickHold,&pick_buffer[45]);/**/trip.fc37_obj1_L1_out_a=fc37_obj1_L1_out_a.trip;
+		pick.fc37_obj1_L1_out_b=off_delay(fc37_obj1_L1_out_b.pick_up,pick.fc37_obj1_L1_out_b,pickHold,&pick_buffer[46]);/**/trip.fc37_obj1_L1_out_b=fc37_obj1_L1_out_b.trip;
+		pick.fc37_obj1_L1_out_c=off_delay(fc37_obj1_L1_out_c.pick_up,pick.fc37_obj1_L1_out_c,pickHold,&pick_buffer[47]);/**/trip.fc37_obj1_L1_out_c=fc37_obj1_L1_out_c.trip;
 		
-		pick.fc37_obj2_L1_out_a=off_delay(fc37_obj2_L1_out_a.pick_up,pick.fc37_obj2_L1_out_a,pickHold,&pick_buffer[54]);/**/trip.fc37_obj2_L1_out_a=fc37_obj2_L1_out_a.trip;
-		pick.fc37_obj2_L1_out_b=off_delay(fc37_obj2_L1_out_b.pick_up,pick.fc37_obj2_L1_out_b,pickHold,&pick_buffer[55]);/**/trip.fc37_obj2_L1_out_b=fc37_obj2_L1_out_b.trip;
-		pick.fc37_obj2_L1_out_c=off_delay(fc37_obj2_L1_out_c.pick_up,pick.fc37_obj2_L1_out_c,pickHold,&pick_buffer[56]);/**/trip.fc37_obj2_L1_out_c=fc37_obj2_L1_out_c.trip;
+		pick.fc37_obj2_L1_out_a=off_delay(fc37_obj2_L1_out_a.pick_up,pick.fc37_obj2_L1_out_a,pickHold,&pick_buffer[48]);/**/trip.fc37_obj2_L1_out_a=fc37_obj2_L1_out_a.trip;
+		pick.fc37_obj2_L1_out_b=off_delay(fc37_obj2_L1_out_b.pick_up,pick.fc37_obj2_L1_out_b,pickHold,&pick_buffer[49]);/**/trip.fc37_obj2_L1_out_b=fc37_obj2_L1_out_b.trip;
+		pick.fc37_obj2_L1_out_c=off_delay(fc37_obj2_L1_out_c.pick_up,pick.fc37_obj2_L1_out_c,pickHold,&pick_buffer[50]);/**/trip.fc37_obj2_L1_out_c=fc37_obj2_L1_out_c.trip;
 		
 		
 		break;
@@ -143,11 +160,11 @@ void pick_up_handles(){
 		
 		case 8:
 			
-		pick.fcUNBd_obj1_L1_out_a=off_delay(fcUNBd_obj1_L1_out_a.pick_up,pick.fcUNBd_obj1_L1_out_a,pickHold,&pick_buffer[57]);/**/trip.fcUNBd_obj1_L1_out_a=fcUNBd_obj1_L1_out_a.trip;
-		pick.fcUNBd_obj1_L1_out_b=off_delay(fcUNBd_obj1_L1_out_b.pick_up,pick.fcUNBd_obj1_L1_out_b,pickHold,&pick_buffer[58]);/**/trip.fcUNBd_obj1_L1_out_b=fcUNBd_obj1_L1_out_b.trip;
+		pick.fcUNBd_obj1_L1_out_a=off_delay(fcUNBd_obj1_L1_out_a.pick_up,pick.fcUNBd_obj1_L1_out_a,pickHold,&pick_buffer[51]);/**/trip.fcUNBd_obj1_L1_out_a=fcUNBd_obj1_L1_out_a.trip;
+		pick.fcUNBd_obj1_L1_out_b=off_delay(fcUNBd_obj1_L1_out_b.pick_up,pick.fcUNBd_obj1_L1_out_b,pickHold,&pick_buffer[52]);/**/trip.fcUNBd_obj1_L1_out_b=fcUNBd_obj1_L1_out_b.trip;
 		
-		pick.fcUNBi_obj1_L1_out_a=off_delay(fcUNBi_obj1_L1_out_a.pick_up,pick.fcUNBi_obj1_L1_out_a,pickHold,&pick_buffer[59]);/**/trip.fcUNBi_obj1_L1_out_a=fcUNBi_obj1_L1_out_a.trip;
-		pick.fcUNBi_obj1_L1_out_b=off_delay(fcUNBi_obj1_L1_out_b.pick_up,pick.fcUNBi_obj1_L1_out_b,pickHold,&pick_buffer[60]);/**/trip.fcUNBi_obj1_L1_out_b=fcUNBi_obj1_L1_out_b.trip;
+		pick.fcUNBi_obj1_L1_out_a=off_delay(fcUNBi_obj1_L1_out_a.pick_up,pick.fcUNBi_obj1_L1_out_a,pickHold,&pick_buffer[53]);/**/trip.fcUNBi_obj1_L1_out_a=fcUNBi_obj1_L1_out_a.trip;
+		pick.fcUNBi_obj1_L1_out_b=off_delay(fcUNBi_obj1_L1_out_b.pick_up,pick.fcUNBi_obj1_L1_out_b,pickHold,&pick_buffer[54]);/**/trip.fcUNBi_obj1_L1_out_b=fcUNBi_obj1_L1_out_b.trip;
 	
 		
 		break;
@@ -155,16 +172,18 @@ void pick_up_handles(){
 		
 		case 9:
 			
-		pick.fcPVPd_obj1_L1_out_a=off_delay(fcPVPd_obj1_L1_out_a.pick_up,pick.fcPVPd_obj1_L1_out_a,pickHold,&pick_buffer[61]);/**/trip.fcPVPd_obj1_L1_out_a=fcPVPd_obj1_L1_out_a.trip;
-		pick.fcPVPd_obj1_L1_out_b=off_delay(fcPVPd_obj1_L1_out_b.pick_up,pick.fcPVPd_obj1_L1_out_b,pickHold,&pick_buffer[62]);/**/trip.fcPVPd_obj1_L1_out_b=fcPVPd_obj1_L1_out_b.trip;
-		pick.fcPVPd_obj1_L1_out_c=off_delay(fcPVPd_obj1_L1_out_c.pick_up,pick.fcPVPd_obj1_L1_out_c,pickHold,&pick_buffer[63]);/**/trip.fcPVPd_obj1_L1_out_c=fcPVPd_obj1_L1_out_c.trip;
+		pick.fcPVPd_obj1_L1_out_a=off_delay(fcPVPd_obj1_L1_out_a.pick_up,pick.fcPVPd_obj1_L1_out_a,pickHold,&pick_buffer[55]);/**/trip.fcPVPd_obj1_L1_out_a=fcPVPd_obj1_L1_out_a.trip;
+		pick.fcPVPd_obj1_L1_out_b=off_delay(fcPVPd_obj1_L1_out_b.pick_up,pick.fcPVPd_obj1_L1_out_b,pickHold,&pick_buffer[56]);/**/trip.fcPVPd_obj1_L1_out_b=fcPVPd_obj1_L1_out_b.trip;
+		pick.fcPVPd_obj1_L1_out_c=off_delay(fcPVPd_obj1_L1_out_c.pick_up,pick.fcPVPd_obj1_L1_out_c,pickHold,&pick_buffer[57]);/**/trip.fcPVPd_obj1_L1_out_c=fcPVPd_obj1_L1_out_c.trip;
 		
-		pick.fcPVPi_obj1_L1_out_a=off_delay(fcPVPi_obj1_L1_out_a.pick_up,pick.fcPVPi_obj1_L1_out_a,pickHold,&pick_buffer[64]);/**/trip.fcPVPi_obj1_L1_out_a=fcPVPi_obj1_L1_out_a.trip;
-		pick.fcPVPi_obj1_L1_out_b=off_delay(fcPVPi_obj1_L1_out_b.pick_up,pick.fcPVPi_obj1_L1_out_b,pickHold,&pick_buffer[65]);/**/trip.fcPVPi_obj1_L1_out_b=fcPVPi_obj1_L1_out_b.trip;
-		pick.fcPVPi_obj1_L1_out_c=off_delay(fcPVPi_obj1_L1_out_c.pick_up,pick.fcPVPi_obj1_L1_out_c,pickHold,&pick_buffer[66]);/**/trip.fcPVPi_obj1_L1_out_c=fcPVPi_obj1_L1_out_c.trip;
+		pick.fcPVPi_obj1_L1_out_a=off_delay(fcPVPi_obj1_L1_out_a.pick_up,pick.fcPVPi_obj1_L1_out_a,pickHold,&pick_buffer[58]);/**/trip.fcPVPi_obj1_L1_out_a=fcPVPi_obj1_L1_out_a.trip;
+		pick.fcPVPi_obj1_L1_out_b=off_delay(fcPVPi_obj1_L1_out_b.pick_up,pick.fcPVPi_obj1_L1_out_b,pickHold,&pick_buffer[59]);/**/trip.fcPVPi_obj1_L1_out_b=fcPVPi_obj1_L1_out_b.trip;
+		pick.fcPVPi_obj1_L1_out_c=off_delay(fcPVPi_obj1_L1_out_c.pick_up,pick.fcPVPi_obj1_L1_out_c,pickHold,&pick_buffer[60]);/**/trip.fcPVPi_obj1_L1_out_c=fcPVPi_obj1_L1_out_c.trip;
 		
 	
-		break;
+		break; 
+		
+		
 		
 		
   }
@@ -172,10 +191,283 @@ void pick_up_handles(){
 	
 
 	if(++pick_up_counter==10){pick_up_counter=0;}
+	
+	
+	pick_words.w_str=pick;
+	
+		if(pick_words.w_arr[0]!=0 || pick_words.w_arr[0]!=0 || pick_words.w_arr[0]!=0){
+		
+		DO.bits.alarm=1;
+		DO.bits.LD_ALARM=1;
+		
+		}else{
+			
+		DO.bits.alarm=0;
+		DO.bits.LD_ALARM=0;	
+		
+		}
+
+
+}
+
+
+void reset_handles(){
+	
+		// cau , invoke after DO op.
+	
+		if(DI.bit.reset){
+	
+	
+		if(!pick.fc50_obj1_L1_out_a){fc50_obj1_L1_out_a.trip_latch=0;}
+		if(!pick.fc50_obj1_L1_out_b){fc50_obj1_L1_out_b.trip_latch=0;}
+		if(!pick.fc50_obj1_L1_out_c){fc50_obj1_L1_out_c.trip_latch=0;}
+		
+		if(!pick.fc50_obj1_L2_out_a){fc50_obj1_L2_out_a.trip_latch=0;}
+		if(!pick.fc50_obj1_L2_out_b){fc50_obj1_L2_out_b.trip_latch=0;}
+		if(!pick.fc50_obj1_L2_out_c){fc50_obj1_L2_out_c.trip_latch=0;}
+		
+		if(!pick.fc50_obj1_L3_out_a){fc50_obj1_L3_out_a.trip_latch=0;}
+		if(!pick.fc50_obj1_L3_out_b){fc50_obj1_L3_out_b.trip_latch=0;}
+		if(!pick.fc50_obj1_L3_out_c){fc50_obj1_L3_out_c.trip_latch=0;}
+		
+		
+		
+		if(!pick.fc50_obj2_L1_out_a){fc50_obj2_L1_out_a.trip_latch=0;}
+		if(!pick.fc50_obj2_L1_out_b){fc50_obj2_L1_out_b.trip_latch=0;}
+		if(!pick.fc50_obj2_L1_out_c){fc50_obj2_L1_out_c.trip_latch=0;}
+		
+		if(!pick.fc50_obj2_L2_out_a){fc50_obj2_L2_out_a.trip_latch=0;}
+		if(!pick.fc50_obj2_L2_out_b){fc50_obj2_L2_out_b.trip_latch=0;}
+		if(!pick.fc50_obj2_L2_out_c){fc50_obj2_L2_out_c.trip_latch=0;}
+		
+		if(!pick.fc50_obj2_L3_out_a){fc50_obj2_L3_out_a.trip_latch=0;}
+		if(!pick.fc50_obj2_L3_out_b){fc50_obj2_L3_out_b.trip_latch=0;}
+		if(!pick.fc50_obj2_L3_out_c){fc50_obj2_L3_out_c.trip_latch=0;}
+		
+		
+		
+		if(!pick.fc50N_obj1_L1_out){fc50N_obj1_L1_out.trip_latch=0;}
+		if(!pick.fc50N_obj1_L2_out){fc50N_obj1_L2_out.trip_latch=0;}
+		if(!pick.fc50N_obj1_L3_out){fc50N_obj1_L3_out.trip_latch=0;}
+		
+		
+		if(!pick.fc51_obj1_out_a){fc51_obj1_out_a.trip=0;}
+		if(!pick.fc51_obj1_out_b){fc51_obj1_out_b.trip=0;}
+		if(!pick.fc51_obj1_out_c){fc51_obj1_out_c.trip=0;}
+		
+		if(!pick.fc51_obj2_out_a){fc51_obj2_out_a.trip=0;}
+		if(!pick.fc51_obj2_out_b){fc51_obj2_out_b.trip=0;}
+		if(!pick.fc51_obj2_out_c){fc51_obj2_out_c.trip=0;}
+		
+		
+		if(!pick.fc51N_obj1_out){fc51N_obj1_out.trip=0;}
+		
+		
+		if(!pick.fc27_obj1_L1_out){fc27_obj1_L1_out.trip=0;}
+		if(!pick.fc27_obj1_L2_out){fc27_obj1_L2_out.trip=0;}
+		
+
+		if(!pick.fc59_obj1_L1_out_a){fc59_obj1_L1_out_a.trip=0;}
+		if(!pick.fc59_obj1_L1_out_b){fc59_obj1_L1_out_b.trip=0;}
+		if(!pick.fc59_obj1_L1_out_c){fc59_obj1_L1_out_c.trip=0;}
+		
+		if(!pick.fc59_obj1_L2_out_a){fc59_obj1_L2_out_a.trip=0;}
+		if(!pick.fc59_obj1_L2_out_b){fc59_obj1_L2_out_b.trip=0;}
+		if(!pick.fc59_obj1_L2_out_c){fc59_obj1_L2_out_c.trip=0;}
+		
+		
+		if(!pick.fc46d_obj1_L1_out){fc46d_obj1_L1_out.trip_latch=0;}
+		if(!pick.fc46i_obj1_L1_out){fc46i_obj1_L1_out.trip=0;}
+		
+		
+		if(!pick.fc49_obj1_L1_out_a){fc49_obj1_L1_out_a.trip=0;}
+		if(!pick.fc49_obj1_L1_out_b){fc49_obj1_L1_out_b.trip=0;}
+		if(!pick.fc49_obj1_L1_out_c){fc49_obj1_L1_out_c.trip=0;}
+		
+		if(!pick.fc49_obj2_L1_out_a){fc49_obj2_L1_out_a.trip=0;}
+		if(!pick.fc49_obj2_L1_out_b){fc49_obj2_L1_out_b.trip=0;}
+		if(!pick.fc49_obj2_L1_out_c){fc49_obj2_L1_out_c.trip=0;}
+		
+		if(!pick.fcBF_out){fcBF_out.trip=0;}
+		
+		
+		if(!pick.fc37_obj1_L1_out_a){fc37_obj1_L1_out_a.trip=0;}
+		if(!pick.fc37_obj1_L1_out_b){fc37_obj1_L1_out_b.trip=0;}
+		if(!pick.fc37_obj1_L1_out_c){fc37_obj1_L1_out_c.trip=0;}
+		
+		if(!pick.fc37_obj2_L1_out_a){fc37_obj1_L1_out_a.trip=0;}
+		if(!pick.fc37_obj2_L1_out_b){fc37_obj1_L1_out_b.trip=0;}
+		if(!pick.fc37_obj2_L1_out_c){fc37_obj1_L1_out_c.trip=0;}
+		
+		
+		if(!pick.fcUNBd_obj1_L1_out_a){fcUNBd_obj1_L1_out_a.trip=0;}
+		if(!pick.fcUNBd_obj1_L1_out_b){fcUNBd_obj1_L1_out_b.trip=0;}
+		
+		if(!pick.fcUNBi_obj1_L1_out_a){fcUNBi_obj1_L1_out_a.trip=0;}
+		if(!pick.fcUNBi_obj1_L1_out_b){fcUNBi_obj1_L1_out_b.trip=0;}
+		
+		
+		if(!pick.fcPVPd_obj1_L1_out_a){fcPVPd_obj1_L1_out_a.trip=0;}
+		if(!pick.fcPVPd_obj1_L1_out_b){fcPVPd_obj1_L1_out_b.trip=0;}
+		if(!pick.fcPVPd_obj1_L1_out_c){fcPVPd_obj1_L1_out_c.trip=0;}
+		
+		if(!pick.fcPVPi_obj1_L1_out_a){fcPVPi_obj1_L1_out_a.trip=0;}
+		if(!pick.fcPVPi_obj1_L1_out_b){fcPVPi_obj1_L1_out_b.trip=0;}
+		if(!pick.fcPVPi_obj1_L1_out_c){fcPVPi_obj1_L1_out_c.trip=0;}
+		
+		
+		
+		
+		//--reset end	
+		
+		}
+		
+		
+
+
+
+
+}
+
+void trip_handles(){
+	
+	
+	
+	trip_words.w_str=trip;
+	
+	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[0]!=0 || trip_words.w_arr[0]!=0){
+		
+		DO.bits.trip=0;
+		DO.bits.LD_TRIP=1;
+	
+	}else{
+		
+		DO.bits.trip=1;
+		DO.bits.LD_TRIP=0;
+		fault_code=no_fault;
+	
+	
+	}
+	
+	
+	if(DO.bits.trip==1 && fault_code==0){
+	
+	switch (trip_words.w_arr[0]){
+		
+  	case BIT_0: 	fault_code=_50_1_a;break;/*50-1a*/
+		case BIT_1: 	fault_code=_50_1_b;break;/*50-1b*/
+		case BIT_2: 	fault_code=_50_1_c;break;/*50-1c*/
+		
+		case BIT_3: 	fault_code=_50_2_a;break;/*50-2a*/
+		case BIT_4: 	fault_code=_50_2_b;break;/*50-2b*/
+		case BIT_5: 	fault_code=_50_2_c;break;/*50-2c*/
+		
+		case BIT_6: 	fault_code=_50_3_a;break;/*50-3a*/
+		case BIT_7: 	fault_code=_50_3_b;break;/*50-3b*/
+		case BIT_8: 	fault_code=_50_3_c;break;/*50-3c*/
+		
+		case BIT_9: 	fault_code=_50_1_a_res;break;/*50-1a_res*/
+		case BIT_10: 	fault_code=_50_1_b_res;break;/*50-1b_res*/
+		case BIT_11: 	fault_code=_50_1_c_res;break;/*50-1c_res*/
+		
+		case BIT_12: 	fault_code=_50_2_a_res;break;/*50-2a_res*/
+		case BIT_13: 	fault_code=_50_2_b_res;break;/*50-2b_res*/
+		case BIT_14: 	fault_code=_50_2_c_res;break;/*50-2c_res*/
+		
+		case BIT_15: 	fault_code=_50_3_a_res;break;/*50-3a_res*/
+		case BIT_16: 	fault_code=_50_3_b_res;break;/*50-3b_res*/
+		case BIT_17: 	fault_code=_50_3_c_res;break;/*50-3c_res*/
+		
+		case BIT_18: 	fault_code=_50N_1;break;/*50N-a*/
+		case BIT_19: 	fault_code=_50N_2;break;/*50N-b*/
+		case BIT_20: 	fault_code=_50N_3;break;/*50N-c*/
+		
+		case BIT_21: 	fault_code=_51_a;break;/*51-a*/
+		case BIT_22: 	fault_code=_51_b;break;/*51-b*/
+		case BIT_23: 	fault_code=_51_c;break;/*51-c*/
+		
+		case BIT_24: 	fault_code=_51_a_res;break;/*51-a-res*/
+		case BIT_25: 	fault_code=_51_b_res;break;/*51-b-res*/
+		case BIT_26: 	fault_code=_51_c_res;break;/*51-c-res*/
+		
+		case BIT_27: 	fault_code=_51N;break;/*51-c-res*/
+		
+  	
+  }
+	
+	
+	
+	switch (trip_words.w_arr[1]){
+			
+  	case BIT_0: 	fault_code=_27_1;break;	/*27-1*/
+		case BIT_1: 	fault_code=_27_2;break;	/*27-2*/
+		
+		case BIT_2: 	fault_code=_59_1a;break;	/*59-1a*/
+		case BIT_3: 	fault_code=_59_1b;break; 	/*59-1b*/
+		case BIT_4: 	fault_code=_59_1c;break; 	/*59-1c*/
+		
+		case BIT_5: 	fault_code=_59_2a;break;	/*59-2a*/
+		case BIT_6: 	fault_code=_59_2b;break;	/*59-2b*/
+		case BIT_7: 	fault_code=_59_2c;break;	/*59-2c*/
+		
+		case BIT_8: 	fault_code=_46d;break;	/*46-d*/
+		case BIT_9: 	fault_code=_46i;break;	/*46-i*/
+		
+		case BIT_10: 	fault_code=_49_a;break;	/*49-a*/
+		case BIT_11: 	fault_code=_49_b;break;	/*49-b*/
+		case BIT_12: 	fault_code=_49_c;break;	/*49-c*/
+		
+		case BIT_16: 	fault_code=_49_a_res;break;	/*49-a-res*/
+		case BIT_17: 	fault_code=_49_b_res;break;	/*49-b-res*/
+		case BIT_18: 	fault_code=_49_c_res;break;	/*49-c-res*/
+		
+		case BIT_22: 	fault_code=_BF;break;/*BF*/
+		
+  }
+	
+	
+	
+	switch (trip_words.w_arr[2]){
+			
+  	case BIT_0: 	fault_code=_37_a;break;	/*37-1a*/
+		case BIT_1: 	fault_code=_37_b;break;	/*37-1b*/
+		case BIT_2: 	fault_code=_37_c;break;	/*37-1c*/
+			
+		case BIT_3: 	fault_code=_37_a_res;break; 	/*37-1a-res*/
+		case BIT_4: 	fault_code=_37_b_res;break; 	/*37-1b-res*/
+		case BIT_5: 	fault_code=_37_c_res;break;	/*37-1c-res*/
+			
+		case BIT_6: 	fault_code=_UNBd_a;break;	/*UNBd-a*/
+		case BIT_7: 	fault_code=_UNBd_b;break;	/*UNBd-b*/
+		
+		case BIT_9: 	fault_code=_UNBi_a;break;	/*UNBi-a*/
+		case BIT_10: 	fault_code=_UNBi_b;break;	/*UNBi-b*/
+		
+		case BIT_12: 	fault_code=_PVPd_a;break;	/*pvp-d-a*/
+		case BIT_13: 	fault_code=_PVPd_b;break;	/*pvp-d-b*/
+		case BIT_14: 	fault_code=_PVPd_c;break;	/*pvp-d-c*/
+		
+		case BIT_15: 	fault_code=_PVPi_a;break;	/*pvpi-a*/
+		case BIT_16: 	fault_code=_PVPi_b;break;	/*pvpi-b*/
+		case BIT_17: 	fault_code=_PVPi_c;break;	/*pvpi-c*/
+		
+		
+		
+		}
+	
+	}
+	
+}
 
 
 
 
 
+void pick_trip_reset_handles(){
+
+
+	pick_up_handles();
+	reset_handles();
+	trip_handles();
 
 }

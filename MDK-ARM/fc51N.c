@@ -18,9 +18,9 @@ void fc51N_init(){
 
 	
 		
-	fc51N_obj1_in.curve_data[0]=curve_data[curve][0];
-	fc51N_obj1_in.curve_data[1]=curve_data[curve][1];
-	fc51N_obj1_in.curve_data[2]=curve_data[curve][2];	
+	fc51N_obj1_in.curve_data[0]=curve_data[IEC_normal_inverse][0];
+	fc51N_obj1_in.curve_data[1]=curve_data[IEC_normal_inverse][1];
+	fc51N_obj1_in.curve_data[2]=curve_data[IEC_normal_inverse][2];	
 
 
 }

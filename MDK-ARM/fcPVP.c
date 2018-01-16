@@ -46,9 +46,9 @@ void fcPVP_init(){
 																										
 	//cau curve data is not checked																					
 		
-	fcPVPi_obj1_L1_in.curve_data[0]=curve_data[curve][0];
-	fcPVPi_obj1_L1_in.curve_data[1]=curve_data[curve][1];
-	fcPVPi_obj1_L1_in.curve_data[2]=curve_data[curve][2];
+	fcPVPi_obj1_L1_in.curve_data[0]=curve_data[IEC_normal_inverse][0];
+	fcPVPi_obj1_L1_in.curve_data[1]=curve_data[IEC_normal_inverse][1];
+	fcPVPi_obj1_L1_in.curve_data[2]=curve_data[IEC_normal_inverse][2];
 
 
 
