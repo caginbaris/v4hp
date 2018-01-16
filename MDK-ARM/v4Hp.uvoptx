@@ -142,7 +142,7 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>ST-LINKIII-KEIL_SWO</Key>
-          <Name>-U48FF71065185525436270187 -O2190 -S0 -C0 -A0 -N00("ARM CoreSight JTAG-DP (Cortex-M)") -D00(0BA00477) -L00(4) -N01("STM32 BSC (boundary scan) TAP") -D01(06451041) -L01(5) -TO18 -TC10000000 -TP21 -TDS8004 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO15 -FD20000000 -FC1000 -FN2 -FF0STM32F7x_2048.FLM -FS08000000 -FL0200000 -FP0($$Device:STM32F767ZI$Flash\STM32F7x_2048.FLM) -FF1STM32F7xTCM_2048.FLM -FS1200000 -FL1200000 -FP1($$Device:STM32F767ZI$Flash\STM32F7xTCM_2048.FLM)</Name>
+          <Name>-U48FF71065185525436270187 -O2223 -S0 -C0 -A0 -N00("ARM CoreSight JTAG-DP (Cortex-M)") -D00(0BA00477) -L00(4) -N01("STM32 BSC (boundary scan) TAP") -D01(06451041) -L01(5) -TO18 -TC10000000 -TP21 -TDS8004 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -FO15 -FD20000000 -FC1000 -FN2 -FF0STM32F7x_2048.FLM -FS08000000 -FL0200000 -FP0($$Device:STM32F767ZI$Flash\STM32F7x_2048.FLM) -FF1STM32F7xTCM_2048.FLM -FS1200000 -FL1200000 -FP1($$Device:STM32F767ZI$Flash\STM32F7xTCM_2048.FLM)</Name>
         </SetRegEntry>
       </TargetDriverDllRegistry>
       <Breakpoint/>
@@ -150,249 +150,104 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>comParams,0x0A</ItemText>
+          <ItemText>fc50_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>comParams_uart,0x0A</ItemText>
+          <ItemText>fc50_obj1_L1_out_a</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>fckCnt,0x0A</ItemText>
+          <ItemText>EN</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>res,0x0A</ItemText>
+          <ItemText>fc50_rms_a</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>comParams_uart.recDataBufferF[0]</ItemText>
+          <ItemText>EN.bits.fc50_obj1_L1</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>comParams_uart.recDataBufferF[1]</ItemText>
+          <ItemText>mSelect.bit.obj1_fc50_L1</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>comParams_uart.recDataBufferF[2]</ItemText>
+          <ItemText>tRMS</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>1</WinNumber>
-          <ItemText>fRMS.Van</ItemText>
+          <ItemText>fc50_obj1_L1_out_a</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>1</WinNumber>
-          <ItemText>fRMS.Ia</ItemText>
+          <ItemText>fc50_obj1_L2_out_a</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>1</WinNumber>
-          <ItemText>phase_cs_A.Vc</ItemText>
+          <ItemText>DO</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>1</WinNumber>
-          <ItemText>comParams.pushDataBufferDW[1]</ItemText>
+          <ItemText>trip_words</ItemText>
         </Ww>
         <Ww>
           <count>11</count>
           <WinNumber>1</WinNumber>
-          <ItemText>comParams.txIndex,0x0A</ItemText>
+          <ItemText>trip</ItemText>
         </Ww>
         <Ww>
           <count>12</count>
           <WinNumber>1</WinNumber>
-          <ItemText>comParams.txBuffer[0]</ItemText>
-        </Ww>
-        <Ww>
-          <count>13</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>comParams.txBuffer[1]</ItemText>
-        </Ww>
-        <Ww>
-          <count>14</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>comParams.txIndex,0x0A</ItemText>
-        </Ww>
-        <Ww>
-          <count>15</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>comParams.pushDataBufferF[1]</ItemText>
-        </Ww>
-        <Ww>
-          <count>16</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>modbusWriteCnt,0x0A</ItemText>
-        </Ww>
-        <Ww>
-          <count>17</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>adc_values</ItemText>
-        </Ww>
-        <Ww>
-          <count>18</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>fAdc</ItemText>
-        </Ww>
-        <Ww>
-          <count>19</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>smAdc</ItemText>
-        </Ww>
-        <Ww>
-          <count>20</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>scale</ItemText>
-        </Ww>
-        <Ww>
-          <count>21</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>rawAdc</ItemText>
-        </Ww>
-        <Ww>
-          <count>22</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>adc_values</ItemText>
-        </Ww>
-        <Ww>
-          <count>23</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>dec</ItemText>
-        </Ww>
-        <Ww>
-          <count>24</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>fRMS</ItemText>
-        </Ww>
-        <Ww>
-          <count>25</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>tRMS</ItemText>
-        </Ww>
-        <Ww>
-          <count>26</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>spect_Ia</ItemText>
-        </Ww>
-        <Ww>
-          <count>27</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>spect_Ib</ItemText>
-        </Ww>
-        <Ww>
-          <count>28</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>cycle_count_1,0x0A</ItemText>
-        </Ww>
-        <Ww>
-          <count>29</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>cycle_count_2,0x0A</ItemText>
-        </Ww>
-        <Ww>
-          <count>30</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>(null)</ItemText>
-        </Ww>
-        <Ww>
-          <count>31</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>offset</ItemText>
-        </Ww>
-        <Ww>
-          <count>32</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>backRMS</ItemText>
-        </Ww>
-        <Ww>
-          <count>33</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>scale</ItemText>
-        </Ww>
-        <Ww>
-          <count>34</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>\\v4Hp\conversion.c\offset.Ia</ItemText>
-        </Ww>
-        <Ww>
-          <count>35</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>ch</ItemText>
-        </Ww>
-        <Ww>
-          <count>36</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>adc_values</ItemText>
-        </Ww>
-        <Ww>
-          <count>37</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>scale</ItemText>
-        </Ww>
-        <Ww>
-          <count>38</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>rawAdc</ItemText>
-        </Ww>
-        <Ww>
-          <count>39</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>DO</ItemText>
+          <ItemText>pEN</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
           <count>0</count>
           <WinNumber>2</WinNumber>
-          <ItemText>calc_offset</ItemText>
+          <ItemText>tRMS</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>2</WinNumber>
-          <ItemText>ch,0x0A</ItemText>
+          <ItemText>pick</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>2</WinNumber>
-          <ItemText>scale</ItemText>
+          <ItemText>cycle_count_1,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>2</WinNumber>
-          <ItemText>ofset</ItemText>
+          <ItemText>cycle_count_2,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>2</WinNumber>
-          <ItemText>ooffset</ItemText>
+          <ItemText>DO</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>2</WinNumber>
-          <ItemText>ooffset</ItemText>
+          <ItemText>fc50_obj1_L1_out_az</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>2</WinNumber>
-          <ItemText>ooffst</ItemText>
-        </Ww>
-        <Ww>
-          <count>7</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>ooffset</ItemText>
-        </Ww>
-        <Ww>
-          <count>8</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>offset</ItemText>
+          <ItemText>fc50_obj1_L1_out_a</ItemText>
         </Ww>
       </WatchWindow2>
       <Tracepoint>
@@ -613,7 +468,7 @@
 
   <Group>
     <GroupName>Application/MDK-ARM</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -925,7 +780,7 @@
 
   <Group>
     <GroupName>pfunctions</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -957,7 +812,7 @@
       <GroupNumber>6</GroupNumber>
       <FileNumber>40</FileNumber>
       <FileType>1</FileType>
-      <tvExp>0</tvExp>
+      <tvExp>1</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\fc50N.c</PathWithFileName>
@@ -1101,7 +956,7 @@
 
   <Group>
     <GroupName>mfunctions</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1145,7 +1000,7 @@
 
   <Group>
     <GroupName>conversion</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1205,7 +1060,7 @@
 
   <Group>
     <GroupName>boardIO</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1225,7 +1080,7 @@
 
   <Group>
     <GroupName>Comm Layer</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1305,7 +1160,7 @@
 
   <Group>
     <GroupName>Comm Params</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1345,7 +1200,7 @@
       <GroupNumber>14</GroupNumber>
       <FileNumber>67</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\main_flow.c</PathWithFileName>

@@ -167,18 +167,20 @@ int main(void)
 
 	if(incoming_data_flag){
 
-		pullDataFromMaster();
-		incoming_data_flag=0;	
+		//pullDataFromMaster();
+		//incoming_data_flag=0;	
 	
 	}else{
 	
-		pushDataToMaster();
+		//pushDataToMaster();
 	
 	}
 	
+
+}
+	
 	uart_runComApp(); 
 	spi_runComApp();
-}
 
 	
 	/* Comm Layer Functions in superloop */

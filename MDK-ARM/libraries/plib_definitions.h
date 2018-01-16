@@ -8,7 +8,7 @@
 
 struct fc50_inputParameters {
 
-	float rms;
+	
 	float level;
 	float dropout_ratio;
 	float delay;
@@ -29,6 +29,8 @@ struct fc50_outputParameters {
 	
 
 };
+
+void fc50(float rms,struct fc50_inputParameters fc50_in, struct fc50_outputParameters *fc50_out, int enable);
 
 
 struct fc51_inputParameters {
