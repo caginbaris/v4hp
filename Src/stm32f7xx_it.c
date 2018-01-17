@@ -39,6 +39,7 @@
 #include "UART_MasterSlave.h"
 #include "SPI_MasterSlave.h"
 #include "CommConfig.h"
+#include "main.h"
 
 extern uint8_t incoming_data_flag;
 /* USER CODE END 0 */
@@ -246,7 +247,7 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
   uint32_t modbusWriteCnt = 1;
 	
-	incoming_data_flag=1;
+
 	
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_11);

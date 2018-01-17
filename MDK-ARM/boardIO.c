@@ -55,9 +55,9 @@ void boardIO(){
 	/*Output stage*/
 	
 	//DO.bits.trip=1;
-	//DO.bits.inhibit=0;
-	//DO.bits.IBF=1;
-	//DO.bits.BF=1;
+	DO.bits.inhibit=0;
+	DO.bits.IBF=1;
+	DO.bits.BF=1;
 	
 	HAL_GPIO_WritePin(BOARD_TRIP_DO_1_GPIO_Port,BOARD_TRIP_DO_1_Pin,(GPIO_PinState)DO.bits.trip); 
 	HAL_GPIO_WritePin(BOARD_ALARM_DO_2_GPIO_Port,BOARD_ALARM_DO_2_Pin,(GPIO_PinState)DO.bits.alarm);

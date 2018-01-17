@@ -222,6 +222,21 @@
           <WinNumber>1</WinNumber>
           <ItemText>DI.reset</ItemText>
         </Ww>
+        <Ww>
+          <count>15</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>fc50N_obj1_L1_in</ItemText>
+        </Ww>
+        <Ww>
+          <count>16</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>SCALE</ItemText>
+        </Ww>
+        <Ww>
+          <count>17</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>scale</ItemText>
+        </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
@@ -283,6 +298,11 @@
           <count>11</count>
           <WinNumber>2</WinNumber>
           <ItemText>DI.reset</ItemText>
+        </Ww>
+        <Ww>
+          <count>12</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>incoming_data_flag</ItemText>
         </Ww>
       </WatchWindow2>
       <Tracepoint>
@@ -1055,7 +1075,7 @@
 
   <Group>
     <GroupName>initFunctions</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1075,7 +1095,7 @@
 
   <Group>
     <GroupName>powerSys</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
