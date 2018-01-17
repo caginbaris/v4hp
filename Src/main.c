@@ -172,7 +172,7 @@ int main(void)
 	
 	}else{
 	
-		//pushDataToMaster();
+		pushDataToMaster();
 	
 	}
 	

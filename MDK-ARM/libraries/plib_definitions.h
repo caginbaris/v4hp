@@ -10,8 +10,8 @@ struct fc50_inputParameters {
 
 	
 	float level;
-	float dropout_ratio;
 	float delay;
+	float dropout_ratio;
 	float dropout_time;
 
 };
@@ -35,7 +35,7 @@ void fc50(float rms,struct fc50_inputParameters fc50_in, struct fc50_outputParam
 
 struct fc51_inputParameters {
 
-	float rms;
+	
 	float level;
 	float curve_data[3];
 	float time_multiplier;

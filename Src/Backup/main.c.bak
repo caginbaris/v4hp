@@ -89,6 +89,12 @@ int main(void)
 
   /* USER CODE END 1 */
 
+  /* Enable I-Cache-------------------------------------------------------------*/
+  SCB_EnableICache();
+
+  /* Enable D-Cache-------------------------------------------------------------*/
+  SCB_EnableDCache();
+
   /* MCU Configuration----------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
@@ -150,7 +156,7 @@ int main(void)
 	
 		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 		
-		main_flow();
+		//main_flow();
 		cycle_count_2++;
 		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
 		
@@ -166,7 +172,7 @@ int main(void)
 	
 	}else{
 	
-		//pushDataToMaster();
+		pushDataToMaster();
 	
 	}
 	
@@ -174,7 +180,7 @@ int main(void)
 }
 	
 	uart_runComApp(); 
-	//spi_runComApp();
+	spi_runComApp();
 
 	
 	/* Comm Layer Functions in superloop */

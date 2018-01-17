@@ -1,5 +1,5 @@
 #include "nfbm.h"
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "pDataConfigs.h"
 
 struct fc50_inputParameters fc50N_obj1_L1_in;

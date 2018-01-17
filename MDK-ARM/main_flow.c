@@ -20,7 +20,7 @@ void main_flow(){
 	//DO.bits.alarm=1;
 	//DO.bits.LD_ALARM =1;
 	fc50_all();
-//	fc50N_all();
+	fc50N_all();
 	
 	#if 0
 	fc51_all();
@@ -47,7 +47,7 @@ void main_flow(){
 	fcPVP_all();
 	
 	#endif 
-	//pick_trip_reset_handles();
+	pick_trip_reset_handles();
 	boardIO();
 	
 	

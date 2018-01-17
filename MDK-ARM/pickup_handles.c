@@ -335,7 +335,7 @@ void trip_handles(){
 	
 	trip_words.w_str=trip;
 	
-	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[0]!=0 || trip_words.w_arr[0]!=0){
+	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[1]!=0 || trip_words.w_arr[2]!=0){
 		
 		DO.bits.trip=0;
 		DO.bits.LD_TRIP=1;
@@ -350,7 +350,7 @@ void trip_handles(){
 	}
 	
 	
-	if(DO.bits.trip==1 && fault_code==0){
+	if(DO.bits.trip==0 && fault_code==0){
 	
 	switch (trip_words.w_arr[0]){
 		
