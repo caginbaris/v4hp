@@ -11,7 +11,7 @@ void main_flow(){
 
 	
 	//spectral_analysis();
-	//cs_handles();
+	cs_handles();
 	trueRMS();
   
 
@@ -22,9 +22,11 @@ void main_flow(){
 	fc50_all();
 	fc50N_all();
 	
+	//fc51_all();
+	//fc51N_all();
+	
 	#if 0
-	fc51_all();
-	fc51N_all();
+	
 	
 
 	fc27_all();

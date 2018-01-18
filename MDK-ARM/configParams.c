@@ -251,7 +251,10 @@ void pullDataFromMaster(){
 	//cau final TR value must considered
 	
 	
-	
+	TR.VT=	(TR.VT_Secondary>eps) 	? 	(TR.VT_Primary/TR.VT_Secondary) : 0.0f;
+	TR.CT=	(TR.CT_Secondary>eps) 	? 	(TR.CT_Primary/TR.CT_Secondary) : 0.0f;
+	TR.RES=	(TR.RES_Secondary>eps) 	? 	(TR.RES_Primary/TR.RES_Secondary) : 0.0f;
+	TR.UNB=	(TR.UNB_Secondary>eps) 	? 	(TR.UNB_Primary/TR.RES_Secondary) : 0.0f;
 								 
 												 
 	

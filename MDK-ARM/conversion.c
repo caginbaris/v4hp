@@ -54,9 +54,9 @@ void init_conversion(){
 	
 	// Scale
 	
-	scale.Ia=0.055370985603544f;//0.055411955626188f;
+	scale.Ia=0.055470985603544f;//0.055411955626188f;
 	scale.Ib=0.055493895671476f;//0.055411955626188f;
-	scale.Ic=0.055370985603544f;//0.055411955626188f;
+	scale.Ic=0.055470985603544f;//0.055411955626188f;
 	
 	scale.In=0.005482456140351f;
 
@@ -71,10 +71,7 @@ void init_conversion(){
 	scale.Vbn=0.10699f;
 	scale.Vcn=0.10699f;
 	
-	//TR.VT=	(TR.VT_Secondary>eps) 	? 	(TR.VT_Primary/TR.VT_Secondary) : 0.0f;
-	//TR.CT=	(TR.CT_Secondary>eps) 	? 	(TR.CT_Primary/TR.CT_Secondary) : 0.0f;
-	//TR.RES=	(TR.RES_Secondary>eps) 	? 	(TR.RES_Primary/TR.RES_Secondary) : 0.0f;
-	//TR.UNB=	(TR.UNB_Secondary>eps) 	? 	(TR.UNB_Primary/TR.RES_Secondary) : 0.0f;
+
 }
 
 
@@ -114,7 +111,12 @@ if(hadc->Instance==ADC1){
 	
 	//#endif	
 	
-	fAdc=rawAdc;
+	fAdc.sAdc.Ia=rawAdc.sAdc.Ia*TR.CT;
+	fAdc.sAdc.Ib=rawAdc.sAdc.Ib*TR.CT;
+	fAdc.sAdc.Ic=rawAdc.sAdc.Ic*TR.CT;
+	fAdc.sAdc.In=rawAdc.sAdc.In*TR.CT;
+	
+	//fAdc=rawAdc;
 	
 	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
 	main_flow();

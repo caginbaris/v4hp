@@ -6,7 +6,7 @@
 #include "bit_expansion.h"
 
 #define totalPick 62
-#define pickHold 10
+#define pickHold 150
 
 struct plib_handles pick={0};
 struct plib_handles trip={0};
@@ -60,6 +60,8 @@ void pick_up_handles(){
 		pick.fc50N_obj1_L2_out=off_delay(fc50N_obj1_L2_out.pick_up, pick.fc50N_obj1_L2_out, pickHold, &pick_buffer[13]);/**/trip.fc50N_obj1_L2_out=fc50N_obj1_L2_out.trip_latch;
 			
   	break;
+		
+		#if 0
 		
 		case 2:
 			
@@ -182,6 +184,8 @@ void pick_up_handles(){
 		
 	
 		break; 
+		
+		#endif 
 		
 		
 		
@@ -349,7 +353,7 @@ void trip_handles(){
 	
 	}
 	
-	
+	#if 0
 	if(DO.bits.trip==0 && fault_code==0){
 	
 	switch (trip_words.w_arr[0]){
@@ -456,6 +460,7 @@ void trip_handles(){
 		}
 	
 	}
+	#endif
 	
 }
 
