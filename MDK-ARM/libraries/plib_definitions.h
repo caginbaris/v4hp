@@ -54,6 +54,9 @@ struct fc51_outputParameters {
 
 };
 
+void fc51(float rms,struct fc51_inputParameters fc51_in, struct fc51_outputParameters *fc51_out,int enable );
+
+
 struct fc27_inputParameters{
 
 	float rms;

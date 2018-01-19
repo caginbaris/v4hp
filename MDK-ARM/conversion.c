@@ -116,6 +116,8 @@ if(hadc->Instance==ADC1){
 	fAdc.sAdc.Ic=rawAdc.sAdc.Ic*TR.CT;
 	fAdc.sAdc.In=rawAdc.sAdc.In*TR.CT;
 	
+  
+	
 	//fAdc=rawAdc;
 	
 	HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
