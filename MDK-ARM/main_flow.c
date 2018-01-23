@@ -2,27 +2,31 @@
 
 
 #include "main_flow.h"
-
+#include "boardIO.h"
 
 void main_flow(){
 
   //measurement
 	
-		
-	
-	spectral_analysis();
-	cs_handles();
-	trueRMS();
 
+	
+	//spectral_analysis();
+	//cs_handles();
+	trueRMS();
+  
 
 	// protection
 	
-	
-	fc50_all();
-	fc50N_all();
+	//DO.bits.alarm=1;
+	//DO.bits.LD_ALARM =1;
+	//fc50_all();
+	//fc50N_all();
 	
 	fc51_all();
 	fc51N_all();
+	
+	#if 0
+	
 	
 
 	fc27_all();
@@ -44,7 +48,7 @@ void main_flow(){
 	
 	fcPVP_all();
 	
-	
+	#endif 
 	pick_trip_reset_handles();
 	boardIO();
 	

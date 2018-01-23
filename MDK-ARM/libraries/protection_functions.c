@@ -152,7 +152,7 @@ void fc51(float rms, struct fc51_inputParameters fc51_in, struct fc51_outputPara
 		{
 
 			fc51_out->pick_up = 0;
-			fc51_out->time2trip = 80000;
+			fc51_out->time2trip = 800000; //cau
 
 		}
 

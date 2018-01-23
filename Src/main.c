@@ -76,6 +76,13 @@ void main_flow(void);
 void initFunctions(void);
 void pushDataToMaster(void);
 void pullDataFromMaster(void);
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  
+  incoming_data_flag=1;
+
+}
 /* USER CODE END PFP */
 
 /* USER CODE BEGIN 0 */
@@ -176,9 +183,11 @@ int main(void)
 	
 	}
 	
+
+}
+	
 	uart_runComApp(); 
 	spi_runComApp();
-}
 
 	
 	/* Comm Layer Functions in superloop */

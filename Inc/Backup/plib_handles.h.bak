@@ -192,10 +192,7 @@ uint32_t fc51_obj2_out_c:1;
 //fc51N-----------------------------------------------1 obj,total=28
 
 uint32_t fc51N_obj1_out:1;
-
 uint32_t W1_spare:4;
-
-
 
 //fc27------------------------------------------------2 obj,total=30
 
@@ -221,32 +218,32 @@ uint32_t fc46d_obj1_L1_out:1;
 uint32_t fc46i_obj1_L1_out:1;
 
 
-//fc49------------------------------------------------12 obj,total=50
+//fc49------------------------------------------------6 obj,total=44
 
 
 uint32_t fc49_obj1_L1_out_a:1;
 uint32_t fc49_obj1_L1_out_b:1;
 uint32_t fc49_obj1_L1_out_c:1;
 
-uint32_t fc49_obj1_L2_out_a:1;
-uint32_t fc49_obj1_L2_out_b:1;
-uint32_t fc49_obj1_L2_out_c:1;
+uint32_t fc49_obj1_L2_out_a:1;  //cau disc
+uint32_t fc49_obj1_L2_out_b:1;	//cau disc
+uint32_t fc49_obj1_L2_out_c:1;	//cau disc
 
 uint32_t fc49_obj2_L1_out_a:1;
 uint32_t fc49_obj2_L1_out_b:1;
 uint32_t fc49_obj2_L1_out_c:1;
 
-uint32_t fc49_obj2_L2_out_a:1;
-uint32_t fc49_obj2_L2_out_b:1;
-uint32_t fc49_obj2_L2_out_c:1;
+uint32_t fc49_obj2_L2_out_a:1;  //cau disc
+uint32_t fc49_obj2_L2_out_b:1;	//cau disc
+uint32_t fc49_obj2_L2_out_c:1;	//cau disc
 
-//fcBF------------------------------------------------1 obj,total=51
+//fcBF------------------------------------------------1 obj,total=45
 
 uint32_t fcBF_out:1;
 
 uint32_t W2_spare:9;
 
-//fc37------------------------------------------------6 obj,total=57
+//fc37------------------------------------------------6 obj,total=51
 
 
 uint32_t fc37_obj1_L1_out_a:1;
@@ -257,17 +254,22 @@ uint32_t fc37_obj2_L1_out_a:1;
 uint32_t fc37_obj2_L1_out_b:1;
 uint32_t fc37_obj2_L1_out_c:1;
 
-//fcUNB------------------------------------------------4 obj,total=61
+//fcUNB------------------------------------------------4 obj,total=55
 
 
 uint32_t fcUNBd_obj1_L1_out_a:1;
 uint32_t fcUNBd_obj1_L1_out_b:1;
 
+uint32_t W3_spare:1;
+
 uint32_t fcUNBi_obj1_L1_out_a:1;
 uint32_t fcUNBi_obj1_L1_out_b:1;
 
 
-//fcPVP------------------------------------------------6 obj,total=67
+uint32_t W4_spare:1;
+
+
+//fcPVP------------------------------------------------6 obj,total=61
 
 uint32_t fcPVPd_obj1_L1_out_a:1;
 uint32_t fcPVPd_obj1_L1_out_b:1;
@@ -278,7 +280,7 @@ uint32_t fcPVPi_obj1_L1_out_b:1;
 uint32_t fcPVPi_obj1_L1_out_c:1;	
 
 
-uint32_t W3_spare:14;
+uint32_t W5_spare:14;
 	
 
 

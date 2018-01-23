@@ -6,7 +6,7 @@
 #include "bit_expansion.h"
 
 #define totalPick 62
-#define pickHold 10
+#define pickHold 5000
 
 struct plib_handles pick={0};
 struct plib_handles trip={0};
@@ -61,6 +61,8 @@ void pick_up_handles(){
 			
   	break;
 		
+		
+		
 		case 2:
 			
 		pick.fc50_obj2_L2_out_a=off_delay(fc50_obj2_L2_out_a.pick_up, pick.fc50_obj2_L2_out_a, pickHold, &pick_buffer[14]);/**/trip.fc50_obj2_L2_out_a=fc50_obj2_L2_out_a.trip_latch;	
@@ -74,10 +76,7 @@ void pick_up_handles(){
 		pick.fc50N_obj1_L3_out=off_delay(fc50N_obj1_L3_out.pick_up, pick.fc50N_obj1_L3_out, pickHold, &pick_buffer[20]);/**/trip.fc50N_obj1_L3_out=fc50N_obj1_L3_out.trip_latch;	
 			
 		break;
-		
-		
-		
-		
+				
 		case 3:
 			
 		pick.fc51_obj1_out_a=off_delay(fc51_obj1_out_a.pick_up, pick.fc51_obj1_out_a,pickHold,&pick_buffer[21]);/**/trip.fc51_obj1_out_a=fc51_obj1_out_a.trip;
@@ -93,7 +92,7 @@ void pick_up_handles(){
 		
 		break;
 		
-		
+		#if 0
 		
 		case 4:
 			
@@ -182,6 +181,8 @@ void pick_up_handles(){
 		
 	
 		break; 
+		
+		#endif 
 		
 		
 		
@@ -335,7 +336,7 @@ void trip_handles(){
 	
 	trip_words.w_str=trip;
 	
-	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[0]!=0 || trip_words.w_arr[0]!=0){
+	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[1]!=0 || trip_words.w_arr[2]!=0){
 		
 		DO.bits.trip=0;
 		DO.bits.LD_TRIP=1;
@@ -349,8 +350,8 @@ void trip_handles(){
 	
 	}
 	
-	
-	if(DO.bits.trip==1 && fault_code==0){
+	#if 0
+	if(DO.bits.trip==0 && fault_code==0){
 	
 	switch (trip_words.w_arr[0]){
 		
@@ -456,6 +457,7 @@ void trip_handles(){
 		}
 	
 	}
+	#endif
 	
 }
 

@@ -1,5 +1,5 @@
 #include "nfbm.h"
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "pDataConfigs.h"
 
 
@@ -20,6 +20,8 @@ struct fc50_inputParameters fc50_obj2_L3_in;
 struct fc50_outputParameters fc50_obj1_L1_out_a={0};
 struct fc50_outputParameters fc50_obj1_L1_out_b={0};
 struct fc50_outputParameters fc50_obj1_L1_out_c={0};
+
+
 
 // L2 obj1
 
@@ -99,7 +101,7 @@ void fc50_all(){
 		
 	}
 	
-	fc50(fc50_rms_a,fc50_obj1_L1_in,&fc50_obj1_L1_out_a,EN.bits.fc50_obj1_L1);
+	fc50(fc50_rms_a ,fc50_obj1_L1_in,&fc50_obj1_L1_out_a,EN.bits.fc50_obj1_L1);
 	fc50(fc50_rms_b,fc50_obj1_L1_in,&fc50_obj1_L1_out_b,EN.bits.fc50_obj1_L1);
 	fc50(fc50_rms_c,fc50_obj1_L1_in,&fc50_obj1_L1_out_c,EN.bits.fc50_obj1_L1);
 	
@@ -175,7 +177,6 @@ void fc50_all(){
 	fc50(tRMS.IRESa,fc50_obj2_L3_in,&fc50_obj2_L3_out_a,EN.bits.fc50_obj2_L3);
 	fc50(tRMS.IRESb,fc50_obj2_L3_in,&fc50_obj2_L3_out_b,EN.bits.fc50_obj2_L3);
 	fc50(tRMS.IRESc,fc50_obj2_L3_in,&fc50_obj2_L3_out_c,EN.bits.fc50_obj2_L3);
-	
 	// fc50 obj2 End****************************
 
 }
