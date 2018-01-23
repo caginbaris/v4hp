@@ -66,12 +66,12 @@ void init_protection(void){
 	//fc51	
 	
 		EN.bits.fc51_obj1= 	  pEN.bit.obj1_50_51_N &
-													pEN.bit.obj1_50s &
+													pEN.bit.obj1_51s &
 												(fc51_obj1_in.level>eps) &
 												(fc51_obj1_in.time_multiplier>eps);
 												
 		EN.bits.fc51_obj2= 	  pEN.bit.obj2_50_51_N &
-													pEN.bit.obj2_50s &
+													pEN.bit.obj2_51s &
 												(fc51_obj2_in.level>eps) &
 												(fc51_obj2_in.time_multiplier>eps);											
 												

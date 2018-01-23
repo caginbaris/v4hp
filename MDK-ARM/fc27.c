@@ -1,5 +1,5 @@
 #include "nfbm.h"
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "measurement_functions.h"
 #include "powerSysData.h"
 #include "cs_handles.h"
@@ -22,7 +22,7 @@ void fc27_init(){
 	struct fc27_inputParameters fc27_initStruct={ 1.0f,/*level*/
 																								0.04f,/*dropoutRatio*/
 																								1.1,/*delay*/
-																								1/*cs*/	};
+																								};
 	
 	fc27_obj1_L1_in=fc27_initStruct;
 	fc27_obj1_L2_in=fc27_initStruct;
@@ -59,13 +59,13 @@ void fc27_all(){
 	
 	if(cs_qual){
 	
-	fc27_obj1_L1_in.cs=1;
-	fc27_obj1_L2_in.cs=1;		
+	fc27_obj1_L1_out.cs=1;
+	fc27_obj1_L2_out.cs=1;		
 	
 	}else{
 		
-	fc27_obj1_L1_in.cs=0;
-	fc27_obj1_L2_in.cs=0;			
+	fc27_obj1_L1_out.cs=0;
+	fc27_obj1_L2_out.cs=0;			
 	
 	}
 	

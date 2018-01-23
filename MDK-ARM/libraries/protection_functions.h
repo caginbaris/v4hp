@@ -69,7 +69,7 @@ struct fc27_inputParameters{
 	float level;
 	float delay;
 	float dropout_ratio;
-	unsigned int cs; // caution: externally set by a routine
+	
 
 };
 
@@ -79,6 +79,7 @@ struct fc27_outputParameters{
 	long trip_counter;
 	unsigned int pick_up:1;
 	unsigned int trip:1;
+	unsigned int cs:1; // caution: externally set by a routine
 
 };
 

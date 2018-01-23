@@ -104,9 +104,7 @@ if(hadc->Instance==ADC1){
 	rawAdc.sAdc.IRESb=		(adc_values[IRESb]-offset.IRESb)			*scale.IRESb;
 	rawAdc.sAdc.IRESc=		(adc_values[IRESc]-offset.IRESc)			*scale.IRESc;
 
-	rawAdc.sAdc.AB_synth=(rawAdc.sAdc.Van-rawAdc.sAdc.Vbn);
-	rawAdc.sAdc.BC_synth=(rawAdc.sAdc.Vbn-rawAdc.sAdc.Vcn);
-	rawAdc.sAdc.CA_synth=(rawAdc.sAdc.Vcn-rawAdc.sAdc.Van);
+
 	
 	
 	//#endif	
@@ -116,6 +114,13 @@ if(hadc->Instance==ADC1){
 	fAdc.sAdc.Ic=rawAdc.sAdc.Ic*TR.CT;
 	fAdc.sAdc.In=rawAdc.sAdc.In*TR.CT;
 	
+	fAdc.sAdc.Van=rawAdc.sAdc.Van*TR.VT;
+	fAdc.sAdc.Vbn=rawAdc.sAdc.Vbn*TR.VT;
+	fAdc.sAdc.Vcn=rawAdc.sAdc.Vcn*TR.VT;
+	
+	fAdc.sAdc.AB_synth=(fAdc.sAdc.Van-fAdc.sAdc.Vbn);
+	fAdc.sAdc.BC_synth=(fAdc.sAdc.Vbn-fAdc.sAdc.Vcn);
+	fAdc.sAdc.CA_synth=(fAdc.sAdc.Vcn-fAdc.sAdc.Van);
   
 	
 	//fAdc=rawAdc;

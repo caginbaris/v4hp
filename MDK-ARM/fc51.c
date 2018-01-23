@@ -57,7 +57,10 @@ void fc51_all(){
 	
 	// fc51 obj1 Start**************************
 
-	if(mSelect.bit.obj1_fc51){
+	if(mSelect.bit.obj1_fc51){ 
+		
+		// cau mselec problem fc51
+		// cau 12 A ustunde waveform bozuluyor CRB tarafinda
 		
 		fc51_rms_a=fRMS.Ia;
 		fc51_rms_b=fRMS.Ib;

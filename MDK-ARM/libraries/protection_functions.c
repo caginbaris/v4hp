@@ -185,27 +185,27 @@ void fc51(float rms, struct fc51_inputParameters fc51_in, struct fc51_outputPara
 //Undervoltage Protection
 // cs trip caution...... (has to set externally by trigger of trip, but can be integrated)
 
-void fc27(struct fc27_inputParameters fc27_in, struct fc27_outputParameters *fc27_out, int enable)
+void fc27(float rms, struct fc27_inputParameters fc27_in, struct fc27_outputParameters *fc27_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (fc27_in.rms < fc27_in.level)
+		if (rms < fc27_in.level)
 		{
 
 			fc27_out->pick_up = 1;
 
 		}
 
-		if (fc27_in.rms > fc27_in.level * fc27_in.dropout_ratio)
+		if (rms > fc27_in.level * fc27_in.dropout_ratio)
 		{
 
 			fc27_out->pick_up = 0;
 
 		}
 		
-		if(fc27_in.cs){
+		if(fc27_out->cs){
 		
 		fc27_out->pick_up = 0;
 		

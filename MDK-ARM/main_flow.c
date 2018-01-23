@@ -10,8 +10,8 @@ void main_flow(){
 	
 
 	
-	//spectral_analysis();
-	//cs_handles();
+	//spectral_analysis(); //cau comm problem when invoked
+	cs_handles();
 	trueRMS();
   
 
@@ -19,17 +19,19 @@ void main_flow(){
 	
 	//DO.bits.alarm=1;
 	//DO.bits.LD_ALARM =1;
-	//fc50_all();
-	//fc50N_all();
+	fc50_all();
+	fc50N_all();
 	
 	fc51_all();
 	fc51N_all();
 	
-	#if 0
+	
 	
 	
 
 	fc27_all();
+	
+	#if 0
 	fc59_all();
 	
 		

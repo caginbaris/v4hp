@@ -92,7 +92,7 @@ void pick_up_handles(){
 		
 		break;
 		
-		#if 0
+		
 		
 		case 4:
 			
@@ -182,7 +182,7 @@ void pick_up_handles(){
 	
 		break; 
 		
-		#endif 
+		
 		
 		
 		
@@ -196,7 +196,7 @@ void pick_up_handles(){
 	
 	pick_words.w_str=pick;
 	
-		if(pick_words.w_arr[0]!=0 || pick_words.w_arr[0]!=0 || pick_words.w_arr[0]!=0){
+		if(pick_words.w_arr[0]!=0 || pick_words.w_arr[1]!=0 || pick_words.w_arr[2]!=0){
 		
 		DO.bits.alarm=1;
 		DO.bits.LD_ALARM=1;
@@ -350,7 +350,7 @@ void trip_handles(){
 	
 	}
 	
-	#if 0
+	
 	if(DO.bits.trip==0 && fault_code==0){
 	
 	switch (trip_words.w_arr[0]){
@@ -457,7 +457,7 @@ void trip_handles(){
 		}
 	
 	}
-	#endif
+	
 	
 }
 

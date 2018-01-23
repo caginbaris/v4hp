@@ -1,5 +1,5 @@
 #include "nfbm.h"
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "pDataConfigs.h"
 
 
@@ -37,11 +37,11 @@ void fc51N_all(){
 
 	if(mSelect.bit.obj1_fc51N){
 		
-		fc51N_rms=fRMS.Ia;
+		fc51N_rms=fRMS.In;
 
 	}else{
 		
-		fc51N_rms=tRMS.Ia;
+		fc51N_rms=tRMS.In;
 
 	}
 	
