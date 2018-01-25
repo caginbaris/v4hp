@@ -136,7 +136,7 @@ void pullDataFromMaster(){
 	
 	
 	fc49_obj1_therm.k=comParams_uart.recDataBufferF[42];
-	fc49_obj1_therm.tau=comParams_uart.recDataBufferF[43];
+	fc49_obj1_therm.tau=comParams_uart.recDataBufferF[43]*60;
 	fc49_obj1_L1_in.alarm_level=comParams_uart.recDataBufferF[44];
 	fc49_obj1_therm.Inom=comParams_uart.recDataBufferF[104];
 	

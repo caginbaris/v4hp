@@ -1,4 +1,4 @@
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "nfbm.h"
 
 
@@ -20,8 +20,9 @@ struct fc59_outputParameters fc59_obj1_L2_out_c={0};
 void fc59_init(){
 
 	struct fc59_inputParameters fc59_initStruct={	1.0f, /*level*/
-																								0.9f, /*DropOutRatio*/
 																								0.04f,/*Delay*/
+																								0.9f, /*DropOutRatio*/
+																								
 																								};
 	
 	fc59_obj1_L1_in=fc59_initStruct;

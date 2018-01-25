@@ -1,4 +1,5 @@
 #include "measurement_functions.h"
+#include "measurement_functions.h"
 #include "nfbm.h"
 
 
@@ -84,13 +85,15 @@ void spectral_analysis(){
 								
 	//cau thd problem
 	
-	thd.a=signal_thd(spect_Ia);
-	thd.b=signal_thd(spect_Ib);
-	thd.c=signal_thd(spect_Ic);	
+	
+	switch(count){
+	
+		case 10:thd.a=signal_thd(spect_Ia);break;
+		case 20:thd.b=signal_thd(spect_Ib);break;
+		case 30:thd.c=signal_thd(spect_Ic);	break;
+	
+	}
 
-	
-								
-	
 	if(++count==spectraLength){count=0;}
 
 

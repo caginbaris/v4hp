@@ -3,6 +3,7 @@
 #include "plib_definitions.h"
 
 #define fs 2500
+#define uber 1000000
 
 //function-1,2,3
 //count  has to be initialized and supplied as different in each invocation
@@ -152,7 +153,7 @@ void fc51(float rms, struct fc51_inputParameters fc51_in, struct fc51_outputPara
 		{
 
 			fc51_out->pick_up = 0;
-			fc51_out->time2trip = 800000; //cau
+			fc51_out->time2trip = uber; //cau
 
 		}
 
@@ -290,13 +291,16 @@ void fc59(float rms, struct fc59_inputParameters fc59_in, struct fc59_outputPara
 // function-8
 // Definite TOC Negative Seq. Protection
 
-void fc46d(float rms,struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable)
+void fc46d(float rms, float Inom, struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable)
 {
 
-	if (enable && (rms > 0.1f * fc46d_in.level && rms < 10.0f * fc46d_in.level))
+	if (enable)
 	{
+		
+		fc46d_out->pass_flag = on_delay((rms > 0.1f * Inom && rms < 10.0f * Inom),fc46d_out->pass_flag,fs*0.1f,&(fc46d_out->pass_counter));
 
-		if (rms > fc46d_in.level)
+
+		if (rms > fc46d_in.level && fc46d_out->pass_flag)
 		{
 			fc46d_out->initial_pick_up = 1;
 		}
@@ -321,24 +325,28 @@ void fc46d(float rms,struct fc46d_inputParameters fc46d_in, struct fc46d_outputP
 // function-9
 // Inverse TOC Negative Seq. Protection
 
-void fc46i(float rms,struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable)
+void fc46i(float rms,float Inom, struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable)
 {
 
-	if (enable && (rms > 0.1f * fc46i_in.level && rms < 10.0f * fc46i_in.level))
+	if (enable)
 	{
+		
+		fc46i_out->pass_flag = on_delay((rms > 0.1f * Inom && rms < 10.0f * Inom),fc46i_out->pass_flag,fs*0.1f,&(fc46i_out->pass_counter));
 
-		if (rms > fc46i_in.level * 1.100f)
+
+		if (rms > fc46i_in.level * 1.100f && fc46i_out->pass_flag )
 		{
 
 			fc46i_out->pick_up = 1;
-			fc46i_out->time2trip = fc46i_in.time_multiplier * (fc46i_in.curve_data[0] / (powf((fc46i_in.rms / fc46i_in.level), fc46i_in.curve_data[1]) - 1.0f) + fc46i_in.curve_data[2]);
+			fc46i_out->time2trip = fc46i_in.time_multiplier * (fc46i_in.curve_data[0] / (powf((rms / fc46i_in.level), fc46i_in.curve_data[1]) - 1.0f) + fc46i_in.curve_data[2]);
 
 		}
+		
 		if (rms < fc46i_in.level * 1.045f)
 		{
 
 			fc46i_out->pick_up = 0;
-			fc46i_out->time2trip = 80000;
+			fc46i_out->time2trip = uber;
 
 		}
 
@@ -390,7 +398,7 @@ void fc49(float temp,struct fc49_inputParameters fc49_in, struct fc49_outputPara
 
 		}
 
-		if (temp > fc49_in.trip_level)
+		if (temp > 1.0)
 		{
 
 			fc49_out->trip = 1;
@@ -411,10 +419,13 @@ void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcB
 	if (enable)
 	{
 
-		if (fcBF_in.trip_input /*&& fcBF_out->trip == 0*/)
-		{
 
-			fcBF_out->current_checked = (fcBF_in.rmsA < fcBF_in.threshold && fcBF_in.rmsB < fcBF_in.threshold && fcBF_in.rmsC < fcBF_in.threshold);
+
+			fcBF_out->current_checked = (	fcBF_in.rmsA < fcBF_in.threshold && 
+			
+																		fcBF_in.rmsB < fcBF_in.threshold && 
+			
+																		fcBF_in.rmsC < fcBF_in.threshold);
 
 			if (fcBF_in.CB_pos_check)
 			{
@@ -432,7 +443,7 @@ void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcB
 			// for breaking latency, fcBF_out->pass_flag initialised to 1, 20ms delay entered
 			fcBF_out->pass_flag_filtered = off_delay(fcBF_out->pass_flag, fcBF_out->pass_flag_filtered, fs*0.02f, &(fcBF_out->pass_flag_counter));
 
-			if (fcBF_out->pass_flag_filtered == 0)
+			if (fcBF_out->pass_flag_filtered == 0 && fcBF_in.trip_input==1 )
 			{
 
 				fcBF_out->pick_up = 1;
@@ -464,7 +475,6 @@ void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcB
 				fcBF_out->trip = 1;
 				fcBF_out->trip_counter = 0;
 
-			}
 		}
 	}
 }
@@ -486,7 +496,7 @@ void fc37(float rms, struct fc37_inputParameters fc37_in, struct fc37_outputPara
                        
 		}
 
-		if (rms > fc37_in.level * fc37_in.dropout_ratio)
+		if (rms > fc37_in.level * fc37_in.dropout_ratio || fc37_in.bs==0)
 		{
 
 			fc37_out->pick_up = 0;
@@ -589,7 +599,7 @@ void fcUNBi(float rms,struct fcUNBi_inputParameters fcUNBi_in, struct fcUNBi_out
 		{
 
 			fcUNBi_out->pick_up = 0;
-			fcUNBi_out->time2trip = 80000;
+			fcUNBi_out->time2trip = uber;
 
 		}
 
@@ -686,7 +696,7 @@ void fcPVPi(float rms,struct fcPVPi_inputParameters fcPVPi_in, struct fcPVPi_out
 		{
 
 			fcPVPi_out->pick_up = 0;
-			fcPVPi_out->time2trip = 80000;
+			fcPVPi_out->time2trip = uber;
 
 		}
 

@@ -1,4 +1,4 @@
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "nfbm.h"
 #include "powerSysData.h"
 #include "boardIO.h"
@@ -64,8 +64,9 @@ void fc37_all(){
 	pick_current=maxSelector_3p(fRMS.Ia,fRMS.Ib,fRMS.Ic);
 
 	fc37_obj1_L1_in.bs	=	off_delay(	pick_current>(Sys.I_Nom_obj1*0.5f),
-																			fc37_obj1_L1_in.bs,fs*0.5f, /*cau trip tip should be lower from time*/
-																			&pick_current_counter);
+																		fc37_obj1_L1_in.bs,
+																		fs*2.0f*fc37_obj1_L1_in.delay, /*cau trip time should be lower from time*/
+																		&pick_current_counter);
 												
 	fc37_obj2_L1_in.bs=fc37_obj1_L1_in.bs;																		
 																			
@@ -80,7 +81,7 @@ void fc37_all(){
 	fc37(tRMS.IRESc,fc37_obj2_L1_in,&fc37_obj2_L1_out_c,EN.bits.fc37_obj2);
 	
 
-	inhibition();
+	//inhibition();
 
 
 }

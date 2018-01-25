@@ -52,6 +52,8 @@ struct sym_out{
 
 };
 
+extern struct sym_out sym;
+
 void sym_comp(struct phase_cs_in pa, struct phase_cs_in pb,struct phase_cs_in pc,struct sym_out *sym);
 void sym_mag(struct sym_out sym, struct sym_out *sym_back, struct sym_out *sym_rms);
 

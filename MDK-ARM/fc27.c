@@ -20,16 +20,12 @@ struct fc27_outputParameters fc27_obj1_L2_out={0};;
 void fc27_init(){
 	
 	struct fc27_inputParameters fc27_initStruct={ 1.0f,/*level*/
-																								0.04f,/*dropoutRatio*/
-																								1.1,/*delay*/
+																								0.04f,/*delay*/
+																								1.1,/*dropout*/
 																								};
 	
 	fc27_obj1_L1_in=fc27_initStruct;
 	fc27_obj1_L2_in=fc27_initStruct;
-
-
-
-
 
 }
 

@@ -84,11 +84,11 @@ void fc27(float rms, struct fc27_inputParameters fc27_in, struct fc27_outputPara
 
 struct fc59_inputParameters{
 
-	float rms;
+
 	float level;
-	float dropout_ratio;
 	float delay;
-	unsigned int cs;
+	float dropout_ratio;
+	
 
 };
 
@@ -99,24 +99,27 @@ struct fc59_outputParameters{
 	unsigned int trip;
 
 };
+void fc59(float rms, struct fc59_inputParameters fc59_in, struct fc59_outputParameters *fc59_out, int enable);
+
 
 struct fc46d_inputParameters{
 
-	float rms;
+	
 	float level;
 	float delay;
-	float dropout_time;
 	float dropout_ratio;
+	float dropout_time;
 
 };
 
 
 struct fc46d_outputParameters{
 
-	
+	long pass_counter;
 	long trip_counter;
 	long dropout_counter;
 
+	unsigned int pass_flag:1;
 	unsigned int initial_pick_up:1;
 	unsigned int pick_up:1;
 	unsigned int trip:1;
@@ -124,9 +127,13 @@ struct fc46d_outputParameters{
 
 };
 
+void fc46d(float rms, float Inom, struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable);
+
+
+
 struct fc46i_inputParameters {
 
-	float rms;
+	
 	float level;
 	float curve_data[3];
 	float time_multiplier;
@@ -135,20 +142,25 @@ struct fc46i_inputParameters {
 
 struct fc46i_outputParameters {
 
+	long pass_counter;
 	float time2trip;
 	long trip_counter;
 	
+	
+	unsigned int pass_flag:1;
 	unsigned int pick_up:1;
 	unsigned int trip:1;
 
 
 };
 
+void fc46i(float rms,float Inom, struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable);
+
+
 struct fc49_inputParameters{
 
 	
 	float alarm_level; 
-	float trip_level; 
 	float dropout_ratio;
 
 };
@@ -161,6 +173,8 @@ struct fc49_outputParameters{
 	
 
 };
+
+void fc49(float temp,struct fc49_inputParameters fc49_in, struct fc49_outputParameters *fc49_out, int enable);
 
 struct fcBF_inputParameters{
 
@@ -217,6 +231,8 @@ struct fc37_outputParameters{
 	unsigned int trip:1;
 
 };
+
+void fc37(float rms,struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc37_out, int enable);
 
 
 struct fcUNBd_inputParameters{
@@ -296,6 +312,10 @@ struct fcPVPi_outputParameters{
 	unsigned int pick_up:1;
 	unsigned int trip:1;
 };
+
+
+float minSelector_3p(float a, float b, float c);
+float maxSelector_3p(float a, float b, float c);
 
 
 #endif

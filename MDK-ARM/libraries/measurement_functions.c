@@ -220,13 +220,14 @@ void signal_spectra(
 float signal_thd(struct spectra h){
 
 	unsigned int i;
-	float hsum=0,thd=0;
+	float hsum=0.0f,thd=0.0f;
 
-	hsum=0;
+	thd=0.0f;
+	hsum=0.0f;
 
 	if(h.foutMag[1]>1.0f){
 	
-		for(i=2;i<13;i++){hsum+=h.foutMag[i]*h.foutMag[i];}
+		for(i=2;i<14;i++){hsum+=h.foutMag[i]*h.foutMag[i];}
 		
 		thd=100.0f*sqrtf(hsum)/h.foutMag[1];
 
@@ -327,13 +328,18 @@ float thermal_status(float rms,struct thermal_parameters therm, float mem)
 	float temp;
 	float t_constant;
 
-	t_constant = therm.ts / therm.tau;
+	if(therm.tau>1.0f) {t_constant = therm.ts / therm.tau;}else{t_constant=0.0f;}
 
 	if (therm.freeze == 0)
 	{
-		temp = t_constant * (rms*rms) / (therm.Inom * therm.Inom * therm.k * therm.k) + mem * (1 - t_constant);
+		if(therm.Inom * therm.k>1.0f) {
+			
+		temp = t_constant * (rms*rms) / (therm.Inom * therm.Inom * therm.k * therm.k) + mem * (1.0f - t_constant);
+			
+		}
 	}
 	else{
+		
 		temp = mem;
 	}
 

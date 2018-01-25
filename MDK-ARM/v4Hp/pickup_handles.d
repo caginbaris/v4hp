@@ -2,7 +2,7 @@ v4hp\pickup_handles.o: pickup_handles.c
 v4hp\pickup_handles.o: ../Inc/nfbm.h
 v4hp\pickup_handles.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 v4hp\pickup_handles.o: ../Inc/plib_handles.h
-v4hp\pickup_handles.o: .\libraries\protection_functions.h
+v4hp\pickup_handles.o: .\libraries\plib_definitions.h
 v4hp\pickup_handles.o: ../Inc/boardIO.h
 v4hp\pickup_handles.o: ../Inc/main.h
 v4hp\pickup_handles.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h

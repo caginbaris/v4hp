@@ -157,6 +157,9 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
+		
+	uart_runComApp(); 
+	spi_runComApp();
 
 		
 	if(conversion_completed){
@@ -186,12 +189,10 @@ int main(void)
 
 }
 	
-	uart_runComApp(); 
-	spi_runComApp();
+
 
 	
 	/* Comm Layer Functions in superloop */
-
 	
   }
   /* USER CODE END 3 */
