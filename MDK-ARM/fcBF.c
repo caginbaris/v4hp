@@ -1,4 +1,4 @@
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "nfbm.h"
 #include "powerSysData.h"
 #include "boardIO.h"
@@ -29,8 +29,7 @@ struct fcBF_inputParameters fcBF_initStruct={
 
 fcBF_in=fcBF_initStruct;
 
-fcBF_in.threshold=Sys.I_BreakerClosed_MIN;
-fcBF_in.CB_pos_check=Sys.fcBF_CBSupervision; /*CB pos input control*/
+
 
 
 
@@ -43,9 +42,11 @@ void fcBF_all(){
 	fcBF_in.rmsB=fRMS.Ib;
 	fcBF_in.rmsC=fRMS.Ic;
 	
+	fcBF_in.threshold=Sys.I_BreakerClosed_MIN;
+	fcBF_in.CB_pos_check=Sys.fcBF_CBSupervision; 
 	
-	fcBF_in.CB_pos		=DI.bit.Q1_cb_pos | DI.bit.Q2_cb_pos | DI.bit.Q3_cb_pos;			/*Breaker Input*/
-	fcBF_in.trip_input=DI.bit.Q1_trip 	| DI.bit.Q2_trip	 | DI.bit.Q3_trip;	       /*Trip Input*/
+	fcBF_in.CB_pos		=DI.bit.Q1_cb_pos;												/*Breaker Input*/
+	fcBF_in.trip_input=DI.bit.SVC_trip | DI.bit.Q1_open ;	       /*Trip Input*/
 	// cau related cb position should conditionally compiled
 	
 	fcBF(fcBF_in,&fcBF_out,EN.bits.fcBF_obj1);
@@ -53,11 +54,11 @@ void fcBF_all(){
 	
 	if(fcBF_out.trip){
 
-		DO.bits.BF=1;
+		DO.bits.BF=0;
 
 	}else{
 	
-		DO.bits.BF=0;
+		DO.bits.BF=1;
 	
 	}
 	

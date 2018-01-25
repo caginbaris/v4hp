@@ -569,6 +569,81 @@
           <WinNumber>2</WinNumber>
           <ItemText>fc37_obj1_L1_out_c</ItemText>
         </Ww>
+        <Ww>
+          <count>70</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>DI.bit.Q1_cb_pos</ItemText>
+        </Ww>
+        <Ww>
+          <count>71</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>current_checked</ItemText>
+        </Ww>
+        <Ww>
+          <count>72</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>current_flag</ItemText>
+        </Ww>
+        <Ww>
+          <count>73</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>DO.bits.inhibit</ItemText>
+        </Ww>
+        <Ww>
+          <count>74</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>DI.bit.reset</ItemText>
+        </Ww>
+        <Ww>
+          <count>75</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>inhibit_enabled</ItemText>
+        </Ww>
+        <Ww>
+          <count>76</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>fcBF_in</ItemText>
+        </Ww>
+        <Ww>
+          <count>77</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>fcBF_out</ItemText>
+        </Ww>
+        <Ww>
+          <count>78</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>Flag.bit.fcBF_cbSupervision</ItemText>
+        </Ww>
+        <Ww>
+          <count>79</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>pFlag.bit.fcBF_cbSupervision</ItemText>
+        </Ww>
+        <Ww>
+          <count>80</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>DI.bit.Q1_cb_pos</ItemText>
+        </Ww>
+        <Ww>
+          <count>81</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>DI.bit.SVC_trip</ItemText>
+        </Ww>
+        <Ww>
+          <count>82</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>DI.bit.Q1_open</ItemText>
+        </Ww>
+        <Ww>
+          <count>83</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>scale</ItemText>
+        </Ww>
+        <Ww>
+          <count>84</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>DO</ItemText>
+        </Ww>
       </WatchWindow2>
       <Tracepoint>
         <THDelay>0</THDelay>
@@ -776,7 +851,7 @@
       <GroupNumber>2</GroupNumber>
       <FileNumber>13</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\libraries\protection_functions.c</PathWithFileName>
@@ -1120,7 +1195,7 @@
       <GroupNumber>6</GroupNumber>
       <FileNumber>39</FileNumber>
       <FileType>1</FileType>
-      <tvExp>1</tvExp>
+      <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
       <PathWithFileName>.\fc50.c</PathWithFileName>

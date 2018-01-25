@@ -483,27 +483,27 @@ void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcB
 // Undercurrent Protection
 // bs is CB input
 
-void fc37(float rms, struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc37_out, int enable)
+void fc37(float rms,int cb_pos, struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc37_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (rms < fc37_in.level && fc37_in.bs)
+		if (rms < fc37_in.level && cb_pos==1)
 		{
 
 			fc37_out->pick_up = 1;
                        
 		}
 
-		if (rms > fc37_in.level * fc37_in.dropout_ratio || fc37_in.bs==0)
+		if (rms > fc37_in.level * fc37_in.dropout_ratio || cb_pos==0)
 		{
 
 			fc37_out->pick_up = 0;
 
 		}
 
-		if (fc37_out->pick_up && fc37_out->trip == 0)
+		if (fc37_out->pick_up)
 		{
 
 			fc37_out->trip_counter++;
@@ -516,7 +516,7 @@ void fc37(float rms, struct fc37_inputParameters fc37_in, struct fc37_outputPara
 
 		}
 
-		if (fc37_out->trip_counter > fc37_in.delay * fs)
+		if (fc37_out->trip_counter > fc37_in.delay * fs )
 		{
 
 			fc37_out->trip = 1;

@@ -208,11 +208,11 @@ struct fcBF_outputParameters{
 	unsigned int pass_flag:1;
 	unsigned int pass_flag_filtered:1;
 	
-	
-
-
 
 };
+
+void fcBF(struct fcBF_inputParameters fcBF_in, struct fcBF_outputParameters *fcBF_out, int enable);
+
 
 struct fc37_inputParameters{
 
@@ -220,7 +220,7 @@ struct fc37_inputParameters{
 	float level;
 	float dropout_ratio;
 	float delay;
-	unsigned int bs; // will be assigned to CB position
+	
 
 };
 
@@ -232,7 +232,7 @@ struct fc37_outputParameters{
 
 };
 
-void fc37(float rms,struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc37_out, int enable);
+void fc37(float rms,int cb_pos, struct fc37_inputParameters fc37_in, struct fc37_outputParameters *fc37_out, int enable);
 
 
 struct fcUNBd_inputParameters{
