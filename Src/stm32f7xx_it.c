@@ -247,7 +247,7 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
   uint32_t modbusWriteCnt = 1;
 	
-
+	incoming_data_flag=1;
 	
   /* USER CODE END EXTI15_10_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_11);

@@ -1,6 +1,6 @@
 #include "measurement_functions.h"
 #include "mlib_constants.h"
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "nfbm.h"
 #include "powerSysData.h"
 #include "cs_handles.h"
@@ -18,26 +18,26 @@ struct fcUNBd_outputParameters  fcUNBd_obj1_L1_out_b={0};
 struct fcUNBi_outputParameters  fcUNBi_obj1_L1_out_a={0};
 struct fcUNBi_outputParameters  fcUNBi_obj1_L1_out_b={0};
 
-float UNBpcorrection=0.062831853071796; //half deg @fs
+float UNBpcorrection=0;//0.062831853071796; //half deg @fs
+
+uint8_t detect=0;
+uint8_t comp=0;
+uint8_t dmy_phase=0;
+
+float UNBa_rms=0;
+float UNBb_rms=0;
 
 
 void fcUNB_initial_dt(){
 	
-	if(Sys.UNBdetect){
-		
+	//if(Sys.UNBdetect){
+		if(1){
 		
 		fcUNBd_obj1_L1_out_a.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBa.c,UNBa.s)+pi-UNBpcorrection);
 		fcUNBd_obj1_L1_out_b.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBb.c,UNBb.s)+pi-UNBpcorrection);
 		
-		if(fcUNBd_obj1_L1_out_a.Nphase<0){fcUNBd_obj1_L1_out_a.Nphase=fcUNBd_obj1_L1_out_a.Nphase+2*pi;}
-		if(fcUNBd_obj1_L1_out_b.Nphase<0){fcUNBd_obj1_L1_out_b.Nphase=fcUNBd_obj1_L1_out_b.Nphase+2*pi;}
-
-		if(fcUNBd_obj1_L1_out_a.Nphase>pi){fcUNBd_obj1_L1_out_a.Nphase=fcUNBd_obj1_L1_out_a.Nphase-2*pi;}
-		if(fcUNBd_obj1_L1_out_b.Nphase>pi){fcUNBd_obj1_L1_out_b.Nphase=fcUNBd_obj1_L1_out_b.Nphase-2*pi;}
-		
-		
 		fcUNBd_obj1_L1_out_a.Nmag=fRMS.IUNBa*sqrt2;
-		fcUNBd_obj1_L1_out_b.Nmag=fRMS.IUNBb*sqrt2;
+		fcUNBd_obj1_L1_out_b.Nmag=fRMS.IUNBb*sqrt2; 
 		
 
 	}
@@ -75,27 +75,33 @@ void fcUNB_all(){
 	float UNBa_synth=0;
 	float UNBb_synth=0;
 	
-	float UNBa_rms=0;
-	float UNBb_rms=0;
+
+	
+	fcUNB_initial_dt();
 	
 	
-	if(Sys.UNBcompFlag){
-		
-	UNBa_synth=(fcUNBd_obj1_L1_out_a.Nmag*sin(phase_cs_A_out.phase_I+fcUNBd_obj1_L1_out_a.Nphase));
-	UNBb_synth=(fcUNBd_obj1_L1_out_b.Nmag*sin(phase_cs_A_out.phase_I+fcUNBd_obj1_L1_out_a.Nphase));	
+	//if(Sys.UNBcompFlag){
 	
-	UNBa_rms=true_rms((fAdc.sAdc.IUNBa-UNBa_synth),&UNBa_buffer[0],counter,25);
+	if(comp){
+	
+	UNBa_synth=(fcUNBd_obj1_L1_out_a.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));
+	UNBb_synth=(fcUNBd_obj1_L1_out_b.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));	
+	
+	UNBa_rms=true_rms((fAdc.sAdc.IUNBa -UNBa_synth),&UNBa_buffer[0],counter,25);
 	UNBb_rms=true_rms((fAdc.sAdc.IUNBb-UNBb_synth),&UNBb_buffer[0],counter,25);	
 		
-	if(++counter==25){counter=0;}	
+	
 		
 	}else{
 		
+	
 	UNBa_rms=fRMS.IUNBa;
 	UNBb_rms=fRMS.IUNBb;
 	
 	
 	}
+	
+	if(++counter==25){counter=0;}	
 	
 	
 	fcUNBd(UNBa_rms,fcUNBd_obj1_L1_in,&fcUNBd_obj1_L1_out_a,EN.bits.fcUNBd_obj1);
@@ -104,7 +110,6 @@ void fcUNB_all(){
 	fcUNBi(UNBa_rms,fcUNBi_obj1_L1_in,&fcUNBi_obj1_L1_out_a,EN.bits.fcUNBi_obj1);
 	fcUNBi(UNBb_rms,fcUNBi_obj1_L1_in,&fcUNBi_obj1_L1_out_b,EN.bits.fcUNBi_obj1);
 	
-
 
 }
 

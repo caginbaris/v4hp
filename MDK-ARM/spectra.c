@@ -86,13 +86,13 @@ void spectral_analysis(){
 	//cau thd problem
 	
 	
-	switch(count){
+	/*switch(count){
 	
 		case 10:thd.a=signal_thd(spect_Ia);break;
 		case 20:thd.b=signal_thd(spect_Ib);break;
 		case 30:thd.c=signal_thd(spect_Ic);	break;
 	
-	}
+	}*/
 
 	if(++count==spectraLength){count=0;}
 

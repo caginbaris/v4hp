@@ -150,194 +150,154 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>EN</ItemText>
+          <ItemText>tRMS.Ia</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>fRMS</ItemText>
+          <ItemText>Sys</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>tRMS</ItemText>
+          <ItemText>fRMS</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>fc50_obj1_L1_in</ItemText>
+          <ItemText>fcPVPd_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>fc50N_obj1_L3_out</ItemText>
+          <ItemText>scale</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>fc50N_obj1_L3_in</ItemText>
-        </Ww>
-        <Ww>
-          <count>6</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>mSelect.bit.obj1_fc51</ItemText>
-        </Ww>
-        <Ww>
-          <count>7</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>mag_sym</ItemText>
-        </Ww>
-        <Ww>
-          <count>8</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>Sys.fc27_currentSupervision</ItemText>
-        </Ww>
-        <Ww>
-          <count>9</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>Sys.phaseRotation</ItemText>
-        </Ww>
-        <Ww>
-          <count>10</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>Sys.I_BreakerClosed_MIN</ItemText>
-        </Ww>
-        <Ww>
-          <count>11</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>cs_counter</ItemText>
-        </Ww>
-        <Ww>
-          <count>12</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>Sys</ItemText>
-        </Ww>
-        <Ww>
-          <count>13</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>DI.reset</ItemText>
+          <ItemText>offset</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
           <count>0</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc50_obj1_L1_in</ItemText>
+          <ItemText>fcUNBd_obj1_L1_out_a</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>2</WinNumber>
-          <ItemText>tRMS.Ia</ItemText>
+          <ItemText>UNBa_rms</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fRMS.Ia</ItemText>
+          <ItemText>dmy</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>2</WinNumber>
-          <ItemText>TR.CT</ItemText>
+          <ItemText>UNBa_synth</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>2</WinNumber>
-          <ItemText>mSelect</ItemText>
+          <ItemText>dmy_phase</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc51_obj1_in</ItemText>
+          <ItemText>UNBpcorrection</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc51_obj1_out_a</ItemText>
+          <ItemText>TR</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>2</WinNumber>
-          <ItemText>pEN</ItemText>
+          <ItemText>scale</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>2</WinNumber>
-          <ItemText>DI.bit.reset</ItemText>
+          <ItemText>fAdc</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW[1]</ItemText>
+          <ItemText>fcUNBd_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>2</WinNumber>
-          <ItemText>function_code</ItemText>
+          <ItemText>fcBF_in</ItemText>
         </Ww>
         <Ww>
           <count>11</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fault_code</ItemText>
+          <ItemText>fcBF_out</ItemText>
         </Ww>
         <Ww>
           <count>12</count>
           <WinNumber>2</WinNumber>
-          <ItemText>cSelect1</ItemText>
+          <ItemText>DO</ItemText>
         </Ww>
         <Ww>
           <count>13</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc51N_obj1_in</ItemText>
+          <ItemText>fault_code</ItemText>
         </Ww>
         <Ww>
           <count>14</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc51N_obj1_out</ItemText>
+          <ItemText>trip</ItemText>
         </Ww>
         <Ww>
           <count>15</count>
           <WinNumber>2</WinNumber>
-          <ItemText>trip</ItemText>
+          <ItemText>fcUNBi_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>16</count>
           <WinNumber>2</WinNumber>
-          <ItemText>pick</ItemText>
+          <ItemText>fcUNBd_obj1_L1_out_a.Nphase</ItemText>
         </Ww>
         <Ww>
           <count>17</count>
           <WinNumber>2</WinNumber>
-          <ItemText>mag_sym</ItemText>
+          <ItemText>fcUNBd_obj1_L1_NMag</ItemText>
         </Ww>
         <Ww>
           <count>18</count>
           <WinNumber>2</WinNumber>
-          <ItemText>TR</ItemText>
+          <ItemText>fcUNBd_obj1_L1_out_a.Nmag</ItemText>
         </Ww>
         <Ww>
           <count>19</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc27_obj1_L1_in</ItemText>
+          <ItemText>UNBa_rms</ItemText>
         </Ww>
         <Ww>
           <count>20</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc27_obj1_L1_out</ItemText>
+          <ItemText>fRMS.IUNBa</ItemText>
         </Ww>
         <Ww>
           <count>21</count>
           <WinNumber>2</WinNumber>
-          <ItemText>pick</ItemText>
+          <ItemText>comp</ItemText>
         </Ww>
         <Ww>
           <count>22</count>
           <WinNumber>2</WinNumber>
-          <ItemText>trip</ItemText>
+          <ItemText>fcPVPd_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>23</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc27_obj1_L2_in</ItemText>
+          <ItemText>comParams_uart.recDataBufferF[71]</ItemText>
         </Ww>
         <Ww>
           <count>24</count>
@@ -347,302 +307,77 @@
         <Ww>
           <count>25</count>
           <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW</ItemText>
+          <ItemText>comParams_uart.recDataBufferF[110]</ItemText>
         </Ww>
         <Ww>
           <count>26</count>
           <WinNumber>2</WinNumber>
-          <ItemText>thd.a</ItemText>
+          <ItemText>comParams_uart.recDataBufferF[111]</ItemText>
         </Ww>
         <Ww>
           <count>27</count>
           <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferF</ItemText>
+          <ItemText>comParams_uart.recDataBufferF[69]</ItemText>
         </Ww>
         <Ww>
           <count>28</count>
           <WinNumber>2</WinNumber>
-          <ItemText>thd</ItemText>
+          <ItemText>comParams_uart.recDataBufferF[71]</ItemText>
         </Ww>
         <Ww>
           <count>29</count>
           <WinNumber>2</WinNumber>
-          <ItemText>spect_Ia</ItemText>
+          <ItemText>comParams_uart.recDataBufferF[72]</ItemText>
         </Ww>
         <Ww>
           <count>30</count>
           <WinNumber>2</WinNumber>
-          <ItemText>therm_a_obj1</ItemText>
+          <ItemText>peak_a</ItemText>
         </Ww>
         <Ww>
           <count>31</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc49_obj1_therm</ItemText>
+          <ItemText>peak_p</ItemText>
         </Ww>
         <Ww>
           <count>32</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc49_obj1_L1_in</ItemText>
+          <ItemText>peak_b</ItemText>
         </Ww>
         <Ww>
           <count>33</count>
           <WinNumber>2</WinNumber>
-          <ItemText>tRMS</ItemText>
+          <ItemText>peak_c</ItemText>
         </Ww>
         <Ww>
           <count>34</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fRMS</ItemText>
+          <ItemText>pvp_in</ItemText>
         </Ww>
         <Ww>
           <count>35</count>
           <WinNumber>2</WinNumber>
-          <ItemText>mag_sym</ItemText>
+          <ItemText>pvp_out</ItemText>
         </Ww>
         <Ww>
           <count>36</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc49_obj1_therm</ItemText>
+          <ItemText>pvp_in_back</ItemText>
         </Ww>
         <Ww>
           <count>37</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc49_obj1_L1_in</ItemText>
+          <ItemText>pvp_out_back</ItemText>
         </Ww>
         <Ww>
           <count>38</count>
           <WinNumber>2</WinNumber>
-          <ItemText>Sys</ItemText>
+          <ItemText>ts</ItemText>
         </Ww>
         <Ww>
           <count>39</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fc49_obj1_L1_out_a</ItemText>
-        </Ww>
-        <Ww>
-          <count>40</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>therm_b_obj1</ItemText>
-        </Ww>
-        <Ww>
-          <count>41</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>therm_c_obj1</ItemText>
-        </Ww>
-        <Ww>
-          <count>42</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>therm</ItemText>
-        </Ww>
-        <Ww>
-          <count>43</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc49_obj1_therm</ItemText>
-        </Ww>
-        <Ww>
-          <count>44</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc59_obj1_L1_in</ItemText>
-        </Ww>
-        <Ww>
-          <count>45</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc59_obj1_L1_in</ItemText>
-        </Ww>
-        <Ww>
-          <count>46</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>EN</ItemText>
-        </Ww>
-        <Ww>
-          <count>47</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc59_obj1_L1_out_a</ItemText>
-        </Ww>
-        <Ww>
-          <count>48</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>trip_words</ItemText>
-        </Ww>
-        <Ww>
-          <count>49</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>trip</ItemText>
-        </Ww>
-        <Ww>
-          <count>50</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc59_obj1_L1_out_a.trip</ItemText>
-        </Ww>
-        <Ww>
-          <count>51</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>trip.fc59_obj1_L1_out_a</ItemText>
-        </Ww>
-        <Ww>
-          <count>52</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>DI.bit.reset</ItemText>
-        </Ww>
-        <Ww>
-          <count>53</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fault_code</ItemText>
-        </Ww>
-        <Ww>
-          <count>54</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc59_obj1_L1_out_a.trip</ItemText>
-        </Ww>
-        <Ww>
-          <count>55</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>DO</ItemText>
-        </Ww>
-        <Ww>
-          <count>56</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc59_obj1_L2_in</ItemText>
-        </Ww>
-        <Ww>
-          <count>57</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferF[26]</ItemText>
-        </Ww>
-        <Ww>
-          <count>58</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc59_obj1_L2_out_a</ItemText>
-        </Ww>
-        <Ww>
-          <count>59</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>mag_sym</ItemText>
-        </Ww>
-        <Ww>
-          <count>60</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc59_obj1_L1_in</ItemText>
-        </Ww>
-        <Ww>
-          <count>61</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc46d_obj1_L1_in</ItemText>
-        </Ww>
-        <Ww>
-          <count>62</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc46d_obj1_L1_out</ItemText>
-        </Ww>
-        <Ww>
-          <count>63</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc46i_obj1_L1_in</ItemText>
-        </Ww>
-        <Ww>
-          <count>64</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc46i_obj1_L1_out</ItemText>
-        </Ww>
-        <Ww>
-          <count>65</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>Sys</ItemText>
-        </Ww>
-        <Ww>
-          <count>66</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc37_obj1_L1_in</ItemText>
-        </Ww>
-        <Ww>
-          <count>67</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc37_obj1_L1_out_a</ItemText>
-        </Ww>
-        <Ww>
-          <count>68</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc37_obj1_L1_out_b</ItemText>
-        </Ww>
-        <Ww>
-          <count>69</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fc37_obj1_L1_out_c</ItemText>
-        </Ww>
-        <Ww>
-          <count>70</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>DI.bit.Q1_cb_pos</ItemText>
-        </Ww>
-        <Ww>
-          <count>71</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>current_checked</ItemText>
-        </Ww>
-        <Ww>
-          <count>72</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>current_flag</ItemText>
-        </Ww>
-        <Ww>
-          <count>73</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>DO.bits.inhibit</ItemText>
-        </Ww>
-        <Ww>
-          <count>74</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>DI.bit.reset</ItemText>
-        </Ww>
-        <Ww>
-          <count>75</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>inhibit_enabled</ItemText>
-        </Ww>
-        <Ww>
-          <count>76</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fcBF_in</ItemText>
-        </Ww>
-        <Ww>
-          <count>77</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>fcBF_out</ItemText>
-        </Ww>
-        <Ww>
-          <count>78</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>Flag.bit.fcBF_cbSupervision</ItemText>
-        </Ww>
-        <Ww>
-          <count>79</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>pFlag.bit.fcBF_cbSupervision</ItemText>
-        </Ww>
-        <Ww>
-          <count>80</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>DI.bit.Q1_cb_pos</ItemText>
-        </Ww>
-        <Ww>
-          <count>81</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>DI.bit.SVC_trip</ItemText>
-        </Ww>
-        <Ww>
-          <count>82</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>DI.bit.Q1_open</ItemText>
-        </Ww>
-        <Ww>
-          <count>83</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>scale</ItemText>
-        </Ww>
-        <Ww>
-          <count>84</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>DO</ItemText>
+          <ItemText>spect_Ia</ItemText>
         </Ww>
       </WatchWindow2>
       <Tracepoint>

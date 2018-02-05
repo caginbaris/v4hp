@@ -1,11 +1,11 @@
 #include "measurement_functions.h"
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "nfbm.h"
 #include "powerSysData.h"
 #include "cs_handles.h"
 #include "pDataConfigs.h"
 
-#define ts 1/fs
+#define ts (1.0f)/fs
 #define N 50
 
 struct pvp_data pvp_in={0};
@@ -27,6 +27,9 @@ struct fcPVPi_outputParameters fcPVPi_obj1_L1_out_b={0};
 struct fcPVPi_outputParameters fcPVPi_obj1_L1_out_c={0};
 
 
+float peak_a;
+float peak_b;
+float peak_c;
 
 void fcPVP_init(){
 	
@@ -59,22 +62,31 @@ void fcPVP_init(){
 void fcPVP_all(){
 	
 	static float counter=0;
-	static float peakBuffer[3][N];
+	static float peakBuffer[3][N]={0};
 	
-	float peak_a;
-	float peak_b;
-	float peak_c;
+
 	
 	pvp_in.a=fAdc.sAdc.Ia;
 	pvp_in.b=fAdc.sAdc.Ib;
 	pvp_in.c=fAdc.sAdc.Ic;
 	
-	pvp_filter(pvp_in,&pvp_in_back,&pvp_out,&pvp_out_back,ts);
+	pvp_filter(pvp_in,&pvp_in_back,&pvp_out,&pvp_out_back,ts*314.15926535897932384626433832795f);
+	
+	
 	
 	peak_a=peak_detect_rms(pvp_out.a,&peakBuffer[0][0],counter,N);
 	peak_b=peak_detect_rms(pvp_out.b,&peakBuffer[1][0],counter,N);
 	peak_c=peak_detect_rms(pvp_out.c,&peakBuffer[2][0],counter,N);
 	
+	if(++counter==N){
+	
+	counter=0;
+		
+	pvp_out_back.a=0.0f;
+	pvp_out_back.b=0.0f;
+	pvp_out_back.c=0.0f;	
+		
+	}
 	
 	fcPVPd(peak_a,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_a,EN.bits.fcPVPd_obj1);
 	fcPVPd(peak_b,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_b,EN.bits.fcPVPd_obj1);
@@ -85,7 +97,7 @@ void fcPVP_all(){
 	fcPVPi(peak_c,fcPVPi_obj1_L1_in,&fcPVPi_obj1_L1_out_c,EN.bits.fcPVPi_obj1);
 	
 	
-	if(++counter==N){counter=0;}
+	
 	
 	
 

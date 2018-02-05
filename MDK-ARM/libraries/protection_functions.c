@@ -2,7 +2,7 @@
 #include <math.h>
 #include "plib_definitions.h"
 
-#define fs 2500
+#define fs 2500.0f
 #define uber 1000000
 
 //function-1,2,3
@@ -592,7 +592,9 @@ void fcUNBi(float rms,struct fcUNBi_inputParameters fcUNBi_in, struct fcUNBi_out
 		{
 
 			fcUNBi_out->pick_up = 1;
-			fcUNBi_out->time2trip = fcUNBi_in.time_multiplier * (101.2f / (100.0f * (rms / fcUNBi_in.level) - 97.0f) + 0.02f);
+			//fcUNBi_out->time2trip = fcUNBi_in.time_multiplier * (101.2f / (100.0f * (rms / fcUNBi_in.level) - 97.0f) + 0.02f);
+			//fc51_out->time2trip = fc51_in.time_multiplier * (fc51_in.curve_data[0] / (powf((rms / fc51_in.level), fc51_in.curve_data[1]) - 1.0f) + fc51_in.curve_data[2]);
+			fcUNBi_out->time2trip = fcUNBi_in.time_multiplier * 0.14f / (powf ((rms / fcUNBi_in.level),0.02 )-1.0f);
 
 		}
 		if (rms < fcUNBi_in.level * 1.045f)

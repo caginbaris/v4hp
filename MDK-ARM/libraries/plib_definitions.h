@@ -238,7 +238,7 @@ void fc37(float rms,int cb_pos, struct fc37_inputParameters fc37_in, struct fc37
 struct fcUNBd_inputParameters{
 
 	
-	float level; 
+	float level; // vectoral difference will be used
 	float delay;
 	float dropout_ratio;
 	
@@ -247,6 +247,9 @@ struct fcUNBd_inputParameters{
 };
 
 struct fcUNBd_outputParameters{
+	
+	float Nphase;
+	float Nmag;
 
 	long trip_counter;
 	unsigned int pick_up:1;
@@ -254,18 +257,23 @@ struct fcUNBd_outputParameters{
 
 };
 
+
+
 struct fcUNBi_inputParameters {
+	
+	
 
 	
 	float level;
-	float curve_data[3];
 	float time_multiplier;
+
 
 	
 };
 
 
 struct fcUNBi_outputParameters{
+	
 
 	float time2trip;
 	long trip_counter;
@@ -275,10 +283,14 @@ struct fcUNBi_outputParameters{
 };
 
 
+void fcUNBd(float rms,struct fcUNBd_inputParameters fcUNBd_in, struct fcUNBd_outputParameters *fcUNBd_out, int enable);
+void fcUNBi(float rms,struct fcUNBi_inputParameters fcUNBi_in, struct fcUNBi_outputParameters *fcUNBi_out, int enable);
+
+
 struct fcPVPd_inputParameters{
 
 	
-	float level;
+	float level; // vectoral difference will be used
 	float delay;
 	float dropout_ratio;
 	
@@ -297,9 +309,11 @@ struct fcPVPd_outputParameters{
 
 struct fcPVPi_inputParameters {
 
+	
 	float level;
 	float curve_data[3];
 	float time_multiplier;
+
 
 };
 
@@ -312,6 +326,9 @@ struct fcPVPi_outputParameters{
 	unsigned int pick_up:1;
 	unsigned int trip:1;
 };
+
+void fcPVPd(float rms,struct fcPVPd_inputParameters fcPVPd_in, struct fcPVPd_outputParameters *fcPVPd_out, int enable);
+void fcPVPi(float rms,struct fcPVPi_inputParameters fcPVPi_in, struct fcPVPi_outputParameters *fcPVPi_out, int enable);
 
 
 float minSelector_3p(float a, float b, float c);

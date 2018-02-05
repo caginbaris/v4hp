@@ -45,8 +45,8 @@ void init_conversion(){
 	offset.IRESb=0.0f;
 	offset.IRESc=0.0f;
 	
-	offset.IUNBa=0.0f;
-	offset.IUNBb=0.0f;
+	offset.IUNBa=2050.0f;
+	offset.IUNBb=2050.0f;
 	
 	offset.Van=2048.936f;
 	offset.Vbn=2050.661f;
@@ -64,8 +64,8 @@ void init_conversion(){
 	scale.IRESb=1.0f;
 	scale.IRESc=1.0f;
 	
-	scale.IUNBa=1.0f;
-	scale.IUNBb=1.0f;
+	scale.IUNBa=0.005507f;
+	scale.IUNBb=0.005507f;
 	
 	scale.Van=0.10699f;
 	scale.Vbn=0.10699f;
@@ -117,6 +117,9 @@ if(hadc->Instance==ADC1){
 	fAdc.sAdc.Van=rawAdc.sAdc.Van*TR.VT;
 	fAdc.sAdc.Vbn=rawAdc.sAdc.Vbn*TR.VT;
 	fAdc.sAdc.Vcn=rawAdc.sAdc.Vcn*TR.VT;
+	
+	fAdc.sAdc.IUNBa=rawAdc.sAdc.IUNBa*TR.UNB;
+	fAdc.sAdc.IUNBb=rawAdc.sAdc.IUNBb*TR.UNB; 	
 	
 	fAdc.sAdc.AB_synth=(fAdc.sAdc.Van-fAdc.sAdc.Vbn);
 	fAdc.sAdc.BC_synth=(fAdc.sAdc.Vbn-fAdc.sAdc.Vcn);
