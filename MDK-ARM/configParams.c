@@ -11,7 +11,7 @@ union protectionEnableData pEN;
 union mSelection mSelect={0};
 union pFlags pFlag={0};
 
-void init_protection();
+void init_protection(void);
 
 void checkDataFromMaster(){
 	

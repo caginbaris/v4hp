@@ -1,6 +1,7 @@
 
 #include <math.h>
 #include "plib_definitions.h"
+#include "pvp_curve.h"
 
 #define fs 2500.0f
 #define uber 1000000
@@ -398,7 +399,7 @@ void fc49(float temp,struct fc49_inputParameters fc49_in, struct fc49_outputPara
 
 		}
 
-		if (temp > 1.0)
+		if (temp > 1.0f)
 		{
 
 			fc49_out->trip = 1;
@@ -681,19 +682,44 @@ void fcPVPd(float rms,struct fcPVPd_inputParameters fcPVPd_in, struct fcPVPd_out
 // Function 17
 // Filter PVP-Trip Stage
 
+
+float pvp_curve(float x){
+	
+	float tt=1000000.0f;
+	
+	
+	
+	if (x<b0)tt=uber; 
+	if (x>=b0 && x<b1){tt=b0_m*(x-b0)+ b0_const;} 
+	if (x>=b1 && x<b2){tt=b1_m*(x-b1)+ b1_const;} 	
+	if (x>=b2 && x<b3){tt=b2_m*(x-b2)+ b2_const;} 	
+	if (x>=b3 && x<b4){tt=b3_m*(x-b3)+ b3_const;}
+	if (x>=b4 && x<b5){tt=b4_m*(x-b4)+ b4_const;}
+	if (x>=b5 && x<b6){tt=b3_m*(x-b3)+ b3_const;}
+	if (x>=b6){tt=0.1f;}
+	
+	
+	
+	return tt;
+	
+	
+}
+
 void fcPVPi(float rms,struct fcPVPi_inputParameters fcPVPi_in, struct fcPVPi_outputParameters *fcPVPi_out, int enable)
 {
 
 	if (enable)
 	{
 
-		if (rms > fcPVPi_in.level * 1.100f)
+		if (rms > fcPVPi_in.level * 1.1f)
 		{
 
 			fcPVPi_out->pick_up = 1;
-			fcPVPi_out->time2trip = fcPVPi_in.time_multiplier * (fcPVPi_in.curve_data[0] / (100.0f * (rms / fcPVPi_in.level) - 97.0f) + 0.02f);
-
+			//fcPVPi_out->time2trip = fcPVPi_in.time_multiplier * (fcPVPi_in.curve_data[0] / (100.0f * (rms / fcPVPi_in.level) - 97.0f) + 0.02f);
+			fcPVPi_out->time2trip =pvp_curve(rms/fcPVPi_in.level);
+			
 		}
+		
 		if (rms < fcPVPi_in.level * 1.045f)
 		{
 

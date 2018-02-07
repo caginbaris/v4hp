@@ -2,7 +2,7 @@
 #ifndef __protection_functions_h
 #define __protection_functions_h
 
-#define fs 2500
+
 
 int on_delay(unsigned int input, unsigned int mem, unsigned int qual_sample, long *count);
 int off_delay(unsigned int input, unsigned int mem, unsigned int qual_sample, long *count);
