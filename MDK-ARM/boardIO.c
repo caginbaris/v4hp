@@ -57,6 +57,7 @@ void boardIO(){
 	//DO.bits.trip=1;
 	//DO.bits.inhibit=0;
 	DO.bits.IBF=1;
+	DO.bits.LD_IBF=1;
 	//DO.bits.BF=1;
 	
 	HAL_GPIO_WritePin(BOARD_TRIP_DO_1_GPIO_Port,BOARD_TRIP_DO_1_Pin,(GPIO_PinState)DO.bits.trip); 
@@ -69,6 +70,7 @@ void boardIO(){
 	
 	HAL_GPIO_WritePin(LD_TRIP_GPIO_Port ,LD_TRIP_Pin,(GPIO_PinState)DO.bits.LD_TRIP);
 	HAL_GPIO_WritePin(LD_ALARM_GPIO_Port ,LD_ALARM_Pin,(GPIO_PinState)DO.bits.LD_ALARM);
+	HAL_GPIO_WritePin(LD_IBF_GPIO_Port,LD_IBF_Pin,(GPIO_PinState)DO.bits.LD_IBF);
 
 	
 	

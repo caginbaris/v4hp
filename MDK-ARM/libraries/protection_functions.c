@@ -298,7 +298,7 @@ void fc46d(float rms, float Inom, struct fc46d_inputParameters fc46d_in, struct 
 	if (enable)
 	{
 		
-		fc46d_out->pass_flag = on_delay((rms > 0.1f * Inom && rms < 10.0f * Inom),fc46d_out->pass_flag,fs*0.1f,&(fc46d_out->pass_counter));
+		fc46d_out->pass_flag = off_delay((rms > 0.1f * Inom && rms < 10.0f * Inom),fc46d_out->pass_flag,fs*0.02f,&(fc46d_out->pass_counter));
 
 
 		if (rms > fc46d_in.level && fc46d_out->pass_flag)
@@ -332,7 +332,7 @@ void fc46i(float rms,float Inom, struct fc46i_inputParameters fc46i_in, struct f
 	if (enable)
 	{
 		
-		fc46i_out->pass_flag = on_delay((rms > 0.1f * Inom && rms < 10.0f * Inom),fc46i_out->pass_flag,fs*0.1f,&(fc46i_out->pass_counter));
+		fc46i_out->pass_flag = off_delay((rms > 0.1f * Inom && rms < 10.0f * Inom),fc46i_out->pass_flag,fs*0.02f,&(fc46i_out->pass_counter));
 
 
 		if (rms > fc46i_in.level * 1.100f && fc46i_out->pass_flag )

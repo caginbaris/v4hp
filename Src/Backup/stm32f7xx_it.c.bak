@@ -39,6 +39,7 @@
 #include "UART_MasterSlave.h"
 #include "SPI_MasterSlave.h"
 #include "CommConfig.h"
+#include "main.h"
 
 extern uint8_t incoming_data_flag;
 /* USER CODE END 0 */
