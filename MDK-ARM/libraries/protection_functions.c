@@ -392,7 +392,7 @@ void fc49(float temp,struct fc49_inputParameters fc49_in, struct fc49_outputPara
 
 		}
 
-		if (temp < fc49_in.alarm_level * fc49_in.dropout_ratio)
+		if (temp < fc49_in.alarm_level * 0.95f)
 		{
 
 			fc49_out->alarm = 0;
@@ -695,7 +695,7 @@ float pvp_curve(float x){
 	if (x>=b2 && x<b3){tt=b2_m*(x-b2)+ b2_const;} 	
 	if (x>=b3 && x<b4){tt=b3_m*(x-b3)+ b3_const;}
 	if (x>=b4 && x<b5){tt=b4_m*(x-b4)+ b4_const;}
-	if (x>=b5 && x<b6){tt=b3_m*(x-b3)+ b3_const;}
+	if (x>=b5 && x<b6){tt=b5_m*(x-b5)+ b5_const;}
 	if (x>=b6){tt=0.1f;}
 	
 	

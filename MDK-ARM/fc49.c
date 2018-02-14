@@ -40,6 +40,8 @@ float therm_b_obj2=0;
 float therm_c_obj2=0;
 
 
+
+
 void fc49_init(){
 	
 	struct thermal_parameters fc49_therm_initStruct={ 1.0f,/*Inom*/
@@ -48,8 +50,7 @@ void fc49_init(){
 																										0.0004f,/*ts*/				
 																										0 /*freeze*/	};
 	
-	struct fc49_inputParameters fc49_initStruct={ 0.9f,/*alarm level*/			
-																								0.95f /*dropOut*/	};
+	struct fc49_inputParameters fc49_initStruct={ 0.777f,/*alarm level*/		};
 	
 	fc49_obj1_therm=fc49_therm_initStruct;
 	fc49_obj2_therm=fc49_therm_initStruct;	

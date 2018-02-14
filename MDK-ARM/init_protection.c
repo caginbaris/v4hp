@@ -1,5 +1,5 @@
 #include "nfbm.h"
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "pDataConfigs.h"
 
 
@@ -139,21 +139,14 @@ void init_protection(void){
 	// fc49
 	
 		EN.bits.fc49_obj1_L1=  	 pEN.bit.obj1_49 &
-													(fc49_obj1_L1_in.alarm_level>eps) &
-													(fc49_obj1_L1_in.trip_level>eps);	
+													(fc49_obj1_L1_in.alarm_level>eps) 
+													;	
 												
-		EN.bits.fc49_obj1_L2=  	 pEN.bit.obj1_49 &
-													(fc49_obj1_L2_in.alarm_level>eps) &
-													(fc49_obj1_L2_in.trip_level>eps);			
-
 
 		EN.bits.fc49_obj2_L1=  	 pEN.bit.obj2_49 &
-													(fc49_obj2_L1_in.alarm_level>eps) &
-													(fc49_obj2_L1_in.trip_level>eps);	
+													(fc49_obj2_L1_in.alarm_level>eps) 
+													;	
 													
-		EN.bits.fc49_obj2_L2=  	pEN.bit.obj2_49 &
-													(fc49_obj2_L2_in.alarm_level>eps) &
-													(fc49_obj2_L2_in.trip_level>eps);
 												
 												
 												

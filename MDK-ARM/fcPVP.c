@@ -31,6 +31,10 @@ float peak_a;
 float peak_b;
 float peak_c;
 
+float peak_a_test;
+float peak_b_test;
+float peak_c_test;
+
 void fcPVP_init(){
 	
  struct fcPVPd_inputParameters fcPVPd_initStruct={	1.0f, /*level*/
@@ -47,11 +51,7 @@ void fcPVP_init(){
 	fcPVPd_obj1_L1_in=fcPVPd_initStruct;																									
 	fcPVPi_obj1_L1_in=fcPVPi_initStruct;
 																										
-	//cau curve data is not checked																					
-		
-	fcPVPi_obj1_L1_in.curve_data[0]=curve_data[IEC_normal_inverse][0];
-	fcPVPi_obj1_L1_in.curve_data[1]=curve_data[IEC_normal_inverse][1];
-	fcPVPi_obj1_L1_in.curve_data[2]=curve_data[IEC_normal_inverse][2];
+	//cau curve data is entered inside pfunctions
 
 
 
@@ -65,7 +65,7 @@ void fcPVP_init(){
 void fcPVP_all(){
 	
 	static float counter=0;
-	static float peakBuffer[3][N]={0};
+	static float peakBuffer[6][N]={0};
 	
 
 	
@@ -81,6 +81,10 @@ void fcPVP_all(){
 	peak_b=peak_detect_rms(pvp_out.b,&peakBuffer[1][0],counter,N);
 	peak_c=peak_detect_rms(pvp_out.c,&peakBuffer[2][0],counter,N);
 	
+	//peak_a_test=peak_detect_rms(pvp_in.a,&peakBuffer[3][0],counter,N);
+	//peak_b_test=peak_detect_rms(pvp_in.b,&peakBuffer[4][0],counter,N);
+	//peak_c_test=peak_detect_rms(pvp_in.c,&peakBuffer[5][0],counter,N);
+	
 	if(++counter==N){
 	
 	counter=0;
@@ -90,6 +94,8 @@ void fcPVP_all(){
 	pvp_out_back.c=0.0f;	
 		
 	}
+	
+	fcPVPd_obj1_L1_in.level=fcPVPi_obj1_L1_in.level;
 	
 	fcPVPd(peak_a,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_a,EN.bits.fcPVPd_obj1);
 	fcPVPd(peak_b,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_b,EN.bits.fcPVPd_obj1);

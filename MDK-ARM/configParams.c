@@ -1,7 +1,7 @@
 #include "nfbm.h"
 #include "UART_MasterSlave.h"
 #include "measurement_functions.h"
-#include "protection_functions.h"
+#include "plib_definitions.h"
 #include "pDataConfigs.h"
 #include "powerSysData.h"
 
@@ -173,7 +173,7 @@ void pullDataFromMaster(){
 	
 	fcPVPd_obj1_L1_in.dropout_ratio=comParams_uart.recDataBufferF[69];
 	//discard
-	fcPVPd_obj1_L1_in.level=comParams_uart.recDataBufferF[71];
+	//fcPVPd_obj1_L1_in.level=comParams_uart.recDataBufferF[71]; //cau sould e revised
 	fcPVPd_obj1_L1_in.delay=comParams_uart.recDataBufferF[72];
 	
 	//discard

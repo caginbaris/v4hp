@@ -159,11 +159,11 @@ void fc46i(float rms,float Inom, struct fc46i_inputParameters fc46i_in, struct f
 
 struct fc49_inputParameters{
 
-	
+
 	float alarm_level; 
-	float dropout_ratio;
 
 };
+
 
 struct fc49_outputParameters{
 
