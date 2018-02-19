@@ -36,9 +36,9 @@ void init_conversion(){
 	
 	//Offset
 	
-	offset.Ia=2051.129f;
-	offset.Ib=2050.04f;
-	offset.Ic=2050.65f;
+	offset.Ia=2064.0f;//CTB4 2051.129f; 
+	offset.Ib=2064.0f;//CTB4 2050.04f;
+	offset.Ic=2064.0f;//CTB4 2050.65f;
 	
 	offset.In=2051.270f;
 	
@@ -53,6 +53,8 @@ void init_conversion(){
 	offset.Vbn=2050.661f;
 	offset.Vcn=2050.0f;
 	
+	
+	
 	// Scale
 	
 	scale.Ia=0.055470985603544f;//0.055411955626188f;
@@ -61,9 +63,7 @@ void init_conversion(){
 	
 	scale.In=0.005482456140351f;
 
-	scale.IRESa=1.0f;
-	scale.IRESb=1.0f;
-	scale.IRESc=1.0f;
+
 	
 	scale.IUNBa=0.005507f;
 	scale.IUNBb=0.005507f;

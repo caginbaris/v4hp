@@ -21,15 +21,13 @@ struct fcBF_inputParameters fcBF_initStruct={
 	
 	0.0f,	/*threshold*/
 	0.05f,	/*delay*/
-	0, 		/*trip inp*/
-	0,		/*cb_pos inp*/
-	0,		/*CB_pos_check*/
+	0.0f, 		/*trip inp*/
+	0.0f,		/*cb_pos inp*/
+	0.0f,		/*CB_pos_check*/
 
 };	
 
 fcBF_in=fcBF_initStruct;
-
-
 
 
 

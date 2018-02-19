@@ -1393,7 +1393,7 @@ F (.\fc27.c)(0x5A66F446)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (.\libraries\plib_definitions.h)(0x5A83D577)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (../Inc/powerSysData.h)(0x5A4CEB2C)
 I (../Inc/cs_handles.h)(0x5A69F29A)
 F (.\fc59.c)(0x5A66F479)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\fc59.o --depend v4hp\fc59.d)
@@ -1404,16 +1404,16 @@ F (.\fc46.c)(0x5A688C4F)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (.\libraries\plib_definitions.h)(0x5A83D577)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (../Inc/powerSysData.h)(0x5A4CEB2C)
 I (../Inc/cs_handles.h)(0x5A69F29A)
 F (.\fc49.c)(0x5A83DA94)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\fc49.o --depend v4hp\fc49.d)
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (.\libraries\plib_definitions.h)(0x5A83D577)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (../Inc/powerSysData.h)(0x5A4CEB2C)
-F (.\fcBF.c)(0x5A69DDC5)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\fcbf.o --depend v4hp\fcbf.d)
+F (.\fcBF.c)(0x5A86C4CF)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\fcbf.o --depend v4hp\fcbf.d)
 I (.\libraries\plib_definitions.h)(0x5A83D577)
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
@@ -1499,8 +1499,8 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h)(0x59E60FE9)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x59E60FE9)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x59E60FE9)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x59E60FE9)
-F (.\fcUNB.c)(0x5A6B2E91)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\fcunb.o --depend v4hp\fcunb.d)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+F (.\fcUNB.c)(0x5A86C9C9)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\fcunb.o --depend v4hp\fcunb.d)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (.\libraries\mlib_constants.h)(0x5A4CEB2C)
 I (.\libraries\plib_definitions.h)(0x5A83D577)
 I (../Inc/nfbm.h)(0x5A5DAA00)
@@ -1508,15 +1508,15 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (../Inc/powerSysData.h)(0x5A4CEB2C)
 I (../Inc/cs_handles.h)(0x5A69F29A)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x574E8476)
-F (.\fcPVP.c)(0x5A82E426)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\fcpvp.o --depend v4hp\fcpvp.d)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+F (.\fcPVP.c)(0x5A8A9B89)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\fcpvp.o --depend v4hp\fcpvp.d)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (.\libraries\plib_definitions.h)(0x5A83D577)
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (../Inc/powerSysData.h)(0x5A4CEB2C)
 I (../Inc/cs_handles.h)(0x5A69F29A)
 I (../Inc/pDataConfigs.h)(0x5A4CEB2C)
-F (.\pickup_handles.c)(0x5A684DBE)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\pickup_handles.o --depend v4hp\pickup_handles.d)
+F (.\pickup_handles.c)(0x5A844F35)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\pickup_handles.o --depend v4hp\pickup_handles.d)
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (../Inc/plib_handles.h)(0x5A684DBE)
@@ -1562,21 +1562,21 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x59E60FE9)
 I (../Inc/externalData.h)(0x5A5DA949)
 I (../Inc/bit_expansion.h)(0x5A5DA949)
 F (.\cs_handles.c)(0x5A5C7275)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\cs_handles.o --depend v4hp\cs_handles.d)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (../Inc/conversion.h)(0x5A5477DD)
 I (../Inc/cs_handles.h)(0x5A69F29A)
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (C:\Keil_v5\ARM\ARMCC\include\math.h)(0x574E8476)
 F (.\trueRMS.c)(0x5A59FF6B)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\truerms.o --depend v4hp\truerms.d)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 F (.\spectra.c)(0x5A6C64A8)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\spectra.o --depend v4hp\spectra.d)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
-F (.\conversion.c)(0x5A8178B5)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\conversion.o --depend v4hp\conversion.d)
+F (.\conversion.c)(0x5A8A965F)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\conversion.o --depend v4hp\conversion.d)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x59E60FE9)
 I (../Inc/stm32f7xx_hal_conf.h)(0x5A7AE61B)
 I (../Inc/main.h)(0x5A7AE61B)
@@ -1617,7 +1617,7 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x59E60FE9)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x59E60FE9)
 I (../Inc/adc.h)(0x5A7AE618)
 I (../Inc/nfbm.h)(0x5A5DAA00)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (../Inc/pDataConfigs.h)(0x5A4CEB2C)
 I (../Inc/conversion.h)(0x5A5477DD)
 F (.\initFunctions.c)(0x5A4F2EC9)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\initfunctions.o --depend v4hp\initfunctions.d)
@@ -1625,7 +1625,7 @@ I (../Inc/initFunctions.h)(0x5A4DD624)
 F (.\powerSysData.c)(0x5A001962)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\powersysdata.o --depend v4hp\powersysdata.d)
 I (../Inc/powerSysData.h)(0x5A4CEB2C)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
-F (.\boardIO.c)(0x5A841A3B)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\boardio.o --depend v4hp\boardio.d)
+F (.\boardIO.c)(0x5A7AE6AB)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\boardio.o --depend v4hp\boardio.d)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x59E60FE9)
 I (../Inc/stm32f7xx_hal_conf.h)(0x5A7AE61B)
 I (../Inc/main.h)(0x5A7AE61B)
@@ -1664,7 +1664,7 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h)(0x59E60FE9)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x59E60FE9)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x59E60FE9)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x59E60FE9)
-I (.\libraries\plib_definitions.h)(0x5A83D577)
+I (.\libraries\protection_functions.h)(0x5A78577A)
 I (../Inc/boardIO.h)(0x5A4CEB2C)
 F (..\Src\Comm_Library_Source\CommConfig.c)(0x5A537CC2)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\commconfig.o --depend v4hp\commconfig.d)
 I (..\Inc\Comm_Library_Header\CommConfig.h)(0x5A4CEB2C)
@@ -1888,7 +1888,7 @@ I (..\Inc\Comm_Library_Header\UART_MasterSlave.h)(0x5A4CEB2C)
 I (..\Inc\Comm_Library_Header\CommConfig.h)(0x5A4CEB2C)
 I (..\Src\Comm_Library_Source\CommConfig.c)(0x5A537CC2)
 I (..\Inc\Comm_Library_Header\DataParserMerger.h)(0x5A4CEB2C)
-F (.\commParams.c)(0x5A841A3B)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\commparams.o --depend v4hp\commparams.d)
+F (.\commParams.c)(0x5A5DA949)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\commparams.o --depend v4hp\commparams.d)
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (..\Inc\Comm_Library_Header\SPI_MasterSlave.h)(0x5A4CEB2C)
@@ -1896,7 +1896,8 @@ I (..\Inc\Comm_Library_Header\CommConfig.h)(0x5A4CEB2C)
 I (..\Src\Comm_Library_Source\CommConfig.c)(0x5A537CC2)
 I (..\Inc\Comm_Library_Header\UART_MasterSlave.h)(0x5A4CEB2C)
 I (.\libraries\mlib_definitions.h)(0x5A6C6665)
-I (.\libraries\plib_definitions.h)(0x5A83D577)
+I (../Inc/plib_handles.h)(0x5A684DBE)
+I (.\libraries\protection_functions.h)(0x5A78577A)
 I (../Inc/boardIO.h)(0x5A4CEB2C)
 I (../Inc/main.h)(0x5A7AE61B)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h)(0x59E60FE9)
@@ -1936,17 +1937,16 @@ I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h)(0x59E60FE9)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h)(0x59E60FE9)
 I (../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h)(0x59E60FE9)
 I (../Inc/externalData.h)(0x5A5DA949)
-I (../Inc/plib_handles.h)(0x5A684DBE)
 I (../Inc/pDataConfigs.h)(0x5A4CEB2C)
 I (../Inc/powerSysData.h)(0x5A4CEB2C)
 I (../Inc/test_commParams.h)(0x5A4CEB2C)
-F (.\configParams.c)(0x5A8304B2)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\configparams.o --depend v4hp\configparams.d)
+F (.\configParams.c)(0x5A844477)(-c --cpu Cortex-M7.fp.dp -D__EVAL -D__MICROLIB -g -O3 -Otime --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc -I ../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I ../Drivers/CMSIS/Include -I .\libraries -I ..\Inc\Comm_Library_Header -I ..\Src\Comm_Library_Source --C99-IC:\Users\baris.cengiz\Dropbox\habas_310\v4hp\MDK-ARM\RTE-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F7xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F7xx\Include-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F767xx -DUSE_HAL_DRIVER -DSTM32F767xx-o v4hp\configparams.o --depend v4hp\configparams.d)
 I (../Inc/nfbm.h)(0x5A5DAA00)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574E8476)
 I (..\Inc\Comm_Library_Header\UART_MasterSlave.h)(0x5A4CEB2C)
 I (..\Inc\Comm_Library_Header\CommConfig.h)(0x5A4CEB2C)
 I (..\Src\Comm_Library_Source\CommConfig.c)(0x5A537CC2)
-I (.\libraries\measurement_functions.h)(0x5A688660)
+I (.\libraries\measurement_functions.h)(0x5A8A9B89)
 I (.\libraries\plib_definitions.h)(0x5A83D577)
 I (../Inc/pDataConfigs.h)(0x5A4CEB2C)
 I (../Inc/powerSysData.h)(0x5A4CEB2C)

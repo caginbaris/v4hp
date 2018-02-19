@@ -98,6 +98,9 @@ struct pvp_data{
 };
 
 void pvp_filter(struct pvp_data in,struct pvp_data *in_back,struct pvp_data *out, struct pvp_data *out_back,float ts);
+float pvp_post_filter(float rtInput,float *coeff, unsigned int coeffLength, float *zValues);
+
+
 float peak_detect_rms(float rtInput, float *pData,unsigned int pDataCounter, unsigned int dataLength);
 
 

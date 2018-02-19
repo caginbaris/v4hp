@@ -294,9 +294,9 @@ void reset_handles(){
 		if(!pick.fc37_obj1_L1_out_b){fc37_obj1_L1_out_b.trip=0;}
 		if(!pick.fc37_obj1_L1_out_c){fc37_obj1_L1_out_c.trip=0;}
 		
-		if(!pick.fc37_obj2_L1_out_a){fc37_obj1_L1_out_a.trip=0;}
-		if(!pick.fc37_obj2_L1_out_b){fc37_obj1_L1_out_b.trip=0;}
-		if(!pick.fc37_obj2_L1_out_c){fc37_obj1_L1_out_c.trip=0;}
+		if(!pick.fc37_obj2_L1_out_a){fc37_obj2_L1_out_a.trip=0;}
+		if(!pick.fc37_obj2_L1_out_b){fc37_obj2_L1_out_b.trip=0;}
+		if(!pick.fc37_obj2_L1_out_c){fc37_obj2_L1_out_c.trip=0;}
 		
 		
 		if(!pick.fcUNBd_obj1_L1_out_a){fcUNBd_obj1_L1_out_a.trip=0;}

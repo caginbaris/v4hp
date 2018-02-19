@@ -38,5 +38,5 @@ v4hp\boardio.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim.h
 v4hp\boardio.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_tim_ex.h
 v4hp\boardio.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart.h
 v4hp\boardio.o: ../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal_uart_ex.h
-v4hp\boardio.o: .\libraries\plib_definitions.h
+v4hp\boardio.o: .\libraries\protection_functions.h
 v4hp\boardio.o: ../Inc/boardIO.h

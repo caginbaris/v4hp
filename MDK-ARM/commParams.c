@@ -3,7 +3,8 @@
 
 #include "UART_MasterSlave.h"
 #include "mlib_definitions.h"
-#include "plib_definitions.h"
+#include "plib_handles.h"
+#include "protection_functions.h"
 #include "boardIO.h"
 #include "externalData.h"
 #include "pDataConfigs.h"

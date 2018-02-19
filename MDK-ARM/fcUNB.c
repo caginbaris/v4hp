@@ -8,6 +8,7 @@
 
 
 
+
 struct fcUNBd_inputParameters fcUNBd_obj1_L1_in;
 struct fcUNBi_inputParameters fcUNBi_obj1_L1_in;
 
@@ -18,7 +19,7 @@ struct fcUNBd_outputParameters  fcUNBd_obj1_L1_out_b={0};
 struct fcUNBi_outputParameters  fcUNBi_obj1_L1_out_a={0};
 struct fcUNBi_outputParameters  fcUNBi_obj1_L1_out_b={0};
 
-float UNBpcorrection=0;//0.062831853071796; //half deg @fs
+float UNBpcorrection=0.062831853071796; //half deg @fs
 
 uint8_t detect=0;
 uint8_t comp=0;
@@ -30,9 +31,13 @@ float UNBb_rms=0;
 
 void fcUNB_initial_dt(){
 	
-	//if(Sys.UNBdetect){
-		if(1){
+	static long time_out_counter=0;
+	static uint8_t  passed=0;
+	
+	if(Sys.UNBdetect && passed==0){
 		
+		passed=off_delay(1,passed,12500,&time_out_counter);
+
 		fcUNBd_obj1_L1_out_a.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBa.c,UNBa.s)+pi-UNBpcorrection);
 		fcUNBd_obj1_L1_out_b.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBb.c,UNBb.s)+pi-UNBpcorrection);
 		
@@ -41,6 +46,11 @@ void fcUNB_initial_dt(){
 		
 
 	}
+	
+	if(!Sys.UNBdetect){passed=0;}
+	
+	
+	
 }
 
 
@@ -80,9 +90,9 @@ void fcUNB_all(){
 	fcUNB_initial_dt();
 	
 	
-	//if(Sys.UNBcompFlag){
+	if(Sys.UNBcompFlag){
 	
-	if(comp){
+	//cau cs_handles part is not used
 	
 	UNBa_synth=(fcUNBd_obj1_L1_out_a.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));
 	UNBb_synth=(fcUNBd_obj1_L1_out_b.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));	
