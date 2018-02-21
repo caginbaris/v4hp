@@ -8,9 +8,9 @@ void main_flow(){
 
   //measurement
 	
-
+	
 		
-	//spectral_analysis(); //cau comm problem when invoked
+	spectral_analysis(); //cau comm problem when invoked
 	cs_handles();
 	trueRMS();
   
@@ -18,7 +18,9 @@ void main_flow(){
 	// protection
 	
 	
-
+	
+	
+	
 	fc50_all();
 	fc50N_all();
 	
@@ -30,13 +32,15 @@ void main_flow(){
 	fc46_all();
 	fc49_all();	
 	
+	
 	fc37_all();
 	fcBF_all();
 	fcUNB_all();
 	fcPVP_all();
-	
-	
 	#if 0	
+	
+	
+	
 	
 	#endif 
 	pick_trip_reset_handles();

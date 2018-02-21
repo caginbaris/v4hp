@@ -186,9 +186,9 @@ void fcPVP_all(){
 	
 	*/
 	
-	pvp_out.a=pvp_post_filter(fAdc.sAdc.Ia,pvp_coefficents,101,&pvp_buf[0][0]); 
-	pvp_out.a=pvp_post_filter(fAdc.sAdc.Ib,pvp_coefficents,101,&pvp_buf[1][0]); 
-	pvp_out.a=pvp_post_filter(fAdc.sAdc.Ic,pvp_coefficents,101,&pvp_buf[2][0]); 
+	pvp_out.a=pvp_post_filter(fAdc.sAdc.Ia,pvp_coefficents,100,&pvp_buf[0][0]); 
+	pvp_out.b=pvp_post_filter(fAdc.sAdc.Ib,pvp_coefficents,100,&pvp_buf[1][0]); 
+	pvp_out.c=pvp_post_filter(fAdc.sAdc.Ic,pvp_coefficents,100,&pvp_buf[2][0]); 
 	
 	
 	peak_a=peak_detect_rms(pvp_out.a,&peakBuffer[0][0],counter,N);
