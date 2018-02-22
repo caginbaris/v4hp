@@ -82,6 +82,14 @@ struct thermal_parameters{
 };
 
 
+struct  prefilt{
+	
+	float x;
+	float y;
+
+};
+
+
 
 
 
