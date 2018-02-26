@@ -27,10 +27,24 @@ Project File Date:  02/21/2018
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 3 (build 300)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'v4Hp'
+compiling init_protection.c...
+init_protection.c(196): warning:  #188-D: enumerated type mixed with another type
+  	curve=cSelect1.all & 0x00FF;
+init_protection.c(237): warning:  #188-D: enumerated type mixed with another type
+  	curve=(cSelect1.all>>8) & 0x00FF;
+init_protection.c(277): warning:  #188-D: enumerated type mixed with another type
+  	curve=(cSelect1.all>>16) & 0x00FF;
+init_protection.c(318): warning:  #188-D: enumerated type mixed with another type
+  	curve=(cSelect1.all>>24) & 0x00FF;
+init_protection.c(360): warning:  #188-D: enumerated type mixed with another type
+  	curve=(cSelect2.all) & 0x00FF;
+init_protection.c(400): warning:  #188-D: enumerated type mixed with another type
+  	curve=(cSelect2.all>>8) & 0x00FF;
+init_protection.c: 6 warnings, 0 errors
 linking...
-v4Hp\v4Hp.axf: error: L6050U: The code size of this image (55100 bytes) exceeds the maximum allowed for this version of the linker.
+v4Hp\v4Hp.axf: error: L6050U: The code size of this image (55532 bytes) exceeds the maximum allowed for this version of the linker.
 Finished: 0 information, 0 warning, 0 error and 1 fatal error messages.
-"v4Hp\v4Hp.axf" - 1 Error(s), 0 Warning(s).
+"v4Hp\v4Hp.axf" - 1 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -49,7 +63,7 @@ Package Vendor: ARM
 
    * Component: ARM::CMSIS:CORE:5.0.0
 Target not created.
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

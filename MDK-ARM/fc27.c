@@ -36,7 +36,7 @@ void fc27_all(){
 	static long 		cs_counter=0;
 	
 	float rms;
-	
+
 
 	
 	if(Sys.fc27_currentSupervision){ //cau assigment check needed
@@ -75,6 +75,10 @@ void fc27_all(){
 	rms=mag_sym.V1;
 	
 	}
+	
+	
+	
+	
 	
 	
 		//L1

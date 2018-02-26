@@ -3,7 +3,7 @@
 #include "plib_definitions.h"
 #include "pvp_curve.h"
 
-#define fs 2500.0f
+
 #define uber 1000000
 
 //function-1,2,3
@@ -292,20 +292,20 @@ void fc59(float rms, struct fc59_inputParameters fc59_in, struct fc59_outputPara
 // function-8
 // Definite TOC Negative Seq. Protection
 
-void fc46d(float rms, float Inom, struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable)
+void fc46d(float rms,float pass_level, float Inom, struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable)
 {
 
 	if (enable)
 	{
 		
-		fc46d_out->pass_flag = off_delay((rms > 0.1f * Inom && rms < 10.0f * Inom),fc46d_out->pass_flag,fs*0.02f,&(fc46d_out->pass_counter));
+		fc46d_out->pass_flag = on_off_delay((pass_level > 0.1f * Inom && pass_level < 10.0f * Inom),fc46d_out->pass_flag,fs*0.02f,&(fc46d_out->pass_counter));
 
 
 		if (rms > fc46d_in.level && fc46d_out->pass_flag)
 		{
 			fc46d_out->initial_pick_up = 1;
 		}
-		if (rms < fc46d_in.level * fc46d_in.dropout_ratio)
+		if (rms < fc46d_in.level * fc46d_in.dropout_ratio || fc46d_out->pass_flag==0)
 		{
 			fc46d_out->initial_pick_up = 0;
 		}
@@ -326,13 +326,13 @@ void fc46d(float rms, float Inom, struct fc46d_inputParameters fc46d_in, struct 
 // function-9
 // Inverse TOC Negative Seq. Protection
 
-void fc46i(float rms,float Inom, struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable)
+void fc46i(float rms,float pass_level,float Inom, struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable)
 {
 
 	if (enable)
 	{
 		
-		fc46i_out->pass_flag = off_delay((rms > 0.1f * Inom && rms < 10.0f * Inom),fc46i_out->pass_flag,fs*0.02f,&(fc46i_out->pass_counter));
+		fc46i_out->pass_flag = on_off_delay((pass_level > 0.1f * Inom && pass_level < 10.0f * Inom),fc46i_out->pass_flag,fs*0.02f,&(fc46i_out->pass_counter));
 
 
 		if (rms > fc46i_in.level * 1.100f && fc46i_out->pass_flag )
@@ -343,7 +343,7 @@ void fc46i(float rms,float Inom, struct fc46i_inputParameters fc46i_in, struct f
 
 		}
 		
-		if (rms < fc46i_in.level * 1.045f)
+		if (rms < fc46i_in.level * 1.045f || fc46i_out->pass_flag==0 )
 		{
 
 			fc46i_out->pick_up = 0;
@@ -595,7 +595,7 @@ void fcUNBi(float rms,struct fcUNBi_inputParameters fcUNBi_in, struct fcUNBi_out
 			fcUNBi_out->pick_up = 1;
 			//fcUNBi_out->time2trip = fcUNBi_in.time_multiplier * (101.2f / (100.0f * (rms / fcUNBi_in.level) - 97.0f) + 0.02f);
 			//fc51_out->time2trip = fc51_in.time_multiplier * (fc51_in.curve_data[0] / (powf((rms / fc51_in.level), fc51_in.curve_data[1]) - 1.0f) + fc51_in.curve_data[2]);
-			fcUNBi_out->time2trip = fcUNBi_in.time_multiplier * 0.14f / (powf ((rms / fcUNBi_in.level),0.02 )-1.0f);
+			fcUNBi_out->time2trip = fcUNBi_in.time_multiplier * 0.14f / (powf ((rms / fcUNBi_in.level),0.02 )-1.0f); // IEC normal
 
 		}
 		if (rms < fcUNBi_in.level * 1.045f)
