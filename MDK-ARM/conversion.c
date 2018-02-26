@@ -37,7 +37,7 @@ void init_conversion(){
 	
 	//Offset
 	
-	offset.Ia=2064.0f;//CTB4 2051.129f; 
+	offset.Ia=2064.0f;//CTBss 2051.129f; 
 	offset.Ib=2064.0f;//CTB4 2050.04f;
 	offset.Ic=2064.0f;//CTB4 2050.65f;
 	
