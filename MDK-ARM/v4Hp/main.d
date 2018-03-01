@@ -52,4 +52,3 @@ v4hp\main.o: ..\Inc\Comm_Library_Header\CommConfig.h
 v4hp\main.o: ..\Src\Comm_Library_Source\CommConfig.c
 v4hp\main.o: ..\Inc\Comm_Library_Header\CommConfig.h
 v4hp\main.o: ..\Inc\Comm_Library_Header\SPI_MasterSlave.h
-v4hp\main.o: .\libraries\plib_definitions.h

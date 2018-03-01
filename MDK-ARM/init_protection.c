@@ -315,47 +315,8 @@ void init_protection(void){
   }
 	
 	
-	curve=(cSelect1.all>>24) & 0x00FF;
 	
-		switch (curve)
-  {
-  	case IEC_normal_inverse: 			fcUNBi_obj1_L1_in.curve_data[0]=curve_data[0][0] ; 
-																	fcUNBi_obj1_L1_in.curve_data[1]=curve_data[0][1] ; 
-																	fcUNBi_obj1_L1_in.curve_data[2]=0 ; break;	
-		
-		case IEC_very_inverse: 				fcUNBi_obj1_L1_in.curve_data[0]=curve_data[1][0] ; 
-																	fcUNBi_obj1_L1_in.curve_data[1]=curve_data[1][1] ; 
-																	fcUNBi_obj1_L1_in.curve_data[2]=0.0f ; break;				
-		
-		case IEC_extremely_inverse: 	fcUNBi_obj1_L1_in.curve_data[0]=curve_data[2][0] ; 
-																	fcUNBi_obj1_L1_in.curve_data[1]=curve_data[2][1] ; 
-																	fcUNBi_obj1_L1_in.curve_data[2]=0.0f ; break;				
-		
-		case IEC_long_inverse: 				fcUNBi_obj1_L1_in.curve_data[0]=curve_data[3][0] ; 
-																	fcUNBi_obj1_L1_in.curve_data[1]=curve_data[3][1] ; 	
-																	fcUNBi_obj1_L1_in.curve_data[2]=0.0f ; break;				
-		
-		case ANSI_normal_inverse: 		fcUNBi_obj1_L1_in.curve_data[0]=curve_data[4][0] ; 
-																	fcUNBi_obj1_L1_in.curve_data[1]=curve_data[4][1] ; 
-																	fcUNBi_obj1_L1_in.curve_data[2]=curve_data[4][2] ; break;
-  	 
-		case ANSI_very_inverse: 			fcUNBi_obj1_L1_in.curve_data[0]=curve_data[5][0] ; 
-																	fcUNBi_obj1_L1_in.curve_data[1]=curve_data[5][1] ;
-																	fcUNBi_obj1_L1_in.curve_data[2]=curve_data[5][2] ; break;
-																	
-		case ANSI_extremely_inverse: 	fcUNBi_obj1_L1_in.curve_data[0]=curve_data[6][0] ; 
-																	fcUNBi_obj1_L1_in.curve_data[1]=curve_data[6][1] ;	
-																	fcUNBi_obj1_L1_in.curve_data[2]=curve_data[6][2] ; break;
-		
-		case ANSI_long_inverse: 			fcUNBi_obj1_L1_in.curve_data[0]=curve_data[7][0] ; 
-																	fcUNBi_obj1_L1_in.curve_data[1]=curve_data[7][1] ; 
-																	fcUNBi_obj1_L1_in.curve_data[2]=curve_data[7][2] ; break;
-													
-																	
-		
-  }
-	
-	
+	// cau for Ib but
 	
 	curve=(cSelect2.all) & 0x00FF;
 	

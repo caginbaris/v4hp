@@ -127,7 +127,9 @@ struct fc46d_outputParameters{
 
 };
 
-void fc46d(float rms,float pass_level,float Inom, struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable);
+void fc46d(float rms, float Inom, struct fc46d_inputParameters fc46d_in, struct fc46d_outputParameters *fc46d_out, int enable);
+
+
 
 struct fc46i_inputParameters {
 
@@ -152,8 +154,7 @@ struct fc46i_outputParameters {
 
 };
 
-
-void fc46i(float rms,float pass_level,float Inom, struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable);
+void fc46i(float rms,float Inom, struct fc46i_inputParameters fc46i_in, struct fc46i_outputParameters *fc46i_out, int enable);
 
 
 struct fc49_inputParameters{
@@ -264,7 +265,6 @@ struct fcUNBi_inputParameters {
 
 	
 	float level;
-	float curve_data[3];
 	float time_multiplier;
 
 

@@ -171,7 +171,7 @@ void PendSV_Handler(void)
 
   /* USER CODE END PendSV_IRQn 1 */
 }
-
+uint32_t testCounter = 0;
 /**
 * @brief This function handles System tick timer.
 */
@@ -187,7 +187,7 @@ void SysTick_Handler(void)
   /* Comm Layer Functions in 1ms timer */
   uart_sysTickCallApp(); //cau
   spi_sysTickCallApp();	 //cau
-	//testCounter++;
+	testCounter++;
   /* USER CODE END SysTick_IRQn 1 */
 }
 

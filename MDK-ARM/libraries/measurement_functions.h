@@ -117,14 +117,8 @@ struct thermal_parameters{
 
 float thermal_status(float rms,struct thermal_parameters therm, float mem);
 
-struct  prefilt{
-	
-	float x;
-	float y;
-
-};
-
-float prefilter(float x,struct prefilt *back);
+float prefilter(float rtInput ,float *zValues , unsigned int N);
+float prefilter2(float rtInput, unsigned int seq);
 
 float minSelector_3p(float a, float b, float c);
 float maxSelector_3p(float a, float b, float c);

@@ -62,7 +62,6 @@ void fcUNB_init(){
 																										  0.02f 						/*dropout ratio*/};
 		
 		struct fcUNBi_inputParameters fUNBi_initStruct={	0.0f, 						/*level*/
-																											{0.0f,0.0f,0.0f}, 	/*Curve*/
 																										  0.02f 						/*time Multiplier*/};
 		
 		

@@ -351,24 +351,56 @@ float thermal_status(float rms,struct thermal_parameters therm, float mem)
 
 
 
-float prefilter(float x,struct prefilt *back){
+
+#if 0
+
+//function 11
+//prefiltering for conversion
+float prefilter(float rtInput ,float *zValues , unsigned int N){
+
+	unsigned int i;
+      float *z1_ptr,*z2_ptr;
+      float output;
+	float invN;
+
+	invN=1/(float)N;
+
+	z1_ptr=zValues; 					//background data
+	z2_ptr=z1_ptr; 						//data update
+
+	output=(*z1_ptr++) *(invN);
+
+	for(i=2;i<N;i++){
 	
-		float y;
-	
-		y = (x-back->x)*b_pf +back->y*a_pf;
-		back->y=y;
-		back->x=x;
-	
-		return y;
-	
+	*z2_ptr++ =*z1_ptr;
+	output+=(*z1_ptr++) *(invN);
+		
+
+	}
+
+	output+=rtInput *(invN);
+	*z2_ptr=rtInput;
+
+	return(output);
+
 }
 
+//function 12
+//prefiltering for conversion
+float prefilter2(float rtInput,unsigned int seq){
 
+	static float buffer[12]={0};
+	
+  float output;
 
+	output=(rtInput)*1.0f;
+	buffer[seq]=rtInput;
 
+	return(output);
 
+}
 
-
+#endif
 
 
 

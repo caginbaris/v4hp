@@ -5,7 +5,6 @@
 #include "cs_handles.h"
 
 
-
 struct fc46d_inputParameters fc46d_obj1_L1_in;
 struct fc46i_inputParameters fc46i_obj1_L1_in;
 
@@ -47,11 +46,10 @@ void fc46_all(){
 
 
 	float sym_data=0.0f;
-	float pass_level;
 	static uint8_t counter=0;	
 	
 	// cau latency in tripping time about 20+80 msec
-	// cau  protection limit has to set on phase currents not on neg or pos seq !!! 
+	
 	
 	if(Sys.phaseRotation){
 		
@@ -68,10 +66,9 @@ void fc46_all(){
 	
 	if(++counter==50){counter=0;}
 	
-	pass_level=maxSelector_3p(fRMS.Ia,fRMS.Ib,fRMS.Ic);
 	
-	fc46d(sym_data,pass_level,Sys.I_Nom_obj1,fc46d_obj1_L1_in,&fc46d_obj1_L1_out,EN.bits.fc46_obj1_L1);
-	fc46i(sym_data,pass_level,Sys.I_Nom_obj1,fc46i_obj1_L1_in,&fc46i_obj1_L1_out,EN.bits.fc46_obj1_L2);
+	fc46d(sym_data,Sys.I_Nom_obj1,fc46d_obj1_L1_in,&fc46d_obj1_L1_out,EN.bits.fc46_obj1_L1);
+	fc46i(sym_data,Sys.I_Nom_obj1,fc46i_obj1_L1_in,&fc46i_obj1_L1_out,EN.bits.fc46_obj1_L2);
 
 
 
