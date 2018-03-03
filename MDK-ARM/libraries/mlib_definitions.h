@@ -60,6 +60,17 @@ struct thd_data{
 
 }	;
 
+void signal_spectra(
+	
+	float rtInput, 
+	struct spectra *h,
+	unsigned int qBufferLength,	//updated buffer length
+	float *twBufferReal,			//twiddle factor Real coeffs
+	float *twBufferImag,			//twiddle factor Imag coeffs    
+	unsigned int pCounter);
+	
+float signal_thd(struct spectra h);
+
 struct pvp_data{
 
 	float a;
