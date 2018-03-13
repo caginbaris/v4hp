@@ -1,7 +1,7 @@
 #include "stm32f7xx_hal.h"
 #include "adc.h"
 #include "nfbm.h"
-#include "measurement_functions.h"
+#include "mlib_definitions.h"
 #include "pDataConfigs.h"
 #include "conversion.h"
 
@@ -12,12 +12,10 @@ volatile uint32_t cycle_count_2=0;
 
 union uAdc rawAdc={0};
 union uAdc fAdc={0};
-
-
 struct AdcData offset={0};
 struct AdcData scale={0};
-
 struct TurnRatios TR;
+struct prefilter_oc_parameters oc[15]={0};	
 
 extern uint32_t adc_values[15];
 
@@ -25,7 +23,9 @@ float calc_offset=0;
 enum AdcChannel ch=Van;
 
 
-float averager();
+
+
+
 void main_flow(void);
 
 
@@ -113,21 +113,21 @@ if(hadc->Instance==ADC1){
 	
 	//#endif	
 	
-	fAdc.sAdc.Ia=rawAdc.sAdc.Ia*TR.CT;
-	fAdc.sAdc.Ib=rawAdc.sAdc.Ib*TR.CT;
-	fAdc.sAdc.Ic=rawAdc.sAdc.Ic*TR.CT;
-	fAdc.sAdc.In=rawAdc.sAdc.In*TR.CT;
+	fAdc.sAdc.Ia=prefilter_oc(rawAdc.sAdc.Ia*TR.CT,&oc[Ia]);
+	fAdc.sAdc.Ib=prefilter_oc(rawAdc.sAdc.Ib*TR.CT,&oc[Ib]);
+	fAdc.sAdc.Ic=prefilter_oc(rawAdc.sAdc.Ic*TR.CT,&oc[Ic]);
+	fAdc.sAdc.In=prefilter_oc(rawAdc.sAdc.In*TR.CT,&oc[In]);
 	
-	fAdc.sAdc.IRESa=rawAdc.sAdc.IRESa*TR.RES;
-  fAdc.sAdc.IRESb=rawAdc.sAdc.IRESb*TR.RES;
-	fAdc.sAdc.IRESc=rawAdc.sAdc.IRESc*TR.RES;
+	fAdc.sAdc.IRESa=prefilter_oc(rawAdc.sAdc.IRESa*TR.RES,&oc[IRESa]);
+  fAdc.sAdc.IRESb=prefilter_oc(rawAdc.sAdc.IRESb*TR.RES,&oc[IRESb]);
+	fAdc.sAdc.IRESc=prefilter_oc(rawAdc.sAdc.IRESc*TR.RES,&oc[IRESc]);
 	
-	fAdc.sAdc.Van=rawAdc.sAdc.Van*TR.VT;
-	fAdc.sAdc.Vbn=rawAdc.sAdc.Vbn*TR.VT;
-	fAdc.sAdc.Vcn=rawAdc.sAdc.Vcn*TR.VT;
+	fAdc.sAdc.Van=prefilter_oc(rawAdc.sAdc.Van*TR.VT,&oc[Van]);
+	fAdc.sAdc.Vbn=prefilter_oc(rawAdc.sAdc.Vbn*TR.VT,&oc[Vbn]);
+	fAdc.sAdc.Vcn=prefilter_oc(rawAdc.sAdc.Vcn*TR.VT,&oc[Vcn]);
 	
-	fAdc.sAdc.IUNBa=rawAdc.sAdc.IUNBa*TR.UNB;
-	fAdc.sAdc.IUNBb=rawAdc.sAdc.IUNBb*TR.UNB; 	
+	fAdc.sAdc.IUNBa=prefilter_oc(rawAdc.sAdc.IUNBa*TR.UNB,&oc[IUNBa]);
+	fAdc.sAdc.IUNBb=prefilter_oc(rawAdc.sAdc.IUNBb*TR.UNB,&oc[IUNBb]); 	
 	
 	fAdc.sAdc.AB_synth=(fAdc.sAdc.Van-fAdc.sAdc.Vbn);
 	fAdc.sAdc.BC_synth=(fAdc.sAdc.Vbn-fAdc.sAdc.Vcn);
@@ -157,24 +157,6 @@ if(hadc->Instance==ADC1){
 
 
 
-float averager(){
-	
-	
-	static uint32_t count=0;
-	static float sum=0;
-	static float x=0;
-	
-	sum+=fAdc.bufferAdc[ch];
-	
-	if(++count==12500){
-	
-		x=sum/12500.0f;
-		sum=0;
-		count=0;
-	}
-	
-	return x;
 
-}
 
 

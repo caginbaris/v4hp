@@ -95,7 +95,7 @@ void fcUNB_all(){
 	//cau cs_handles part is not used
 	
 	UNBa_synth=(fcUNBd_obj1_L1_out_a.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));
-	UNBb_synth=(fcUNBd_obj1_L1_out_b.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));	
+	UNBb_synth=(fcUNBd_obj1_L1_out_b.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_b.Nphase));	
 	
 	UNBa_rms=true_rms((fAdc.sAdc.IUNBa -UNBa_synth),&UNBa_buffer[0],counter,25);
 	UNBb_rms=true_rms((fAdc.sAdc.IUNBb-UNBb_synth),&UNBb_buffer[0],counter,25);	

@@ -143,16 +143,6 @@ extern union pFunctionEnable EN;
 	
 	
 
-
-
-	
-	
-	
-	
-	
-	
-	
-
 enum curve_entry{
 	
 	IEC_normal_inverse=0x01,

@@ -70,6 +70,7 @@ void signal_spectra(
 	unsigned int pCounter);
 	
 float signal_thd(struct spectra h);
+	
 
 struct pvp_data{
 
@@ -91,6 +92,17 @@ struct thermal_parameters{
 	unsigned int freeze;
 
 };
+
+
+struct prefilter_oc_parameters{
+
+	float xz;
+	float yz;
+	float y;
+	
+};
+
+float prefilter_oc(float rtInput, struct prefilter_oc_parameters *buf);
 
 
 
