@@ -241,6 +241,7 @@ struct fcUNBd_inputParameters{
 	float level; // vectoral difference will be used
 	float delay;
 	float dropout_ratio;
+	float alarm_level; //cau related levels should added to comm parameters side
 	
 	
 

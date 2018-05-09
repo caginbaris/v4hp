@@ -29,6 +29,14 @@ float UNBa_rms=0;
 float UNBb_rms=0;
 
 
+struct phase_cs_in phase_cs_UNBa_comp={0};
+struct phase_cs_in phase_cs_UNBb_comp={0};
+
+
+float cc_buffer[2][50]={0};
+float cs_buffer[2][50]={0};
+
+
 void fcUNB_initial_dt(){
 	
 	static long time_out_counter=0;
@@ -44,12 +52,9 @@ void fcUNB_initial_dt(){
 		fcUNBd_obj1_L1_out_a.Nmag=fRMS.IUNBa*sqrt2;
 		fcUNBd_obj1_L1_out_b.Nmag=fRMS.IUNBb*sqrt2; 
 		
-
 	}
 	
 	if(!Sys.UNBdetect){passed=0;}
-	
-	
 	
 }
 
@@ -79,29 +84,43 @@ void fcUNB_all(){
 	
 	static uint8_t counter=0;
 	
-	static float UNBa_buffer[25];
-	static float UNBb_buffer[25];
+	static float UNBa_buffer[50];
+	static float UNBb_buffer[50];
 	
 	float UNBa_synth=0;
 	float UNBb_synth=0;
 	
+	static uint8_t current_checked=0;
+	static long current_check_counter=0;
 
 	
 	fcUNB_initial_dt();
 	
+	current_checked=on_off_delay(fRMS.Ia>Sys.I_BreakerClosed_MIN,current_checked,100,&current_check_counter);
 	
-	if(Sys.UNBcompFlag){
+	if(Sys.UNBcompFlag & current_checked){
 	
 	//cau cs_handles part is not used
 	
 	UNBa_synth=(fcUNBd_obj1_L1_out_a.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));
 	UNBb_synth=(fcUNBd_obj1_L1_out_b.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_b.Nphase));	
-	
-	UNBa_rms=true_rms((fAdc.sAdc.IUNBa -UNBa_synth),&UNBa_buffer[0],counter,25);
-	UNBb_rms=true_rms((fAdc.sAdc.IUNBb-UNBb_synth),&UNBb_buffer[0],counter,25);	
+		
 		
 	
+	//UNBa_rms=true_rms((fAdc.sAdc.IUNBa -UNBa_synth),&UNBa_buffer[0],counter,50);
+	//UNBb_rms=true_rms((fAdc.sAdc.IUNBb-UNBb_synth),&UNBb_buffer[0],counter,50);	
+	
+	//	UNB cs components	
 		
+	phase_cs_UNBa_comp.Ic=cs_generation((fAdc.sAdc.IUNBa -UNBa_synth),cos_coeffs,50,&cc_buffer[0][0]);
+	phase_cs_UNBa_comp.Is=cs_generation((fAdc.sAdc.IUNBa -UNBa_synth),sin_coeffs,50,&cs_buffer[0][0]);
+		
+	phase_cs_UNBb_comp.Ic=cs_generation((fAdc.sAdc.IUNBb -UNBb_synth),cos_coeffs,50,&cc_buffer[1][0]);
+	phase_cs_UNBb_comp.Is=cs_generation((fAdc.sAdc.IUNBb -UNBb_synth),sin_coeffs,50,&cs_buffer[1][0]);
+
+	UNBa_rms=(phase_cs_UNBa_comp.Ic*phase_cs_UNBa_comp.Ic+phase_cs_UNBa_comp.Is*phase_cs_UNBa_comp.Is);
+	UNBa_rms=(phase_cs_UNBb_comp.Ic*phase_cs_UNBb_comp.Ic+phase_cs_UNBb_comp.Is*phase_cs_UNBb_comp.Is);
+	
 	}else{
 		
 	

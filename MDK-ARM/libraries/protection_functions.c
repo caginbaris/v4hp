@@ -3,7 +3,7 @@
 #include "plib_definitions.h"
 #include "pvp_curve.h"
 
-#define fs 2500.0f
+
 #define uber 1000000
 
 //function-1,2,3
@@ -696,7 +696,8 @@ float pvp_curve(float x){
 	if (x>=b3 && x<b4){tt=b3_m*(x-b3)+ b3_const;}
 	if (x>=b4 && x<b5){tt=b4_m*(x-b4)+ b4_const;}
 	if (x>=b5 && x<b6){tt=b5_m*(x-b5)+ b5_const;}
-	if (x>=b6){tt=0.1f;}
+	if (x>=b6 && x<b7){tt=b6_m*(x-b6)+ b6_const;}
+	if (x>=b7){tt=0.1f;}
 	
 	
 	
@@ -715,7 +716,6 @@ void fcPVPi(float rms,struct fcPVPi_inputParameters fcPVPi_in, struct fcPVPi_out
 		{
 
 			fcPVPi_out->pick_up = 1;
-			//fcPVPi_out->time2trip = fcPVPi_in.time_multiplier * (fcPVPi_in.curve_data[0] / (100.0f * (rms / fcPVPi_in.level) - 97.0f) + 0.02f);
 			fcPVPi_out->time2trip =pvp_curve(rms/fcPVPi_in.level);
 			
 		}

@@ -50,6 +50,7 @@
 "v4hp\fcunb.o"
 "v4hp\fcpvp.o"
 "v4hp\pickup_handles.o"
+"v4hp\alarms.o"
 "v4hp\cs_handles.o"
 "v4hp\truerms.o"
 "v4hp\spectra.o"

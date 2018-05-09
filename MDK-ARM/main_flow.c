@@ -37,14 +37,15 @@ void main_flow(){
 	fcBF_all();
 	fcUNB_all();
 	fcPVP_all();
+	
 	#if 0	
 	
 	
-	
-	
 	#endif 
+	
 	pick_trip_reset_handles();
 	boardIO();
+	alarms();
 	
 	
 	

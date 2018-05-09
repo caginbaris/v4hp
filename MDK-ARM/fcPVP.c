@@ -5,6 +5,7 @@
 #include "cs_handles.h"
 #include "pDataConfigs.h"
 
+
 #define ts (1.0f)/fs
 #define N 50
 
@@ -175,6 +176,9 @@ void fcPVP_all(){
 	static float counter=0;
 	static float peakBuffer[6][N]={0};
 	
+	static uint8_t current_checked;
+	static long current_check_counter;
+	
 
 	/* first version
 	
@@ -195,15 +199,7 @@ void fcPVP_all(){
 	peak_b=peak_detect_rms(pvp_out.b,&peakBuffer[1][0],counter,N);
 	peak_c=peak_detect_rms(pvp_out.c,&peakBuffer[2][0],counter,N);
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	//peak_a_test=peak_detect_rms(pvp_in.a,&peakBuffer[3][0],counter,N);
 	//peak_b_test=peak_detect_rms(pvp_in.b,&peakBuffer[4][0],counter,N);
@@ -219,15 +215,17 @@ void fcPVP_all(){
 		
 	}
 	
-	fcPVPd_obj1_L1_in.level=fcPVPi_obj1_L1_in.level;
 	
-	fcPVPd(peak_a,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_a,EN.bits.fcPVPd_obj1);
-	fcPVPd(peak_b,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_b,EN.bits.fcPVPd_obj1);
-	fcPVPd(peak_c,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_c,EN.bits.fcPVPd_obj1);
+	current_checked=on_off_delay(fRMS.Ia>Sys.I_BreakerClosed_MIN,current_checked,250,&current_check_counter);
 	
-	fcPVPi(peak_a,fcPVPi_obj1_L1_in,&fcPVPi_obj1_L1_out_a,EN.bits.fcPVPi_obj1);
-	fcPVPi(peak_b,fcPVPi_obj1_L1_in,&fcPVPi_obj1_L1_out_b,EN.bits.fcPVPi_obj1);
-	fcPVPi(peak_c,fcPVPi_obj1_L1_in,&fcPVPi_obj1_L1_out_c,EN.bits.fcPVPi_obj1);
+	
+	fcPVPd(peak_a,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_a,EN.bits.fcPVPd_obj1&current_checked);
+	fcPVPd(peak_b,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_b,EN.bits.fcPVPd_obj1&current_checked);
+	fcPVPd(peak_c,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_c,EN.bits.fcPVPd_obj1&current_checked);
+	
+	fcPVPi(peak_a,fcPVPi_obj1_L1_in,&fcPVPi_obj1_L1_out_a,EN.bits.fcPVPi_obj1&current_checked);
+	fcPVPi(peak_b,fcPVPi_obj1_L1_in,&fcPVPi_obj1_L1_out_b,EN.bits.fcPVPi_obj1&current_checked);
+	fcPVPi(peak_c,fcPVPi_obj1_L1_in,&fcPVPi_obj1_L1_out_c,EN.bits.fcPVPi_obj1&current_checked);
 	
 	
 	

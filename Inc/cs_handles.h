@@ -15,8 +15,8 @@ extern struct phase_cs_single UNBa;
 extern struct phase_cs_single UNBb;
 
 
-
-
+extern float sin_coeffs[];
+extern float cos_coeffs[];
 
 #endif
 
