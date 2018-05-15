@@ -216,7 +216,10 @@ void fcPVP_all(){
 	}
 	
 	
-	current_checked=on_off_delay(fRMS.Ia>Sys.I_BreakerClosed_MIN,current_checked,250,&current_check_counter);
+	current_checked=on_off_delay(	(tRMS.Ia>Sys.I_BreakerClosed_MIN ||
+																 tRMS.Ib>Sys.I_BreakerClosed_MIN ||
+																 tRMS.Ic>Sys.I_BreakerClosed_MIN ),
+	current_checked,250,&current_check_counter);
 	
 	
 	fcPVPd(peak_a,fcPVPd_obj1_L1_in,&fcPVPd_obj1_L1_out_a,EN.bits.fcPVPd_obj1&current_checked);

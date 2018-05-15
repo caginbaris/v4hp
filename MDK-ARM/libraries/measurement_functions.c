@@ -200,7 +200,7 @@ void signal_spectra(
 	x_error=h->qBuffer[pCounter]-rtInput;
 	h->qBuffer[pCounter]=rtInput;
 
-	for(i=0;i<13;i++){
+	for(i=0;i<14;i++){
 
 	temp_real =twBufferReal[i]* (h->foutReal[i]+x_error)-twBufferImag[i]*h->foutImag[i];
 	temp_imag=twBufferImag[i]* (h->foutReal[i]+x_error)+twBufferReal[i]*h->foutImag[i];

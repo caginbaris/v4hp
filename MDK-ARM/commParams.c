@@ -161,9 +161,9 @@ void pushDataToMaster(void){
 	/*148*/comParams.pushDataBufferF[58]=fRMS.Vbn;		//RMS Vbn
 	/*150*/comParams.pushDataBufferF[59]=fRMS.Vcn;		//RMS Vcn
 	
-	/*152*/comParams.pushDataBufferF[60]=fRMS.AB_synth;//RMS Vab
-	/*154*/comParams.pushDataBufferF[61]=fRMS.BC_synth;//RMS Vbc
-	/*156*/comParams.pushDataBufferF[62]=fRMS.CA_synth;//RMS Vca
+	/*152*/comParams.pushDataBufferF[60]=tRMS.AB_synth;//RMS Vab
+	/*154*/comParams.pushDataBufferF[61]=tRMS.BC_synth;//RMS Vbc
+	/*156*/comParams.pushDataBufferF[62]=tRMS.CA_synth;//RMS Vca
 	
 	/*158*/comParams.pushDataBufferF[63]=tRMS.IRESa; // true RMS IresA
 	/*160*/comParams.pushDataBufferF[64]=tRMS.IRESb; // true RMS IresB

@@ -76,6 +76,11 @@ void init_conversion(){
 	scale.IRESb=0.005502f; 
 	scale.IRESc=0.005502f; 
 	
+	TR.VT=345;
+	TR.CT=500;
+	TR.UNB=5;
+	TR.RES=80;
+	
 }
 
 

@@ -173,9 +173,9 @@ void pullDataFromMaster(){
 	
 	fcPVPd_obj1_L1_in.dropout_ratio=comParams_uart.recDataBufferF[69];
 	//discard
-	//fcPVPd_obj1_L1_in.level=comParams_uart.recDataBufferF[71]; //cau sould e revised
+	fcPVPd_obj1_L1_in.level=comParams_uart.recDataBufferF[71]; 
 	fcPVPd_obj1_L1_in.delay=comParams_uart.recDataBufferF[72];
-	
+
 	//discard
 	//discard
 	fcPVPi_obj1_L1_in.level=comParams_uart.recDataBufferF[75];

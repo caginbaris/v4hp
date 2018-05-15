@@ -38,15 +38,19 @@ void main_flow(){
 	fcUNB_all();
 	fcPVP_all();
 	
-	#if 0	
+		
 	
 	
-	#endif 
+	
 	
 	pick_trip_reset_handles();
 	boardIO();
 	alarms();
 	
+	
+	#if 0
+	
+	#endif 
 	
 	
 	
