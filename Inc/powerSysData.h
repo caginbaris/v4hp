@@ -25,10 +25,14 @@ struct PowerSysData{
 	uint32_t UNBdetect:1;
 	uint32_t UNBcompFlag:1;
 	
+	uint32_t spare_card_ids:20;
 	
-
-	
-
+	uint32_t CTB1:1;
+	uint32_t CTB2:1;
+	uint32_t CTB3:1;
+	uint32_t CTB4:1;
+	uint32_t CTB5:1;
+	uint32_t CTB6:1;
 
 };
 

@@ -45,6 +45,9 @@ void pullDataFromMaster(){
 	Sys.UNBdetect=pFlag.bit.naturalUNBdetect;
 	Sys.UNBcompFlag=pFlag.bit.naturalUNBcomp;
 	
+	Sys.CTB4=pFlag.bit.CTB4;
+	Sys.CTB5=pFlag.bit.CTB5;
+	Sys.CTB6=pFlag.bit.CTB6;
 	
 	//F data
 	

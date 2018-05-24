@@ -244,7 +244,16 @@ union pFlags{
 		uint32_t spare1:1;
 		uint32_t naturalUNBdetect:1;
 		uint32_t naturalUNBcomp:1;
-		uint32_t spare2:26;
+		
+		
+		uint32_t spare_card_ids:20;
+	
+		uint32_t CTB1:1;
+		uint32_t CTB2:1;
+		uint32_t CTB3:1;
+		uint32_t CTB4:1;
+		uint32_t CTB5:1;
+		uint32_t CTB6:1;
 	
 	}bit;
 	
