@@ -181,8 +181,8 @@ void pushDataToMaster(void){
 	/*176*/comParams.pushDataBufferF[72]=fRMS.IUNBb; // UNBa fund RMS
 	/*178*/comParams.pushDataBufferF[73]=tRMS.IUNBb; // UNBa true RMS
 	
-	/*180*/comParams.pushDataBufferF[74]=0.0f ; //Spare
-	/*182*/comParams.pushDataBufferF[75]=0.0f ; //Spare
+	/*180*/comParams.pushDataBufferF[74]=tRMS.In ; //Spare
+	/*182*/comParams.pushDataBufferF[75]=fRMS.In ; //Spare
 
 	/*184*/comParams.pushDataBufferF[76]=phase_cs_A_out.X ; // imp. A
 	/*186*/comParams.pushDataBufferF[77]=phase_cs_B_out.X ;	// imp. B
@@ -192,11 +192,13 @@ void pushDataToMaster(void){
 	/*192*/comParams.pushDataBufferF[80]=phase_cs_B_out.phase_disp ;	// phase. disp.B
 	/*194*/comParams.pushDataBufferF[81]=phase_cs_C_out.phase_disp ;	// phase. disp.C
 	
-	/*196*/comParams.pushDataBufferF[82]=0.0f ; //Spare
-	/*198*/comParams.pushDataBufferF[83]=0.0f ; //Spare
-	/*200*/comParams.pushDataBufferF[84]=0.0f ; //Spare
-	/*202*/comParams.pushDataBufferF[85]=0.0f ; //Spare
-	/*204*/comParams.pushDataBufferF[86]=0.0f ; //Spare
+	/*196*/comParams.pushDataBufferF[82]=therm_a_obj1 ; //Spare
+	/*198*/comParams.pushDataBufferF[83]=therm_b_obj1 ; //Spare
+	/*200*/comParams.pushDataBufferF[84]=therm_c_obj1 ; //Spare
+	
+	/*202*/comParams.pushDataBufferF[85]=therm_a_obj2; //Spare
+	/*204*/comParams.pushDataBufferF[86]=therm_b_obj2 ; //Spare
+	/*206*/comParams.pushDataBufferF[87]=therm_c_obj2 ; //Spare
 	
 	/*Spare->206-248*/
 	

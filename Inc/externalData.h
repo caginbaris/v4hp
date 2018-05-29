@@ -29,5 +29,15 @@ extern struct phase_cs_out phase_cs_A_out;
 extern struct phase_cs_out phase_cs_B_out;
 extern struct phase_cs_out phase_cs_C_out;
 
+
+extern float therm_a_obj1;
+extern float therm_b_obj1;
+extern float therm_c_obj1;
+	
+extern float therm_a_obj2;
+extern float therm_b_obj2;
+extern float therm_c_obj2;
+
+
 #endif
 
