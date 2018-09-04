@@ -36,6 +36,7 @@ struct phase_cs_in phase_cs_UNBb_comp={0};
 float cc_buffer[2][50]={0};
 float cs_buffer[2][50]={0};
 
+float nucArray[4]={0};
 
 void fcUNB_initial_dt(){
 	
@@ -51,6 +52,11 @@ void fcUNB_initial_dt(){
 		
 		fcUNBd_obj1_L1_out_a.Nmag=fRMS.IUNBa*sqrt2;
 		fcUNBd_obj1_L1_out_b.Nmag=fRMS.IUNBb*sqrt2; 
+		
+		nucArray[0]=fcUNBd_obj1_L1_out_a.Nmag;
+		nucArray[1]=fcUNBd_obj1_L1_out_a.Nphase;
+		nucArray[2]=fcUNBd_obj1_L1_out_b.Nmag;
+		nucArray[3]=fcUNBd_obj1_L1_out_b.Nphase;
 		
 	}
 	

@@ -54,6 +54,7 @@
 #include "CommConfig.h"
 #include "plib_definitions.h"
 #include "alarms.h"
+#include "flash_api.h"
 
 /* USER CODE END Includes */
 
@@ -145,6 +146,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	
+	flashDataCheckStartup();
 	initFunctions();
 	
 	HAL_TIM_Base_Start_IT(&htim1);
@@ -162,38 +164,26 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 		
-	uart_runComApp(); 
-	spi_runComApp();
+	//uart_runComApp(); 
+	//spi_runComApp();
+	flashDataWriteChecking();	
 
 		
 	if(conversion_completed){
 	
-		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_SET);
-		
-		//main_flow();
+
 		incoming_data_flag=off_delay(0,incoming_data_flag,12500,&incoming_data_flag_counter);
-	
-		cycle_count_2++;
-		
-		//HAL_GPIO_WritePin(DO_TEST_1_GPIO_Port, DO_TEST_1_Pin,GPIO_PIN_RESET);		
-		
+
 		conversion_completed=0;
 	
-	}else{
-		
-
-
-	
-
-}
+	}
 	
 
 	if(incoming_data_flag){
 
 		pullDataFromMaster();
 		alarm.bit.configDataReception=1;
-		
-		//incoming_data_flag=0;	
+
 	  
 		
 	}else{
