@@ -4,6 +4,7 @@
 #include "powerSysData.h"
 
 
+
 struct thermal_parameters fc49_obj1_therm;
 struct thermal_parameters fc49_obj2_therm;
 

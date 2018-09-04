@@ -53,6 +53,7 @@
 #include "SPI_MasterSlave.h"
 #include "CommConfig.h"
 #include "plib_definitions.h"
+#include "alarms.h"
 
 /* USER CODE END Includes */
 
@@ -66,6 +67,7 @@ uint32_t adc_values[15]={0};
 uint8_t incoming_data_flag=0;
 long incoming_data_flag_counter=0;
 uint8_t write_enable=0;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -189,7 +191,7 @@ int main(void)
 	if(incoming_data_flag){
 
 		pullDataFromMaster();
-		
+		alarm.bit.configDataReception=1;
 		
 		//incoming_data_flag=0;	
 	  

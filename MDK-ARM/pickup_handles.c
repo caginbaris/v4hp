@@ -4,6 +4,7 @@
 #include "boardIO.h"
 #include "externalData.h"
 #include "bit_expansion.h"
+#include "alarms.h"
 
 #define totalPick 62
 #define pickHold 1000
@@ -397,7 +398,7 @@ void trip_handles(){
 		/**/trip.fc49_obj2_L1_out_b=fc49_obj2_L1_out_b.trip;
 		/**/trip.fc49_obj2_L1_out_c=fc49_obj2_L1_out_c.trip;
 		
-		/**/trip.fcBF_out=fcBF_out.trip;
+		/**/trip.fcBF_out=0;//cau revised to 0 for non-tripping op.
 			
 		/**/trip.fc37_obj1_L1_out_a=fc37_obj1_L1_out_a.trip;
 		/**/trip.fc37_obj1_L1_out_b=fc37_obj1_L1_out_b.trip;
@@ -423,9 +424,10 @@ void trip_handles(){
 		/**/trip.fcPVPi_obj1_L1_out_c=fcPVPi_obj1_L1_out_c.trip;
 			
 	
+	
 	trip_words.w_str=trip;
 	
-	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[1]!=0 || trip_words.w_arr[2]!=0){
+	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[1]!=0 || trip_words.w_arr[2]!=0  || alarm.bit.configDataReception==0){
 		
 		DO.bits.trip=0;
 		DO.bits.LD_TRIP=1;
@@ -438,6 +440,9 @@ void trip_handles(){
 	
 	
 	}
+	
+	/**/trip.fcBF_out=fcBF_out.trip;//cau revised nominal for signaling
+	trip_words.w_str=trip;//cau rearm for indication
 	
 	
 	if(DO.bits.trip==0 && fault_code==0){

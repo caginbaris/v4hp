@@ -42,9 +42,9 @@ void fcUNB_initial_dt(){
 	static long time_out_counter=0;
 	static uint8_t  passed=0;
 	
-	if(Sys.UNBdetect && passed==0){
+	if(Sys.UNBdetect==1 && passed==0){
 		
-		passed=off_delay(1,passed,12500,&time_out_counter);
+		passed=on_delay(1,passed,12500,&time_out_counter);
 
 		fcUNBd_obj1_L1_out_a.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBa.c,UNBa.s)+pi-UNBpcorrection);
 		fcUNBd_obj1_L1_out_b.Nphase=phase_cs_A_out.phase_I-(-atan2f(UNBb.c,UNBb.s)+pi-UNBpcorrection);
@@ -54,7 +54,7 @@ void fcUNB_initial_dt(){
 		
 	}
 	
-	if(!Sys.UNBdetect){passed=0;}
+	if(Sys.UNBdetect==1 && passed==1){Sys.UNBdetect=0;passed=0;}
 	
 }
 
@@ -105,22 +105,20 @@ void fcUNB_all(){
 	UNBa_synth=(fcUNBd_obj1_L1_out_a.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_a.Nphase));
 	UNBb_synth=(fcUNBd_obj1_L1_out_b.Nmag*sin(phase_cs_A_out.phase_I-fcUNBd_obj1_L1_out_b.Nphase));	
 		
-		
-	
-	//UNBa_rms=true_rms((fAdc.sAdc.IUNBa -UNBa_synth),&UNBa_buffer[0],counter,50);
-	//UNBb_rms=true_rms((fAdc.sAdc.IUNBb-UNBb_synth),&UNBb_buffer[0],counter,50);	
+	UNBa_rms=true_rms((UNBa.c-UNBa_synth),&UNBa_buffer[0],counter,50);
+	UNBb_rms=true_rms((UNBb.c-UNBb_synth),&UNBb_buffer[0],counter,50);
 	
 	//	UNB cs components	
-		
+	#if 0	
 	phase_cs_UNBa_comp.Ic=cs_generation((fAdc.sAdc.IUNBa -UNBa_synth),cos_coeffs,50,&cc_buffer[0][0]);
 	phase_cs_UNBa_comp.Is=cs_generation((fAdc.sAdc.IUNBa -UNBa_synth),sin_coeffs,50,&cs_buffer[0][0]);
 		
 	phase_cs_UNBb_comp.Ic=cs_generation((fAdc.sAdc.IUNBb -UNBb_synth),cos_coeffs,50,&cc_buffer[1][0]);
 	phase_cs_UNBb_comp.Is=cs_generation((fAdc.sAdc.IUNBb -UNBb_synth),sin_coeffs,50,&cs_buffer[1][0]);
 
-	UNBa_rms=(phase_cs_UNBa_comp.Ic*phase_cs_UNBa_comp.Ic+phase_cs_UNBa_comp.Is*phase_cs_UNBa_comp.Is);
-	UNBa_rms=(phase_cs_UNBb_comp.Ic*phase_cs_UNBb_comp.Ic+phase_cs_UNBb_comp.Is*phase_cs_UNBb_comp.Is);
-	
+	UNBa_rms=sqrtf(0.5f*(phase_cs_UNBa_comp.Ic*phase_cs_UNBa_comp.Ic+phase_cs_UNBa_comp.Is*phase_cs_UNBa_comp.Is));
+	UNBb_rms=sqrtf(0.5f*(phase_cs_UNBb_comp.Ic*phase_cs_UNBb_comp.Ic+phase_cs_UNBb_comp.Is*phase_cs_UNBb_comp.Is));
+	#endif
 	}else{
 		
 	
@@ -130,7 +128,9 @@ void fcUNB_all(){
 	
 	}
 	
-	if(++counter==25){counter=0;}	
+	if(++counter==50){counter=0;}	
+	
+	
 	
 	
 	fcUNBd(UNBa_rms,fcUNBd_obj1_L1_in,&fcUNBd_obj1_L1_out_a,EN.bits.fcUNBd_obj1);

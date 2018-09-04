@@ -45,11 +45,11 @@ void fcBF_all(){
 	
 	
 	fcBF_in.CB_pos=0;
-	fcBF_in.trip_input=0;
+	fcBF_in.trip_input=!(DI.bit.SVC_trip);
 	
-	if(Sys.CTB4 ){	fcBF_in.CB_pos=DI.bit.Q3_cb_pos; fcBF_in.trip_input=!(DI.bit.Q3_trip) ;}
-	if(Sys.CTB5	){	fcBF_in.CB_pos=DI.bit.Q1_cb_pos; fcBF_in.trip_input=!(DI.bit.Q1_trip) ;}
-	if(Sys.CTB6	){	fcBF_in.CB_pos=DI.bit.Q2_cb_pos; fcBF_in.trip_input=!(DI.bit.Q2_trip) ;}
+	if(Sys.CTB4 ){	fcBF_in.CB_pos=DI.bit.Q3_cb_pos;}
+	if(Sys.CTB5	){	fcBF_in.CB_pos=DI.bit.Q1_cb_pos;}
+	if(Sys.CTB6	){	fcBF_in.CB_pos=DI.bit.Q2_cb_pos;}
 
 	
 

@@ -8,9 +8,12 @@
 union alarm_indications alarm={0};
 
 void alarms(void){
+	
+	static uint8_t ENalarm=0;
+	static long ENalarm_counter=0;
 
 	
-	static long alarm_counters[3]={0};
+	static long alarm_counters[4]={0};
 	
 	//sequence alarms
 	
@@ -22,7 +25,7 @@ void alarms(void){
 																						&alarm_counters[0]);
 	
 	alarm.bit.current_phase_seq=on_off_delay(	mag_sym.I1>mag_sym.I2,
-																						alarm.bit.voltage_phase_seq,
+																						alarm.bit.current_phase_seq,
 																						fs,
 																						&alarm_counters[1]);
 	
@@ -35,7 +38,7 @@ void alarms(void){
 																						&alarm_counters[0]);
 	
 	alarm.bit.current_phase_seq=on_off_delay(	mag_sym.I2>mag_sym.I1,
-																						alarm.bit.voltage_phase_seq,
+																						alarm.bit.current_phase_seq,
 																						fs,
 																						&alarm_counters[1]);
 	
@@ -43,10 +46,28 @@ void alarms(void){
 	
 	//unbalance alarms
 	
-	alarm.bit.unbalance=on_off_delay(					fRMS.IUNBa>fcUNBd_obj1_L1_in.alarm_level,
-																						alarm.bit.unbalance,
+	alarm.bit.unbalance_a=on_off_delay(				fRMS.IUNBa>fcUNBd_obj1_L1_in.alarm_level,
+																						alarm.bit.unbalance_a,
 																						fs,
 																						&alarm_counters[2]);	
+	
+	alarm.bit.unbalance_b=on_off_delay(				fRMS.IUNBb>fcUNBd_obj1_L1_in.alarm_level,
+																						alarm.bit.unbalance_b,
+																						fs,
+																						&alarm_counters[3]);
+	
+	ENalarm=on_off_delay((maxSelector_3p(fRMS.Ia,fRMS.Ib,fRMS.Ic)<Sys.I_Nom_obj1*0.5f),ENalarm,fs,&ENalarm_counter);
+	
+	if(ENalarm){
+	
+	alarm.bit.current_phase_seq=0;
+	alarm.bit.voltage_phase_seq=0;
+	alarm.bit.unbalance_a=0;
+	alarm.bit.unbalance_b=0;		
+		
+	}
+	
+	
 																					
 }
 

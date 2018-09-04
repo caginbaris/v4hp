@@ -89,7 +89,7 @@ void init_protection(void){
 													(fc50N_obj1_L2_in.delay>eps);										
 												
 		EN.bits.fc50N_obj1_L3= 	pEN.bit.obj1_50_51_N &
-														pEN.bit.obj1_50s &
+														pEN.bit.obj1_50Ns &
 													(fc50N_obj1_L3_in.level>eps) &
 													(fc50N_obj1_L3_in.delay>eps);		
 
@@ -175,6 +175,7 @@ void init_protection(void){
 											(fcUNBd_obj1_L1_in.delay>eps);		
 
 		EN.bits.fcUNBi_obj1 =pEN.bit.obj1_UNB &
+											(fcUNBi_obj1_L1_in.time_multiplier>eps) &
 											(fcUNBi_obj1_L1_in.level>eps);	
 
 	// fcPVP

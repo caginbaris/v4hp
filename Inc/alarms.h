@@ -6,17 +6,22 @@
 union alarm_indications{
 
 	struct{
-
-	uint8_t voltage_phase_seq:1;
-	uint8_t current_phase_seq:1;
-	uint8_t unbalance:1;
 	
+	uint32_t configDataReception:1;
+	uint32_t voltage_phase_seq:1;
+	uint32_t current_phase_seq:1;
+	uint32_t unbalance_a:1;
+	uint32_t unbalance_b:1;
+		
 	}bit;
 	
-	uint8_t all;
+	uint32_t all;
 
 };
 
 extern struct fcUNBd_inputParameters fcUNBd_obj1_L1_in;
+extern union alarm_indications alarm;
 
 #endif
+
+

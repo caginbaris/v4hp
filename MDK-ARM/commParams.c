@@ -9,6 +9,7 @@
 #include "externalData.h"
 #include "pDataConfigs.h"
 #include "powerSysData.h"
+#include "alarms.h"
 
 #include "test_commParams.h"
 
@@ -65,7 +66,7 @@ void pushDataToMaster(void){
 	
 	/*14*/comParams.pushDataBufferDW[6]=0; 				//tripping hist enerterd 1 or more seq
 	
-	/*16*/comParams.pushDataBufferDW[7]=0; 				// Board Status
+	/*16*/comParams.pushDataBufferDW[7]=alarm.all; 				// Board Status
 	
 	/*18*/comParams.pushDataBufferDW[8]=DI.all; 	// Input Status
 	/*20*/comParams.pushDataBufferDW[9]=DO.all; 	// Output Status

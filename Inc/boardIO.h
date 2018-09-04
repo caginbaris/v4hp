@@ -65,12 +65,12 @@ struct{
 	
 	/*--------MRB naming----Board Naming*/
 	
-	uint8_t trip:1; 		//DO-1
-	uint8_t alarm:1;  	//DO-2
-	uint8_t inhibit:1;  //DO-3
-	uint8_t BF:1;  			//DO-4
-	uint8_t IBF:1;			//DO-5
-	uint8_t spare:1;		//DO-6
+	uint32_t trip:1; 		//DO-1
+	uint32_t alarm:1;  	//DO-2
+	uint32_t inhibit:1;  //DO-3
+	uint32_t BF:1;  			//DO-4
+	uint32_t IBF:1;			//DO-5
+	uint32_t current_checked:1;		//DO-6
 	uint32_t boardSPARE:10;	// DO-7...16	
 	
 	uint32_t LD_IBF:1;		// Board Ind. Output Upper
@@ -82,7 +82,7 @@ struct{
 
 
 
-uint8_t all; 
+uint32_t all; 
 
 
 

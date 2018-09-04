@@ -167,7 +167,7 @@ void pullDataFromMaster(){
 	//discard
 	fcUNBd_obj1_L1_in.level=comParams_uart.recDataBufferF[62];
 	fcUNBd_obj1_L1_in.delay=comParams_uart.recDataBufferF[63];
-	//spare
+	fcUNBd_obj1_L1_in.alarm_level=comParams_uart.recDataBufferF[64];
 	
 	//discard
 	//discard

@@ -61,21 +61,25 @@ void fc37_all(){
 	
 	pick_current=maxSelector_3p(fRMS.Ia,fRMS.Ib,fRMS.Ic);
 	
-	cb_pos=DI.bit.Q1_cb_pos;  //cau counditionally compiled wrt card ID and corresponding CBs
+	if(Sys.CTB4 ){	cb_pos=DI.bit.Q3_cb_pos;}
+	if(Sys.CTB5	){	cb_pos=DI.bit.Q1_cb_pos;}
+	if(Sys.CTB6	){	cb_pos=DI.bit.Q2_cb_pos;}
  
-	current_checked	=	on_off_delay(	 (pick_current>(Sys.I_Nom_obj1*0.5f)),
+	current_checked	=	on_delay(	 (pick_current>(Sys.I_Nom_obj1*0.5f)),
 															 current_checked,
 															 fs*0.026f,
 															 &pick_current_counter);
 	
-	if(current_checked){inhibit_enabled =1;}
+	if(current_checked){inhibit_enabled =1;DO.bits.current_checked=1;}else{DO.bits.current_checked=0;}
 	if(DO.bits.inhibit){inhibit_enabled =0;}
 	
 	DO.bits.inhibit=off_delay((inhibit_enabled==1 && current_checked==0),DO.bits.inhibit,fs*30,&inhibit_counter); 
 	
 	/*************inhibit part-end**********/
 		
-	EN_all=(cb_pos|current_checked);																
+	EN_all=(cb_pos|current_checked);	
+
+	
 
 	fc37(fRMS.Ia,EN_all,fc37_obj1_L1_in,&fc37_obj1_L1_out_a,EN.bits.fc37_obj1);
 	fc37(fRMS.Ib,EN_all,fc37_obj1_L1_in,&fc37_obj1_L1_out_b,EN.bits.fc37_obj1);
