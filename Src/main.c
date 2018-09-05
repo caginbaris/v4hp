@@ -67,7 +67,8 @@ extern uint32_t cycle_count_2;
 uint32_t adc_values[15]={0};
 uint8_t incoming_data_flag=0;
 long incoming_data_flag_counter=0;
-uint8_t write_enable=0;
+uint8_t writeEnable=0;
+long write_counter=0;
 
 /* USER CODE END PV */
 
@@ -164,26 +165,28 @@ int main(void)
 
   /* USER CODE BEGIN 3 */
 		
-	//uart_runComApp(); 
-	//spi_runComApp();
+	uart_runComApp(); 
+	spi_runComApp();
+		
 	flashDataWriteChecking();	
 
 		
 	if(conversion_completed){
 	
 
-		incoming_data_flag=off_delay(0,incoming_data_flag,12500,&incoming_data_flag_counter);
-
 		conversion_completed=0;
+		
+		writeEnable=on_delay(incoming_data_flag,writeEnable,12500,&write_counter);
+		if(writeEnable){incoming_data_flag=0;}
 	
 	}
 	
 
-	if(incoming_data_flag){
-
+	if(writeEnable){
+		
 		pullDataFromMaster();
 		alarm.bit.configDataReception=1;
-
+		writeEnable=0;
 	  
 		
 	}else{

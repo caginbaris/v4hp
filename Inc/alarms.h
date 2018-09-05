@@ -12,6 +12,7 @@ union alarm_indications{
 	uint32_t current_phase_seq:1;
 	uint32_t unbalance_a:1;
 	uint32_t unbalance_b:1;
+	uint32_t flashError:1;	
 		
 	}bit;
 	

@@ -17,10 +17,6 @@ void main_flow(){
 
 	// protection
 	
-	#if 0
-	
-	
-	
 	fc50_all();
 	fc50N_all();
 	
@@ -39,17 +35,14 @@ void main_flow(){
 	fcPVP_all();
 	
 		
-	
-	
-	
-	
+
 	pick_trip_reset_handles();
 	boardIO();
 	alarms();
 	
 	
 	
-	
+	#if 0
 	#endif 
 	
 	

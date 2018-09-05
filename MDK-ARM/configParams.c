@@ -13,6 +13,10 @@ union pFlags pFlag={0};
 
 void init_protection(void);
 
+extern float nucArray[4];
+extern struct fcUNBd_outputParameters  fcUNBd_obj1_L1_out_a;
+extern struct fcUNBd_outputParameters  fcUNBd_obj1_L1_out_b;
+
 void checkDataFromMaster(){
 	
 	
@@ -250,6 +254,13 @@ void pullDataFromMaster(){
 	TR.RES_Primary  =comParams_uart.recDataBufferF[114];
 	TR.RES_Secondary=comParams_uart.recDataBufferF[115];
 	
+	//****
+	
+	
+	fcUNBd_obj1_L1_out_a.Nmag=nucArray[0];
+	fcUNBd_obj1_L1_out_a.Nphase=nucArray[1];
+	fcUNBd_obj1_L1_out_b.Nmag=nucArray[2];
+	fcUNBd_obj1_L1_out_b.Nphase=nucArray[3];
 	
 	//cau final TR value must considered
 	

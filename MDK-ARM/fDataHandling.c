@@ -25,10 +25,11 @@ uint32_t sentinel=0xA5B4C3D2;
 uint8_t flashWritePending=0;
 extern uint8_t incoming_data_flag;
 
-extern uint8_t write_enable;
+
 
 
 extern float nucArray[4];
+
 
 
 
@@ -43,7 +44,7 @@ void flashErase(void){
   EraseInitStruct.NbSectors     = 1;
 	
 	
-	if (HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError) != HAL_OK){eraseError=1;}else{eraseError=0;}
+	if (HAL_FLASHEx_Erase(&EraseInitStruct, &SECTORError) != HAL_OK){eraseError=1;}
 	
 	
 
@@ -60,7 +61,7 @@ void flashWriteF(uint32_t Address, float* data, uint8_t N ){
 	
 	for(i=0;i<N;i++){
 	
-		if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, Address, *(uint32_t *)(&data[i])) == HAL_OK){writeError=1;}
+		if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, Address, *(uint32_t *)(&data[i])) != HAL_OK){writeError=1;}
 		
 		Address=Address+4;
 	
@@ -77,7 +78,7 @@ void flashWriteD(uint32_t Address, uint32_t* data, uint8_t N ){
 	
 	for(i=0;i<N;i++){
 	
-		if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, Address, *(uint32_t *)(&data[i])) == HAL_OK){writeError=1;}
+		if (HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, Address, *(uint32_t *)(&data[i])) != HAL_OK){writeError=1;}
 		Address=Address+4;
 		
 	}
@@ -208,6 +209,7 @@ void flashConfigDataWrite(uint8_t* enable){
 		
 		DO.bits.IBF=0;
 		bulkFlashWrite();
+		bulkFlashRead();
 		DO.bits.IBF=1;
 		*enable=0;
 	}

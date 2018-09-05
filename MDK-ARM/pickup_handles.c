@@ -15,11 +15,13 @@
 union ToWord pick_words={0};
 union ToWord trip_words={0};
 
+
 static long pick_buffer[totalPick]={0};
 
 enum fault_codes fault_code=no_fault;
 
-
+extern uint8_t eraseError;
+extern uint8_t writeError;
 
 void pick_up_handles(){
 	
@@ -316,7 +318,8 @@ void reset_handles(){
 		if(!pick.fcPVPi_obj1_L1_out_c){fcPVPi_obj1_L1_out_c.trip=0;}
 		
 		
-		
+		writeError=0;
+		eraseError=0;
 		
 		//--reset end	
 		
@@ -427,7 +430,9 @@ void trip_handles(){
 	
 	trip_words.w_str=trip;
 	
-	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[1]!=0 || trip_words.w_arr[2]!=0  || alarm.bit.configDataReception==0){
+	alarm.bit.flashError=(writeError|eraseError);
+	
+	if(trip_words.w_arr[0]!=0 || trip_words.w_arr[1]!=0 || trip_words.w_arr[2]!=0  || (alarm.bit.configDataReception==0 || alarm.bit.flashError==1)){
 		
 		DO.bits.trip=0;
 		DO.bits.LD_TRIP=1;
