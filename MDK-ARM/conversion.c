@@ -70,7 +70,7 @@ void init_conversion(){
 	
 	scale.Van=0.10699f;
 	scale.Vbn=0.10699f;
-	scale.Vcn=0.10699f;
+	scale.Vcn=0.106399998f;
 	
 	scale.IRESa=0.005502f; 
 	scale.IRESb=0.005502f; 

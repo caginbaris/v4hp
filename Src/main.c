@@ -182,7 +182,7 @@ int main(void)
 	}
 	
 
-	if(writeEnable){
+	if(writeEnable==1 && incoming_data_flag==0 ){
 		
 		pullDataFromMaster();
 		alarm.bit.configDataReception=1;

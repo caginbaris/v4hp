@@ -1,7 +1,7 @@
 #include "nfbm.h"
 #include "plib_definitions.h"
 #include "pDataConfigs.h"
-
+#include "boardIO.h"
 
 // input parameters------------------------------
 
@@ -156,6 +156,7 @@ void fc50_all(){
 	
 	// fc50 obj2 Start**************************
 	
+
 	
 	
 	// fc50 obj2 L1
@@ -178,6 +179,25 @@ void fc50_all(){
 	fc50(tRMS.IRESb,fc50_obj2_L3_in,&fc50_obj2_L3_out_b,EN.bits.fc50_obj2_L3);
 	fc50(tRMS.IRESc,fc50_obj2_L3_in,&fc50_obj2_L3_out_c,EN.bits.fc50_obj2_L3);
 	// fc50 obj2 End****************************
+	
+	
+		if(DO.bits.current_checked==0){
+	
+		fc50_obj2_L1_out_a.pick_up=0;
+		fc50_obj2_L1_out_b.pick_up=0;
+		fc50_obj2_L1_out_c.pick_up=0;
+		
+		
+		fc50_obj2_L2_out_a.pick_up=0;
+		fc50_obj2_L2_out_b.pick_up=0;
+		fc50_obj2_L2_out_c.pick_up=0;
+		
+		
+		fc50_obj2_L3_out_a.pick_up=0;
+		fc50_obj2_L3_out_b.pick_up=0;
+		fc50_obj2_L3_out_c.pick_up=0;
+		
+	}
 
 }
 

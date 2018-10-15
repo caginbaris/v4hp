@@ -62,8 +62,8 @@ void alarms(void){
 	
 	alarm.bit.current_phase_seq=0;
 	alarm.bit.voltage_phase_seq=0;
-	alarm.bit.unbalance_a=0;
-	alarm.bit.unbalance_b=0;		
+	//alarm.bit.unbalance_a=0;
+	//alarm.bit.unbalance_b=0;		
 		
 	}
 	

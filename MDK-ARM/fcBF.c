@@ -36,6 +36,8 @@ fcBF_in=fcBF_initStruct;
 
 void fcBF_all(){
 	
+	uint8_t cb_open=0;
+	
 	fcBF_in.rmsA=fRMS.Ia;
 	fcBF_in.rmsB=fRMS.Ib;
 	fcBF_in.rmsC=fRMS.Ic;
@@ -45,13 +47,13 @@ void fcBF_all(){
 	
 	
 	fcBF_in.CB_pos=0;
-	fcBF_in.trip_input=!(DI.bit.SVC_trip);
-	
-	if(Sys.CTB4 ){	fcBF_in.CB_pos=DI.bit.Q3_cb_pos;}
-	if(Sys.CTB5	){	fcBF_in.CB_pos=DI.bit.Q1_cb_pos;}
-	if(Sys.CTB6	){	fcBF_in.CB_pos=DI.bit.Q2_cb_pos;}
 
 	
+	if(Sys.CTB4 ){	fcBF_in.CB_pos=DI.bit.Q3_cb_pos;cb_open=DI.bit.Q3_open;}
+	if(Sys.CTB5	){	fcBF_in.CB_pos=DI.bit.Q1_cb_pos;cb_open=DI.bit.Q1_open;}
+	if(Sys.CTB6	){	fcBF_in.CB_pos=DI.bit.Q2_cb_pos;cb_open=DI.bit.Q2_open;}
+
+	fcBF_in.trip_input=!(DI.bit.SVC_trip); //cau opening should added
 
 	
 	fcBF(fcBF_in,&fcBF_out,EN.bits.fcBF_obj1);

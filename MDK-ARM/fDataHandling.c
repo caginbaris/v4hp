@@ -19,7 +19,7 @@ uint8_t writeError=0;
 uint32_t sentinel=0xA5B4C3D2;
 
 
-
+void pullDataFromMaster(void);
 
 
 uint8_t flashWritePending=0;
@@ -209,7 +209,6 @@ void flashConfigDataWrite(uint8_t* enable){
 		
 		DO.bits.IBF=0;
 		bulkFlashWrite();
-		bulkFlashRead();
 		DO.bits.IBF=1;
 		*enable=0;
 	}

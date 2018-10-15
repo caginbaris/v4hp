@@ -67,13 +67,13 @@ void fc37_all(){
  
 	current_checked	=	on_delay(	 (pick_current>(Sys.I_Nom_obj1*0.5f)),
 															 current_checked,
-															 fs*0.026f,
+															 fs*0.04f,
 															 &pick_current_counter);
 	
 	if(current_checked){inhibit_enabled =1;DO.bits.current_checked=1;}else{DO.bits.current_checked=0;}
 	if(DO.bits.inhibit){inhibit_enabled =0;}
 	
-	DO.bits.inhibit=off_delay((inhibit_enabled==1 && current_checked==0),DO.bits.inhibit,fs*30,&inhibit_counter); 
+	DO.bits.inhibit=off_delay((inhibit_enabled==1 && current_checked==0),DO.bits.inhibit,fs*600,&inhibit_counter); 
 	
 	/*************inhibit part-end**********/
 		
@@ -89,9 +89,6 @@ void fc37_all(){
 	fc37(tRMS.IRESb,EN_all,fc37_obj2_L1_in,&fc37_obj2_L1_out_b,EN.bits.fc37_obj2);
 	fc37(tRMS.IRESc,EN_all,fc37_obj2_L1_in,&fc37_obj2_L1_out_c,EN.bits.fc37_obj2);
 	
-
-	
-
 
 }
 

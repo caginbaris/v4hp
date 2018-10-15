@@ -100,7 +100,7 @@
         <tRSysVw>1</tRSysVw>
         <sRunDeb>0</sRunDeb>
         <sLrtime>0</sLrtime>
-        <nTsel>5</nTsel>
+        <nTsel>3</nTsel>
         <sDll></sDll>
         <sDllPa></sDllPa>
         <sDlgDll></sDlgDll>
@@ -111,18 +111,13 @@
         <tDlgDll></tDlgDll>
         <tDlgPa></tDlgPa>
         <tIfile></tIfile>
-        <pMon>STLink\ST-LINKIII-KEIL_SWO.dll</pMon>
+        <pMon>Segger\JL2CM3.dll</pMon>
       </DebugOpt>
       <TargetDriverDllRegistry>
         <SetRegEntry>
           <Number>0</Number>
-          <Key>DLGUARM</Key>
-          <Name>(105=-1,-1,-1,-1,0)</Name>
-        </SetRegEntry>
-        <SetRegEntry>
-          <Number>0</Number>
           <Key>JL2CM3</Key>
-          <Name>-U260108897 -O2190 -S2 -ZTIFSpeedSel5000 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight JTAG-DP") -D00(5BA00477) -L00(4) -N01("Unknown JTAG device") -D01(06451041) -L01(5) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20020000 -FC1000 -FN2 -FF0STM32F7x_2048.FLM -FS08000000 -FL0200000 -FP0($$Device:STM32F767ZITx$CMSIS\Flash\STM32F7x_2048.FLM) -FF1STM32F7xTCM_2048.FLM -FS1200000 -FL1200000 -FP1($$Device:STM32F767ZITx$CMSIS\Flash\STM32F7xTCM_2048.FLM)</Name>
+          <Name>-U260103240 -O2190 -S2 -ZTIFSpeedSel5000 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST0 -N00("ARM CoreSight JTAG-DP") -D00(5BA00477) -L00(4) -N01("Unknown JTAG device") -D01(06451041) -L01(5) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO15 -FD20020000 -FC1000 -FN2 -FF0STM32F7x_2048.FLM -FS08000000 -FL0200000 -FP0($$Device:STM32F767ZITx$CMSIS\Flash\STM32F7x_2048.FLM) -FF1STM32F7xTCM_2048.FLM -FS1200000 -FL1200000 -FP1($$Device:STM32F767ZITx$CMSIS\Flash\STM32F7xTCM_2048.FLM)</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -160,89 +155,99 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>sentinel</ItemText>
+          <ItemText>fRMS</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>tRMS</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>fc50_obj2_L1_in</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
         <Ww>
           <count>0</count>
           <WinNumber>2</WinNumber>
-          <ItemText>incoming_data_flag</ItemText>
+          <ItemText>TR</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>2</WinNumber>
-          <ItemText>alarm</ItemText>
+          <ItemText>fcUNBd_obj1_L1_out_a</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>2</WinNumber>
-          <ItemText>pEN</ItemText>
+          <ItemText>fcUNBd_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW[0]</ItemText>
+          <ItemText>fcUNBi_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>2</WinNumber>
-          <ItemText>flashWritePending</ItemText>
+          <ItemText>fRMS</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW[1]</ItemText>
+          <ItemText>pEN</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW</ItemText>
+          <ItemText>pvp_in</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
           <WinNumber>2</WinNumber>
-          <ItemText>eraseError</ItemText>
+          <ItemText>fcPVPd_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>8</count>
           <WinNumber>2</WinNumber>
-          <ItemText>nucArray</ItemText>
+          <ItemText>fcPVPi_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>9</count>
           <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferF[0]</ItemText>
+          <ItemText>peak_a</ItemText>
         </Ww>
         <Ww>
           <count>10</count>
           <WinNumber>2</WinNumber>
-          <ItemText>alarm</ItemText>
+          <ItemText>fc59_obj1_L1_out_a</ItemText>
         </Ww>
         <Ww>
           <count>11</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fcUNBd_obj1_L1_out_a.Nmag</ItemText>
+          <ItemText>fc59_obj1_L1_in</ItemText>
         </Ww>
         <Ww>
           <count>12</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fcUNBd_obj1_L1_out_a.Nphase</ItemText>
+          <ItemText>pick</ItemText>
         </Ww>
         <Ww>
           <count>13</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fcUNBd_obj1_L1_out_b.Nmag</ItemText>
+          <ItemText>fc59_obj1_L2_in</ItemText>
         </Ww>
         <Ww>
           <count>14</count>
           <WinNumber>2</WinNumber>
-          <ItemText>fcUNBd_obj1_L1_out_b.Nphase</ItemText>
+          <ItemText>pflag</ItemText>
         </Ww>
         <Ww>
           <count>15</count>
           <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferF[115]</ItemText>
+          <ItemText>pFlag</ItemText>
         </Ww>
         <Ww>
           <count>16</count>
@@ -252,69 +257,14 @@
         <Ww>
           <count>17</count>
           <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW</ItemText>
-        </Ww>
-        <Ww>
-          <count>18</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferF</ItemText>
-        </Ww>
-        <Ww>
-          <count>19</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW[13]</ItemText>
-        </Ww>
-        <Ww>
-          <count>20</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW[12]</ItemText>
-        </Ww>
-        <Ww>
-          <count>21</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW[9]</ItemText>
-        </Ww>
-        <Ww>
-          <count>22</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>comParams_uart.recDataBufferDW[8]</ItemText>
-        </Ww>
-        <Ww>
-          <count>23</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>alarm</ItemText>
-        </Ww>
-        <Ww>
-          <count>24</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>eraseError</ItemText>
-        </Ww>
-        <Ww>
-          <count>25</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>writeerror</ItemText>
-        </Ww>
-        <Ww>
-          <count>26</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>writeError</ItemText>
-        </Ww>
-        <Ww>
-          <count>27</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>incoming_data_flag</ItemText>
-        </Ww>
-        <Ww>
-          <count>28</count>
-          <WinNumber>2</WinNumber>
-          <ItemText>flashWritePending</ItemText>
+          <ItemText>scale</ItemText>
         </Ww>
       </WatchWindow2>
       <MemoryWindow1>
         <Mm>
           <WinNumber>1</WinNumber>
           <SubType>0</SubType>
-          <ItemText>0x08010000</ItemText>
+          <ItemText>0x08009900</ItemText>
           <AccSizeX>0</AccSizeX>
         </Mm>
       </MemoryWindow1>
@@ -324,7 +274,7 @@
       <DebugFlag>
         <trace>0</trace>
         <periodic>1</periodic>
-        <aLwin>1</aLwin>
+        <aLwin>0</aLwin>
         <aCover>0</aCover>
         <aSer1>0</aSer1>
         <aSer2>0</aSer2>
@@ -1036,7 +986,7 @@
 
   <Group>
     <GroupName>mfunctions</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>
@@ -1120,7 +1070,7 @@
 
   <Group>
     <GroupName>powerSys</GroupName>
-    <tvExp>0</tvExp>
+    <tvExp>1</tvExp>
     <tvExpOptDlg>0</tvExpOptDlg>
     <cbSel>0</cbSel>
     <RteFlg>0</RteFlg>

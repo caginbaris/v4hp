@@ -176,11 +176,11 @@ void pushDataToMaster(void){
 	
 	/*170*/comParams.pushDataBufferF[69]=comParams.pushDataBufferF[63]+comParams.pushDataBufferF[64]+comParams.pushDataBufferF[65]; // P Res Total
 	
-	/*172*/comParams.pushDataBufferF[70]=fRMS.IUNBa; // UNBa fund RMS
-	/*174*/comParams.pushDataBufferF[71]=tRMS.IUNBa; // UNBa true RMS
+	/*172*/comParams.pushDataBufferF[70]=tRMS.IUNBa; // UNBa fund RMS
+	/*174*/comParams.pushDataBufferF[71]=fRMS.IUNBa; // UNBa true RMS
 	
-	/*176*/comParams.pushDataBufferF[72]=fRMS.IUNBb; // UNBa fund RMS
-	/*178*/comParams.pushDataBufferF[73]=tRMS.IUNBb; // UNBa true RMS
+	/*176*/comParams.pushDataBufferF[72]=tRMS.IUNBb; // UNBa fund RMS
+	/*178*/comParams.pushDataBufferF[73]=fRMS.IUNBb; // UNBa true RMS
 	
 	/*180*/comParams.pushDataBufferF[74]=tRMS.In ; //Spare
 	/*182*/comParams.pushDataBufferF[75]=fRMS.In ; //Spare
@@ -200,6 +200,10 @@ void pushDataToMaster(void){
 	/*202*/comParams.pushDataBufferF[85]=therm_a_obj2; //Spare
 	/*204*/comParams.pushDataBufferF[86]=therm_b_obj2 ; //Spare
 	/*206*/comParams.pushDataBufferF[87]=therm_c_obj2 ; //Spare
+	
+	/*208*/comParams.pushDataBufferF[88]=peak_a; //Spare
+	/*210*/comParams.pushDataBufferF[89]=peak_b ; //Spare
+	/*206*/comParams.pushDataBufferF[90]=peak_c ; //Spare
 	
 	/*Spare->206-248*/
 	
@@ -281,7 +285,7 @@ void pushDataToMaster(void){
 	/*344*/comParams.pushDataBufferF[150]=fc46i_obj1_L1_in.time_multiplier;
 	
 	/*346*/comParams.pushDataBufferF[151]=fc49_obj1_therm.k;
-	/*348*/comParams.pushDataBufferF[152]=fc49_obj1_therm.tau;
+	/*348*/comParams.pushDataBufferF[152]=fc49_obj1_therm.tau*0.01666f;
 	/*350*/comParams.pushDataBufferF[153]=fc49_obj1_L1_in.alarm_level;
 	/*352*/comParams.pushDataBufferF[154]=fc49_obj1_therm.Inom;
 	
@@ -355,7 +359,7 @@ void pushDataToMaster(void){
 	
 	
 	/*446*/comParams.pushDataBufferF[200]=fc49_obj2_therm.k;
-	/*448*/comParams.pushDataBufferF[201]=fc49_obj2_therm.tau;
+	/*448*/comParams.pushDataBufferF[201]=fc49_obj2_therm.tau*0.01666f;
 	/*450*/comParams.pushDataBufferF[202]=fc49_obj2_L1_in.alarm_level;
 	/*452*/comParams.pushDataBufferF[203]=fc49_obj2_therm.Inom;
 	//discard

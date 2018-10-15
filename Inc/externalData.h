@@ -38,6 +38,10 @@ extern float therm_a_obj2;
 extern float therm_b_obj2;
 extern float therm_c_obj2;
 
+extern float peak_a;
+extern float peak_b;
+extern float peak_c;
+
 
 
 #endif
