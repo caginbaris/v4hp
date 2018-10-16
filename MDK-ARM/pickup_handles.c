@@ -56,9 +56,9 @@ void pick_up_handles(){
 		pick.fc50_obj1_L3_out_b=off_delay(fc50_obj1_L3_out_b.pick_up, pick.fc50_obj1_L3_out_b, pickHold, &pick_buffer[8]);
 		pick.fc50_obj1_L3_out_c=off_delay(fc50_obj1_L3_out_c.pick_up, pick.fc50_obj1_L3_out_c, pickHold, &pick_buffer[9]);
 		
-		pick.fc50_obj2_L1_out_a=off_delay(fc50_obj2_L1_out_a.pick_up, pick.fc50_obj2_L1_out_a, pickHold, &pick_buffer[10]);
-		pick.fc50_obj2_L1_out_b=off_delay(fc50_obj2_L1_out_b.pick_up, pick.fc50_obj2_L1_out_b, pickHold, &pick_buffer[11]);
-		pick.fc50_obj2_L1_out_c=off_delay(fc50_obj2_L1_out_c.pick_up, pick.fc50_obj2_L1_out_c, pickHold, &pick_buffer[12]);
+		pick.fc50_obj2_L1_out_a=on_off_delay(fc50_obj2_L1_out_a.pick_up, pick.fc50_obj2_L1_out_a, pickHold, &pick_buffer[10]); //cau
+		pick.fc50_obj2_L1_out_b=on_off_delay(fc50_obj2_L1_out_b.pick_up, pick.fc50_obj2_L1_out_b, pickHold, &pick_buffer[11]);
+		pick.fc50_obj2_L1_out_c=on_off_delay(fc50_obj2_L1_out_c.pick_up, pick.fc50_obj2_L1_out_c, pickHold, &pick_buffer[12]);
 
 		pick.fc50N_obj1_L2_out=off_delay(fc50N_obj1_L2_out.pick_up, pick.fc50N_obj1_L2_out, pickHold, &pick_buffer[13]);
 			
@@ -68,13 +68,13 @@ void pick_up_handles(){
 		
 		case 2:
 			
-		pick.fc50_obj2_L2_out_a=off_delay(fc50_obj2_L2_out_a.pick_up, pick.fc50_obj2_L2_out_a, pickHold, &pick_buffer[14]);
-		pick.fc50_obj2_L2_out_b=off_delay(fc50_obj2_L2_out_b.pick_up, pick.fc50_obj2_L2_out_b, pickHold, &pick_buffer[15]);		
-		pick.fc50_obj2_L2_out_c=off_delay(fc50_obj2_L2_out_c.pick_up, pick.fc50_obj2_L2_out_c, pickHold, &pick_buffer[16]);	
+		pick.fc50_obj2_L2_out_a=on_off_delay(fc50_obj2_L2_out_a.pick_up, pick.fc50_obj2_L2_out_a, pickHold, &pick_buffer[14]);//cau
+		pick.fc50_obj2_L2_out_b=on_off_delay(fc50_obj2_L2_out_b.pick_up, pick.fc50_obj2_L2_out_b, pickHold, &pick_buffer[15]);		
+		pick.fc50_obj2_L2_out_c=on_off_delay(fc50_obj2_L2_out_c.pick_up, pick.fc50_obj2_L2_out_c, pickHold, &pick_buffer[16]);	
 			
-		pick.fc50_obj2_L3_out_a=off_delay(fc50_obj2_L3_out_a.pick_up, pick.fc50_obj2_L3_out_a, pickHold, &pick_buffer[17]);	
-		pick.fc50_obj2_L3_out_b=off_delay(fc50_obj2_L3_out_b.pick_up, pick.fc50_obj2_L3_out_b, pickHold, &pick_buffer[18]);		
-		pick.fc50_obj2_L3_out_c=off_delay(fc50_obj2_L3_out_c.pick_up, pick.fc50_obj2_L3_out_c, pickHold, &pick_buffer[19]);	
+		pick.fc50_obj2_L3_out_a=on_off_delay(fc50_obj2_L3_out_a.pick_up, pick.fc50_obj2_L3_out_a, pickHold, &pick_buffer[17]);//cau	
+		pick.fc50_obj2_L3_out_b=on_off_delay(fc50_obj2_L3_out_b.pick_up, pick.fc50_obj2_L3_out_b, pickHold, &pick_buffer[18]);		
+		pick.fc50_obj2_L3_out_c=on_off_delay(fc50_obj2_L3_out_c.pick_up, pick.fc50_obj2_L3_out_c, pickHold, &pick_buffer[19]);	
 		
 		pick.fc50N_obj1_L3_out=off_delay(fc50N_obj1_L3_out.pick_up, pick.fc50N_obj1_L3_out, pickHold, &pick_buffer[20]);	
 			
@@ -85,9 +85,10 @@ void pick_up_handles(){
 		pick.fc51_obj1_out_a=off_delay(fc51_obj1_out_a.pick_up, pick.fc51_obj1_out_a,pickHold,&pick_buffer[21]);
 		pick.fc51_obj1_out_b=off_delay(fc51_obj1_out_b.pick_up, pick.fc51_obj1_out_b,pickHold,&pick_buffer[22]);	
 		pick.fc51_obj1_out_c=off_delay(fc51_obj1_out_c.pick_up, pick.fc51_obj1_out_c,pickHold,&pick_buffer[23]);		
-		pick.fc51_obj2_out_a=off_delay(fc51_obj2_out_a.pick_up, pick.fc51_obj2_out_a,pickHold,&pick_buffer[24]);
-		pick.fc51_obj2_out_b=off_delay(fc51_obj2_out_b.pick_up, pick.fc51_obj2_out_b,pickHold,&pick_buffer[25]);	
-		pick.fc51_obj2_out_c=off_delay(fc51_obj2_out_c.pick_up, pick.fc51_obj2_out_c,pickHold,&pick_buffer[26]);
+		
+		pick.fc51_obj2_out_a=on_off_delay(fc51_obj2_out_a.pick_up, pick.fc51_obj2_out_a,pickHold,&pick_buffer[24]);//cau
+		pick.fc51_obj2_out_b=on_off_delay(fc51_obj2_out_b.pick_up, pick.fc51_obj2_out_b,pickHold,&pick_buffer[25]);	
+		pick.fc51_obj2_out_c=on_off_delay(fc51_obj2_out_c.pick_up, pick.fc51_obj2_out_c,pickHold,&pick_buffer[26]);
 			
 		pick.fc51N_obj1_out=off_delay(fc51N_obj1_out.pick_up, pick.fc51N_obj1_out,pickHold,&pick_buffer[27]);
 			
@@ -115,8 +116,9 @@ void pick_up_handles(){
 		
 		case 5:
 			
-		pick.fc46d_obj1_L1_out=off_delay(fc46d_obj1_L1_out.pick_up, pick.fc46d_obj1_L1_out,pickHold,&pick_buffer[36]);
-		pick.fc46i_obj1_L1_out=off_delay(fc46i_obj1_L1_out.pick_up, pick.fc46i_obj1_L1_out,pickHold,&pick_buffer[37]);
+		pick.fc46d_obj1_L1_out=on_off_delay(fc46d_obj1_L1_out.pick_up, pick.fc46d_obj1_L1_out,pickHold,&pick_buffer[36]);//cau
+		pick.fc46i_obj1_L1_out=on_off_delay(fc46i_obj1_L1_out.pick_up, pick.fc46i_obj1_L1_out,pickHold,&pick_buffer[37]);
+		
 		pick.fc49_obj1_L1_out_a=off_delay(fc49_obj1_L1_out_a.alarm, pick.fc49_obj1_L1_out_a,pickHold,&pick_buffer[38]);
 		pick.fc49_obj1_L1_out_b=off_delay(fc49_obj1_L1_out_b.alarm, pick.fc49_obj1_L1_out_b,pickHold,&pick_buffer[39]);
 		pick.fc49_obj1_L1_out_c=off_delay(fc49_obj1_L1_out_c.alarm, pick.fc49_obj1_L1_out_c,pickHold,&pick_buffer[40]);
@@ -146,13 +148,13 @@ void pick_up_handles(){
 		
 		case 7:
 			
-		pick.fc37_obj1_L1_out_a=off_delay(fc37_obj1_L1_out_a.pick_up,pick.fc37_obj1_L1_out_a,pickHold,&pick_buffer[45]);
-		pick.fc37_obj1_L1_out_b=off_delay(fc37_obj1_L1_out_b.pick_up,pick.fc37_obj1_L1_out_b,pickHold,&pick_buffer[46]);
-		pick.fc37_obj1_L1_out_c=off_delay(fc37_obj1_L1_out_c.pick_up,pick.fc37_obj1_L1_out_c,pickHold,&pick_buffer[47]);
+		pick.fc37_obj1_L1_out_a=on_off_delay(fc37_obj1_L1_out_a.pick_up,pick.fc37_obj1_L1_out_a,pickHold,&pick_buffer[45]);//cau
+		pick.fc37_obj1_L1_out_b=on_off_delay(fc37_obj1_L1_out_b.pick_up,pick.fc37_obj1_L1_out_b,pickHold,&pick_buffer[46]);
+		pick.fc37_obj1_L1_out_c=on_off_delay(fc37_obj1_L1_out_c.pick_up,pick.fc37_obj1_L1_out_c,pickHold,&pick_buffer[47]);
 		
-		pick.fc37_obj2_L1_out_a=off_delay(fc37_obj2_L1_out_a.pick_up,pick.fc37_obj2_L1_out_a,pickHold,&pick_buffer[48]);
-		pick.fc37_obj2_L1_out_b=off_delay(fc37_obj2_L1_out_b.pick_up,pick.fc37_obj2_L1_out_b,pickHold,&pick_buffer[49]);
-		pick.fc37_obj2_L1_out_c=off_delay(fc37_obj2_L1_out_c.pick_up,pick.fc37_obj2_L1_out_c,pickHold,&pick_buffer[50]);
+		pick.fc37_obj2_L1_out_a=on_off_delay(fc37_obj2_L1_out_a.pick_up,pick.fc37_obj2_L1_out_a,pickHold,&pick_buffer[48]);//cau
+		pick.fc37_obj2_L1_out_b=on_off_delay(fc37_obj2_L1_out_b.pick_up,pick.fc37_obj2_L1_out_b,pickHold,&pick_buffer[49]);
+		pick.fc37_obj2_L1_out_c=on_off_delay(fc37_obj2_L1_out_c.pick_up,pick.fc37_obj2_L1_out_c,pickHold,&pick_buffer[50]);
 		
 		
 		break;
